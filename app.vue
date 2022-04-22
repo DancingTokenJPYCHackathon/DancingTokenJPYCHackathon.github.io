@@ -1,20 +1,313 @@
 <script setup>
+const abi_ThrowMoneyFactory = [
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "__error_message",
+				"type": "string"
+			}
+		],
+		"name": "ErrorLog",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "__sender_address",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "__pool_address",
+				"type": "address"
+			}
+		],
+		"name": "PoolCreated",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_sender",
+				"type": "address"
+			}
+		],
+		"name": "getPool",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "newThrowMoneyPool",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+]
+
+const abi_ThrowMoneyPool = [
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_sender",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_throwMoneyFactoryAddress",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "__error_message",
+				"type": "string"
+			}
+		],
+		"name": "ErrorLog",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "__senderAddr",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "__reciveAddr",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "__message",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "__alias",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "__amount",
+				"type": "uint256"
+			}
+		],
+		"name": "MoneySent",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "approveJpycFromContract",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_senderAddr",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_message",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_senderAlias",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "emitMoneySent",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getname",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getsymbol",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "jpyc",
+		"outputs": [
+			{
+				"internalType": "contract IERC20",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "jpycAmount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_reciveAddr",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "_message",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_senderAlias",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_amount",
+				"type": "uint256"
+			}
+		],
+		"name": "sendJpyc",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "throwMoneyFactory",
+		"outputs": [
+			{
+				"internalType": "contract IThrowMoneyFactory",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
 
 const address = ref('')
-
 const walletAddress = ref('')
-const data = ref(null)
 
-const handleSubmit = () => {
+const data = ref([])
+
+
+let provider
+const throwMoneyFactoryAddress = "0x85841E40736Feb76de69DDA89e05760c4aB54E28"
+let throwMoneyFactoryContract
+let signerPool
+let PoolContract
+let filter
+let chatCounter = 0
+let chatData
+
+let streamerAddress
+let _amountEther
+
+
+async function handleSubmit  () {
     console.log('clicked!')
 
-    // get data（initmetamask function）
-    data.value = 'message is here'
-
-    walletAddress.value = address.value
+    provider = await ethers.getDefaultProvider("rinkeby", {etherscan: "KAAQMZSEM8PAUDKX7BP26EAEM85A7SG5G6"})
+    streamerAddress = address.value
     address.value = ''
-}
+	walletAddress.value = streamerAddress
 
+    throwMoneyFactoryContract = await new ethers.Contract(throwMoneyFactoryAddress, abi_ThrowMoneyFactory, provider)
+    signerPool = await throwMoneyFactoryContract.getPool(streamerAddress)
+
+    PoolContract = await new ethers.Contract(signerPool, abi_ThrowMoneyPool, provider)
+    filter = PoolContract.filters.MoneySent(null, signerPool, null, null, null)
+
+    PoolContract.on(filter, (_senderAddr, _reciveAddr, _message, _alias, _amount) => {
+      chatCounter++
+	  _amountEther = ethers.utils.formatEther(_amount)
+      chatData = {
+        alias: _alias,
+        amount: _amountEther,
+        message: _message,
+      }
+
+      data.value.push(chatData)
+    })
+}
 
 </script>
 <template>

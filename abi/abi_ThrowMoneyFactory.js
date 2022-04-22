@@ -1,4 +1,4 @@
-abi_ThrowMoneyFactory = [
+const abi_ThrowMoneyFactory = [
 	{
 		"anonymous": false,
 		"inputs": [

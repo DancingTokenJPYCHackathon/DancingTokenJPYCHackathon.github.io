@@ -17,16 +17,28 @@
     "baseUrl": "..",
     "paths": {
       "~~": [
-        "../dancingtokenjpychackathon.github"
+        "."
+      ],
+      "~~/*": [
+        "./*"
       ],
       "@@": [
-        "../dancingtokenjpychackathon.github"
+        "."
+      ],
+      "@@/*": [
+        "./*"
       ],
       "~": [
-        "../dancingtokenjpychackathon.github"
+        "."
+      ],
+      "~/*": [
+        "./*"
       ],
       "@": [
-        "../dancingtokenjpychackathon.github"
+        "."
+      ],
+      "@/*": [
+        "./*"
       ],
       "assets": [
         "assets"

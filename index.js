@@ -1,39 +1,12 @@
-let useraddress;
-let provider;
-let signer;
-let throwMoneyFactoryContract;
-const throwMoneyFactoryAddress = "0x85841E40736Feb76de69DDA89e05760c4aB54E28";
+export default {
 
-window.onload = async function() {
-      startup();
-}
+throwMoneyFactoryAddress = "0x85841E40736Feb76de69DDA89e05760c4aB54E28";
 
-async function startup() {
-    ethereum.on('chainChanged', (_chainId) => window.location.reload());
-    changeToRinkeby();
 
-    //initmetamask();
-}
-
-/**
-// 送金額に応じてスタイルシートを返す関数
-function addStyleFromAmount(_amount, messageId){
-    	const chatStyleSheet = "";
-
-	if (_amount) {
-		// 送金額に応じて異なるチャットボックスのスタイルシートを決定
-	} else {
-		// 送金額に応じて異なるチャットボックスのスタイルシートを決定
-	}
-
-	return chatStyleSheet;
-}
-**/
-
-async function initmetamask(){
+async function initmetamask(_data){
     document.getElementById("message_box").innerHTML = "配信開始しました！";
     const provider = await ethers.getDefaultProvider("rinkeby", {etherscan: "KAAQMZSEM8PAUDKX7BP26EAEM85A7SG5G6"});
-    useraddress = document.getElementById("wallet_address_input").value;    
+    const useraddress = document.getElementById("wallet_address_input").value;    
 
     throwMoneyFactoryContract = await new ethers.Contract(throwMoneyFactoryAddress, abi_ThrowMoneyFactory, provider);
     signerPool = await throwMoneyFactoryContract.getPool(useraddress);
@@ -43,6 +16,17 @@ async function initmetamask(){
     chat_counter = 0;
 
     PoolContract.on(filter, (_senderAddr, _reciveAddr, _message, _alias, _amount) => {
+
+	    chatData = {
+                alias: _alias,
+                amount: _amount,
+                message: _message,
+	    }
+            _data.push(chatData);
+
+	    
+	    // Vue を使わない場合の chat_box への要素追加処理
+	    //
 	    const chatId =  `chat_message_${ chat_counter }`;
 	    // 入金額によってスタイルを変更
             //const chatStyleSheet = addStyleFromAmount(_amount, messageId);
@@ -78,13 +62,4 @@ async function initmetamask(){
     });
 }
 
-
-async function changeToRinkeby(){
-    document.getElementById("message_box").innerHTML = "Rinkeby Networkに切り替えましょう";
-    let ethereum = window.ethereum;
-        const data = [{
-            chainId: '0x4',
-        }]
-    const tx = await ethereum.request({method: 'wallet_switchEthereumChain', params:data}).catch()
-    document.getElementById("message_box").innerHTML = "ウォレットとの連携が完了しました。<br><br>"
 }

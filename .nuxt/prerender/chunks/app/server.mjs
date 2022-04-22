@@ -1,3 +1,20 @@
+import { v as vue_cjs_prod, r as require$$0, s as serverRenderer } from '../index.mjs';
+import { hasProtocol, parseQuery, parseURL, withBase, withQuery } from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/ufo/dist/index.mjs';
+import { u as useRuntimeConfig$1 } from '../nitro/nitro-prerenderer.mjs';
+import 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/unenv/runtime/mock/proxy.mjs';
+import 'stream';
+import 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/unenv/runtime/polyfill/fetch.node.mjs';
+import 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/h3/dist/index.mjs';
+import 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/ohmyfetch/dist/node.mjs';
+import 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/destr/dist/index.mjs';
+import 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/radix3/dist/index.mjs';
+import 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/unenv/runtime/fetch/index.mjs';
+import 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/hookable/dist/index.mjs';
+import 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/scule/dist/index.mjs';
+import 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/defu/dist/defu.mjs';
+import 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/ohash/dist/index.mjs';
+import 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/unstorage/dist/index.mjs';
+
 var __defProp = Object.defineProperty;
 var __defProps = Object.defineProperties;
 var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
@@ -17,10 +34,6 @@ var __spreadValues = (a, b) => {
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-import require$$0, { getCurrentInstance, reactive, toRef, isRef, defineComponent, computed, h, resolveComponent, watchEffect, ref, useSSRContext, mergeProps, withCtx, createTextVNode, toDisplayString as toDisplayString$1, unref, onErrorCaptured, createVNode, createApp } from "vue";
-import { withBase, withQuery, hasProtocol, parseQuery, parseURL } from "ufo";
-import { useRuntimeConfig as useRuntimeConfig$1 } from "#internal/nitro";
-import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderSuspense, ssrRenderAttr } from "vue/server-renderer";
 const suspectProtoRx = /"(?:_|\\u005[Ff])(?:_|\\u005[Ff])(?:p|\\u0070)(?:r|\\u0072)(?:o|\\u006[Ff])(?:t|\\u0074)(?:o|\\u006[Ff])(?:_|\\u005[Ff])(?:_|\\u005[Ff])"\s*:/;
 const suspectConstructorRx = /"(?:c|\\u0063)(?:o|\\u006[Ff])(?:n|\\u006[Ee])(?:s|\\u0073)(?:t|\\u0074)(?:r|\\u0072)(?:u|\\u0075)(?:c|\\u0063)(?:t|\\u0074)(?:o|\\u006[Ff])(?:r|\\u0072)"\s*:/;
 const JsonSigRx = /^["{[]|^-?[0-9][0-9.]{0,14}$/;
@@ -235,7 +248,7 @@ const _globalThis$2 = function() {
   }
   throw new Error("unable to locate global object");
 }();
-const fetch = _globalThis$2.fetch || (() => Promise.reject(new Error("[ohmyfetch] global.fetch is not supported!")));
+const fetch = _globalThis$2.fetch || (() => Promise.reject(new Error("[ohmyfetch] globalThis.fetch is not supported!")));
 const Headers = _globalThis$2.Headers;
 const $fetch = createFetch({ fetch, Headers });
 const appConfig = useRuntimeConfig$1().app;
@@ -538,7 +551,7 @@ function createNuxtApp(options) {
   const nuxtApp = __spreadValues({
     provide: void 0,
     globalName: "nuxt",
-    payload: reactive(__spreadValues({
+    payload: vue_cjs_prod.reactive(__spreadValues({
       data: {},
       state: {},
       _errors: {}
@@ -635,7 +648,7 @@ function callWithNuxt(nuxt, setup, args) {
   }
 }
 function useNuxtApp() {
-  const vm = getCurrentInstance();
+  const vm = vue_cjs_prod.getCurrentInstance();
   if (!vm) {
     const nuxtAppInstance = nuxtAppCtx.use();
     if (!nuxtAppInstance) {
@@ -2343,10 +2356,10 @@ var vueRouter_cjs_prod = {};
 })(vueRouter_cjs_prod);
 const useState = (key, init) => {
   const nuxt = useNuxtApp();
-  const state = toRef(nuxt.payload.state, key);
+  const state = vue_cjs_prod.toRef(nuxt.payload.state, key);
   if (state.value === void 0 && init) {
     const initialValue = init();
-    if (isRef(initialValue)) {
+    if (vue_cjs_prod.isRef(initialValue)) {
       nuxt.payload.state[key] = initialValue;
       return initialValue;
     }
@@ -2367,15 +2380,6 @@ const throwError = (_err) => {
     nuxtApp.ssrContext.error = nuxtApp.ssrContext.error || err;
   }
   return err;
-};
-const clearError = async (options = {}) => {
-  const nuxtApp = useNuxtApp();
-  const error = useError();
-  nuxtApp.callHook("app:error:cleared", options);
-  if (options.redirect) {
-    await nuxtApp.$router.replace(options.redirect);
-  }
-  error.value = null;
 };
 const MIMES = {
   html: "text/html",
@@ -2461,7 +2465,7 @@ function defineNuxtLink(options) {
   const componentName = options.componentName || "NuxtLink";
   const checkPropConflicts = (props, main, sub) => {
   };
-  return defineComponent({
+  return vue_cjs_prod.defineComponent({
     name: componentName,
     props: {
       to: {
@@ -2522,11 +2526,11 @@ function defineNuxtLink(options) {
     },
     setup(props, { slots }) {
       const router = useRouter();
-      const to = computed(() => {
+      const to = vue_cjs_prod.computed(() => {
         checkPropConflicts(props, "to", "href");
         return props.to || props.href || "";
       });
-      const isExternal = computed(() => {
+      const isExternal = vue_cjs_prod.computed(() => {
         if (props.external) {
           return true;
         }
@@ -2541,7 +2545,7 @@ function defineNuxtLink(options) {
       return () => {
         var _a, _b;
         if (!isExternal.value) {
-          return h(resolveComponent("RouterLink"), {
+          return vue_cjs_prod.h(vue_cjs_prod.resolveComponent("RouterLink"), {
             to: to.value,
             activeClass: props.activeClass || options.activeClass,
             exactActiveClass: props.exactActiveClass || options.exactActiveClass,
@@ -2553,7 +2557,7 @@ function defineNuxtLink(options) {
         const target = props.target || null;
         checkPropConflicts(props, "noRel", "rel");
         const rel = props.noRel ? null : firstNonUndefined(props.rel, options.externalRelAttribute, href ? DEFAULT_EXTERNAL_REL_ATTRIBUTE : "") || null;
-        return h("a", { href, rel, target }, slots.default());
+        return vue_cjs_prod.h("a", { href, rel, target }, slots.default());
       };
     }
   });
@@ -2981,12 +2985,9 @@ shared_cjs_prod.toNumber = toNumber;
 shared_cjs_prod.toRawType = toRawType;
 shared_cjs_prod.toTypeString = toTypeString;
 function useHead(meta) {
-  const resolvedMeta = isFunction_1(meta) ? computed(meta) : meta;
+  const resolvedMeta = isFunction_1(meta) ? vue_cjs_prod.computed(meta) : meta;
   useNuxtApp()._useHead(resolvedMeta);
 }
-const ress = "";
-const style$1 = "";
-const style = "";
 const preload = defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.mixin({
     beforeCreate() {
@@ -3332,17 +3333,17 @@ const vueuseHead_2ec57934 = defineNuxtPlugin((nuxtApp) => {
   const head = createHead();
   nuxtApp.vueApp.use(head);
   nuxtApp.hooks.hookOnce("app:mounted", () => {
-    watchEffect(() => {
+    vue_cjs_prod.watchEffect(() => {
       head.updateDOM();
     });
   });
-  const titleTemplate = ref();
+  const titleTemplate = vue_cjs_prod.ref();
   nuxtApp._useHead = (_meta) => {
-    const meta = ref(_meta);
+    const meta = vue_cjs_prod.ref(_meta);
     if ("titleTemplate" in meta.value) {
       titleTemplate.value = meta.value.titleTemplate;
     }
-    const headObj = computed(() => {
+    const headObj = vue_cjs_prod.computed(() => {
       const overrides = { meta: [] };
       if (titleTemplate.value && "title" in meta.value) {
         overrides.title = typeof titleTemplate.value === "function" ? titleTemplate.value(meta.value.title) : titleTemplate.value.replace(/%s/g, meta.value.title);
@@ -3417,7 +3418,7 @@ const globalProps = {
   title: String,
   translate: String
 };
-const Script = defineComponent({
+const Script = vue_cjs_prod.defineComponent({
   name: "Script",
   props: __spreadProps(__spreadValues({}, globalProps), {
     async: Boolean,
@@ -3439,7 +3440,7 @@ const Script = defineComponent({
     script: [script]
   }))
 });
-const Link = defineComponent({
+const Link = vue_cjs_prod.defineComponent({
   name: "Link",
   props: __spreadProps(__spreadValues({}, globalProps), {
     as: String,
@@ -3467,7 +3468,7 @@ const Link = defineComponent({
     link: [link]
   }))
 });
-const Base = defineComponent({
+const Base = vue_cjs_prod.defineComponent({
   name: "Base",
   props: __spreadProps(__spreadValues({}, globalProps), {
     href: String,
@@ -3477,7 +3478,7 @@ const Base = defineComponent({
     base
   }))
 });
-const Title = defineComponent({
+const Title = vue_cjs_prod.defineComponent({
   name: "Title",
   setup: setupForUseMeta((_, { slots }) => {
     var _a, _b;
@@ -3487,7 +3488,7 @@ const Title = defineComponent({
     };
   })
 });
-const Meta = defineComponent({
+const Meta = vue_cjs_prod.defineComponent({
   name: "Meta",
   props: __spreadProps(__spreadValues({}, globalProps), {
     charset: String,
@@ -3499,7 +3500,7 @@ const Meta = defineComponent({
     meta: [meta]
   }))
 });
-const Style = defineComponent({
+const Style = vue_cjs_prod.defineComponent({
   name: "Style",
   props: __spreadProps(__spreadValues({}, globalProps), {
     type: String,
@@ -3523,14 +3524,14 @@ const Style = defineComponent({
     };
   })
 });
-const Head = defineComponent({
+const Head = vue_cjs_prod.defineComponent({
   name: "Head",
   setup: (_props, ctx) => () => {
     var _a, _b;
     return (_b = (_a = ctx.slots).default) == null ? void 0 : _b.call(_a);
   }
 });
-const Html = defineComponent({
+const Html = vue_cjs_prod.defineComponent({
   name: "Html",
   props: __spreadProps(__spreadValues({}, globalProps), {
     manifest: String,
@@ -3539,7 +3540,7 @@ const Html = defineComponent({
   }),
   setup: setupForUseMeta((htmlAttrs) => ({ htmlAttrs }), true)
 });
-const Body = defineComponent({
+const Body = vue_cjs_prod.defineComponent({
   name: "Body",
   props: globalProps,
   setup: setupForUseMeta((bodyAttrs) => ({ bodyAttrs }), true)
@@ -3560,7 +3561,7 @@ const metaConfig = { "globalMeta": { "charset": "utf-8", "viewport": "width=devi
 const metaMixin = {
   [metaConfig.mixinKey]() {
     var _a;
-    const instance = getCurrentInstance();
+    const instance = vue_cjs_prod.getCurrentInstance();
     if (!instance) {
       return;
     }
@@ -3569,7 +3570,7 @@ const metaMixin = {
       return;
     }
     const nuxtApp = useNuxtApp();
-    const source = typeof options.head === "function" ? computed(() => options.head(nuxtApp)) : options.head;
+    const source = typeof options.head === "function" ? vue_cjs_prod.computed(() => options.head(nuxtApp)) : options.head;
     useHead(source);
   }
 };
@@ -3610,7 +3611,7 @@ const router_50d5f825 = defineNuxtPlugin((nuxtApp) => {
     hooks[hook].push(guard);
     return () => hooks[hook].splice(hooks[hook].indexOf(guard), 1);
   };
-  const route = reactive(getRouteFromPath(nuxtApp.ssrContext.url));
+  const route = vue_cjs_prod.reactive(getRouteFromPath(nuxtApp.ssrContext.url));
   async function handleNavigation(url, replace) {
     try {
       const to = getRouteFromPath(url);
@@ -3645,8 +3646,8 @@ const router_50d5f825 = defineNuxtPlugin((nuxtApp) => {
     isReady: () => Promise.resolve(),
     options: {},
     install: () => Promise.resolve(),
-    push: (url) => handleNavigation(url, false),
-    replace: (url) => handleNavigation(url, true),
+    push: (url) => handleNavigation(url),
+    replace: (url) => handleNavigation(url),
     back: () => window.history.go(-1),
     go: (delta) => window.history.go(delta),
     forward: () => window.history.go(1),
@@ -3670,7 +3671,7 @@ const router_50d5f825 = defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component("RouterLink", {
     functional: true,
     props: { to: String },
-    setup: (props, { slots }) => () => h("a", { href: props.to, onClick: (e) => {
+    setup: (props, { slots }) => () => vue_cjs_prod.h("a", { href: props.to, onClick: (e) => {
       e.preventDefault();
       router.push(props.to);
     } }, slots)
@@ -3681,7 +3682,7 @@ const router_50d5f825 = defineNuxtPlugin((nuxtApp) => {
     named: {}
   };
   router.beforeEach(async (to, from) => {
-    to.meta = reactive(to.meta || {});
+    to.meta = vue_cjs_prod.reactive(to.meta || {});
     nuxtApp._processingMiddleware = true;
     const middlewareEntries = new Set(nuxtApp._middleware.global);
     for (const middleware of middlewareEntries) {
@@ -3724,7 +3725,6 @@ const _plugins = [
   plugin_4bbaf14c,
   router_50d5f825
 ];
-const error404_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -3773,17 +3773,17 @@ const _sfc_main$5 = {
     });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLink = __nuxt_component_0;
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "font-sans antialiased bg-white dark:bg-black text-black dark:text-white grid min-h-screen place-content-center overflow-hidden" }, _attrs))} data-v-b11ad3a6><div class="fixed left-0 right-0 spotlight z-10" data-v-b11ad3a6></div><div class="max-w-520px text-center z-20" data-v-b11ad3a6><h1 class="text-8xl sm:text-10xl font-medium mb-8" data-v-b11ad3a6>${__props.statusCode}</h1><p class="text-xl px-8 sm:px-0 sm:text-4xl font-light mb-16 leading-tight" data-v-b11ad3a6>${__props.description}</p><div class="w-full flex items-center justify-center" data-v-b11ad3a6>`);
-      _push(ssrRenderComponent(_component_NuxtLink, {
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "font-sans antialiased bg-white dark:bg-black text-black dark:text-white grid min-h-screen place-content-center overflow-hidden" }, _attrs))} data-v-b11ad3a6><div class="fixed left-0 right-0 spotlight z-10" data-v-b11ad3a6></div><div class="max-w-520px text-center z-20" data-v-b11ad3a6><h1 class="text-8xl sm:text-10xl font-medium mb-8" data-v-b11ad3a6>${__props.statusCode}</h1><p class="text-xl px-8 sm:px-0 sm:text-4xl font-light mb-16 leading-tight" data-v-b11ad3a6>${__props.description}</p><div class="w-full flex items-center justify-center" data-v-b11ad3a6>`);
+      _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
         to: "/",
         class: "gradient-border text-md sm:text-xl py-2 px-4 sm:py-3 sm:px-6 cursor-pointer"
       }, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
+        default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(`${ssrInterpolate(__props.backHome)}`);
+            _push2(`${serverRenderer.exports.ssrInterpolate(__props.backHome)}`);
           } else {
             return [
-              createTextVNode(toDisplayString$1(__props.backHome), 1)
+              vue_cjs_prod.createTextVNode(vue_cjs_prod.toDisplayString(__props.backHome), 1)
             ];
           }
         }),
@@ -3795,12 +3795,11 @@ const _sfc_main$5 = {
 };
 const _sfc_setup$5 = _sfc_main$5.setup;
 _sfc_main$5.setup = (props, ctx) => {
-  const ssrContext = useSSRContext();
+  const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/@nuxt/ui-templates/dist/templates/error-404.vue");
   return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
 };
 const Error404 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-b11ad3a6"]]);
-const error500_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main$4 = {
   __ssrInlineRender: true,
   props: {
@@ -3837,68 +3836,17 @@ const _sfc_main$4 = {
       ]
     });
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "font-sans antialiased bg-white dark:bg-black text-black dark:text-white grid min-h-screen place-content-center overflow-hidden" }, _attrs))} data-v-18181656><div class="fixed -bottom-1/2 left-0 right-0 h-1/2 spotlight" data-v-18181656></div><div class="max-w-520px text-center" data-v-18181656><h1 class="text-8xl sm:text-10xl font-medium mb-8" data-v-18181656>${__props.statusCode}</h1><p class="text-xl px-8 sm:px-0 sm:text-4xl font-light mb-16 leading-tight" data-v-18181656>${__props.description}</p></div></div>`);
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "font-sans antialiased bg-white dark:bg-black text-black dark:text-white grid min-h-screen place-content-center overflow-hidden" }, _attrs))} data-v-18181656><div class="fixed -bottom-1/2 left-0 right-0 h-1/2 spotlight" data-v-18181656></div><div class="max-w-520px text-center" data-v-18181656><h1 class="text-8xl sm:text-10xl font-medium mb-8" data-v-18181656>${__props.statusCode}</h1><p class="text-xl px-8 sm:px-0 sm:text-4xl font-light mb-16 leading-tight" data-v-18181656>${__props.description}</p></div></div>`);
     };
   }
 };
 const _sfc_setup$4 = _sfc_main$4.setup;
 _sfc_main$4.setup = (props, ctx) => {
-  const ssrContext = useSSRContext();
+  const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/@nuxt/ui-templates/dist/templates/error-500.vue");
   return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
 };
 const Error500 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-18181656"]]);
-const errorDev_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$3 = {
-  __ssrInlineRender: true,
-  props: {
-    appName: {
-      type: String,
-      default: "Nuxt"
-    },
-    version: {
-      type: String,
-      default: ""
-    },
-    statusCode: {
-      type: String,
-      default: "500"
-    },
-    statusMessage: {
-      type: String,
-      default: "Server error"
-    },
-    description: {
-      type: String,
-      default: "An error occurred in the application and the page could not be served. If you are the application owner, check your server logs for details."
-    },
-    stack: {
-      type: String,
-      default: ""
-    }
-  },
-  setup(__props) {
-    const props = __props;
-    useHead({
-      title: `${props.statusCode} - ${props.statusMessage} | ${props.appName}`,
-      script: [],
-      style: [
-        {
-          children: `*,:before,:after{-webkit-box-sizing:border-box;box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}*{--tw-ring-inset:var(--tw-empty, );--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(14, 165, 233, .5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000}:root{-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{margin:0;font-family:inherit;line-height:inherit}html{-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";line-height:1.5}h1,p,pre{margin:0}h1{font-size:inherit;font-weight:inherit}pre{font-size:1em;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}`
-        }
-      ]
-    });
-    return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "font-sans antialiased bg-white px-10 pt-14 dark:bg-black text-black dark:text-white min-h-screen flex flex-col" }, _attrs))} data-v-4f8d0ee7><div class="fixed left-0 right-0 spotlight" data-v-4f8d0ee7></div><h1 class="text-6xl sm:text-8xl font-medium mb-6" data-v-4f8d0ee7>${__props.statusCode}</h1><p class="text-xl sm:text-2xl font-light mb-8 leading-tight" data-v-4f8d0ee7>${__props.description}</p><div class="bg-white rounded-t-md bg-black/5 dark:bg-white/10 flex-1 overflow-y-auto h-auto" data-v-4f8d0ee7><pre class="text-xl font-light leading-tight z-10 p-8" data-v-4f8d0ee7>${__props.stack}</pre></div></div>`);
-    };
-  }
-};
-const _sfc_setup$3 = _sfc_main$3.setup;
-_sfc_main$3.setup = (props, ctx) => {
-  const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue");
-  return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
-};
 const _sfc_main$2 = {
   __ssrInlineRender: true,
   props: {
@@ -3922,13 +3870,13 @@ const _sfc_main$2 = {
     const stack = void 0;
     const ErrorTemplate = is404 ? Error404 : Error500;
     return (_ctx, _push, _parent, _attrs) => {
-      _push(ssrRenderComponent(unref(ErrorTemplate), mergeProps({ statusCode: unref(statusCode), statusMessage: unref(statusMessage), description: unref(description), stack: unref(stack) }, _attrs), null, _parent));
+      _push(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(ErrorTemplate), vue_cjs_prod.mergeProps({ statusCode: vue_cjs_prod.unref(statusCode), statusMessage: vue_cjs_prod.unref(statusMessage), description: vue_cjs_prod.unref(description), stack: vue_cjs_prod.unref(stack) }, _attrs), null, _parent));
     };
   }
 };
 const _sfc_setup$2 = _sfc_main$2.setup;
 _sfc_main$2.setup = (props, ctx) => {
-  const ssrContext = useSSRContext();
+  const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/nuxt/dist/app/components/nuxt-error-page.vue");
   return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
 };
@@ -3938,20 +3886,20 @@ const _sfc_main$1 = {
     const nuxtApp = useNuxtApp();
     nuxtApp.hooks.callHookWith((hooks) => hooks.map((hook) => hook()), "vue:setup");
     const error = useError();
-    onErrorCaptured((err, target, info) => {
+    vue_cjs_prod.onErrorCaptured((err, target, info) => {
       nuxtApp.hooks.callHook("vue:error", err, target, info).catch((hookError) => console.error("[nuxt] Error in `vue:error` hook", hookError));
       {
         callWithNuxt(nuxtApp, throwError, [err]);
       }
     });
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_App = resolveComponent("App");
-      ssrRenderSuspense(_push, {
+      const _component_App = vue_cjs_prod.resolveComponent("App");
+      serverRenderer.exports.ssrRenderSuspense(_push, {
         default: () => {
-          if (unref(error)) {
-            _push(ssrRenderComponent(unref(_sfc_main$2), { error: unref(error) }, null, _parent));
+          if (vue_cjs_prod.unref(error)) {
+            _push(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(_sfc_main$2), { error: vue_cjs_prod.unref(error) }, null, _parent));
           } else {
-            _push(ssrRenderComponent(_component_App, null, null, _parent));
+            _push(serverRenderer.exports.ssrRenderComponent(_component_App, null, null, _parent));
           }
         },
         _: 1
@@ -3961,50 +3909,49 @@ const _sfc_main$1 = {
 };
 const _sfc_setup$1 = _sfc_main$1.setup;
 _sfc_main$1.setup = (props, ctx) => {
-  const ssrContext = useSSRContext();
+  const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/nuxt/dist/app/components/nuxt-root.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
-const app_vue_vue_type_style_index_0_lang = "";
 const _sfc_main = {
   __ssrInlineRender: true,
   setup(__props) {
-    const address = ref("");
-    const walletAddress = ref("");
-    const data = ref([]);
+    const address = vue_cjs_prod.ref("");
+    const walletAddress = vue_cjs_prod.ref("");
+    const data = vue_cjs_prod.ref([]);
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_Html = resolveComponent("Html");
-      const _component_Title = resolveComponent("Title");
-      const _component_Meta = resolveComponent("Meta");
-      _push(`<div${ssrRenderAttrs(_attrs)}>`);
-      _push(ssrRenderComponent(_component_Html, null, {
-        default: withCtx((_, _push2, _parent2, _scopeId) => {
+      const _component_Html = vue_cjs_prod.resolveComponent("Html");
+      const _component_Title = vue_cjs_prod.resolveComponent("Title");
+      const _component_Meta = vue_cjs_prod.resolveComponent("Meta");
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}>`);
+      _push(serverRenderer.exports.ssrRenderComponent(_component_Html, null, {
+        default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
-            _push2(ssrRenderComponent(_component_Title, null, {
-              default: withCtx((_2, _push3, _parent3, _scopeId2) => {
+            _push2(serverRenderer.exports.ssrRenderComponent(_component_Title, null, {
+              default: vue_cjs_prod.withCtx((_2, _push3, _parent3, _scopeId2) => {
                 if (_push3) {
                   _push3(`OSHI\u30B5\u30DD!`);
                 } else {
                   return [
-                    createTextVNode("OSHI\u30B5\u30DD!")
+                    vue_cjs_prod.createTextVNode("OSHI\u30B5\u30DD!")
                   ];
                 }
               }),
               _: 1
             }, _parent2, _scopeId));
-            _push2(ssrRenderComponent(_component_Meta, {
+            _push2(serverRenderer.exports.ssrRenderComponent(_component_Meta, {
               name: "description",
               content: "Encourage people directly!"
             }, null, _parent2, _scopeId));
           } else {
             return [
-              createVNode(_component_Title, null, {
-                default: withCtx(() => [
-                  createTextVNode("OSHI\u30B5\u30DD!")
+              vue_cjs_prod.createVNode(_component_Title, null, {
+                default: vue_cjs_prod.withCtx(() => [
+                  vue_cjs_prod.createTextVNode("OSHI\u30B5\u30DD!")
                 ]),
                 _: 1
               }),
-              createVNode(_component_Meta, {
+              vue_cjs_prod.createVNode(_component_Meta, {
                 name: "description",
                 content: "Encourage people directly!"
               })
@@ -4013,9 +3960,9 @@ const _sfc_main = {
         }),
         _: 1
       }, _parent));
-      _push(`<form class="form"><div class="form-item"><p class="form-item__label">\u30A6\u30A9\u30EC\u30C3\u30C8 \u30A2\u30C9\u30EC\u30B9\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044</p><input type="text" class="form-item__input"${ssrRenderAttr("value", address.value)} placeholder="your wallet address" required></div><button class="btn btn--start" id="start_chat" type="submit"> \u914D\u4FE1\u30B9\u30BF\u30FC\u30C8! </button></form>`);
+      _push(`<form class="form"><div class="form-item"><p class="form-item__label">\u30A6\u30A9\u30EC\u30C3\u30C8 \u30A2\u30C9\u30EC\u30B9\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044</p><input type="text" class="form-item__input"${serverRenderer.exports.ssrRenderAttr("value", address.value)} placeholder="your wallet address" required></div><button class="btn btn--start" id="start_chat" type="submit"> \u914D\u4FE1\u30B9\u30BF\u30FC\u30C8! </button></form>`);
       if (data.value) {
-        _push(`<section class="container"><div class="container__title"> Your Wallet Address \u{1F449} ${ssrInterpolate(walletAddress.value)}</div><div class="content-box">${ssrInterpolate(data.value)}</div></section>`);
+        _push(`<section class="container"><div class="container__title"> Your Wallet Address \u{1F449} ${serverRenderer.exports.ssrInterpolate(walletAddress.value)}</div><div class="content-box">${serverRenderer.exports.ssrInterpolate(data.value)}</div></section>`);
       } else {
         _push(`<!---->`);
       }
@@ -4025,7 +3972,7 @@ const _sfc_main = {
 };
 const _sfc_setup = _sfc_main.setup;
 _sfc_main.setup = (props, ctx) => {
-  const ssrContext = useSSRContext();
+  const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("app.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
@@ -4038,7 +3985,7 @@ let entry;
 const plugins = normalizePlugins(_plugins);
 {
   entry = async function createNuxtAppServer(ssrContext = {}) {
-    const vueApp = createApp(_sfc_main$1);
+    const vueApp = vue_cjs_prod.createApp(_sfc_main$1);
     vueApp.component("App", _sfc_main);
     const nuxt = createNuxtApp({ vueApp, ssrContext });
     try {
@@ -4052,4 +3999,5 @@ const plugins = normalizePlugins(_plugins);
   };
 }
 const entry$1 = (ctx) => entry(ctx);
+
 export { entry$1 as default };

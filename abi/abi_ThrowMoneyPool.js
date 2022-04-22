@@ -1,4 +1,4 @@
-abi_ThrowMoneyPool = [
+const abi_ThrowMoneyPool = [
 	{
 		"inputs": [
 			{

@@ -19,9 +19,9 @@ export default {
       ],
       script: [
         {src: 'https://cdn.ethers.io/lib/ethers-5.0.umd.min.js'},
-        {src: '~/abi/abi_ThrowMoneyFactory.js'},
-        {src: '~/abi/abi_ThrowMoneyPool.js'},
-        {src: '~/Settings.js'}
+        //{src: '/abi/abi_ThrowMoneyFactory.js'},
+        //{src: '/abi/abi_ThrowMoneyPool.js'},
+        //{src: './Settings.js'}
       ]
   
     },
@@ -61,14 +61,11 @@ export default {
       // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
       baseURL: '/',
     },
-  
     // Build Configuration: https://go.nuxtjs.dev/config-build
     pageTransition: {
       name: 'page',
       appear: true
     },
-    nitro: {
-      preset: 'server'
-    }
+    target: 'static'
   }
 
