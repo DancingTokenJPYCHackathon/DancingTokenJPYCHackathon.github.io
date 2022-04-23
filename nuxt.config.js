@@ -19,9 +19,9 @@ export default {
       ],
       script: [
         {src: 'https://cdn.ethers.io/lib/ethers-5.0.umd.min.js'},
-        //{src: '/abi/abi_ThrowMoneyFactory.js'},
-        //{src: '/abi/abi_ThrowMoneyPool.js'},
-        //{src: './Settings.js'}
+        {src: './js/abi/abi_ThrowMoneyFactory.js'},
+        {src: './js/abi/abi_ThrowMoneyPool.js'},
+        {src: './js/getContractEvent.js'},
       ]
   
     },
