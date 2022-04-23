@@ -3407,6 +3407,17 @@ async function handleSubmit  () {
     walletAddress.value = streamerAddress
     
     getContractEvent(streamerAddress, data)   
+
+    // getContractEvent に渡した data の中には以下の内容が組み込まれる (以下 ./js/getContractEvent.js より引用)
+    /** 
+      chatData = {
+        Id: chatCounter, // DOM 上でチャットの番号を管理する為の ID
+        alias: _alias, // 送金者のユーザー名 
+        amount: _amountEther, // 送金者が送金した額
+        message: _message, // 送金者のメッセージ内容
+        effect: null, // エフェクトのデータ (これはまだ未確定なので使わなくていい)
+      }
+    **/
 }
 
 

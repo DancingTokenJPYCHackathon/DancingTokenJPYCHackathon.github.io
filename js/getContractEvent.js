@@ -27,6 +27,7 @@ async function getContractEvent (_streamerAddress, _data) {
         alias: _alias,
         amount: _amountEther,
         message: _message,
+        effect: null,
       }
 
       _data.value.push(chatData)

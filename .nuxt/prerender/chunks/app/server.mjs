@@ -3557,7 +3557,7 @@ const Components = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePr
   Html,
   Body
 }, Symbol.toStringTag, { value: "Module" }));
-const metaConfig = { "globalMeta": { "charset": "utf-8", "viewport": "width=device-width, initial-scale=1", "meta": [{ "charset": "utf-8" }, { "name": "viewport", "content": "width=device-width, initial-scale=1" }, { "name": "format-detection", "content": "telephone=no" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/favicon.ico" }], "style": [], "script": [{ "src": "https://cdn.ethers.io/lib/ethers-5.0.umd.min.js" }, { "src": "./abi/abi_ThrowMoneyFactory.js" }, { "src": "./abi/abi_ThrowMoneyPool.js" }, { "src": "./src/getContractEvent.js" }] }, "mixinKey": "created" };
+const metaConfig = { "globalMeta": { "charset": "utf-8", "viewport": "width=device-width, initial-scale=1", "meta": [{ "charset": "utf-8" }, { "name": "viewport", "content": "width=device-width, initial-scale=1" }, { "name": "format-detection", "content": "telephone=no" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/favicon.ico" }], "style": [], "script": [{ "src": "https://cdn.ethers.io/lib/ethers-5.0.umd.min.js" }, { "src": "./js/abi/abi_ThrowMoneyFactory.js" }, { "src": "./js/abi/abi_ThrowMoneyPool.js" }, { "src": "./js/getContractEvent.js" }] }, "mixinKey": "created" };
 const metaMixin = {
   [metaConfig.mixinKey]() {
     var _a;
