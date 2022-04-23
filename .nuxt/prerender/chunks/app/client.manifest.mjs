@@ -1,10 +1,10 @@
 const client_manifest = {
   "node_modules/nuxt/dist/app/entry.mjs": {
-    "file": "entry-e60d62e7.mjs",
+    "file": "entry-ca6c5074.mjs",
     "src": "node_modules/nuxt/dist/app/entry.mjs",
     "isEntry": true,
     "css": [
-      "entry.2c577703.css"
+      "entry.695ef352.css"
     ]
   }
 };

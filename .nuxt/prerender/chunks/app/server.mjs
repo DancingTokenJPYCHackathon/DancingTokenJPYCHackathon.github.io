@@ -2562,7 +2562,7 @@ function defineNuxtLink(options) {
     }
   });
 }
-const __nuxt_component_0 = defineNuxtLink({ componentName: "NuxtLink" });
+const __nuxt_component_0$1 = defineNuxtLink({ componentName: "NuxtLink" });
 var shared_cjs_prod = {};
 Object.defineProperty(shared_cjs_prod, "__esModule", { value: true });
 function makeMap(str, expectsLowerCase) {
@@ -3732,7 +3732,7 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _sfc_main$5 = {
+const _sfc_main$6 = {
   __ssrInlineRender: true,
   props: {
     appName: {
@@ -3772,7 +3772,7 @@ const _sfc_main$5 = {
       ]
     });
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_NuxtLink = __nuxt_component_0;
+      const _component_NuxtLink = __nuxt_component_0$1;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({ class: "font-sans antialiased bg-white dark:bg-black text-black dark:text-white grid min-h-screen place-content-center overflow-hidden" }, _attrs))} data-v-b11ad3a6><div class="fixed left-0 right-0 spotlight z-10" data-v-b11ad3a6></div><div class="max-w-520px text-center z-20" data-v-b11ad3a6><h1 class="text-8xl sm:text-10xl font-medium mb-8" data-v-b11ad3a6>${__props.statusCode}</h1><p class="text-xl px-8 sm:px-0 sm:text-4xl font-light mb-16 leading-tight" data-v-b11ad3a6>${__props.description}</p><div class="w-full flex items-center justify-center" data-v-b11ad3a6>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_NuxtLink, {
         to: "/",
@@ -3793,14 +3793,14 @@ const _sfc_main$5 = {
     };
   }
 };
-const _sfc_setup$5 = _sfc_main$5.setup;
-_sfc_main$5.setup = (props, ctx) => {
+const _sfc_setup$6 = _sfc_main$6.setup;
+_sfc_main$6.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/@nuxt/ui-templates/dist/templates/error-404.vue");
-  return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
+  return _sfc_setup$6 ? _sfc_setup$6(props, ctx) : void 0;
 };
-const Error404 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-b11ad3a6"]]);
-const _sfc_main$4 = {
+const Error404 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-b11ad3a6"]]);
+const _sfc_main$5 = {
   __ssrInlineRender: true,
   props: {
     appName: {
@@ -3840,14 +3840,14 @@ const _sfc_main$4 = {
     };
   }
 };
-const _sfc_setup$4 = _sfc_main$4.setup;
-_sfc_main$4.setup = (props, ctx) => {
+const _sfc_setup$5 = _sfc_main$5.setup;
+_sfc_main$5.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/@nuxt/ui-templates/dist/templates/error-500.vue");
-  return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
+  return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
 };
-const Error500 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__scopeId", "data-v-18181656"]]);
-const _sfc_main$2 = {
+const Error500 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-18181656"]]);
+const _sfc_main$3 = {
   __ssrInlineRender: true,
   props: {
     error: Object
@@ -3874,13 +3874,13 @@ const _sfc_main$2 = {
     };
   }
 };
-const _sfc_setup$2 = _sfc_main$2.setup;
-_sfc_main$2.setup = (props, ctx) => {
+const _sfc_setup$3 = _sfc_main$3.setup;
+_sfc_main$3.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/nuxt/dist/app/components/nuxt-error-page.vue");
-  return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
+  return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
 };
-const _sfc_main$1 = {
+const _sfc_main$2 = {
   __ssrInlineRender: true,
   setup(__props) {
     const nuxtApp = useNuxtApp();
@@ -3897,7 +3897,7 @@ const _sfc_main$1 = {
       serverRenderer.exports.ssrRenderSuspense(_push, {
         default: () => {
           if (vue_cjs_prod.unref(error)) {
-            _push(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(_sfc_main$2), { error: vue_cjs_prod.unref(error) }, null, _parent));
+            _push(serverRenderer.exports.ssrRenderComponent(vue_cjs_prod.unref(_sfc_main$3), { error: vue_cjs_prod.unref(error) }, null, _parent));
           } else {
             _push(serverRenderer.exports.ssrRenderComponent(_component_App, null, null, _parent));
           }
@@ -3907,22 +3907,52 @@ const _sfc_main$1 = {
     };
   }
 };
+const _sfc_setup$2 = _sfc_main$2.setup;
+_sfc_main$2.setup = (props, ctx) => {
+  const ssrContext = vue_cjs_prod.useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/nuxt/dist/app/components/nuxt-root.vue");
+  return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
+};
+const _sfc_main$1 = {
+  __ssrInlineRender: true,
+  props: ["chat"],
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
+        class: ["chat", { emphasis: __props.chat.amount >= 1e3 }]
+      }, _attrs))} data-v-7754157d><p class="chat__alias" data-v-7754157d>${serverRenderer.exports.ssrInterpolate(__props.chat.alias)}</p><p class="chat__amount" data-v-7754157d><span class="chat__amount--text" data-v-7754157d>${serverRenderer.exports.ssrInterpolate(__props.chat.amount)}</span><span class="chat__amount--sybl" data-v-7754157d> JPYC</span></p><p class="chat__message" data-v-7754157d>${serverRenderer.exports.ssrInterpolate(__props.chat.message)}</p></div>`);
+    };
+  }
+};
 const _sfc_setup$1 = _sfc_main$1.setup;
 _sfc_main$1.setup = (props, ctx) => {
   const ssrContext = vue_cjs_prod.useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/nuxt/dist/app/components/nuxt-root.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/SingleChat.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
+const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-7754157d"]]);
 const _sfc_main = {
   __ssrInlineRender: true,
   setup(__props) {
     const address = vue_cjs_prod.ref("");
-    const walletAddress = vue_cjs_prod.ref("");
+    vue_cjs_prod.ref("");
+    const isButtonDisabled = vue_cjs_prod.ref(false);
+    const isVisible = vue_cjs_prod.ref(true);
     const data = vue_cjs_prod.ref([]);
+    vue_cjs_prod.watch(() => data.value.length, () => {
+      console.log("called function!");
+      var container = document.querySelector(".content-box");
+      if (container !== null) {
+        var scrollHeight = container.scrollHeight;
+        container.scrollTop = scrollHeight;
+        console.log(`scrollHeight is ${scrollHeight}`);
+      }
+    }, { flush: "post" });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_Html = vue_cjs_prod.resolveComponent("Html");
       const _component_Title = vue_cjs_prod.resolveComponent("Title");
       const _component_Meta = vue_cjs_prod.resolveComponent("Meta");
+      const _component_SingleChat = __nuxt_component_0;
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(_attrs)}>`);
       _push(serverRenderer.exports.ssrRenderComponent(_component_Html, null, {
         default: vue_cjs_prod.withCtx((_, _push2, _parent2, _scopeId) => {
@@ -3960,9 +3990,16 @@ const _sfc_main = {
         }),
         _: 1
       }, _parent));
-      _push(`<form class="form"><div class="form-item"><p class="form-item__label">\u30A6\u30A9\u30EC\u30C3\u30C8 \u30A2\u30C9\u30EC\u30B9\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044</p><input type="text" class="form-item__input"${serverRenderer.exports.ssrRenderAttr("value", address.value)} placeholder="your wallet address" required></div><button class="btn btn--start" id="start_chat" type="submit"> \u914D\u4FE1\u30B9\u30BF\u30FC\u30C8! </button></form>`);
-      if (data.value) {
-        _push(`<section class="container"><div class="container__title"> Your Wallet Address \u{1F449} ${serverRenderer.exports.ssrInterpolate(walletAddress.value)}</div><div class="content-box">${serverRenderer.exports.ssrInterpolate(data.value)}</div></section>`);
+      _push(`<form class="form" style="${serverRenderer.exports.ssrRenderStyle(isVisible.value ? null : { display: "none" })}"><div class="form-item"><p class="form-item__label">\u30A6\u30A9\u30EC\u30C3\u30C8 \u30A2\u30C9\u30EC\u30B9\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044</p><input type="text" class="form-item__input"${serverRenderer.exports.ssrRenderAttr("value", address.value)} placeholder="your wallet address" required></div><button${serverRenderer.exports.ssrIncludeBooleanAttr(isButtonDisabled.value) ? " disabled" : ""} class="btn btn--start" id="start_chat" type="submit"> \u914D\u4FE1\u30B9\u30BF\u30FC\u30C8! </button></form>`);
+      if (data.value.length) {
+        _push(`<section class="container"><div class="container__title"> \u{1F447} Live Chat </div><div class="content-box"><!--[-->`);
+        serverRenderer.exports.ssrRenderList(data.value, (chat) => {
+          _push(serverRenderer.exports.ssrRenderComponent(_component_SingleChat, {
+            key: chat.Id,
+            chat
+          }, null, _parent));
+        });
+        _push(`<!--]--></div></section>`);
       } else {
         _push(`<!---->`);
       }
@@ -3985,7 +4022,7 @@ let entry;
 const plugins = normalizePlugins(_plugins);
 {
   entry = async function createNuxtAppServer(ssrContext = {}) {
-    const vueApp = vue_cjs_prod.createApp(_sfc_main$1);
+    const vueApp = vue_cjs_prod.createApp(_sfc_main$2);
     vueApp.component("App", _sfc_main);
     const nuxt = createNuxtApp({ vueApp, ssrContext });
     try {

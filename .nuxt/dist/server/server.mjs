@@ -1,480 +1,466 @@
-
-// --------------------
-// Request: /mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/nuxt/dist/app/entry
-// Parents: 
-// - <entry> ($id_c757eb9e)
-// Dependencies: 
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/ohmyfetch/dist/index.mjs ($id_780217c4)
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/paths.mjs ($id_635ab8aa)
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/css.mjs ($id_6f3a9fbf)
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/plugins/server.mjs ($id_232cc801)
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/root-component.mjs ($id_fcd7cbaa)
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/app-component.mjs ($id_a1ebb2c7)
-// --------------------
-const $id_e0113c9e = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/ohmyfetch/dist/index.mjs");
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/paths.mjs");
-
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
-const __vite_ssr_import_4__ = await __vite_ssr_import__("/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/css.mjs");
-
-const __vite_ssr_import_5__ = await __vite_ssr_import__("/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/plugins/server.mjs");
-
-const __vite_ssr_import_6__ = await __vite_ssr_import__("/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/root-component.mjs");
-
-const __vite_ssr_import_7__ = await __vite_ssr_import__("/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/app-component.mjs");
-
-if (!globalThis.$fetch) {
-  globalThis.$fetch = __vite_ssr_import_1__.$fetch.create({
-    baseURL: __vite_ssr_import_2__.baseURL()
-  });
-}
-let entry;
-const plugins = __vite_ssr_import_3__.normalizePlugins(__vite_ssr_import_5__.default);
-if (true) {
-  entry = async function createNuxtAppServer(ssrContext = {}) {
-    const vueApp = __vite_ssr_import_0__.createApp(__vite_ssr_import_6__.default);
-    vueApp.component("App", __vite_ssr_import_7__.default);
-    const nuxt = __vite_ssr_import_3__.createNuxtApp({ vueApp, ssrContext });
-    try {
-      await __vite_ssr_import_3__.applyPlugins(nuxt, plugins);
-      await nuxt.hooks.callHook("app:created", vueApp);
-    } catch (err) {
-      await nuxt.callHook("app:error", err);
-      ssrContext.error = ssrContext.error || err;
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
     }
-    return vueApp;
-  };
-}
-if (false) {
-  if (true && __vite_ssr_import_meta__.webpackHot) {
-    __vite_ssr_import_meta__.webpackHot.accept();
-  }
-  entry = async function initApp() {
-    const isSSR = Boolean(window.__NUXT__?.serverRendered);
-    const vueApp = isSSR ? __vite_ssr_import_0__.createSSRApp(__vite_ssr_import_6__.default) : __vite_ssr_import_0__.createApp(__vite_ssr_import_6__.default);
-    vueApp.component("App", __vite_ssr_import_7__.default);
-    const nuxt = __vite_ssr_import_3__.createNuxtApp({ vueApp });
-    nuxt.hooks.hookOnce("app:suspense:resolve", () => {
-      nuxt.isHydrating = false;
-    });
-    try {
-      await __vite_ssr_import_3__.applyPlugins(nuxt, plugins);
-    } catch (err) {
-      await nuxt.callHook("app:error", err);
-      nuxt.payload.error = nuxt.payload.error || err;
-    }
-    try {
-      await nuxt.hooks.callHook("app:created", vueApp);
-      await nuxt.hooks.callHook("app:beforeMount", vueApp);
-      vueApp.mount("#__nuxt");
-      await nuxt.hooks.callHook("app:mounted", vueApp);
-      await __vite_ssr_import_0__.nextTick();
-    } catch (err) {
-      await nuxt.callHook("app:error", err);
-      nuxt.payload.error = nuxt.payload.error || err;
-    }
-  };
-  entry().catch((error) => {
-    console.error("Error while mounting app:", error);
-  });
-}
-__vite_ssr_exports__.default = (ctx) => entry(ctx);
-;
-}
-
-
-// --------------------
-// Request: /node_modules/vue/dist/vue.cjs.js
-// Parents: 
-// - /mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/nuxt/dist/app/entry ($id_e0113c9e)
-// - /node_modules/nuxt/dist/app/nuxt.mjs ($id_e069d411)
-// - /node_modules/nuxt/dist/app/composables/component.mjs ($id_53345950)
-// - /node_modules/nuxt/dist/app/composables/asyncData.mjs ($id_d5b6a221)
-// - /node_modules/nuxt/dist/app/composables/utils.mjs ($id_df511336)
-// - /node_modules/nuxt/dist/app/composables/state.mjs ($id_7d872108)
-// - /node_modules/nuxt/dist/app/composables/fetch.mjs ($id_41f5ae4e)
-// - /node_modules/nuxt/dist/app/composables/cookie.mjs ($id_511b441d)
-// - /node_modules/nuxt/dist/app/components/nuxt-link.mjs ($id_ffac87b5)
-// - /node_modules/nuxt/dist/head/runtime/composables.mjs ($id_04ea9504)
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/components.plugin.mjs ($id_c35c5cc8)
-// - /node_modules/@vueuse/head/dist/index.mjs ($id_c032264e)
-// - /node_modules/nuxt/dist/head/runtime/lib/vueuse-head.plugin.mjs ($id_e6f12003)
-// - /node_modules/nuxt/dist/head/runtime/plugin.mjs ($id_a2650341)
-// - /node_modules/nuxt/dist/head/runtime/components.mjs ($id_b2a29d6f)
-// - /node_modules/nuxt/dist/app/plugins/router.mjs ($id_7fe121f6)
-// - /node_modules/nuxt/dist/app/components/nuxt-root.vue ($id_e9bfada3)
-// - /node_modules/nuxt/dist/app/compat/capi.mjs ($id_0c5717a4)
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/imports.mjs ($id_e30cac3e)
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-404.vue ($id_b90d4d0f)
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-500.vue ($id_14c8b574)
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue ($id_bc2d74a1)
-// - /node_modules/nuxt/dist/app/components/nuxt-error-page.vue ($id_8cc6d73f)
-// - /components/SingleChat.vue ($id_0f3fa417)
-// - /app.vue ($id_2b46e842)
-// Dependencies: 
-
-// --------------------
-const $id_60f0615f = (global, module, _, exports, importMeta, ssrImport, ssrDynamicImport, ssrExportAll) =>
-import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/vue/dist/vue.cjs.js")
-  .then(r => {
-    if (r.default && r.default.__esModule)
-      r = r.default
-    exports.default = r.default
-    ssrExportAll(r)
-  })
-  .catch(e => {
-    console.error(e)
-    throw new Error("[vite dev] Error loading external \"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/vue/dist/vue.cjs.js\".")
-  })
-
-
-// --------------------
-// Request: /node_modules/ohmyfetch/dist/index.mjs
-// Parents: 
-// - /mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/nuxt/dist/app/entry ($id_e0113c9e)
-// Dependencies: 
-
-// --------------------
-const $id_780217c4 = (global, module, _, exports, importMeta, ssrImport, ssrDynamicImport, ssrExportAll) =>
-import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/ohmyfetch/dist/index.mjs")
-  .then(r => {
-    if (r.default && r.default.__esModule)
-      r = r.default
-    exports.default = r.default
-    ssrExportAll(r)
-  })
-  .catch(e => {
-    console.error(e)
-    throw new Error("[vite dev] Error loading external \"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/ohmyfetch/dist/index.mjs\".")
-  })
-
-
-// --------------------
-// Request: /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/paths.mjs
-// Parents: 
-// - /mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/nuxt/dist/app/entry ($id_e0113c9e)
-// Dependencies: 
-// - /node_modules/ufo/dist/index.mjs ($id_614de060)
-// --------------------
-const $id_635ab8aa = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/ufo/dist/index.mjs");
-
-const appConfig = {"baseURL":"/","buildAssetsDir":"/_nuxt/","assetsPath":{},"cdnURL":"","head":{"charset":"utf-8","viewport":"width=device-width, initial-scale=1","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"}],"style":[],"script":[{"src":"https://cdn.ethers.io/lib/ethers-5.0.umd.min.js"},{"src":"./js/abi/abi_ThrowMoneyFactory.js"},{"src":"./js/abi/abi_ThrowMoneyPool.js"},{"src":"./js/getContractEvent.js"}]}}
-const baseURL = () => appConfig.baseURL
-Object.defineProperty(__vite_ssr_exports__, "baseURL", { enumerable: true, configurable: true, get(){ return baseURL }});
-const buildAssetsDir = () => appConfig.buildAssetsDir
-Object.defineProperty(__vite_ssr_exports__, "buildAssetsDir", { enumerable: true, configurable: true, get(){ return buildAssetsDir }});
-const buildAssetsURL = (...path) => __vite_ssr_import_0__.joinURL(publicAssetsURL(), buildAssetsDir(), ...path)
-Object.defineProperty(__vite_ssr_exports__, "buildAssetsURL", { enumerable: true, configurable: true, get(){ return buildAssetsURL }});
-const publicAssetsURL = (...path) => {
-  const publicBase = appConfig.cdnURL || appConfig.baseURL
-  return path.length ? __vite_ssr_import_0__.joinURL(publicBase, ...path) : publicBase
-}
-Object.defineProperty(__vite_ssr_exports__, "publicAssetsURL", { enumerable: true, configurable: true, get(){ return publicAssetsURL }});;
-}
-
-
-// --------------------
-// Request: /node_modules/ufo/dist/index.mjs
-// Parents: 
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/paths.mjs ($id_635ab8aa)
-// - /node_modules/nuxt/dist/app/components/nuxt-link.mjs ($id_ffac87b5)
-// - /node_modules/nuxt/dist/app/plugins/router.mjs ($id_7fe121f6)
-// Dependencies: 
-
-// --------------------
-const $id_614de060 = (global, module, _, exports, importMeta, ssrImport, ssrDynamicImport, ssrExportAll) =>
-import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/ufo/dist/index.mjs")
-  .then(r => {
-    if (r.default && r.default.__esModule)
-      r = r.default
-    exports.default = r.default
-    ssrExportAll(r)
-  })
-  .catch(e => {
-    console.error(e)
-    throw new Error("[vite dev] Error loading external \"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/ufo/dist/index.mjs\".")
-  })
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/index.mjs
-// Parents: 
-// - /mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/nuxt/dist/app/entry ($id_e0113c9e)
-// - /node_modules/nuxt/dist/app/composables/asyncData.mjs ($id_d5b6a221)
-// - /node_modules/nuxt/dist/app/composables/hydrate.mjs ($id_0063df1b)
-// - /node_modules/nuxt/dist/app/composables/state.mjs ($id_7d872108)
-// - /node_modules/nuxt/dist/app/composables/error.mjs ($id_6fe050f1)
-// - /node_modules/nuxt/dist/app/composables/ssr.mjs ($id_c4866ba7)
-// - /node_modules/nuxt/dist/app/composables/cookie.mjs ($id_511b441d)
-// - /node_modules/nuxt/dist/app/composables/router.mjs ($id_db4d90a8)
-// - /node_modules/nuxt/dist/app/components/nuxt-link.mjs ($id_ffac87b5)
-// - /node_modules/nuxt/dist/head/runtime/composables.mjs ($id_04ea9504)
-// - /node_modules/nuxt/dist/app/plugins/preload.server.mjs ($id_9871bba0)
-// - /node_modules/nuxt/dist/head/runtime/lib/vueuse-head.plugin.mjs ($id_e6f12003)
-// - /node_modules/nuxt/dist/head/runtime/plugin.mjs ($id_a2650341)
-// - /node_modules/nuxt/dist/app/plugins/router.mjs ($id_7fe121f6)
-// - /node_modules/nuxt/dist/app/components/nuxt-root.vue ($id_e9bfada3)
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/imports.mjs ($id_e30cac3e)
-// Dependencies: 
-// - /node_modules/nuxt/dist/app/nuxt.mjs ($id_e069d411)
-// - /node_modules/nuxt/dist/app/composables/index.mjs ($id_b067a79a)
-// - /node_modules/nuxt/dist/app/components/index.mjs ($id_161bfe9f)
-// - /node_modules/nuxt/dist/head/runtime/index.mjs ($id_b7351483)
-// --------------------
-const $id_36927477 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/nuxt.mjs");
-__vite_ssr_exportAll__(__vite_ssr_import_0__);
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/composables/index.mjs");
-__vite_ssr_exportAll__(__vite_ssr_import_1__);
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/components/index.mjs");
-__vite_ssr_exportAll__(__vite_ssr_import_2__);
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/nuxt/dist/head/runtime/index.mjs");
-
-Object.defineProperty(__vite_ssr_exports__, "useHead", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.useHead }});
-Object.defineProperty(__vite_ssr_exports__, "useMeta", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.useMeta }});
-const isVue2 = false;
-Object.defineProperty(__vite_ssr_exports__, "isVue2", { enumerable: true, configurable: true, get(){ return isVue2 }});
-const isVue3 = true;
-Object.defineProperty(__vite_ssr_exports__, "isVue3", { enumerable: true, configurable: true, get(){ return isVue3 }});
-;
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/nuxt.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// - /node_modules/nuxt/dist/app/compat/legacy-app.mjs ($id_a48341bc)
-// - /node_modules/nuxt/dist/app/composables/component.mjs ($id_53345950)
-// - /node_modules/nuxt/dist/app/plugins/router.mjs ($id_7fe121f6)
-// Dependencies: 
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/hookable/dist/index.mjs ($id_a2c811c4)
-// - /node_modules/unctx/dist/index.mjs ($id_a569ca2d)
-// - /node_modules/nuxt/dist/app/compat/legacy-app.mjs ($id_a48341bc)
-// --------------------
-const $id_e069d411 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/hookable/dist/index.mjs");
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/unctx/dist/index.mjs");
-
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/compat/legacy-app.mjs");
-
-const nuxtAppCtx = __vite_ssr_import_2__.getContext("nuxt-app");
-const NuxtPluginIndicator = "__nuxt_plugin";
-Object.defineProperty(__vite_ssr_exports__, "NuxtPluginIndicator", { enumerable: true, configurable: true, get(){ return NuxtPluginIndicator }});
-function createNuxtApp(options) {
-  const nuxtApp = {
-    provide: void 0,
-    globalName: "nuxt",
-    payload: __vite_ssr_import_0__.reactive({
-      data: {},
-      state: {},
-      _errors: {},
-      ...false ? window.__NUXT__ : { serverRendered: true }
-    }),
-    isHydrating: false,
-    _asyncDataPromises: {},
-    ...options
-  };
-  nuxtApp.hooks = __vite_ssr_import_1__.createHooks();
-  nuxtApp.hook = nuxtApp.hooks.hook;
-  nuxtApp.callHook = nuxtApp.hooks.callHook;
-  nuxtApp.provide = (name, value) => {
-    const $name = "$" + name;
-    defineGetter(nuxtApp, $name, value);
-    defineGetter(nuxtApp.vueApp.config.globalProperties, $name, value);
-  };
-  defineGetter(nuxtApp.vueApp, "$nuxt", nuxtApp);
-  defineGetter(nuxtApp.vueApp.config.globalProperties, "$nuxt", nuxtApp);
-  if (nuxtApp.ssrContext) {
-    nuxtApp.ssrContext.nuxt = nuxtApp;
-  }
-  if (true) {
-    nuxtApp.ssrContext = nuxtApp.ssrContext || {};
-    nuxtApp.ssrContext.payload = nuxtApp.payload;
-  }
-  if (true) {
-    nuxtApp.payload.config = {
-      public: options.ssrContext.runtimeConfig.public,
-      app: options.ssrContext.runtimeConfig.app
-    };
-  }
-  const runtimeConfig = true ? options.ssrContext.runtimeConfig : __vite_ssr_import_0__.reactive(nuxtApp.payload.config);
-  const compatibilityConfig = new Proxy(runtimeConfig, {
-    get(target, prop) {
-      if (prop === "public") {
-        return target.public;
-      }
-      return target[prop] ?? target.public[prop];
-    },
-    set(target, prop, value) {
-      if (true || prop === "public" || prop === "app") {
-        return false;
-      }
-      target[prop] = value;
-      target.public[prop] = value;
-      return true;
-    }
-  });
-  nuxtApp.provide("config", compatibilityConfig);
-  return nuxtApp;
-}
-Object.defineProperty(__vite_ssr_exports__, "createNuxtApp", { enumerable: true, configurable: true, get(){ return createNuxtApp }});
-async function applyPlugin(nuxtApp, plugin) {
-  if (typeof plugin !== "function") {
+  return a;
+};
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+import require$$0, { getCurrentInstance, reactive, toRef, isRef, defineComponent, computed, h, resolveComponent, watchEffect, ref, useSSRContext, mergeProps, withCtx, createTextVNode, toDisplayString as toDisplayString$1, unref, onErrorCaptured, watch, createVNode, createApp } from "vue";
+import { withBase, withQuery, hasProtocol, parseQuery, parseURL } from "ufo";
+import { useRuntimeConfig as useRuntimeConfig$1 } from "#internal/nitro";
+import { ssrRenderAttrs, ssrRenderComponent, ssrInterpolate, ssrRenderSuspense, ssrRenderStyle, ssrRenderAttr, ssrIncludeBooleanAttr, ssrRenderList } from "vue/server-renderer";
+const suspectProtoRx = /"(?:_|\\u005[Ff])(?:_|\\u005[Ff])(?:p|\\u0070)(?:r|\\u0072)(?:o|\\u006[Ff])(?:t|\\u0074)(?:o|\\u006[Ff])(?:_|\\u005[Ff])(?:_|\\u005[Ff])"\s*:/;
+const suspectConstructorRx = /"(?:c|\\u0063)(?:o|\\u006[Ff])(?:n|\\u006[Ee])(?:s|\\u0073)(?:t|\\u0074)(?:r|\\u0072)(?:u|\\u0075)(?:c|\\u0063)(?:t|\\u0074)(?:o|\\u006[Ff])(?:r|\\u0072)"\s*:/;
+const JsonSigRx = /^["{[]|^-?[0-9][0-9.]{0,14}$/;
+function jsonParseTransform(key, value) {
+  if (key === "__proto__" || key === "constructor") {
     return;
   }
-  const { provide } = await callWithNuxt(nuxtApp, plugin, [nuxtApp]) || {};
-  if (provide && typeof provide === "object") {
-    for (const key in provide) {
-      nuxtApp.provide(key, provide[key]);
+  return value;
+}
+function destr(val) {
+  if (typeof val !== "string") {
+    return val;
+  }
+  const _lval = val.toLowerCase();
+  if (_lval === "true") {
+    return true;
+  }
+  if (_lval === "false") {
+    return false;
+  }
+  if (_lval === "null") {
+    return null;
+  }
+  if (_lval === "nan") {
+    return NaN;
+  }
+  if (_lval === "infinity") {
+    return Infinity;
+  }
+  if (_lval === "undefined") {
+    return void 0;
+  }
+  if (!JsonSigRx.test(val)) {
+    return val;
+  }
+  try {
+    if (suspectProtoRx.test(val) || suspectConstructorRx.test(val)) {
+      return JSON.parse(val, jsonParseTransform);
+    }
+    return JSON.parse(val);
+  } catch (_e) {
+    return val;
+  }
+}
+class FetchError extends Error {
+  constructor() {
+    super(...arguments);
+    this.name = "FetchError";
+  }
+}
+function createFetchError(request, error, response) {
+  let message = "";
+  if (request && response) {
+    message = `${response.status} ${response.statusText} (${request.toString()})`;
+  }
+  if (error) {
+    message = `${error.message} (${message})`;
+  }
+  const fetchError = new FetchError(message);
+  Object.defineProperty(fetchError, "request", { get() {
+    return request;
+  } });
+  Object.defineProperty(fetchError, "response", { get() {
+    return response;
+  } });
+  Object.defineProperty(fetchError, "data", { get() {
+    return response && response._data;
+  } });
+  return fetchError;
+}
+const payloadMethods = new Set(Object.freeze(["PATCH", "POST", "PUT", "DELETE"]));
+function isPayloadMethod(method = "GET") {
+  return payloadMethods.has(method.toUpperCase());
+}
+function isJSONSerializable(val) {
+  if (val === void 0) {
+    return false;
+  }
+  const t = typeof val;
+  if (t === "string" || t === "number" || t === "boolean" || t === null) {
+    return true;
+  }
+  if (t !== "object") {
+    return false;
+  }
+  if (Array.isArray(val)) {
+    return true;
+  }
+  return val.constructor && val.constructor.name === "Object" || typeof val.toJSON === "function";
+}
+const textTypes = /* @__PURE__ */ new Set([
+  "image/svg",
+  "application/xml",
+  "application/xhtml",
+  "application/html"
+]);
+const jsonTypes = /* @__PURE__ */ new Set(["application/json", "application/ld+json"]);
+function detectResponseType(_contentType = "") {
+  if (!_contentType) {
+    return "json";
+  }
+  const contentType = _contentType.split(";").shift();
+  if (jsonTypes.has(contentType)) {
+    return "json";
+  }
+  if (textTypes.has(contentType) || contentType.startsWith("text/")) {
+    return "text";
+  }
+  return "blob";
+}
+const retryStatusCodes = /* @__PURE__ */ new Set([
+  408,
+  409,
+  425,
+  429,
+  500,
+  502,
+  503,
+  504
+]);
+function createFetch(globalOptions) {
+  const { fetch: fetch2, Headers: Headers2 } = globalOptions;
+  function onError(ctx) {
+    if (ctx.options.retry !== false) {
+      const retries = typeof ctx.options.retry === "number" ? ctx.options.retry : isPayloadMethod(ctx.options.method) ? 0 : 1;
+      const responseCode = ctx.response && ctx.response.status || 500;
+      if (retries > 0 && retryStatusCodes.has(responseCode)) {
+        return $fetchRaw(ctx.request, __spreadProps(__spreadValues({}, ctx.options), {
+          retry: retries - 1
+        }));
+      }
+    }
+    const err = createFetchError(ctx.request, ctx.error, ctx.response);
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(err, $fetchRaw);
+    }
+    throw err;
+  }
+  const $fetchRaw = async function $fetchRaw2(_request, _opts = {}) {
+    const ctx = {
+      request: _request,
+      options: __spreadValues(__spreadValues({}, globalOptions.defaults), _opts),
+      response: void 0,
+      error: void 0
+    };
+    if (ctx.options.onRequest) {
+      await ctx.options.onRequest(ctx);
+    }
+    if (typeof ctx.request === "string") {
+      if (ctx.options.baseURL) {
+        ctx.request = withBase(ctx.request, ctx.options.baseURL);
+      }
+      if (ctx.options.params) {
+        ctx.request = withQuery(ctx.request, ctx.options.params);
+      }
+      if (ctx.options.body && isPayloadMethod(ctx.options.method)) {
+        if (isJSONSerializable(ctx.options.body)) {
+          ctx.options.body = JSON.stringify(ctx.options.body);
+          ctx.options.headers = new Headers2(ctx.options.headers);
+          if (!ctx.options.headers.has("content-type")) {
+            ctx.options.headers.set("content-type", "application/json");
+          }
+          if (!ctx.options.headers.has("accept")) {
+            ctx.options.headers.set("accept", "application/json");
+          }
+        }
+      }
+    }
+    ctx.response = await fetch2(ctx.request, ctx.options).catch(async (error) => {
+      ctx.error = error;
+      if (ctx.options.onRequestError) {
+        await ctx.options.onRequestError(ctx);
+      }
+      return onError(ctx);
+    });
+    const responseType = (ctx.options.parseResponse ? "json" : ctx.options.responseType) || detectResponseType(ctx.response.headers.get("content-type") || "");
+    if (responseType === "json") {
+      const data = await ctx.response.text();
+      const parseFn = ctx.options.parseResponse || destr;
+      ctx.response._data = parseFn(data);
+    } else {
+      ctx.response._data = await ctx.response[responseType]();
+    }
+    if (ctx.options.onResponse) {
+      await ctx.options.onResponse(ctx);
+    }
+    if (!ctx.response.ok) {
+      if (ctx.options.onResponseError) {
+        await ctx.options.onResponseError(ctx);
+      }
+    }
+    return ctx.response.ok ? ctx.response : onError(ctx);
+  };
+  const $fetch2 = function $fetch22(request, opts) {
+    return $fetchRaw(request, opts).then((r) => r._data);
+  };
+  $fetch2.raw = $fetchRaw;
+  $fetch2.create = (defaultOptions = {}) => createFetch(__spreadProps(__spreadValues({}, globalOptions), {
+    defaults: __spreadValues(__spreadValues({}, globalOptions.defaults), defaultOptions)
+  }));
+  return $fetch2;
+}
+const _globalThis$2 = function() {
+  if (typeof globalThis !== "undefined") {
+    return globalThis;
+  }
+  if (typeof self !== "undefined") {
+    return self;
+  }
+  if (typeof global !== "undefined") {
+    return global;
+  }
+  throw new Error("unable to locate global object");
+}();
+const fetch = _globalThis$2.fetch || (() => Promise.reject(new Error("[ohmyfetch] global.fetch is not supported!")));
+const Headers = _globalThis$2.Headers;
+const $fetch = createFetch({ fetch, Headers });
+const appConfig = useRuntimeConfig$1().app;
+const baseURL = () => appConfig.baseURL;
+function flatHooks(configHooks, hooks = {}, parentName) {
+  for (const key in configHooks) {
+    const subHook = configHooks[key];
+    const name = parentName ? `${parentName}:${key}` : key;
+    if (typeof subHook === "object" && subHook !== null) {
+      flatHooks(subHook, hooks, name);
+    } else if (typeof subHook === "function") {
+      hooks[name] = subHook;
     }
   }
+  return hooks;
 }
-Object.defineProperty(__vite_ssr_exports__, "applyPlugin", { enumerable: true, configurable: true, get(){ return applyPlugin }});
-async function applyPlugins(nuxtApp, plugins) {
-  for (const plugin of plugins) {
-    await applyPlugin(nuxtApp, plugin);
+function serialCaller(hooks, args) {
+  return hooks.reduce((promise, hookFn) => promise.then(() => hookFn.apply(void 0, args)), Promise.resolve(null));
+}
+function parallelCaller(hooks, args) {
+  return Promise.all(hooks.map((hook) => hook.apply(void 0, args)));
+}
+class Hookable {
+  constructor() {
+    this._hooks = {};
+    this._deprecatedHooks = {};
+    this.hook = this.hook.bind(this);
+    this.callHook = this.callHook.bind(this);
+    this.callHookWith = this.callHookWith.bind(this);
   }
-}
-Object.defineProperty(__vite_ssr_exports__, "applyPlugins", { enumerable: true, configurable: true, get(){ return applyPlugins }});
-function normalizePlugins(_plugins) {
-  let needsLegacyContext = false;
-  const plugins = _plugins.map((plugin) => {
-    if (typeof plugin !== "function") {
+  hook(name, fn) {
+    if (!name || typeof fn !== "function") {
       return () => {
       };
     }
-    if (isLegacyPlugin(plugin)) {
-      needsLegacyContext = true;
-      return (nuxtApp) => plugin(nuxtApp._legacyContext, nuxtApp.provide);
+    const originalName = name;
+    let deprecatedHookObj;
+    while (this._deprecatedHooks[name]) {
+      const deprecatedHook = this._deprecatedHooks[name];
+      if (typeof deprecatedHook === "string") {
+        deprecatedHookObj = { to: deprecatedHook };
+      } else {
+        deprecatedHookObj = deprecatedHook;
+      }
+      name = deprecatedHookObj.to;
     }
-    return plugin;
+    if (deprecatedHookObj) {
+      if (!deprecatedHookObj.message) {
+        console.warn(`${originalName} hook has been deprecated` + (deprecatedHookObj.to ? `, please use ${deprecatedHookObj.to}` : ""));
+      } else {
+        console.warn(deprecatedHookObj.message);
+      }
+    }
+    this._hooks[name] = this._hooks[name] || [];
+    this._hooks[name].push(fn);
+    return () => {
+      if (fn) {
+        this.removeHook(name, fn);
+        fn = null;
+      }
+    };
+  }
+  hookOnce(name, fn) {
+    let _unreg;
+    let _fn = (...args) => {
+      _unreg();
+      _unreg = null;
+      _fn = null;
+      return fn(...args);
+    };
+    _unreg = this.hook(name, _fn);
+    return _unreg;
+  }
+  removeHook(name, fn) {
+    if (this._hooks[name]) {
+      const idx = this._hooks[name].indexOf(fn);
+      if (idx !== -1) {
+        this._hooks[name].splice(idx, 1);
+      }
+      if (this._hooks[name].length === 0) {
+        delete this._hooks[name];
+      }
+    }
+  }
+  deprecateHook(name, deprecated) {
+    this._deprecatedHooks[name] = deprecated;
+  }
+  deprecateHooks(deprecatedHooks) {
+    Object.assign(this._deprecatedHooks, deprecatedHooks);
+  }
+  addHooks(configHooks) {
+    const hooks = flatHooks(configHooks);
+    const removeFns = Object.keys(hooks).map((key) => this.hook(key, hooks[key]));
+    return () => {
+      removeFns.splice(0, removeFns.length).forEach((unreg) => unreg());
+    };
+  }
+  removeHooks(configHooks) {
+    const hooks = flatHooks(configHooks);
+    for (const key in hooks) {
+      this.removeHook(key, hooks[key]);
+    }
+  }
+  callHook(name, ...args) {
+    return serialCaller(this._hooks[name] || [], args);
+  }
+  callHookParallel(name, ...args) {
+    return parallelCaller(this._hooks[name] || [], args);
+  }
+  callHookWith(caller, name, ...args) {
+    return caller(this._hooks[name] || [], args);
+  }
+}
+function createHooks() {
+  return new Hookable();
+}
+function createContext() {
+  let currentInstance = null;
+  let isSingleton = false;
+  const checkConflict = (instance) => {
+    if (currentInstance && currentInstance !== instance) {
+      throw new Error("Context conflict");
+    }
+  };
+  return {
+    use: () => currentInstance,
+    set: (instance, replace) => {
+      if (!replace) {
+        checkConflict(instance);
+      }
+      currentInstance = instance;
+      isSingleton = true;
+    },
+    unset: () => {
+      currentInstance = null;
+      isSingleton = false;
+    },
+    call: (instance, cb) => {
+      checkConflict(instance);
+      currentInstance = instance;
+      try {
+        return cb();
+      } finally {
+        if (!isSingleton) {
+          currentInstance = null;
+        }
+      }
+    },
+    async callAsync(instance, cb) {
+      currentInstance = instance;
+      const onRestore = () => {
+        currentInstance = instance;
+      };
+      const onLeave = () => currentInstance === instance ? onRestore : void 0;
+      asyncHandlers.add(onLeave);
+      try {
+        const r = cb();
+        if (!isSingleton) {
+          currentInstance = null;
+        }
+        return await r;
+      } finally {
+        asyncHandlers.delete(onLeave);
+      }
+    }
+  };
+}
+function createNamespace() {
+  const contexts = {};
+  return {
+    get(key) {
+      if (!contexts[key]) {
+        contexts[key] = createContext();
+      }
+      contexts[key];
+      return contexts[key];
+    }
+  };
+}
+const _globalThis$1 = typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : typeof global !== "undefined" ? global : {};
+const globalKey = "__unctx__";
+const defaultNamespace = _globalThis$1[globalKey] || (_globalThis$1[globalKey] = createNamespace());
+const getContext = (key) => defaultNamespace.get(key);
+const asyncHandlersKey = "__unctx_async_handlers__";
+const asyncHandlers = _globalThis$1[asyncHandlersKey] || (_globalThis$1[asyncHandlersKey] = /* @__PURE__ */ new Set());
+function createMock(name, overrides = {}) {
+  const fn = function() {
+  };
+  fn.prototype.name = name;
+  const props = {};
+  return new Proxy(fn, {
+    get(_target, prop) {
+      if (prop === "caller") {
+        return null;
+      }
+      if (prop === "__createMock__") {
+        return createMock;
+      }
+      if (prop in overrides) {
+        return overrides[prop];
+      }
+      return props[prop] = props[prop] || createMock(`${name}.${prop.toString()}`);
+    },
+    apply(_target, _this, _args) {
+      return createMock(`${name}()`);
+    },
+    construct(_target, _args, _newT) {
+      return createMock(`[${name}]`);
+    },
+    enumerate(_target) {
+      return [];
+    }
   });
-  if (needsLegacyContext) {
-    plugins.unshift(__vite_ssr_import_3__.legacyPlugin);
-  }
-  return plugins;
 }
-Object.defineProperty(__vite_ssr_exports__, "normalizePlugins", { enumerable: true, configurable: true, get(){ return normalizePlugins }});
-function defineNuxtPlugin(plugin) {
-  plugin[NuxtPluginIndicator] = true;
-  return plugin;
-}
-Object.defineProperty(__vite_ssr_exports__, "defineNuxtPlugin", { enumerable: true, configurable: true, get(){ return defineNuxtPlugin }});
-function isLegacyPlugin(plugin) {
-  return !plugin[NuxtPluginIndicator];
-}
-Object.defineProperty(__vite_ssr_exports__, "isLegacyPlugin", { enumerable: true, configurable: true, get(){ return isLegacyPlugin }});
-function callWithNuxt(nuxt, setup, args) {
-  const fn = () => args ? setup(...args) : setup();
-  if (true) {
-    return nuxtAppCtx.callAsync(nuxt, fn);
-  } else {
-    nuxtAppCtx.set(nuxt);
-    return fn();
-  }
-}
-Object.defineProperty(__vite_ssr_exports__, "callWithNuxt", { enumerable: true, configurable: true, get(){ return callWithNuxt }});
-function useNuxtApp() {
-  const vm = __vite_ssr_import_0__.getCurrentInstance();
-  if (!vm) {
-    const nuxtAppInstance = nuxtAppCtx.use();
-    if (!nuxtAppInstance) {
-      throw new Error("nuxt instance unavailable");
-    }
-    return nuxtAppInstance;
-  }
-  return vm.appContext.app.$nuxt;
-}
-Object.defineProperty(__vite_ssr_exports__, "useNuxtApp", { enumerable: true, configurable: true, get(){ return useNuxtApp }});
-function useRuntimeConfig() {
-  return useNuxtApp().$config;
-}
-Object.defineProperty(__vite_ssr_exports__, "useRuntimeConfig", { enumerable: true, configurable: true, get(){ return useRuntimeConfig }});
-function defineGetter(obj, key, val) {
-  Object.defineProperty(obj, key, { get: () => val });
-}
-;
-}
-
-
-// --------------------
-// Request: /node_modules/hookable/dist/index.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/nuxt.mjs ($id_e069d411)
-// Dependencies: 
-
-// --------------------
-const $id_a2c811c4 = (global, module, _, exports, importMeta, ssrImport, ssrDynamicImport, ssrExportAll) =>
-import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/hookable/dist/index.mjs")
-  .then(r => {
-    if (r.default && r.default.__esModule)
-      r = r.default
-    exports.default = r.default
-    ssrExportAll(r)
-  })
-  .catch(e => {
-    console.error(e)
-    throw new Error("[vite dev] Error loading external \"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/hookable/dist/index.mjs\".")
-  })
-
-
-// --------------------
-// Request: /node_modules/unctx/dist/index.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/nuxt.mjs ($id_e069d411)
-// Dependencies: 
-
-// --------------------
-const $id_a569ca2d = (global, module, _, exports, importMeta, ssrImport, ssrDynamicImport, ssrExportAll) =>
-import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/unctx/dist/index.mjs")
-  .then(r => {
-    if (r.default && r.default.__esModule)
-      r = r.default
-    exports.default = r.default
-    ssrExportAll(r)
-  })
-  .catch(e => {
-    console.error(e)
-    throw new Error("[vite dev] Error loading external \"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/unctx/dist/index.mjs\".")
-  })
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/compat/legacy-app.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/nuxt.mjs ($id_e069d411)
-// Dependencies: 
-// - /node_modules/unenv/runtime/mock/proxy.mjs ($id_39e12da7)
-// - /node_modules/nuxt/dist/app/nuxt.mjs ($id_e069d411)
-// --------------------
-const $id_a48341bc = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/unenv/runtime/mock/proxy.mjs");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/nuxt.mjs");
-
+const mockContext = createMock("mock");
 function mock(warning) {
   console.warn(warning);
-  return __vite_ssr_import_0__.default;
+  return mockContext;
 }
-const unsupported = new Set([
+const unsupported = /* @__PURE__ */ new Set([
   "store",
   "spa",
   "fetchCounters"
 ]);
-const todo = new Set([
+const todo = /* @__PURE__ */ new Set([
   "isHMR",
   "base",
   "payload",
@@ -488,16 +474,11 @@ const todo = new Set([
   "beforeNuxtRender",
   "beforeSerialize"
 ]);
-const serverProperties = new Set([
-  "req",
-  "res",
-  "ssrContext"
-]);
 const routerKeys = ["route", "params", "query"];
 const staticFlags = {
   isClient: false,
   isServer: true,
-  isDev: true,
+  isDev: false,
   isStatic: void 0,
   target: "server",
   modern: false
@@ -524,13 +505,10 @@ const legacyPlugin = (nuxtApp) => {
         }
       }
       if (p === "$config" || p === "env") {
-        return __vite_ssr_import_1__.useRuntimeConfig();
+        return useRuntimeConfig();
       }
       if (p in staticFlags) {
         return staticFlags[p];
-      }
-      if (false && serverProperties.has(p)) {
-        return void 0;
       }
       if (p === "ssrContext") {
         return nuxt._legacyContext;
@@ -553,390 +531,1822 @@ const legacyPlugin = (nuxtApp) => {
       return mock(`Accessing ${p} is not supported in Nuxt3.`);
     }
   });
-  if (false) {
-    nuxtApp.hook("app:created", () => {
-      const legacyApp = new Proxy(nuxtApp.vueApp, {
-        get(source, p) {
-          if (["$root", "constructor"].includes(p)) {
-            return legacyApp;
-          }
-          return source[p] || nuxtApp[p];
-        }
-      });
-      window[`$${nuxtApp.globalName}`] = legacyApp;
-    });
-  }
 };
-Object.defineProperty(__vite_ssr_exports__, "legacyPlugin", { enumerable: true, configurable: true, get(){ return legacyPlugin }});
-;
-}
-
-
-// --------------------
-// Request: /node_modules/unenv/runtime/mock/proxy.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/compat/legacy-app.mjs ($id_a48341bc)
-// Dependencies: 
-
-// --------------------
-const $id_39e12da7 = (global, module, _, exports, importMeta, ssrImport, ssrDynamicImport, ssrExportAll) =>
-import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/unenv/runtime/mock/proxy.mjs")
-  .then(r => {
-    if (r.default && r.default.__esModule)
-      r = r.default
-    exports.default = r.default
-    ssrExportAll(r)
-  })
-  .catch(e => {
-    console.error(e)
-    throw new Error("[vite dev] Error loading external \"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/unenv/runtime/mock/proxy.mjs\".")
-  })
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/composables/index.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// Dependencies: 
-// - /node_modules/nuxt/dist/app/composables/component.mjs ($id_53345950)
-// - /node_modules/nuxt/dist/app/composables/asyncData.mjs ($id_d5b6a221)
-// - /node_modules/nuxt/dist/app/composables/hydrate.mjs ($id_0063df1b)
-// - /node_modules/nuxt/dist/app/composables/state.mjs ($id_7d872108)
-// - /node_modules/nuxt/dist/app/composables/error.mjs ($id_6fe050f1)
-// - /node_modules/nuxt/dist/app/composables/fetch.mjs ($id_41f5ae4e)
-// - /node_modules/nuxt/dist/app/composables/cookie.mjs ($id_511b441d)
-// - /node_modules/nuxt/dist/app/composables/ssr.mjs ($id_c4866ba7)
-// - /node_modules/nuxt/dist/app/composables/router.mjs ($id_db4d90a8)
-// --------------------
-const $id_b067a79a = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/composables/component.mjs");
-
-Object.defineProperty(__vite_ssr_exports__, "defineNuxtComponent", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_0__.defineNuxtComponent }});
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/composables/asyncData.mjs");
-
-Object.defineProperty(__vite_ssr_exports__, "useAsyncData", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_1__.useAsyncData }});
-Object.defineProperty(__vite_ssr_exports__, "useLazyAsyncData", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_1__.useLazyAsyncData }});
-Object.defineProperty(__vite_ssr_exports__, "refreshNuxtData", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_1__.refreshNuxtData }});
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/composables/hydrate.mjs");
-
-Object.defineProperty(__vite_ssr_exports__, "useHydration", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.useHydration }});
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/composables/state.mjs");
-
-Object.defineProperty(__vite_ssr_exports__, "useState", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.useState }});
-const __vite_ssr_import_4__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/composables/error.mjs");
-
-Object.defineProperty(__vite_ssr_exports__, "clearError", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_4__.clearError }});
-Object.defineProperty(__vite_ssr_exports__, "throwError", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_4__.throwError }});
-Object.defineProperty(__vite_ssr_exports__, "useError", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_4__.useError }});
-const __vite_ssr_import_5__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/composables/fetch.mjs");
-
-Object.defineProperty(__vite_ssr_exports__, "useFetch", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_5__.useFetch }});
-Object.defineProperty(__vite_ssr_exports__, "useLazyFetch", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_5__.useLazyFetch }});
-const __vite_ssr_import_6__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/composables/cookie.mjs");
-
-Object.defineProperty(__vite_ssr_exports__, "useCookie", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_6__.useCookie }});
-const __vite_ssr_import_7__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/composables/ssr.mjs");
-
-Object.defineProperty(__vite_ssr_exports__, "useRequestHeaders", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_7__.useRequestHeaders }});
-Object.defineProperty(__vite_ssr_exports__, "useRequestEvent", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_7__.useRequestEvent }});
-const __vite_ssr_import_8__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/composables/router.mjs");
-
-Object.defineProperty(__vite_ssr_exports__, "abortNavigation", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_8__.abortNavigation }});
-Object.defineProperty(__vite_ssr_exports__, "addRouteMiddleware", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_8__.addRouteMiddleware }});
-Object.defineProperty(__vite_ssr_exports__, "defineNuxtRouteMiddleware", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_8__.defineNuxtRouteMiddleware }});
-Object.defineProperty(__vite_ssr_exports__, "navigateTo", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_8__.navigateTo }});
-Object.defineProperty(__vite_ssr_exports__, "useRoute", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_8__.useRoute }});
-Object.defineProperty(__vite_ssr_exports__, "useActiveRoute", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_8__.useActiveRoute }});
-Object.defineProperty(__vite_ssr_exports__, "useRouter", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_8__.useRouter }});
-;
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/composables/component.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/composables/index.mjs ($id_b067a79a)
-// Dependencies: 
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/vue-router/dist/vue-router.cjs.js ($id_f9a4a698)
-// - /node_modules/nuxt/dist/app/nuxt.mjs ($id_e069d411)
-// - /node_modules/nuxt/dist/app/composables/asyncData.mjs ($id_d5b6a221)
-// --------------------
-const $id_53345950 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/vue-router/dist/vue-router.cjs.js");
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/nuxt.mjs");
-
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/composables/asyncData.mjs");
-
-const NuxtComponentIndicator = "__nuxt_component";
-Object.defineProperty(__vite_ssr_exports__, "NuxtComponentIndicator", { enumerable: true, configurable: true, get(){ return NuxtComponentIndicator }});
-async function runLegacyAsyncData(res, fn) {
-  const nuxt = __vite_ssr_import_2__.useNuxtApp();
-  const route = __vite_ssr_import_1__.useRoute();
-  const vm = __vite_ssr_import_0__.getCurrentInstance();
-  const { fetchKey } = vm.proxy.$options;
-  const key = typeof fetchKey === "function" ? fetchKey(() => "") : fetchKey || route.fullPath;
-  const { data } = await __vite_ssr_import_3__.useAsyncData(`options:asyncdata:${key}`, () => fn(nuxt._legacyContext));
-  if (data.value && typeof data.value === "object") {
-    Object.assign(await res, __vite_ssr_import_0__.toRefs(__vite_ssr_import_0__.reactive(data.value)));
-  } else if (true) {
-    console.warn("[nuxt] asyncData should return an object", data);
+const nuxtAppCtx = getContext("nuxt-app");
+const NuxtPluginIndicator = "__nuxt_plugin";
+function createNuxtApp(options) {
+  const nuxtApp = __spreadValues({
+    provide: void 0,
+    globalName: "nuxt",
+    payload: reactive(__spreadValues({
+      data: {},
+      state: {},
+      _errors: {}
+    }, { serverRendered: true })),
+    isHydrating: false,
+    _asyncDataPromises: {}
+  }, options);
+  nuxtApp.hooks = createHooks();
+  nuxtApp.hook = nuxtApp.hooks.hook;
+  nuxtApp.callHook = nuxtApp.hooks.callHook;
+  nuxtApp.provide = (name, value) => {
+    const $name = "$" + name;
+    defineGetter(nuxtApp, $name, value);
+    defineGetter(nuxtApp.vueApp.config.globalProperties, $name, value);
+  };
+  defineGetter(nuxtApp.vueApp, "$nuxt", nuxtApp);
+  defineGetter(nuxtApp.vueApp.config.globalProperties, "$nuxt", nuxtApp);
+  if (nuxtApp.ssrContext) {
+    nuxtApp.ssrContext.nuxt = nuxtApp;
   }
-}
-const defineNuxtComponent = function defineNuxtComponent2(options) {
-  const { setup } = options;
-  if (!setup && !options.asyncData) {
-    return {
-      [NuxtComponentIndicator]: true,
-      ...options
+  {
+    nuxtApp.ssrContext = nuxtApp.ssrContext || {};
+    nuxtApp.ssrContext.payload = nuxtApp.payload;
+  }
+  {
+    nuxtApp.payload.config = {
+      public: options.ssrContext.runtimeConfig.public,
+      app: options.ssrContext.runtimeConfig.app
     };
   }
-  return {
-    [NuxtComponentIndicator]: true,
-    ...options,
-    setup(props, ctx) {
-      const res = setup?.(props, ctx) || {};
-      let promises = [];
-      promises = promises || [];
-      if (options.asyncData) {
-        promises.push(runLegacyAsyncData(res, options.asyncData));
+  const runtimeConfig = options.ssrContext.runtimeConfig;
+  const compatibilityConfig = new Proxy(runtimeConfig, {
+    get(target, prop) {
+      var _a;
+      if (prop === "public") {
+        return target.public;
       }
-      return Promise.resolve(res).then(() => Promise.all(promises)).then(() => res).finally(() => {
-        promises.length = 0;
-        promises = null;
-      });
+      return (_a = target[prop]) != null ? _a : target.public[prop];
+    },
+    set(target, prop, value) {
+      {
+        return false;
+      }
     }
-  };
-};
-Object.defineProperty(__vite_ssr_exports__, "defineNuxtComponent", { enumerable: true, configurable: true, get(){ return defineNuxtComponent }});
-;
+  });
+  nuxtApp.provide("config", compatibilityConfig);
+  return nuxtApp;
 }
-
-
-// --------------------
-// Request: /node_modules/vue-router/dist/vue-router.cjs.js
-// Parents: 
-// - /node_modules/nuxt/dist/app/composables/component.mjs ($id_53345950)
-// Dependencies: 
-
-// --------------------
-const $id_f9a4a698 = (global, module, _, exports, importMeta, ssrImport, ssrDynamicImport, ssrExportAll) =>
-import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/vue-router/dist/vue-router.cjs.js")
-  .then(r => {
-    if (r.default && r.default.__esModule)
-      r = r.default
-    exports.default = r.default
-    ssrExportAll(r)
-  })
-  .catch(e => {
-    console.error(e)
-    throw new Error("[vite dev] Error loading external \"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/vue-router/dist/vue-router.cjs.js\".")
-  })
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/composables/asyncData.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/composables/component.mjs ($id_53345950)
-// - /node_modules/nuxt/dist/app/composables/index.mjs ($id_b067a79a)
-// - /node_modules/nuxt/dist/app/composables/fetch.mjs ($id_41f5ae4e)
-// Dependencies: 
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/nuxt/dist/app/composables/utils.mjs ($id_df511336)
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// --------------------
-const $id_d5b6a221 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/composables/utils.mjs");
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
-const getDefault = () => null;
-function useAsyncData(key, handler, options = {}) {
-  if (typeof key !== "string") {
-    throw new TypeError("asyncData key must be a string");
+async function applyPlugin(nuxtApp, plugin) {
+  if (typeof plugin !== "function") {
+    return;
   }
-  if (typeof handler !== "function") {
-    throw new TypeError("asyncData handler must be a function");
+  const { provide } = await callWithNuxt(nuxtApp, plugin, [nuxtApp]) || {};
+  if (provide && typeof provide === "object") {
+    for (const key in provide) {
+      nuxtApp.provide(key, provide[key]);
+    }
   }
-  options = { server: true, default: getDefault, ...options };
-  if (options.defer) {
-    console.warn("[useAsyncData] `defer` has been renamed to `lazy`. Support for `defer` will be removed in RC.");
+}
+async function applyPlugins(nuxtApp, plugins2) {
+  for (const plugin of plugins2) {
+    await applyPlugin(nuxtApp, plugin);
   }
-  options.lazy = options.lazy ?? options.defer ?? false;
-  options.initialCache = options.initialCache ?? true;
-  const nuxt = __vite_ssr_import_2__.useNuxtApp();
-  const instance = __vite_ssr_import_0__.getCurrentInstance();
-  if (instance && !instance._nuxtOnBeforeMountCbs) {
-    const cbs = instance._nuxtOnBeforeMountCbs = [];
-    if (instance && false) {
-      __vite_ssr_import_0__.onBeforeMount(() => {
-        cbs.forEach((cb) => {
-          cb();
+}
+function normalizePlugins(_plugins2) {
+  let needsLegacyContext = false;
+  const plugins2 = _plugins2.map((plugin) => {
+    if (typeof plugin !== "function") {
+      return () => {
+      };
+    }
+    if (isLegacyPlugin(plugin)) {
+      needsLegacyContext = true;
+      return (nuxtApp) => plugin(nuxtApp._legacyContext, nuxtApp.provide);
+    }
+    return plugin;
+  });
+  if (needsLegacyContext) {
+    plugins2.unshift(legacyPlugin);
+  }
+  return plugins2;
+}
+function defineNuxtPlugin(plugin) {
+  plugin[NuxtPluginIndicator] = true;
+  return plugin;
+}
+function isLegacyPlugin(plugin) {
+  return !plugin[NuxtPluginIndicator];
+}
+function callWithNuxt(nuxt, setup, args) {
+  const fn = () => args ? setup(...args) : setup();
+  {
+    return nuxtAppCtx.callAsync(nuxt, fn);
+  }
+}
+function useNuxtApp() {
+  const vm = getCurrentInstance();
+  if (!vm) {
+    const nuxtAppInstance = nuxtAppCtx.use();
+    if (!nuxtAppInstance) {
+      throw new Error("nuxt instance unavailable");
+    }
+    return nuxtAppInstance;
+  }
+  return vm.appContext.app.$nuxt;
+}
+function useRuntimeConfig() {
+  return useNuxtApp().$config;
+}
+function defineGetter(obj, key, val) {
+  Object.defineProperty(obj, key, { get: () => val });
+}
+var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
+var vueRouter_cjs_prod = {};
+/*!
+  * vue-router v4.0.14
+  * (c) 2022 Eduardo San Martin Morote
+  * @license MIT
+  */
+(function(exports) {
+  Object.defineProperty(exports, "__esModule", { value: true });
+  var vue = require$$0;
+  const hasSymbol = typeof Symbol === "function" && typeof Symbol.toStringTag === "symbol";
+  const PolySymbol = (name) => hasSymbol ? Symbol(name) : "_vr_" + name;
+  const matchedRouteKey = /* @__PURE__ */ PolySymbol("rvlm");
+  const viewDepthKey = /* @__PURE__ */ PolySymbol("rvd");
+  const routerKey = /* @__PURE__ */ PolySymbol("r");
+  const routeLocationKey = /* @__PURE__ */ PolySymbol("rl");
+  const routerViewLocationKey = /* @__PURE__ */ PolySymbol("rvl");
+  function isESModule(obj) {
+    return obj.__esModule || hasSymbol && obj[Symbol.toStringTag] === "Module";
+  }
+  const assign = Object.assign;
+  function applyToParams(fn, params) {
+    const newParams = {};
+    for (const key in params) {
+      const value = params[key];
+      newParams[key] = Array.isArray(value) ? value.map(fn) : fn(value);
+    }
+    return newParams;
+  }
+  const noop = () => {
+  };
+  const TRAILING_SLASH_RE = /\/$/;
+  const removeTrailingSlash = (path) => path.replace(TRAILING_SLASH_RE, "");
+  function parseURL2(parseQuery3, location2, currentLocation = "/") {
+    let path, query = {}, searchString = "", hash = "";
+    const searchPos = location2.indexOf("?");
+    const hashPos = location2.indexOf("#", searchPos > -1 ? searchPos : 0);
+    if (searchPos > -1) {
+      path = location2.slice(0, searchPos);
+      searchString = location2.slice(searchPos + 1, hashPos > -1 ? hashPos : location2.length);
+      query = parseQuery3(searchString);
+    }
+    if (hashPos > -1) {
+      path = path || location2.slice(0, hashPos);
+      hash = location2.slice(hashPos, location2.length);
+    }
+    path = resolveRelativePath(path != null ? path : location2, currentLocation);
+    return {
+      fullPath: path + (searchString && "?") + searchString + hash,
+      path,
+      query,
+      hash
+    };
+  }
+  function stringifyURL(stringifyQuery2, location2) {
+    const query = location2.query ? stringifyQuery2(location2.query) : "";
+    return location2.path + (query && "?") + query + (location2.hash || "");
+  }
+  function stripBase(pathname, base) {
+    if (!base || !pathname.toLowerCase().startsWith(base.toLowerCase()))
+      return pathname;
+    return pathname.slice(base.length) || "/";
+  }
+  function isSameRouteLocation(stringifyQuery2, a, b) {
+    const aLastIndex = a.matched.length - 1;
+    const bLastIndex = b.matched.length - 1;
+    return aLastIndex > -1 && aLastIndex === bLastIndex && isSameRouteRecord(a.matched[aLastIndex], b.matched[bLastIndex]) && isSameRouteLocationParams(a.params, b.params) && stringifyQuery2(a.query) === stringifyQuery2(b.query) && a.hash === b.hash;
+  }
+  function isSameRouteRecord(a, b) {
+    return (a.aliasOf || a) === (b.aliasOf || b);
+  }
+  function isSameRouteLocationParams(a, b) {
+    if (Object.keys(a).length !== Object.keys(b).length)
+      return false;
+    for (const key in a) {
+      if (!isSameRouteLocationParamsValue(a[key], b[key]))
+        return false;
+    }
+    return true;
+  }
+  function isSameRouteLocationParamsValue(a, b) {
+    return Array.isArray(a) ? isEquivalentArray(a, b) : Array.isArray(b) ? isEquivalentArray(b, a) : a === b;
+  }
+  function isEquivalentArray(a, b) {
+    return Array.isArray(b) ? a.length === b.length && a.every((value, i) => value === b[i]) : a.length === 1 && a[0] === b;
+  }
+  function resolveRelativePath(to, from) {
+    if (to.startsWith("/"))
+      return to;
+    if (!to)
+      return from;
+    const fromSegments = from.split("/");
+    const toSegments = to.split("/");
+    let position = fromSegments.length - 1;
+    let toPosition;
+    let segment;
+    for (toPosition = 0; toPosition < toSegments.length; toPosition++) {
+      segment = toSegments[toPosition];
+      if (position === 1 || segment === ".")
+        continue;
+      if (segment === "..")
+        position--;
+      else
+        break;
+    }
+    return fromSegments.slice(0, position).join("/") + "/" + toSegments.slice(toPosition - (toPosition === toSegments.length ? 1 : 0)).join("/");
+  }
+  var NavigationType;
+  (function(NavigationType2) {
+    NavigationType2["pop"] = "pop";
+    NavigationType2["push"] = "push";
+  })(NavigationType || (NavigationType = {}));
+  var NavigationDirection;
+  (function(NavigationDirection2) {
+    NavigationDirection2["back"] = "back";
+    NavigationDirection2["forward"] = "forward";
+    NavigationDirection2["unknown"] = "";
+  })(NavigationDirection || (NavigationDirection = {}));
+  const START = "";
+  function normalizeBase(base) {
+    if (!base) {
+      {
+        base = "/";
+      }
+    }
+    if (base[0] !== "/" && base[0] !== "#")
+      base = "/" + base;
+    return removeTrailingSlash(base);
+  }
+  const BEFORE_HASH_RE = /^[^#]+#/;
+  function createHref(base, location2) {
+    return base.replace(BEFORE_HASH_RE, "#") + location2;
+  }
+  const computeScrollPosition = () => ({
+    left: window.pageXOffset,
+    top: window.pageYOffset
+  });
+  let createBaseLocation = () => location.protocol + "//" + location.host;
+  function createCurrentLocation(base, location2) {
+    const { pathname, search, hash } = location2;
+    const hashPos = base.indexOf("#");
+    if (hashPos > -1) {
+      let slicePos = hash.includes(base.slice(hashPos)) ? base.slice(hashPos).length : 1;
+      let pathFromHash = hash.slice(slicePos);
+      if (pathFromHash[0] !== "/")
+        pathFromHash = "/" + pathFromHash;
+      return stripBase(pathFromHash, "");
+    }
+    const path = stripBase(pathname, base);
+    return path + search + hash;
+  }
+  function useHistoryListeners(base, historyState, currentLocation, replace) {
+    let listeners = [];
+    let teardowns = [];
+    let pauseState = null;
+    const popStateHandler = ({ state }) => {
+      const to = createCurrentLocation(base, location);
+      const from = currentLocation.value;
+      const fromState = historyState.value;
+      let delta = 0;
+      if (state) {
+        currentLocation.value = to;
+        historyState.value = state;
+        if (pauseState && pauseState === from) {
+          pauseState = null;
+          return;
+        }
+        delta = fromState ? state.position - fromState.position : 0;
+      } else {
+        replace(to);
+      }
+      listeners.forEach((listener) => {
+        listener(currentLocation.value, from, {
+          delta,
+          type: NavigationType.pop,
+          direction: delta ? delta > 0 ? NavigationDirection.forward : NavigationDirection.back : NavigationDirection.unknown
         });
-        cbs.splice(0, cbs.length);
       });
-      __vite_ssr_import_0__.onUnmounted(() => cbs.splice(0, cbs.length));
+    };
+    function pauseListeners() {
+      pauseState = currentLocation.value;
     }
+    function listen(callback) {
+      listeners.push(callback);
+      const teardown = () => {
+        const index = listeners.indexOf(callback);
+        if (index > -1)
+          listeners.splice(index, 1);
+      };
+      teardowns.push(teardown);
+      return teardown;
+    }
+    function beforeUnloadListener() {
+      const { history: history2 } = window;
+      if (!history2.state)
+        return;
+      history2.replaceState(assign({}, history2.state, { scroll: computeScrollPosition() }), "");
+    }
+    function destroy() {
+      for (const teardown of teardowns)
+        teardown();
+      teardowns = [];
+      window.removeEventListener("popstate", popStateHandler);
+      window.removeEventListener("beforeunload", beforeUnloadListener);
+    }
+    window.addEventListener("popstate", popStateHandler);
+    window.addEventListener("beforeunload", beforeUnloadListener);
+    return {
+      pauseListeners,
+      listen,
+      destroy
+    };
   }
-  const useInitialCache = () => options.initialCache && nuxt.payload.data[key] !== void 0;
-  const asyncData = {
-    data: __vite_ssr_import_1__.wrapInRef(nuxt.payload.data[key] ?? options.default()),
-    pending: __vite_ssr_import_0__.ref(!useInitialCache()),
-    error: __vite_ssr_import_0__.ref(nuxt.payload._errors[key] ?? null)
-  };
-  asyncData.refresh = (opts = {}) => {
-    if (nuxt._asyncDataPromises[key]) {
-      return nuxt._asyncDataPromises[key];
+  function buildState(back, current, forward, replaced = false, computeScroll = false) {
+    return {
+      back,
+      current,
+      forward,
+      replaced,
+      position: window.history.length,
+      scroll: computeScroll ? computeScrollPosition() : null
+    };
+  }
+  function useHistoryStateNavigation(base) {
+    const { history: history2, location: location2 } = window;
+    const currentLocation = {
+      value: createCurrentLocation(base, location2)
+    };
+    const historyState = { value: history2.state };
+    if (!historyState.value) {
+      changeLocation(currentLocation.value, {
+        back: null,
+        current: currentLocation.value,
+        forward: null,
+        position: history2.length - 1,
+        replaced: true,
+        scroll: null
+      }, true);
     }
-    if (opts._initial && useInitialCache()) {
-      return nuxt.payload.data[key];
+    function changeLocation(to, state, replace2) {
+      const hashIndex = base.indexOf("#");
+      const url = hashIndex > -1 ? (location2.host && document.querySelector("base") ? base : base.slice(hashIndex)) + to : createBaseLocation() + base + to;
+      try {
+        history2[replace2 ? "replaceState" : "pushState"](state, "", url);
+        historyState.value = state;
+      } catch (err) {
+        {
+          console.error(err);
+        }
+        location2[replace2 ? "replace" : "assign"](url);
+      }
     }
-    asyncData.pending.value = true;
-    nuxt._asyncDataPromises[key] = Promise.resolve(handler(nuxt)).then((result) => {
-      if (options.transform) {
-        result = options.transform(result);
-      }
-      if (options.pick) {
-        result = pick(result, options.pick);
-      }
-      asyncData.data.value = result;
-      asyncData.error.value = null;
-    }).catch((error) => {
-      asyncData.error.value = error;
-      asyncData.data.value = options.default();
-    }).finally(() => {
-      asyncData.pending.value = false;
-      nuxt.payload.data[key] = asyncData.data.value;
-      if (asyncData.error.value) {
-        nuxt.payload._errors[key] = true;
-      }
-      delete nuxt._asyncDataPromises[key];
+    function replace(to, data) {
+      const state = assign({}, history2.state, buildState(historyState.value.back, to, historyState.value.forward, true), data, { position: historyState.value.position });
+      changeLocation(to, state, true);
+      currentLocation.value = to;
+    }
+    function push(to, data) {
+      const currentState = assign({}, historyState.value, history2.state, {
+        forward: to,
+        scroll: computeScrollPosition()
+      });
+      changeLocation(currentState.current, currentState, true);
+      const state = assign({}, buildState(currentLocation.value, to, null), { position: currentState.position + 1 }, data);
+      changeLocation(to, state, false);
+      currentLocation.value = to;
+    }
+    return {
+      location: currentLocation,
+      state: historyState,
+      push,
+      replace
+    };
+  }
+  function createWebHistory(base) {
+    base = normalizeBase(base);
+    const historyNavigation = useHistoryStateNavigation(base);
+    const historyListeners = useHistoryListeners(base, historyNavigation.state, historyNavigation.location, historyNavigation.replace);
+    function go(delta, triggerListeners = true) {
+      if (!triggerListeners)
+        historyListeners.pauseListeners();
+      history.go(delta);
+    }
+    const routerHistory = assign({
+      location: "",
+      base,
+      go,
+      createHref: createHref.bind(null, base)
+    }, historyNavigation, historyListeners);
+    Object.defineProperty(routerHistory, "location", {
+      enumerable: true,
+      get: () => historyNavigation.location.value
     });
-    return nuxt._asyncDataPromises[key];
-  };
-  const initialFetch = () => asyncData.refresh({ _initial: true });
-  const fetchOnServer = options.server !== false && nuxt.payload.serverRendered;
-  if (true && fetchOnServer) {
-    const promise = initialFetch();
-    __vite_ssr_import_0__.onServerPrefetch(() => promise);
+    Object.defineProperty(routerHistory, "state", {
+      enumerable: true,
+      get: () => historyNavigation.state.value
+    });
+    return routerHistory;
   }
-  if (false) {
-    if (fetchOnServer && nuxt.isHydrating) {
-      asyncData.pending.value = false;
-    } else if (instance && (nuxt.isHydrating || options.lazy)) {
-      instance._nuxtOnBeforeMountCbs.push(initialFetch);
+  function createMemoryHistory(base = "") {
+    let listeners = [];
+    let queue = [START];
+    let position = 0;
+    base = normalizeBase(base);
+    function setLocation(location2) {
+      position++;
+      if (position === queue.length) {
+        queue.push(location2);
+      } else {
+        queue.splice(position);
+        queue.push(location2);
+      }
+    }
+    function triggerListeners(to, from, { direction, delta }) {
+      const info = {
+        direction,
+        delta,
+        type: NavigationType.pop
+      };
+      for (const callback of listeners) {
+        callback(to, from, info);
+      }
+    }
+    const routerHistory = {
+      location: START,
+      state: {},
+      base,
+      createHref: createHref.bind(null, base),
+      replace(to) {
+        queue.splice(position--, 1);
+        setLocation(to);
+      },
+      push(to, data) {
+        setLocation(to);
+      },
+      listen(callback) {
+        listeners.push(callback);
+        return () => {
+          const index = listeners.indexOf(callback);
+          if (index > -1)
+            listeners.splice(index, 1);
+        };
+      },
+      destroy() {
+        listeners = [];
+        queue = [START];
+        position = 0;
+      },
+      go(delta, shouldTrigger = true) {
+        const from = this.location;
+        const direction = delta < 0 ? NavigationDirection.back : NavigationDirection.forward;
+        position = Math.max(0, Math.min(position + delta, queue.length - 1));
+        if (shouldTrigger) {
+          triggerListeners(this.location, from, {
+            direction,
+            delta
+          });
+        }
+      }
+    };
+    Object.defineProperty(routerHistory, "location", {
+      enumerable: true,
+      get: () => queue[position]
+    });
+    return routerHistory;
+  }
+  function createWebHashHistory(base) {
+    base = location.host ? base || location.pathname + location.search : "";
+    if (!base.includes("#"))
+      base += "#";
+    return createWebHistory(base);
+  }
+  function isRouteLocation(route) {
+    return typeof route === "string" || route && typeof route === "object";
+  }
+  function isRouteName(name) {
+    return typeof name === "string" || typeof name === "symbol";
+  }
+  const START_LOCATION_NORMALIZED = {
+    path: "/",
+    name: void 0,
+    params: {},
+    query: {},
+    hash: "",
+    fullPath: "/",
+    matched: [],
+    meta: {},
+    redirectedFrom: void 0
+  };
+  const NavigationFailureSymbol = /* @__PURE__ */ PolySymbol("nf");
+  exports.NavigationFailureType = void 0;
+  (function(NavigationFailureType) {
+    NavigationFailureType[NavigationFailureType["aborted"] = 4] = "aborted";
+    NavigationFailureType[NavigationFailureType["cancelled"] = 8] = "cancelled";
+    NavigationFailureType[NavigationFailureType["duplicated"] = 16] = "duplicated";
+  })(exports.NavigationFailureType || (exports.NavigationFailureType = {}));
+  const ErrorTypeMessages = {
+    [1]({ location: location2, currentLocation }) {
+      return `No match for
+ ${JSON.stringify(location2)}${currentLocation ? "\nwhile being at\n" + JSON.stringify(currentLocation) : ""}`;
+    },
+    [2]({ from, to }) {
+      return `Redirected from "${from.fullPath}" to "${stringifyRoute(to)}" via a navigation guard.`;
+    },
+    [4]({ from, to }) {
+      return `Navigation aborted from "${from.fullPath}" to "${to.fullPath}" via a navigation guard.`;
+    },
+    [8]({ from, to }) {
+      return `Navigation cancelled from "${from.fullPath}" to "${to.fullPath}" with a new navigation.`;
+    },
+    [16]({ from, to }) {
+      return `Avoided redundant navigation to current location: "${from.fullPath}".`;
+    }
+  };
+  function createRouterError(type, params) {
+    {
+      return assign(new Error(ErrorTypeMessages[type](params)), {
+        type,
+        [NavigationFailureSymbol]: true
+      }, params);
+    }
+  }
+  function isNavigationFailure(error, type) {
+    return error instanceof Error && NavigationFailureSymbol in error && (type == null || !!(error.type & type));
+  }
+  const propertiesToLog = ["params", "query", "hash"];
+  function stringifyRoute(to) {
+    if (typeof to === "string")
+      return to;
+    if ("path" in to)
+      return to.path;
+    const location2 = {};
+    for (const key of propertiesToLog) {
+      if (key in to)
+        location2[key] = to[key];
+    }
+    return JSON.stringify(location2, null, 2);
+  }
+  const BASE_PARAM_PATTERN = "[^/]+?";
+  const BASE_PATH_PARSER_OPTIONS = {
+    sensitive: false,
+    strict: false,
+    start: true,
+    end: true
+  };
+  const REGEX_CHARS_RE = /[.+*?^${}()[\]/\\]/g;
+  function tokensToParser(segments, extraOptions) {
+    const options = assign({}, BASE_PATH_PARSER_OPTIONS, extraOptions);
+    const score = [];
+    let pattern = options.start ? "^" : "";
+    const keys = [];
+    for (const segment of segments) {
+      const segmentScores = segment.length ? [] : [90];
+      if (options.strict && !segment.length)
+        pattern += "/";
+      for (let tokenIndex = 0; tokenIndex < segment.length; tokenIndex++) {
+        const token = segment[tokenIndex];
+        let subSegmentScore = 40 + (options.sensitive ? 0.25 : 0);
+        if (token.type === 0) {
+          if (!tokenIndex)
+            pattern += "/";
+          pattern += token.value.replace(REGEX_CHARS_RE, "\\$&");
+          subSegmentScore += 40;
+        } else if (token.type === 1) {
+          const { value, repeatable, optional, regexp } = token;
+          keys.push({
+            name: value,
+            repeatable,
+            optional
+          });
+          const re2 = regexp ? regexp : BASE_PARAM_PATTERN;
+          if (re2 !== BASE_PARAM_PATTERN) {
+            subSegmentScore += 10;
+            try {
+              new RegExp(`(${re2})`);
+            } catch (err) {
+              throw new Error(`Invalid custom RegExp for param "${value}" (${re2}): ` + err.message);
+            }
+          }
+          let subPattern = repeatable ? `((?:${re2})(?:/(?:${re2}))*)` : `(${re2})`;
+          if (!tokenIndex)
+            subPattern = optional && segment.length < 2 ? `(?:/${subPattern})` : "/" + subPattern;
+          if (optional)
+            subPattern += "?";
+          pattern += subPattern;
+          subSegmentScore += 20;
+          if (optional)
+            subSegmentScore += -8;
+          if (repeatable)
+            subSegmentScore += -20;
+          if (re2 === ".*")
+            subSegmentScore += -50;
+        }
+        segmentScores.push(subSegmentScore);
+      }
+      score.push(segmentScores);
+    }
+    if (options.strict && options.end) {
+      const i = score.length - 1;
+      score[i][score[i].length - 1] += 0.7000000000000001;
+    }
+    if (!options.strict)
+      pattern += "/?";
+    if (options.end)
+      pattern += "$";
+    else if (options.strict)
+      pattern += "(?:/|$)";
+    const re = new RegExp(pattern, options.sensitive ? "" : "i");
+    function parse(path) {
+      const match = path.match(re);
+      const params = {};
+      if (!match)
+        return null;
+      for (let i = 1; i < match.length; i++) {
+        const value = match[i] || "";
+        const key = keys[i - 1];
+        params[key.name] = value && key.repeatable ? value.split("/") : value;
+      }
+      return params;
+    }
+    function stringify(params) {
+      let path = "";
+      let avoidDuplicatedSlash = false;
+      for (const segment of segments) {
+        if (!avoidDuplicatedSlash || !path.endsWith("/"))
+          path += "/";
+        avoidDuplicatedSlash = false;
+        for (const token of segment) {
+          if (token.type === 0) {
+            path += token.value;
+          } else if (token.type === 1) {
+            const { value, repeatable, optional } = token;
+            const param = value in params ? params[value] : "";
+            if (Array.isArray(param) && !repeatable)
+              throw new Error(`Provided param "${value}" is an array but it is not repeatable (* or + modifiers)`);
+            const text = Array.isArray(param) ? param.join("/") : param;
+            if (!text) {
+              if (optional) {
+                if (segment.length < 2) {
+                  if (path.endsWith("/"))
+                    path = path.slice(0, -1);
+                  else
+                    avoidDuplicatedSlash = true;
+                }
+              } else
+                throw new Error(`Missing required param "${value}"`);
+            }
+            path += text;
+          }
+        }
+      }
+      return path;
+    }
+    return {
+      re,
+      score,
+      keys,
+      parse,
+      stringify
+    };
+  }
+  function compareScoreArray(a, b) {
+    let i = 0;
+    while (i < a.length && i < b.length) {
+      const diff = b[i] - a[i];
+      if (diff)
+        return diff;
+      i++;
+    }
+    if (a.length < b.length) {
+      return a.length === 1 && a[0] === 40 + 40 ? -1 : 1;
+    } else if (a.length > b.length) {
+      return b.length === 1 && b[0] === 40 + 40 ? 1 : -1;
+    }
+    return 0;
+  }
+  function comparePathParserScore(a, b) {
+    let i = 0;
+    const aScore = a.score;
+    const bScore = b.score;
+    while (i < aScore.length && i < bScore.length) {
+      const comp = compareScoreArray(aScore[i], bScore[i]);
+      if (comp)
+        return comp;
+      i++;
+    }
+    return bScore.length - aScore.length;
+  }
+  const ROOT_TOKEN = {
+    type: 0,
+    value: ""
+  };
+  const VALID_PARAM_RE = /[a-zA-Z0-9_]/;
+  function tokenizePath(path) {
+    if (!path)
+      return [[]];
+    if (path === "/")
+      return [[ROOT_TOKEN]];
+    if (!path.startsWith("/")) {
+      throw new Error(`Invalid path "${path}"`);
+    }
+    function crash(message) {
+      throw new Error(`ERR (${state})/"${buffer}": ${message}`);
+    }
+    let state = 0;
+    let previousState = state;
+    const tokens = [];
+    let segment;
+    function finalizeSegment() {
+      if (segment)
+        tokens.push(segment);
+      segment = [];
+    }
+    let i = 0;
+    let char;
+    let buffer = "";
+    let customRe = "";
+    function consumeBuffer() {
+      if (!buffer)
+        return;
+      if (state === 0) {
+        segment.push({
+          type: 0,
+          value: buffer
+        });
+      } else if (state === 1 || state === 2 || state === 3) {
+        if (segment.length > 1 && (char === "*" || char === "+"))
+          crash(`A repeatable param (${buffer}) must be alone in its segment. eg: '/:ids+.`);
+        segment.push({
+          type: 1,
+          value: buffer,
+          regexp: customRe,
+          repeatable: char === "*" || char === "+",
+          optional: char === "*" || char === "?"
+        });
+      } else {
+        crash("Invalid state to consume buffer");
+      }
+      buffer = "";
+    }
+    function addCharToBuffer() {
+      buffer += char;
+    }
+    while (i < path.length) {
+      char = path[i++];
+      if (char === "\\" && state !== 2) {
+        previousState = state;
+        state = 4;
+        continue;
+      }
+      switch (state) {
+        case 0:
+          if (char === "/") {
+            if (buffer) {
+              consumeBuffer();
+            }
+            finalizeSegment();
+          } else if (char === ":") {
+            consumeBuffer();
+            state = 1;
+          } else {
+            addCharToBuffer();
+          }
+          break;
+        case 4:
+          addCharToBuffer();
+          state = previousState;
+          break;
+        case 1:
+          if (char === "(") {
+            state = 2;
+          } else if (VALID_PARAM_RE.test(char)) {
+            addCharToBuffer();
+          } else {
+            consumeBuffer();
+            state = 0;
+            if (char !== "*" && char !== "?" && char !== "+")
+              i--;
+          }
+          break;
+        case 2:
+          if (char === ")") {
+            if (customRe[customRe.length - 1] == "\\")
+              customRe = customRe.slice(0, -1) + char;
+            else
+              state = 3;
+          } else {
+            customRe += char;
+          }
+          break;
+        case 3:
+          consumeBuffer();
+          state = 0;
+          if (char !== "*" && char !== "?" && char !== "+")
+            i--;
+          customRe = "";
+          break;
+        default:
+          crash("Unknown state");
+          break;
+      }
+    }
+    if (state === 2)
+      crash(`Unfinished custom RegExp for param "${buffer}"`);
+    consumeBuffer();
+    finalizeSegment();
+    return tokens;
+  }
+  function createRouteRecordMatcher(record, parent, options) {
+    const parser = tokensToParser(tokenizePath(record.path), options);
+    const matcher = assign(parser, {
+      record,
+      parent,
+      children: [],
+      alias: []
+    });
+    if (parent) {
+      if (!matcher.record.aliasOf === !parent.record.aliasOf)
+        parent.children.push(matcher);
+    }
+    return matcher;
+  }
+  function createRouterMatcher(routes, globalOptions) {
+    const matchers = [];
+    const matcherMap = /* @__PURE__ */ new Map();
+    globalOptions = mergeOptions({ strict: false, end: true, sensitive: false }, globalOptions);
+    function getRecordMatcher(name) {
+      return matcherMap.get(name);
+    }
+    function addRoute(record, parent, originalRecord) {
+      const isRootAdd = !originalRecord;
+      const mainNormalizedRecord = normalizeRouteRecord(record);
+      mainNormalizedRecord.aliasOf = originalRecord && originalRecord.record;
+      const options = mergeOptions(globalOptions, record);
+      const normalizedRecords = [
+        mainNormalizedRecord
+      ];
+      if ("alias" in record) {
+        const aliases = typeof record.alias === "string" ? [record.alias] : record.alias;
+        for (const alias of aliases) {
+          normalizedRecords.push(assign({}, mainNormalizedRecord, {
+            components: originalRecord ? originalRecord.record.components : mainNormalizedRecord.components,
+            path: alias,
+            aliasOf: originalRecord ? originalRecord.record : mainNormalizedRecord
+          }));
+        }
+      }
+      let matcher;
+      let originalMatcher;
+      for (const normalizedRecord of normalizedRecords) {
+        const { path } = normalizedRecord;
+        if (parent && path[0] !== "/") {
+          const parentPath = parent.record.path;
+          const connectingSlash = parentPath[parentPath.length - 1] === "/" ? "" : "/";
+          normalizedRecord.path = parent.record.path + (path && connectingSlash + path);
+        }
+        matcher = createRouteRecordMatcher(normalizedRecord, parent, options);
+        if (originalRecord) {
+          originalRecord.alias.push(matcher);
+        } else {
+          originalMatcher = originalMatcher || matcher;
+          if (originalMatcher !== matcher)
+            originalMatcher.alias.push(matcher);
+          if (isRootAdd && record.name && !isAliasRecord(matcher))
+            removeRoute(record.name);
+        }
+        if ("children" in mainNormalizedRecord) {
+          const children = mainNormalizedRecord.children;
+          for (let i = 0; i < children.length; i++) {
+            addRoute(children[i], matcher, originalRecord && originalRecord.children[i]);
+          }
+        }
+        originalRecord = originalRecord || matcher;
+        insertMatcher(matcher);
+      }
+      return originalMatcher ? () => {
+        removeRoute(originalMatcher);
+      } : noop;
+    }
+    function removeRoute(matcherRef) {
+      if (isRouteName(matcherRef)) {
+        const matcher = matcherMap.get(matcherRef);
+        if (matcher) {
+          matcherMap.delete(matcherRef);
+          matchers.splice(matchers.indexOf(matcher), 1);
+          matcher.children.forEach(removeRoute);
+          matcher.alias.forEach(removeRoute);
+        }
+      } else {
+        const index = matchers.indexOf(matcherRef);
+        if (index > -1) {
+          matchers.splice(index, 1);
+          if (matcherRef.record.name)
+            matcherMap.delete(matcherRef.record.name);
+          matcherRef.children.forEach(removeRoute);
+          matcherRef.alias.forEach(removeRoute);
+        }
+      }
+    }
+    function getRoutes() {
+      return matchers;
+    }
+    function insertMatcher(matcher) {
+      let i = 0;
+      while (i < matchers.length && comparePathParserScore(matcher, matchers[i]) >= 0 && (matcher.record.path !== matchers[i].record.path || !isRecordChildOf(matcher, matchers[i])))
+        i++;
+      matchers.splice(i, 0, matcher);
+      if (matcher.record.name && !isAliasRecord(matcher))
+        matcherMap.set(matcher.record.name, matcher);
+    }
+    function resolve(location2, currentLocation) {
+      let matcher;
+      let params = {};
+      let path;
+      let name;
+      if ("name" in location2 && location2.name) {
+        matcher = matcherMap.get(location2.name);
+        if (!matcher)
+          throw createRouterError(1, {
+            location: location2
+          });
+        name = matcher.record.name;
+        params = assign(paramsFromLocation(currentLocation.params, matcher.keys.filter((k) => !k.optional).map((k) => k.name)), location2.params);
+        path = matcher.stringify(params);
+      } else if ("path" in location2) {
+        path = location2.path;
+        matcher = matchers.find((m) => m.re.test(path));
+        if (matcher) {
+          params = matcher.parse(path);
+          name = matcher.record.name;
+        }
+      } else {
+        matcher = currentLocation.name ? matcherMap.get(currentLocation.name) : matchers.find((m) => m.re.test(currentLocation.path));
+        if (!matcher)
+          throw createRouterError(1, {
+            location: location2,
+            currentLocation
+          });
+        name = matcher.record.name;
+        params = assign({}, currentLocation.params, location2.params);
+        path = matcher.stringify(params);
+      }
+      const matched = [];
+      let parentMatcher = matcher;
+      while (parentMatcher) {
+        matched.unshift(parentMatcher.record);
+        parentMatcher = parentMatcher.parent;
+      }
+      return {
+        name,
+        path,
+        params,
+        matched,
+        meta: mergeMetaFields(matched)
+      };
+    }
+    routes.forEach((route) => addRoute(route));
+    return { addRoute, resolve, removeRoute, getRoutes, getRecordMatcher };
+  }
+  function paramsFromLocation(params, keys) {
+    const newParams = {};
+    for (const key of keys) {
+      if (key in params)
+        newParams[key] = params[key];
+    }
+    return newParams;
+  }
+  function normalizeRouteRecord(record) {
+    return {
+      path: record.path,
+      redirect: record.redirect,
+      name: record.name,
+      meta: record.meta || {},
+      aliasOf: void 0,
+      beforeEnter: record.beforeEnter,
+      props: normalizeRecordProps(record),
+      children: record.children || [],
+      instances: {},
+      leaveGuards: /* @__PURE__ */ new Set(),
+      updateGuards: /* @__PURE__ */ new Set(),
+      enterCallbacks: {},
+      components: "components" in record ? record.components || {} : { default: record.component }
+    };
+  }
+  function normalizeRecordProps(record) {
+    const propsObject = {};
+    const props = record.props || false;
+    if ("component" in record) {
+      propsObject.default = props;
     } else {
-      initialFetch();
+      for (const name in record.components)
+        propsObject[name] = typeof props === "boolean" ? props : props[name];
     }
-    if (options.watch) {
-      __vite_ssr_import_0__.watch(options.watch, () => asyncData.refresh());
+    return propsObject;
+  }
+  function isAliasRecord(record) {
+    while (record) {
+      if (record.record.aliasOf)
+        return true;
+      record = record.parent;
     }
-    const off = nuxt.hook("app:data:refresh", (keys) => {
-      if (!keys || keys.includes(key)) {
-        return asyncData.refresh();
+    return false;
+  }
+  function mergeMetaFields(matched) {
+    return matched.reduce((meta, record) => assign(meta, record.meta), {});
+  }
+  function mergeOptions(defaults, partialOptions) {
+    const options = {};
+    for (const key in defaults) {
+      options[key] = key in partialOptions ? partialOptions[key] : defaults[key];
+    }
+    return options;
+  }
+  function isRecordChildOf(record, parent) {
+    return parent.children.some((child) => child === record || isRecordChildOf(record, child));
+  }
+  const HASH_RE = /#/g;
+  const AMPERSAND_RE = /&/g;
+  const SLASH_RE = /\//g;
+  const EQUAL_RE = /=/g;
+  const IM_RE = /\?/g;
+  const PLUS_RE = /\+/g;
+  const ENC_BRACKET_OPEN_RE = /%5B/g;
+  const ENC_BRACKET_CLOSE_RE = /%5D/g;
+  const ENC_CARET_RE = /%5E/g;
+  const ENC_BACKTICK_RE = /%60/g;
+  const ENC_CURLY_OPEN_RE = /%7B/g;
+  const ENC_PIPE_RE = /%7C/g;
+  const ENC_CURLY_CLOSE_RE = /%7D/g;
+  const ENC_SPACE_RE = /%20/g;
+  function commonEncode(text) {
+    return encodeURI("" + text).replace(ENC_PIPE_RE, "|").replace(ENC_BRACKET_OPEN_RE, "[").replace(ENC_BRACKET_CLOSE_RE, "]");
+  }
+  function encodeHash(text) {
+    return commonEncode(text).replace(ENC_CURLY_OPEN_RE, "{").replace(ENC_CURLY_CLOSE_RE, "}").replace(ENC_CARET_RE, "^");
+  }
+  function encodeQueryValue(text) {
+    return commonEncode(text).replace(PLUS_RE, "%2B").replace(ENC_SPACE_RE, "+").replace(HASH_RE, "%23").replace(AMPERSAND_RE, "%26").replace(ENC_BACKTICK_RE, "`").replace(ENC_CURLY_OPEN_RE, "{").replace(ENC_CURLY_CLOSE_RE, "}").replace(ENC_CARET_RE, "^");
+  }
+  function encodeQueryKey(text) {
+    return encodeQueryValue(text).replace(EQUAL_RE, "%3D");
+  }
+  function encodePath(text) {
+    return commonEncode(text).replace(HASH_RE, "%23").replace(IM_RE, "%3F");
+  }
+  function encodeParam(text) {
+    return text == null ? "" : encodePath(text).replace(SLASH_RE, "%2F");
+  }
+  function decode(text) {
+    try {
+      return decodeURIComponent("" + text);
+    } catch (err) {
+    }
+    return "" + text;
+  }
+  function parseQuery2(search) {
+    const query = {};
+    if (search === "" || search === "?")
+      return query;
+    const hasLeadingIM = search[0] === "?";
+    const searchParams = (hasLeadingIM ? search.slice(1) : search).split("&");
+    for (let i = 0; i < searchParams.length; ++i) {
+      const searchParam = searchParams[i].replace(PLUS_RE, " ");
+      const eqPos = searchParam.indexOf("=");
+      const key = decode(eqPos < 0 ? searchParam : searchParam.slice(0, eqPos));
+      const value = eqPos < 0 ? null : decode(searchParam.slice(eqPos + 1));
+      if (key in query) {
+        let currentValue = query[key];
+        if (!Array.isArray(currentValue)) {
+          currentValue = query[key] = [currentValue];
+        }
+        currentValue.push(value);
+      } else {
+        query[key] = value;
       }
-    });
-    if (instance) {
-      __vite_ssr_import_0__.onUnmounted(off);
     }
+    return query;
   }
-  const asyncDataPromise = Promise.resolve(nuxt._asyncDataPromises[key]).then(() => asyncData);
-  Object.assign(asyncDataPromise, asyncData);
-  return asyncDataPromise;
-}
-Object.defineProperty(__vite_ssr_exports__, "useAsyncData", { enumerable: true, configurable: true, get(){ return useAsyncData }});
-function useLazyAsyncData(key, handler, options = {}) {
-  return useAsyncData(key, handler, { ...options, lazy: true });
-}
-Object.defineProperty(__vite_ssr_exports__, "useLazyAsyncData", { enumerable: true, configurable: true, get(){ return useLazyAsyncData }});
-function refreshNuxtData(keys) {
-  if (true) {
-    return Promise.resolve();
+  function stringifyQuery(query) {
+    let search = "";
+    for (let key in query) {
+      const value = query[key];
+      key = encodeQueryKey(key);
+      if (value == null) {
+        if (value !== void 0) {
+          search += (search.length ? "&" : "") + key;
+        }
+        continue;
+      }
+      const values = Array.isArray(value) ? value.map((v) => v && encodeQueryValue(v)) : [value && encodeQueryValue(value)];
+      values.forEach((value2) => {
+        if (value2 !== void 0) {
+          search += (search.length ? "&" : "") + key;
+          if (value2 != null)
+            search += "=" + value2;
+        }
+      });
+    }
+    return search;
   }
-  const _keys = keys ? Array.isArray(keys) ? keys : [keys] : void 0;
-  return __vite_ssr_import_2__.useNuxtApp().callHook("app:data:refresh", _keys);
-}
-Object.defineProperty(__vite_ssr_exports__, "refreshNuxtData", { enumerable: true, configurable: true, get(){ return refreshNuxtData }});
-function pick(obj, keys) {
-  const newObj = {};
-  for (const key of keys) {
-    newObj[key] = obj[key];
+  function normalizeQuery(query) {
+    const normalizedQuery = {};
+    for (const key in query) {
+      const value = query[key];
+      if (value !== void 0) {
+        normalizedQuery[key] = Array.isArray(value) ? value.map((v) => v == null ? null : "" + v) : value == null ? value : "" + value;
+      }
+    }
+    return normalizedQuery;
   }
-  return newObj;
-}
-;
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/composables/utils.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/composables/asyncData.mjs ($id_d5b6a221)
-// - /node_modules/nuxt/dist/app/composables/cookie.mjs ($id_511b441d)
-// Dependencies: 
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// --------------------
-const $id_df511336 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const wrapInRef = (value) => __vite_ssr_import_0__.isRef(value) ? value : __vite_ssr_import_0__.ref(value);
-Object.defineProperty(__vite_ssr_exports__, "wrapInRef", { enumerable: true, configurable: true, get(){ return wrapInRef }});
-;
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/composables/hydrate.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/composables/index.mjs ($id_b067a79a)
-// Dependencies: 
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// --------------------
-const $id_0063df1b = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
-const useHydration = (key, get, set) => {
-  const nuxt = __vite_ssr_import_0__.useNuxtApp();
-  if (true) {
-    nuxt.hooks.hook("app:rendered", () => {
-      nuxt.payload[key] = get();
+  function useCallbacks() {
+    let handlers = [];
+    function add(handler) {
+      handlers.push(handler);
+      return () => {
+        const i = handlers.indexOf(handler);
+        if (i > -1)
+          handlers.splice(i, 1);
+      };
+    }
+    function reset() {
+      handlers = [];
+    }
+    return {
+      add,
+      list: () => handlers,
+      reset
+    };
+  }
+  function registerGuard(record, name, guard) {
+    const removeFromList = () => {
+      record[name].delete(guard);
+    };
+    vue.onUnmounted(removeFromList);
+    vue.onDeactivated(removeFromList);
+    vue.onActivated(() => {
+      record[name].add(guard);
+    });
+    record[name].add(guard);
+  }
+  function onBeforeRouteLeave(leaveGuard) {
+    const activeRecord = vue.inject(matchedRouteKey, {}).value;
+    if (!activeRecord) {
+      return;
+    }
+    registerGuard(activeRecord, "leaveGuards", leaveGuard);
+  }
+  function onBeforeRouteUpdate(updateGuard) {
+    const activeRecord = vue.inject(matchedRouteKey, {}).value;
+    if (!activeRecord) {
+      return;
+    }
+    registerGuard(activeRecord, "updateGuards", updateGuard);
+  }
+  function guardToPromiseFn(guard, to, from, record, name) {
+    const enterCallbackArray = record && (record.enterCallbacks[name] = record.enterCallbacks[name] || []);
+    return () => new Promise((resolve, reject) => {
+      const next = (valid) => {
+        if (valid === false)
+          reject(createRouterError(4, {
+            from,
+            to
+          }));
+        else if (valid instanceof Error) {
+          reject(valid);
+        } else if (isRouteLocation(valid)) {
+          reject(createRouterError(2, {
+            from: to,
+            to: valid
+          }));
+        } else {
+          if (enterCallbackArray && record.enterCallbacks[name] === enterCallbackArray && typeof valid === "function")
+            enterCallbackArray.push(valid);
+          resolve();
+        }
+      };
+      const guardReturn = guard.call(record && record.instances[name], to, from, next);
+      let guardCall = Promise.resolve(guardReturn);
+      if (guard.length < 3)
+        guardCall = guardCall.then(next);
+      guardCall.catch((err) => reject(err));
     });
   }
-  if (false) {
-    nuxt.hooks.hook("app:created", () => {
-      set(nuxt.payload[key]);
-    });
+  function extractComponentsGuards(matched, guardType, to, from) {
+    const guards = [];
+    for (const record of matched) {
+      for (const name in record.components) {
+        let rawComponent = record.components[name];
+        if (guardType !== "beforeRouteEnter" && !record.instances[name])
+          continue;
+        if (isRouteComponent(rawComponent)) {
+          const options = rawComponent.__vccOpts || rawComponent;
+          const guard = options[guardType];
+          guard && guards.push(guardToPromiseFn(guard, to, from, record, name));
+        } else {
+          let componentPromise = rawComponent();
+          guards.push(() => componentPromise.then((resolved) => {
+            if (!resolved)
+              return Promise.reject(new Error(`Couldn't resolve component "${name}" at "${record.path}"`));
+            const resolvedComponent = isESModule(resolved) ? resolved.default : resolved;
+            record.components[name] = resolvedComponent;
+            const options = resolvedComponent.__vccOpts || resolvedComponent;
+            const guard = options[guardType];
+            return guard && guardToPromiseFn(guard, to, from, record, name)();
+          }));
+        }
+      }
+    }
+    return guards;
   }
-};
-Object.defineProperty(__vite_ssr_exports__, "useHydration", { enumerable: true, configurable: true, get(){ return useHydration }});
-;
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/composables/state.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/composables/index.mjs ($id_b067a79a)
-// Dependencies: 
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// --------------------
-const $id_7d872108 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
+  function isRouteComponent(component) {
+    return typeof component === "object" || "displayName" in component || "props" in component || "__vccOpts" in component;
+  }
+  function useLink(props) {
+    const router = vue.inject(routerKey);
+    const currentRoute = vue.inject(routeLocationKey);
+    const route = vue.computed(() => router.resolve(vue.unref(props.to)));
+    const activeRecordIndex = vue.computed(() => {
+      const { matched } = route.value;
+      const { length } = matched;
+      const routeMatched = matched[length - 1];
+      const currentMatched = currentRoute.matched;
+      if (!routeMatched || !currentMatched.length)
+        return -1;
+      const index = currentMatched.findIndex(isSameRouteRecord.bind(null, routeMatched));
+      if (index > -1)
+        return index;
+      const parentRecordPath = getOriginalPath(matched[length - 2]);
+      return length > 1 && getOriginalPath(routeMatched) === parentRecordPath && currentMatched[currentMatched.length - 1].path !== parentRecordPath ? currentMatched.findIndex(isSameRouteRecord.bind(null, matched[length - 2])) : index;
+    });
+    const isActive = vue.computed(() => activeRecordIndex.value > -1 && includesParams(currentRoute.params, route.value.params));
+    const isExactActive = vue.computed(() => activeRecordIndex.value > -1 && activeRecordIndex.value === currentRoute.matched.length - 1 && isSameRouteLocationParams(currentRoute.params, route.value.params));
+    function navigate(e = {}) {
+      if (guardEvent(e)) {
+        return router[vue.unref(props.replace) ? "replace" : "push"](vue.unref(props.to)).catch(noop);
+      }
+      return Promise.resolve();
+    }
+    return {
+      route,
+      href: vue.computed(() => route.value.href),
+      isActive,
+      isExactActive,
+      navigate
+    };
+  }
+  const RouterLinkImpl = /* @__PURE__ */ vue.defineComponent({
+    name: "RouterLink",
+    props: {
+      to: {
+        type: [String, Object],
+        required: true
+      },
+      replace: Boolean,
+      activeClass: String,
+      exactActiveClass: String,
+      custom: Boolean,
+      ariaCurrentValue: {
+        type: String,
+        default: "page"
+      }
+    },
+    useLink,
+    setup(props, { slots }) {
+      const link = vue.reactive(useLink(props));
+      const { options } = vue.inject(routerKey);
+      const elClass = vue.computed(() => ({
+        [getLinkClass(props.activeClass, options.linkActiveClass, "router-link-active")]: link.isActive,
+        [getLinkClass(props.exactActiveClass, options.linkExactActiveClass, "router-link-exact-active")]: link.isExactActive
+      }));
+      return () => {
+        const children = slots.default && slots.default(link);
+        return props.custom ? children : vue.h("a", {
+          "aria-current": link.isExactActive ? props.ariaCurrentValue : null,
+          href: link.href,
+          onClick: link.navigate,
+          class: elClass.value
+        }, children);
+      };
+    }
+  });
+  const RouterLink = RouterLinkImpl;
+  function guardEvent(e) {
+    if (e.metaKey || e.altKey || e.ctrlKey || e.shiftKey)
+      return;
+    if (e.defaultPrevented)
+      return;
+    if (e.button !== void 0 && e.button !== 0)
+      return;
+    if (e.currentTarget && e.currentTarget.getAttribute) {
+      const target = e.currentTarget.getAttribute("target");
+      if (/\b_blank\b/i.test(target))
+        return;
+    }
+    if (e.preventDefault)
+      e.preventDefault();
+    return true;
+  }
+  function includesParams(outer, inner) {
+    for (const key in inner) {
+      const innerValue = inner[key];
+      const outerValue = outer[key];
+      if (typeof innerValue === "string") {
+        if (innerValue !== outerValue)
+          return false;
+      } else {
+        if (!Array.isArray(outerValue) || outerValue.length !== innerValue.length || innerValue.some((value, i) => value !== outerValue[i]))
+          return false;
+      }
+    }
+    return true;
+  }
+  function getOriginalPath(record) {
+    return record ? record.aliasOf ? record.aliasOf.path : record.path : "";
+  }
+  const getLinkClass = (propClass, globalClass, defaultClass) => propClass != null ? propClass : globalClass != null ? globalClass : defaultClass;
+  const RouterViewImpl = /* @__PURE__ */ vue.defineComponent({
+    name: "RouterView",
+    inheritAttrs: false,
+    props: {
+      name: {
+        type: String,
+        default: "default"
+      },
+      route: Object
+    },
+    setup(props, { attrs, slots }) {
+      const injectedRoute = vue.inject(routerViewLocationKey);
+      const routeToDisplay = vue.computed(() => props.route || injectedRoute.value);
+      const depth = vue.inject(viewDepthKey, 0);
+      const matchedRouteRef = vue.computed(() => routeToDisplay.value.matched[depth]);
+      vue.provide(viewDepthKey, depth + 1);
+      vue.provide(matchedRouteKey, matchedRouteRef);
+      vue.provide(routerViewLocationKey, routeToDisplay);
+      const viewRef = vue.ref();
+      vue.watch(() => [viewRef.value, matchedRouteRef.value, props.name], ([instance, to, name], [oldInstance, from, oldName]) => {
+        if (to) {
+          to.instances[name] = instance;
+          if (from && from !== to && instance && instance === oldInstance) {
+            if (!to.leaveGuards.size) {
+              to.leaveGuards = from.leaveGuards;
+            }
+            if (!to.updateGuards.size) {
+              to.updateGuards = from.updateGuards;
+            }
+          }
+        }
+        if (instance && to && (!from || !isSameRouteRecord(to, from) || !oldInstance)) {
+          (to.enterCallbacks[name] || []).forEach((callback) => callback(instance));
+        }
+      }, { flush: "post" });
+      return () => {
+        const route = routeToDisplay.value;
+        const matchedRoute = matchedRouteRef.value;
+        const ViewComponent = matchedRoute && matchedRoute.components[props.name];
+        const currentName = props.name;
+        if (!ViewComponent) {
+          return normalizeSlot(slots.default, { Component: ViewComponent, route });
+        }
+        const routePropsOption = matchedRoute.props[props.name];
+        const routeProps = routePropsOption ? routePropsOption === true ? route.params : typeof routePropsOption === "function" ? routePropsOption(route) : routePropsOption : null;
+        const onVnodeUnmounted = (vnode) => {
+          if (vnode.component.isUnmounted) {
+            matchedRoute.instances[currentName] = null;
+          }
+        };
+        const component = vue.h(ViewComponent, assign({}, routeProps, attrs, {
+          onVnodeUnmounted,
+          ref: viewRef
+        }));
+        return normalizeSlot(slots.default, { Component: component, route }) || component;
+      };
+    }
+  });
+  function normalizeSlot(slot, data) {
+    if (!slot)
+      return null;
+    const slotContent = slot(data);
+    return slotContent.length === 1 ? slotContent[0] : slotContent;
+  }
+  const RouterView = RouterViewImpl;
+  function createRouter(options) {
+    const matcher = createRouterMatcher(options.routes, options);
+    const parseQuery$1 = options.parseQuery || parseQuery2;
+    const stringifyQuery$1 = options.stringifyQuery || stringifyQuery;
+    const routerHistory = options.history;
+    const beforeGuards = useCallbacks();
+    const beforeResolveGuards = useCallbacks();
+    const afterGuards = useCallbacks();
+    const currentRoute = vue.shallowRef(START_LOCATION_NORMALIZED);
+    let pendingLocation = START_LOCATION_NORMALIZED;
+    const normalizeParams = applyToParams.bind(null, (paramValue) => "" + paramValue);
+    const encodeParams = applyToParams.bind(null, encodeParam);
+    const decodeParams = applyToParams.bind(null, decode);
+    function addRoute(parentOrRoute, route) {
+      let parent;
+      let record;
+      if (isRouteName(parentOrRoute)) {
+        parent = matcher.getRecordMatcher(parentOrRoute);
+        record = route;
+      } else {
+        record = parentOrRoute;
+      }
+      return matcher.addRoute(record, parent);
+    }
+    function removeRoute(name) {
+      const recordMatcher = matcher.getRecordMatcher(name);
+      if (recordMatcher) {
+        matcher.removeRoute(recordMatcher);
+      }
+    }
+    function getRoutes() {
+      return matcher.getRoutes().map((routeMatcher) => routeMatcher.record);
+    }
+    function hasRoute(name) {
+      return !!matcher.getRecordMatcher(name);
+    }
+    function resolve(rawLocation, currentLocation) {
+      currentLocation = assign({}, currentLocation || currentRoute.value);
+      if (typeof rawLocation === "string") {
+        const locationNormalized = parseURL2(parseQuery$1, rawLocation, currentLocation.path);
+        const matchedRoute2 = matcher.resolve({ path: locationNormalized.path }, currentLocation);
+        const href2 = routerHistory.createHref(locationNormalized.fullPath);
+        return assign(locationNormalized, matchedRoute2, {
+          params: decodeParams(matchedRoute2.params),
+          hash: decode(locationNormalized.hash),
+          redirectedFrom: void 0,
+          href: href2
+        });
+      }
+      let matcherLocation;
+      if ("path" in rawLocation) {
+        matcherLocation = assign({}, rawLocation, {
+          path: parseURL2(parseQuery$1, rawLocation.path, currentLocation.path).path
+        });
+      } else {
+        const targetParams = assign({}, rawLocation.params);
+        for (const key in targetParams) {
+          if (targetParams[key] == null) {
+            delete targetParams[key];
+          }
+        }
+        matcherLocation = assign({}, rawLocation, {
+          params: encodeParams(rawLocation.params)
+        });
+        currentLocation.params = encodeParams(currentLocation.params);
+      }
+      const matchedRoute = matcher.resolve(matcherLocation, currentLocation);
+      const hash = rawLocation.hash || "";
+      matchedRoute.params = normalizeParams(decodeParams(matchedRoute.params));
+      const fullPath = stringifyURL(stringifyQuery$1, assign({}, rawLocation, {
+        hash: encodeHash(hash),
+        path: matchedRoute.path
+      }));
+      const href = routerHistory.createHref(fullPath);
+      return assign({
+        fullPath,
+        hash,
+        query: stringifyQuery$1 === stringifyQuery ? normalizeQuery(rawLocation.query) : rawLocation.query || {}
+      }, matchedRoute, {
+        redirectedFrom: void 0,
+        href
+      });
+    }
+    function locationAsObject(to) {
+      return typeof to === "string" ? parseURL2(parseQuery$1, to, currentRoute.value.path) : assign({}, to);
+    }
+    function checkCanceledNavigation(to, from) {
+      if (pendingLocation !== to) {
+        return createRouterError(8, {
+          from,
+          to
+        });
+      }
+    }
+    function push(to) {
+      return pushWithRedirect(to);
+    }
+    function replace(to) {
+      return push(assign(locationAsObject(to), { replace: true }));
+    }
+    function handleRedirectRecord(to) {
+      const lastMatched = to.matched[to.matched.length - 1];
+      if (lastMatched && lastMatched.redirect) {
+        const { redirect } = lastMatched;
+        let newTargetLocation = typeof redirect === "function" ? redirect(to) : redirect;
+        if (typeof newTargetLocation === "string") {
+          newTargetLocation = newTargetLocation.includes("?") || newTargetLocation.includes("#") ? newTargetLocation = locationAsObject(newTargetLocation) : { path: newTargetLocation };
+          newTargetLocation.params = {};
+        }
+        return assign({
+          query: to.query,
+          hash: to.hash,
+          params: to.params
+        }, newTargetLocation);
+      }
+    }
+    function pushWithRedirect(to, redirectedFrom) {
+      const targetLocation = pendingLocation = resolve(to);
+      const from = currentRoute.value;
+      const data = to.state;
+      const force = to.force;
+      const replace2 = to.replace === true;
+      const shouldRedirect = handleRedirectRecord(targetLocation);
+      if (shouldRedirect)
+        return pushWithRedirect(assign(locationAsObject(shouldRedirect), {
+          state: data,
+          force,
+          replace: replace2
+        }), redirectedFrom || targetLocation);
+      const toLocation = targetLocation;
+      toLocation.redirectedFrom = redirectedFrom;
+      let failure;
+      if (!force && isSameRouteLocation(stringifyQuery$1, from, targetLocation)) {
+        failure = createRouterError(16, { to: toLocation, from });
+        handleScroll();
+      }
+      return (failure ? Promise.resolve(failure) : navigate(toLocation, from)).catch((error) => isNavigationFailure(error) ? isNavigationFailure(error, 2) ? error : markAsReady(error) : triggerError(error, toLocation, from)).then((failure2) => {
+        if (failure2) {
+          if (isNavigationFailure(failure2, 2)) {
+            return pushWithRedirect(assign(locationAsObject(failure2.to), {
+              state: data,
+              force,
+              replace: replace2
+            }), redirectedFrom || toLocation);
+          }
+        } else {
+          failure2 = finalizeNavigation(toLocation, from, true, replace2, data);
+        }
+        triggerAfterEach(toLocation, from, failure2);
+        return failure2;
+      });
+    }
+    function checkCanceledNavigationAndReject(to, from) {
+      const error = checkCanceledNavigation(to, from);
+      return error ? Promise.reject(error) : Promise.resolve();
+    }
+    function navigate(to, from) {
+      let guards;
+      const [leavingRecords, updatingRecords, enteringRecords] = extractChangingRecords(to, from);
+      guards = extractComponentsGuards(leavingRecords.reverse(), "beforeRouteLeave", to, from);
+      for (const record of leavingRecords) {
+        record.leaveGuards.forEach((guard) => {
+          guards.push(guardToPromiseFn(guard, to, from));
+        });
+      }
+      const canceledNavigationCheck = checkCanceledNavigationAndReject.bind(null, to, from);
+      guards.push(canceledNavigationCheck);
+      return runGuardQueue(guards).then(() => {
+        guards = [];
+        for (const guard of beforeGuards.list()) {
+          guards.push(guardToPromiseFn(guard, to, from));
+        }
+        guards.push(canceledNavigationCheck);
+        return runGuardQueue(guards);
+      }).then(() => {
+        guards = extractComponentsGuards(updatingRecords, "beforeRouteUpdate", to, from);
+        for (const record of updatingRecords) {
+          record.updateGuards.forEach((guard) => {
+            guards.push(guardToPromiseFn(guard, to, from));
+          });
+        }
+        guards.push(canceledNavigationCheck);
+        return runGuardQueue(guards);
+      }).then(() => {
+        guards = [];
+        for (const record of to.matched) {
+          if (record.beforeEnter && !from.matched.includes(record)) {
+            if (Array.isArray(record.beforeEnter)) {
+              for (const beforeEnter of record.beforeEnter)
+                guards.push(guardToPromiseFn(beforeEnter, to, from));
+            } else {
+              guards.push(guardToPromiseFn(record.beforeEnter, to, from));
+            }
+          }
+        }
+        guards.push(canceledNavigationCheck);
+        return runGuardQueue(guards);
+      }).then(() => {
+        to.matched.forEach((record) => record.enterCallbacks = {});
+        guards = extractComponentsGuards(enteringRecords, "beforeRouteEnter", to, from);
+        guards.push(canceledNavigationCheck);
+        return runGuardQueue(guards);
+      }).then(() => {
+        guards = [];
+        for (const guard of beforeResolveGuards.list()) {
+          guards.push(guardToPromiseFn(guard, to, from));
+        }
+        guards.push(canceledNavigationCheck);
+        return runGuardQueue(guards);
+      }).catch((err) => isNavigationFailure(err, 8) ? err : Promise.reject(err));
+    }
+    function triggerAfterEach(to, from, failure) {
+      for (const guard of afterGuards.list())
+        guard(to, from, failure);
+    }
+    function finalizeNavigation(toLocation, from, isPush, replace2, data) {
+      const error = checkCanceledNavigation(toLocation, from);
+      if (error)
+        return error;
+      const isFirstNavigation = from === START_LOCATION_NORMALIZED;
+      const state = {};
+      if (isPush) {
+        if (replace2 || isFirstNavigation)
+          routerHistory.replace(toLocation.fullPath, assign({
+            scroll: isFirstNavigation && state && state.scroll
+          }, data));
+        else
+          routerHistory.push(toLocation.fullPath, data);
+      }
+      currentRoute.value = toLocation;
+      handleScroll();
+      markAsReady();
+    }
+    let removeHistoryListener;
+    function setupListeners() {
+      removeHistoryListener = routerHistory.listen((to, _from, info) => {
+        const toLocation = resolve(to);
+        const shouldRedirect = handleRedirectRecord(toLocation);
+        if (shouldRedirect) {
+          pushWithRedirect(assign(shouldRedirect, { replace: true }), toLocation).catch(noop);
+          return;
+        }
+        pendingLocation = toLocation;
+        const from = currentRoute.value;
+        navigate(toLocation, from).catch((error) => {
+          if (isNavigationFailure(error, 4 | 8)) {
+            return error;
+          }
+          if (isNavigationFailure(error, 2)) {
+            pushWithRedirect(error.to, toLocation).then((failure) => {
+              if (isNavigationFailure(failure, 4 | 16) && !info.delta && info.type === NavigationType.pop) {
+                routerHistory.go(-1, false);
+              }
+            }).catch(noop);
+            return Promise.reject();
+          }
+          if (info.delta)
+            routerHistory.go(-info.delta, false);
+          return triggerError(error, toLocation, from);
+        }).then((failure) => {
+          failure = failure || finalizeNavigation(toLocation, from, false);
+          if (failure) {
+            if (info.delta) {
+              routerHistory.go(-info.delta, false);
+            } else if (info.type === NavigationType.pop && isNavigationFailure(failure, 4 | 16)) {
+              routerHistory.go(-1, false);
+            }
+          }
+          triggerAfterEach(toLocation, from, failure);
+        }).catch(noop);
+      });
+    }
+    let readyHandlers = useCallbacks();
+    let errorHandlers = useCallbacks();
+    let ready;
+    function triggerError(error, to, from) {
+      markAsReady(error);
+      const list = errorHandlers.list();
+      if (list.length) {
+        list.forEach((handler) => handler(error, to, from));
+      } else {
+        console.error(error);
+      }
+      return Promise.reject(error);
+    }
+    function isReady() {
+      if (ready && currentRoute.value !== START_LOCATION_NORMALIZED)
+        return Promise.resolve();
+      return new Promise((resolve2, reject) => {
+        readyHandlers.add([resolve2, reject]);
+      });
+    }
+    function markAsReady(err) {
+      if (!ready) {
+        ready = !err;
+        setupListeners();
+        readyHandlers.list().forEach(([resolve2, reject]) => err ? reject(err) : resolve2());
+        readyHandlers.reset();
+      }
+      return err;
+    }
+    function handleScroll(to, from, isPush, isFirstNavigation) {
+      return Promise.resolve();
+    }
+    const go = (delta) => routerHistory.go(delta);
+    const installedApps = /* @__PURE__ */ new Set();
+    const router = {
+      currentRoute,
+      addRoute,
+      removeRoute,
+      hasRoute,
+      getRoutes,
+      resolve,
+      options,
+      push,
+      replace,
+      go,
+      back: () => go(-1),
+      forward: () => go(1),
+      beforeEach: beforeGuards.add,
+      beforeResolve: beforeResolveGuards.add,
+      afterEach: afterGuards.add,
+      onError: errorHandlers.add,
+      isReady,
+      install(app) {
+        const router2 = this;
+        app.component("RouterLink", RouterLink);
+        app.component("RouterView", RouterView);
+        app.config.globalProperties.$router = router2;
+        Object.defineProperty(app.config.globalProperties, "$route", {
+          enumerable: true,
+          get: () => vue.unref(currentRoute)
+        });
+        const reactiveRoute = {};
+        for (const key in START_LOCATION_NORMALIZED) {
+          reactiveRoute[key] = vue.computed(() => currentRoute.value[key]);
+        }
+        app.provide(routerKey, router2);
+        app.provide(routeLocationKey, vue.reactive(reactiveRoute));
+        app.provide(routerViewLocationKey, currentRoute);
+        const unmountApp = app.unmount;
+        installedApps.add(app);
+        app.unmount = function() {
+          installedApps.delete(app);
+          if (installedApps.size < 1) {
+            pendingLocation = START_LOCATION_NORMALIZED;
+            removeHistoryListener && removeHistoryListener();
+            currentRoute.value = START_LOCATION_NORMALIZED;
+            ready = false;
+          }
+          unmountApp();
+        };
+      }
+    };
+    return router;
+  }
+  function runGuardQueue(guards) {
+    return guards.reduce((promise, guard) => promise.then(() => guard()), Promise.resolve());
+  }
+  function extractChangingRecords(to, from) {
+    const leavingRecords = [];
+    const updatingRecords = [];
+    const enteringRecords = [];
+    const len = Math.max(from.matched.length, to.matched.length);
+    for (let i = 0; i < len; i++) {
+      const recordFrom = from.matched[i];
+      if (recordFrom) {
+        if (to.matched.find((record) => isSameRouteRecord(record, recordFrom)))
+          updatingRecords.push(recordFrom);
+        else
+          leavingRecords.push(recordFrom);
+      }
+      const recordTo = to.matched[i];
+      if (recordTo) {
+        if (!from.matched.find((record) => isSameRouteRecord(record, recordTo))) {
+          enteringRecords.push(recordTo);
+        }
+      }
+    }
+    return [leavingRecords, updatingRecords, enteringRecords];
+  }
+  function useRouter2() {
+    return vue.inject(routerKey);
+  }
+  function useRoute() {
+    return vue.inject(routeLocationKey);
+  }
+  exports.RouterLink = RouterLink;
+  exports.RouterView = RouterView;
+  exports.START_LOCATION = START_LOCATION_NORMALIZED;
+  exports.createMemoryHistory = createMemoryHistory;
+  exports.createRouter = createRouter;
+  exports.createRouterMatcher = createRouterMatcher;
+  exports.createWebHashHistory = createWebHashHistory;
+  exports.createWebHistory = createWebHistory;
+  exports.isNavigationFailure = isNavigationFailure;
+  exports.matchedRouteKey = matchedRouteKey;
+  exports.onBeforeRouteLeave = onBeforeRouteLeave;
+  exports.onBeforeRouteUpdate = onBeforeRouteUpdate;
+  exports.parseQuery = parseQuery2;
+  exports.routeLocationKey = routeLocationKey;
+  exports.routerKey = routerKey;
+  exports.routerViewLocationKey = routerViewLocationKey;
+  exports.stringifyQuery = stringifyQuery;
+  exports.useLink = useLink;
+  exports.useRoute = useRoute;
+  exports.useRouter = useRouter2;
+  exports.viewDepthKey = viewDepthKey;
+})(vueRouter_cjs_prod);
 const useState = (key, init) => {
-  const nuxt = __vite_ssr_import_1__.useNuxtApp();
-  const state = __vite_ssr_import_0__.toRef(nuxt.payload.state, key);
+  const nuxt = useNuxtApp();
+  const state = toRef(nuxt.payload.state, key);
   if (state.value === void 0 && init) {
     const initialValue = init();
-    if (__vite_ssr_import_0__.isRef(initialValue)) {
+    if (isRef(initialValue)) {
       nuxt.payload.state[key] = initialValue;
       return initialValue;
     }
@@ -944,41 +2354,22 @@ const useState = (key, init) => {
   }
   return state;
 };
-Object.defineProperty(__vite_ssr_exports__, "useState", { enumerable: true, configurable: true, get(){ return useState }});
-;
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/composables/error.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/composables/index.mjs ($id_b067a79a)
-// Dependencies: 
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// --------------------
-const $id_6fe050f1 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
 const useError = () => {
-  const nuxtApp = __vite_ssr_import_0__.useNuxtApp();
-  return __vite_ssr_import_0__.useState("error", () => true ? nuxtApp.ssrContext.error : nuxtApp.payload.error);
+  const nuxtApp = useNuxtApp();
+  return useState("error", () => nuxtApp.ssrContext.error);
 };
-Object.defineProperty(__vite_ssr_exports__, "useError", { enumerable: true, configurable: true, get(){ return useError }});
 const throwError = (_err) => {
-  const nuxtApp = __vite_ssr_import_0__.useNuxtApp();
-  const error = useError();
+  const nuxtApp = useNuxtApp();
+  useError();
   const err = typeof _err === "string" ? new Error(_err) : _err;
   nuxtApp.callHook("app:error", err);
-  if (true) {
+  {
     nuxtApp.ssrContext.error = nuxtApp.ssrContext.error || err;
-  } else {
-    error.value = error.value || err;
   }
   return err;
 };
-Object.defineProperty(__vite_ssr_exports__, "throwError", { enumerable: true, configurable: true, get(){ return throwError }});
 const clearError = async (options = {}) => {
-  const nuxtApp = __vite_ssr_import_0__.useNuxtApp();
+  const nuxtApp = useNuxtApp();
   const error = useError();
   nuxtApp.callHook("app:error:cleared", options);
   if (options.redirect) {
@@ -986,297 +2377,63 @@ const clearError = async (options = {}) => {
   }
   error.value = null;
 };
-Object.defineProperty(__vite_ssr_exports__, "clearError", { enumerable: true, configurable: true, get(){ return clearError }});
-;
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/composables/fetch.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/composables/index.mjs ($id_b067a79a)
-// Dependencies: 
-// - /node_modules/ohash/dist/index.mjs ($id_b1b82cf3)
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/nuxt/dist/app/composables/asyncData.mjs ($id_d5b6a221)
-// --------------------
-const $id_41f5ae4e = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/ohash/dist/index.mjs");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/composables/asyncData.mjs");
-
-function useFetch(request, opts = {}) {
-  const key = "$f_" + (opts.key || __vite_ssr_import_0__.hash([request, opts]));
-  const _request = __vite_ssr_import_1__.computed(() => {
-    let r = request;
-    if (typeof r === "function") {
-      r = r();
-    }
-    return __vite_ssr_import_1__.isRef(r) ? r.value : r;
-  });
-  const _fetchOptions = {
-    ...opts,
-    cache: typeof opts.cache === "boolean" ? void 0 : opts.cache
-  };
-  const _asyncDataOptions = {
-    ...opts,
-    watch: [
-      _request,
-      ...opts.watch || []
-    ]
-  };
-  const asyncData = __vite_ssr_import_2__.useAsyncData(key, () => {
-    return $fetch(_request.value, _fetchOptions);
-  }, _asyncDataOptions);
-  return asyncData;
-}
-Object.defineProperty(__vite_ssr_exports__, "useFetch", { enumerable: true, configurable: true, get(){ return useFetch }});
-function useLazyFetch(request, opts = {}) {
-  return useFetch(request, { ...opts, lazy: true });
-}
-Object.defineProperty(__vite_ssr_exports__, "useLazyFetch", { enumerable: true, configurable: true, get(){ return useLazyFetch }});
-;
-}
-
-
-// --------------------
-// Request: /node_modules/ohash/dist/index.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/composables/fetch.mjs ($id_41f5ae4e)
-// Dependencies: 
-
-// --------------------
-const $id_b1b82cf3 = (global, module, _, exports, importMeta, ssrImport, ssrDynamicImport, ssrExportAll) =>
-import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/ohash/dist/index.mjs")
-  .then(r => {
-    if (r.default && r.default.__esModule)
-      r = r.default
-    exports.default = r.default
-    ssrExportAll(r)
-  })
-  .catch(e => {
-    console.error(e)
-    throw new Error("[vite dev] Error loading external \"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/ohash/dist/index.mjs\".")
-  })
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/composables/cookie.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/composables/index.mjs ($id_b067a79a)
-// Dependencies: 
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/cookie-es/dist/index.mjs ($id_f4975261)
-// - /node_modules/h3/dist/index.mjs ($id_57d7ded6)
-// - /node_modules/destr/dist/index.mjs ($id_03d15ecd)
-// - /node_modules/nuxt/dist/app/composables/ssr.mjs ($id_c4866ba7)
-// - /node_modules/nuxt/dist/app/composables/utils.mjs ($id_df511336)
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// --------------------
-const $id_511b441d = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/cookie-es/dist/index.mjs");
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/h3/dist/index.mjs");
-
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/destr/dist/index.mjs");
-
-const __vite_ssr_import_4__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/composables/ssr.mjs");
-
-const __vite_ssr_import_5__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/composables/utils.mjs");
-
-const __vite_ssr_import_6__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
-const CookieDefaults = {
-  path: "/",
-  decode: (val) => __vite_ssr_import_3__.default(decodeURIComponent(val)),
-  encode: (val) => encodeURIComponent(typeof val === "string" ? val : JSON.stringify(val))
+const MIMES = {
+  html: "text/html",
+  json: "application/json"
 };
-function useCookie(name, _opts) {
-  const opts = { ...CookieDefaults, ..._opts };
-  const cookies = readRawCookies(opts);
-  const cookie = __vite_ssr_import_5__.wrapInRef(cookies[name] ?? opts.default?.());
-  if (false) {
-    __vite_ssr_import_0__.watch(cookie, () => {
-      writeClientCookie(name, cookie.value, opts);
+const defer = typeof setImmediate !== "undefined" ? setImmediate : (fn) => fn();
+function send(event, data, type) {
+  if (type) {
+    defaultContentType(event, type);
+  }
+  return new Promise((resolve) => {
+    defer(() => {
+      event.res.end(data);
+      resolve(void 0);
     });
-  } else if (true) {
-    const nuxtApp = __vite_ssr_import_6__.useNuxtApp();
-    const writeFinalCookieValue = () => {
-      if (cookie.value !== cookies[name]) {
-        writeServerCookie(__vite_ssr_import_4__.useRequestEvent(nuxtApp), name, cookie.value, opts);
-      }
-    };
-    nuxtApp.hooks.hookOnce("app:rendered", writeFinalCookieValue);
-    nuxtApp.hooks.hookOnce("app:redirected", writeFinalCookieValue);
-  }
-  return cookie;
+  });
 }
-Object.defineProperty(__vite_ssr_exports__, "useCookie", { enumerable: true, configurable: true, get(){ return useCookie }});
-function readRawCookies(opts = {}) {
-  if (true) {
-    return __vite_ssr_import_1__.parse(__vite_ssr_import_4__.useRequestEvent()?.req.headers.cookie || "", opts);
-  } else if (false) {
-    return __vite_ssr_import_1__.parse(document.cookie, opts);
+function defaultContentType(event, type) {
+  if (type && !event.res.getHeader("Content-Type")) {
+    event.res.setHeader("Content-Type", type);
   }
 }
-function serializeCookie(name, value, opts = {}) {
-  if (value === null || value === void 0) {
-    return __vite_ssr_import_1__.serialize(name, value, { ...opts, maxAge: -1 });
-  }
-  return __vite_ssr_import_1__.serialize(name, value, opts);
+function sendRedirect(event, location2, code = 302) {
+  event.res.statusCode = code;
+  event.res.setHeader("Location", location2);
+  return send(event, "Redirecting to " + location2, MIMES.html);
 }
-function writeClientCookie(name, value, opts = {}) {
-  if (false) {
-    document.cookie = serializeCookie(name, value, opts);
-  }
-}
-function writeServerCookie(event, name, value, opts = {}) {
-  if (event) {
-    __vite_ssr_import_2__.appendHeader(event, "Set-Cookie", serializeCookie(name, value, opts));
+class H3Error extends Error {
+  constructor() {
+    super(...arguments);
+    this.statusCode = 500;
+    this.statusMessage = "H3Error";
   }
 }
-;
-}
-
-
-// --------------------
-// Request: /node_modules/cookie-es/dist/index.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/composables/cookie.mjs ($id_511b441d)
-// Dependencies: 
-
-// --------------------
-const $id_f4975261 = (global, module, _, exports, importMeta, ssrImport, ssrDynamicImport, ssrExportAll) =>
-import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/cookie-es/dist/index.mjs")
-  .then(r => {
-    if (r.default && r.default.__esModule)
-      r = r.default
-    exports.default = r.default
-    ssrExportAll(r)
-  })
-  .catch(e => {
-    console.error(e)
-    throw new Error("[vite dev] Error loading external \"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/cookie-es/dist/index.mjs\".")
-  })
-
-
-// --------------------
-// Request: /node_modules/h3/dist/index.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/composables/cookie.mjs ($id_511b441d)
-// - /node_modules/nuxt/dist/app/composables/router.mjs ($id_db4d90a8)
-// - /node_modules/nuxt/dist/app/plugins/router.mjs ($id_7fe121f6)
-// Dependencies: 
-
-// --------------------
-const $id_57d7ded6 = (global, module, _, exports, importMeta, ssrImport, ssrDynamicImport, ssrExportAll) =>
-import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/h3/dist/index.mjs")
-  .then(r => {
-    if (r.default && r.default.__esModule)
-      r = r.default
-    exports.default = r.default
-    ssrExportAll(r)
-  })
-  .catch(e => {
-    console.error(e)
-    throw new Error("[vite dev] Error loading external \"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/h3/dist/index.mjs\".")
-  })
-
-
-// --------------------
-// Request: /node_modules/destr/dist/index.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/composables/cookie.mjs ($id_511b441d)
-// Dependencies: 
-
-// --------------------
-const $id_03d15ecd = (global, module, _, exports, importMeta, ssrImport, ssrDynamicImport, ssrExportAll) =>
-import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/destr/dist/index.mjs")
-  .then(r => {
-    if (r.default && r.default.__esModule)
-      r = r.default
-    exports.default = r.default
-    ssrExportAll(r)
-  })
-  .catch(e => {
-    console.error(e)
-    throw new Error("[vite dev] Error loading external \"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/destr/dist/index.mjs\".")
-  })
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/composables/ssr.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/composables/cookie.mjs ($id_511b441d)
-// - /node_modules/nuxt/dist/app/composables/index.mjs ($id_b067a79a)
-// Dependencies: 
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// --------------------
-const $id_c4866ba7 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
-function useRequestHeaders(include) {
-  if (false) {
-    return {};
+function createError(input) {
+  var _a;
+  if (input instanceof H3Error) {
+    return input;
   }
-  const headers = __vite_ssr_import_0__.useNuxtApp().ssrContext?.event.req.headers ?? {};
-  if (!include) {
-    return headers;
+  const err = new H3Error((_a = input.message) != null ? _a : input.statusMessage);
+  if (input.statusCode) {
+    err.statusCode = input.statusCode;
   }
-  return Object.fromEntries(include.filter((key) => headers[key]).map((key) => [key, headers[key]]));
+  if (input.statusMessage) {
+    err.statusMessage = input.statusMessage;
+  }
+  if (input.data) {
+    err.data = input.data;
+  }
+  return err;
 }
-Object.defineProperty(__vite_ssr_exports__, "useRequestHeaders", { enumerable: true, configurable: true, get(){ return useRequestHeaders }});
-function useRequestEvent(nuxtApp = __vite_ssr_import_0__.useNuxtApp()) {
-  return nuxtApp.ssrContext?.event;
-}
-Object.defineProperty(__vite_ssr_exports__, "useRequestEvent", { enumerable: true, configurable: true, get(){ return useRequestEvent }});
-;
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/composables/router.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/composables/index.mjs ($id_b067a79a)
-// Dependencies: 
-// - /node_modules/h3/dist/index.mjs ($id_57d7ded6)
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// --------------------
-const $id_db4d90a8 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/h3/dist/index.mjs");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
 const useRouter = () => {
-  return __vite_ssr_import_1__.useNuxtApp()?.$router;
+  var _a;
+  return (_a = useNuxtApp()) == null ? void 0 : _a.$router;
 };
-Object.defineProperty(__vite_ssr_exports__, "useRouter", { enumerable: true, configurable: true, get(){ return useRouter }});
-const useRoute = () => {
-  return __vite_ssr_import_1__.useNuxtApp()._route;
-};
-Object.defineProperty(__vite_ssr_exports__, "useRoute", { enumerable: true, configurable: true, get(){ return useRoute }});
-const useActiveRoute = () => {
-  return __vite_ssr_import_1__.useNuxtApp()._activeRoute;
-};
-Object.defineProperty(__vite_ssr_exports__, "useActiveRoute", { enumerable: true, configurable: true, get(){ return useActiveRoute }});
-const defineNuxtRouteMiddleware = (middleware) => middleware;
-Object.defineProperty(__vite_ssr_exports__, "defineNuxtRouteMiddleware", { enumerable: true, configurable: true, get(){ return defineNuxtRouteMiddleware }});
-const addRouteMiddleware = (name, middleware, options = {}) => {
-  const nuxtApp = __vite_ssr_import_1__.useNuxtApp();
-  if (options.global || typeof name === "function") {
-    nuxtApp._middleware.global.push(typeof name === "function" ? name : middleware);
-  } else {
-    nuxtApp._middleware.named[name] = middleware;
-  }
-};
-Object.defineProperty(__vite_ssr_exports__, "addRouteMiddleware", { enumerable: true, configurable: true, get(){ return addRouteMiddleware }});
 const isProcessingMiddleware = () => {
   try {
-    if (__vite_ssr_import_1__.useNuxtApp()._processingMiddleware) {
+    if (useNuxtApp()._processingMiddleware) {
       return true;
     }
   } catch {
@@ -1289,72 +2446,22 @@ const navigateTo = (to, options = {}) => {
     return to;
   }
   const router = useRouter();
-  if (true) {
-    const nuxtApp = __vite_ssr_import_1__.useNuxtApp();
+  {
+    const nuxtApp = useNuxtApp();
     if (nuxtApp.ssrContext && nuxtApp.ssrContext.event) {
       const redirectLocation = router.resolve(to).fullPath;
-      return nuxtApp.callHook("app:redirected").then(() => __vite_ssr_import_0__.sendRedirect(nuxtApp.ssrContext.event, redirectLocation, options.redirectCode || 301));
+      return nuxtApp.callHook("app:redirected").then(() => sendRedirect(nuxtApp.ssrContext.event, redirectLocation, options.redirectCode || 301));
     }
   }
   return options.replace ? router.replace(to) : router.push(to);
 };
-Object.defineProperty(__vite_ssr_exports__, "navigateTo", { enumerable: true, configurable: true, get(){ return navigateTo }});
-const abortNavigation = (err) => {
-  if (true && !isProcessingMiddleware()) {
-    throw new Error("abortNavigation() is only usable inside a route middleware handler.");
-  }
-  if (err) {
-    throw err instanceof Error ? err : new Error(err);
-  }
-  return false;
-};
-Object.defineProperty(__vite_ssr_exports__, "abortNavigation", { enumerable: true, configurable: true, get(){ return abortNavigation }});
-;
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/components/index.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// Dependencies: 
-// - /node_modules/nuxt/dist/app/components/nuxt-link.mjs ($id_ffac87b5)
-// --------------------
-const $id_161bfe9f = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/components/nuxt-link.mjs");
-
-Object.defineProperty(__vite_ssr_exports__, "defineNuxtLink", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_0__.defineNuxtLink }});
-;
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/components/nuxt-link.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/components/index.mjs ($id_161bfe9f)
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-404.vue ($id_b90d4d0f)
-// Dependencies: 
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/ufo/dist/index.mjs ($id_614de060)
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// --------------------
-const $id_ffac87b5 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/ufo/dist/index.mjs");
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
 const firstNonUndefined = (...args) => args.find((arg) => arg !== void 0);
 const DEFAULT_EXTERNAL_REL_ATTRIBUTE = "noopener noreferrer";
 function defineNuxtLink(options) {
   const componentName = options.componentName || "NuxtLink";
   const checkPropConflicts = (props, main, sub) => {
-    if (true && props[main] !== void 0 && props[sub] !== void 0) {
-      console.warn(`[${componentName}] \`${main}\` and \`${sub}\` cannot be used together. \`${sub}\` will be ignored.`);
-    }
   };
-  return __vite_ssr_import_0__.defineComponent({
+  return defineComponent({
     name: componentName,
     props: {
       to: {
@@ -1414,12 +2521,12 @@ function defineNuxtLink(options) {
       }
     },
     setup(props, { slots }) {
-      const router = __vite_ssr_import_2__.useRouter();
-      const to = __vite_ssr_import_0__.computed(() => {
+      const router = useRouter();
+      const to = computed(() => {
         checkPropConflicts(props, "to", "href");
         return props.to || props.href || "";
       });
-      const isExternal = __vite_ssr_import_0__.computed(() => {
+      const isExternal = computed(() => {
         if (props.external) {
           return true;
         }
@@ -1429,11 +2536,12 @@ function defineNuxtLink(options) {
         if (typeof to.value === "object") {
           return false;
         }
-        return to.value === "" || __vite_ssr_import_1__.hasProtocol(to.value, true);
+        return to.value === "" || hasProtocol(to.value, true);
       });
       return () => {
+        var _a, _b;
         if (!isExternal.value) {
-          return __vite_ssr_import_0__.h(__vite_ssr_import_0__.resolveComponent("RouterLink"), {
+          return h(resolveComponent("RouterLink"), {
             to: to.value,
             activeClass: props.activeClass || options.activeClass,
             exactActiveClass: props.exactActiveClass || options.exactActiveClass,
@@ -1441,186 +2549,445 @@ function defineNuxtLink(options) {
             ariaCurrentValue: props.ariaCurrentValue
           }, slots.default);
         }
-        const href = typeof to.value === "object" ? router.resolve(to.value)?.href ?? null : to.value || null;
+        const href = typeof to.value === "object" ? (_b = (_a = router.resolve(to.value)) == null ? void 0 : _a.href) != null ? _b : null : to.value || null;
         const target = props.target || null;
         checkPropConflicts(props, "noRel", "rel");
         const rel = props.noRel ? null : firstNonUndefined(props.rel, options.externalRelAttribute, href ? DEFAULT_EXTERNAL_REL_ATTRIBUTE : "") || null;
-        return __vite_ssr_import_0__.h("a", { href, rel, target }, slots.default());
+        return h("a", { href, rel, target }, slots.default());
       };
     }
   });
 }
-Object.defineProperty(__vite_ssr_exports__, "defineNuxtLink", { enumerable: true, configurable: true, get(){ return defineNuxtLink }});
-__vite_ssr_exports__.default = defineNuxtLink({ componentName: "NuxtLink" });
-;
+const __nuxt_component_0$1 = defineNuxtLink({ componentName: "NuxtLink" });
+var shared_cjs_prod = {};
+Object.defineProperty(shared_cjs_prod, "__esModule", { value: true });
+function makeMap(str, expectsLowerCase) {
+  const map = /* @__PURE__ */ Object.create(null);
+  const list = str.split(",");
+  for (let i = 0; i < list.length; i++) {
+    map[list[i]] = true;
+  }
+  return expectsLowerCase ? (val) => !!map[val.toLowerCase()] : (val) => !!map[val];
 }
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/head/runtime/index.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/imports.mjs ($id_e30cac3e)
-// Dependencies: 
-// - /node_modules/nuxt/dist/head/runtime/composables.mjs ($id_04ea9504)
-// --------------------
-const $id_b7351483 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/nuxt/dist/head/runtime/composables.mjs");
-__vite_ssr_exportAll__(__vite_ssr_import_0__);
-;
+const PatchFlagNames = {
+  [1]: `TEXT`,
+  [2]: `CLASS`,
+  [4]: `STYLE`,
+  [8]: `PROPS`,
+  [16]: `FULL_PROPS`,
+  [32]: `HYDRATE_EVENTS`,
+  [64]: `STABLE_FRAGMENT`,
+  [128]: `KEYED_FRAGMENT`,
+  [256]: `UNKEYED_FRAGMENT`,
+  [512]: `NEED_PATCH`,
+  [1024]: `DYNAMIC_SLOTS`,
+  [2048]: `DEV_ROOT_FRAGMENT`,
+  [-1]: `HOISTED`,
+  [-2]: `BAIL`
+};
+const slotFlagsText = {
+  [1]: "STABLE",
+  [2]: "DYNAMIC",
+  [3]: "FORWARDED"
+};
+const GLOBALS_WHITE_LISTED = "Infinity,undefined,NaN,isFinite,isNaN,parseFloat,parseInt,decodeURI,decodeURIComponent,encodeURI,encodeURIComponent,Math,Number,Date,Array,Object,Boolean,String,RegExp,Map,Set,JSON,Intl,BigInt";
+const isGloballyWhitelisted = /* @__PURE__ */ makeMap(GLOBALS_WHITE_LISTED);
+const range = 2;
+function generateCodeFrame(source, start = 0, end = source.length) {
+  let lines = source.split(/(\r?\n)/);
+  const newlineSequences = lines.filter((_, idx) => idx % 2 === 1);
+  lines = lines.filter((_, idx) => idx % 2 === 0);
+  let count = 0;
+  const res = [];
+  for (let i = 0; i < lines.length; i++) {
+    count += lines[i].length + (newlineSequences[i] && newlineSequences[i].length || 0);
+    if (count >= start) {
+      for (let j = i - range; j <= i + range || end > count; j++) {
+        if (j < 0 || j >= lines.length)
+          continue;
+        const line = j + 1;
+        res.push(`${line}${" ".repeat(Math.max(3 - String(line).length, 0))}|  ${lines[j]}`);
+        const lineLength = lines[j].length;
+        const newLineSeqLength = newlineSequences[j] && newlineSequences[j].length || 0;
+        if (j === i) {
+          const pad = start - (count - (lineLength + newLineSeqLength));
+          const length = Math.max(1, end > count ? lineLength - pad : end - start);
+          res.push(`   |  ` + " ".repeat(pad) + "^".repeat(length));
+        } else if (j > i) {
+          if (end > count) {
+            const length = Math.max(Math.min(end - count, lineLength), 1);
+            res.push(`   |  ` + "^".repeat(length));
+          }
+          count += lineLength + newLineSeqLength;
+        }
+      }
+      break;
+    }
+  }
+  return res.join("\n");
 }
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/head/runtime/composables.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/head/runtime/index.mjs ($id_b7351483)
-// - /node_modules/nuxt/dist/head/runtime/components.mjs ($id_b2a29d6f)
-// - /node_modules/nuxt/dist/head/runtime/plugin.mjs ($id_a2650341)
-// Dependencies: 
-// - /node_modules/@vue/shared/dist/shared.cjs.js ($id_852b06a2)
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// --------------------
-const $id_04ea9504 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/@vue/shared/dist/shared.cjs.js");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
+const specialBooleanAttrs = `itemscope,allowfullscreen,formnovalidate,ismap,nomodule,novalidate,readonly`;
+const isSpecialBooleanAttr = /* @__PURE__ */ makeMap(specialBooleanAttrs);
+const isBooleanAttr = /* @__PURE__ */ makeMap(specialBooleanAttrs + `,async,autofocus,autoplay,controls,default,defer,disabled,hidden,loop,open,required,reversed,scoped,seamless,checked,muted,multiple,selected`);
+function includeBooleanAttr(value) {
+  return !!value || value === "";
+}
+const unsafeAttrCharRE = /[>/="'\u0009\u000a\u000c\u0020]/;
+const attrValidationCache = {};
+function isSSRSafeAttrName(name) {
+  if (attrValidationCache.hasOwnProperty(name)) {
+    return attrValidationCache[name];
+  }
+  const isUnsafe = unsafeAttrCharRE.test(name);
+  if (isUnsafe) {
+    console.error(`unsafe attribute name: ${name}`);
+  }
+  return attrValidationCache[name] = !isUnsafe;
+}
+const propsToAttrMap = {
+  acceptCharset: "accept-charset",
+  className: "class",
+  htmlFor: "for",
+  httpEquiv: "http-equiv"
+};
+const isNoUnitNumericStyleProp = /* @__PURE__ */ makeMap(`animation-iteration-count,border-image-outset,border-image-slice,border-image-width,box-flex,box-flex-group,box-ordinal-group,column-count,columns,flex,flex-grow,flex-positive,flex-shrink,flex-negative,flex-order,grid-row,grid-row-end,grid-row-span,grid-row-start,grid-column,grid-column-end,grid-column-span,grid-column-start,font-weight,line-clamp,line-height,opacity,order,orphans,tab-size,widows,z-index,zoom,fill-opacity,flood-opacity,stop-opacity,stroke-dasharray,stroke-dashoffset,stroke-miterlimit,stroke-opacity,stroke-width`);
+const isKnownHtmlAttr = /* @__PURE__ */ makeMap(`accept,accept-charset,accesskey,action,align,allow,alt,async,autocapitalize,autocomplete,autofocus,autoplay,background,bgcolor,border,buffered,capture,challenge,charset,checked,cite,class,code,codebase,color,cols,colspan,content,contenteditable,contextmenu,controls,coords,crossorigin,csp,data,datetime,decoding,default,defer,dir,dirname,disabled,download,draggable,dropzone,enctype,enterkeyhint,for,form,formaction,formenctype,formmethod,formnovalidate,formtarget,headers,height,hidden,high,href,hreflang,http-equiv,icon,id,importance,integrity,ismap,itemprop,keytype,kind,label,lang,language,loading,list,loop,low,manifest,max,maxlength,minlength,media,min,multiple,muted,name,novalidate,open,optimum,pattern,ping,placeholder,poster,preload,radiogroup,readonly,referrerpolicy,rel,required,reversed,rows,rowspan,sandbox,scope,scoped,selected,shape,size,sizes,slot,span,spellcheck,src,srcdoc,srclang,srcset,start,step,style,summary,tabindex,target,title,translate,type,usemap,value,width,wrap`);
+const isKnownSvgAttr = /* @__PURE__ */ makeMap(`xmlns,accent-height,accumulate,additive,alignment-baseline,alphabetic,amplitude,arabic-form,ascent,attributeName,attributeType,azimuth,baseFrequency,baseline-shift,baseProfile,bbox,begin,bias,by,calcMode,cap-height,class,clip,clipPathUnits,clip-path,clip-rule,color,color-interpolation,color-interpolation-filters,color-profile,color-rendering,contentScriptType,contentStyleType,crossorigin,cursor,cx,cy,d,decelerate,descent,diffuseConstant,direction,display,divisor,dominant-baseline,dur,dx,dy,edgeMode,elevation,enable-background,end,exponent,fill,fill-opacity,fill-rule,filter,filterRes,filterUnits,flood-color,flood-opacity,font-family,font-size,font-size-adjust,font-stretch,font-style,font-variant,font-weight,format,from,fr,fx,fy,g1,g2,glyph-name,glyph-orientation-horizontal,glyph-orientation-vertical,glyphRef,gradientTransform,gradientUnits,hanging,height,href,hreflang,horiz-adv-x,horiz-origin-x,id,ideographic,image-rendering,in,in2,intercept,k,k1,k2,k3,k4,kernelMatrix,kernelUnitLength,kerning,keyPoints,keySplines,keyTimes,lang,lengthAdjust,letter-spacing,lighting-color,limitingConeAngle,local,marker-end,marker-mid,marker-start,markerHeight,markerUnits,markerWidth,mask,maskContentUnits,maskUnits,mathematical,max,media,method,min,mode,name,numOctaves,offset,opacity,operator,order,orient,orientation,origin,overflow,overline-position,overline-thickness,panose-1,paint-order,path,pathLength,patternContentUnits,patternTransform,patternUnits,ping,pointer-events,points,pointsAtX,pointsAtY,pointsAtZ,preserveAlpha,preserveAspectRatio,primitiveUnits,r,radius,referrerPolicy,refX,refY,rel,rendering-intent,repeatCount,repeatDur,requiredExtensions,requiredFeatures,restart,result,rotate,rx,ry,scale,seed,shape-rendering,slope,spacing,specularConstant,specularExponent,speed,spreadMethod,startOffset,stdDeviation,stemh,stemv,stitchTiles,stop-color,stop-opacity,strikethrough-position,strikethrough-thickness,string,stroke,stroke-dasharray,stroke-dashoffset,stroke-linecap,stroke-linejoin,stroke-miterlimit,stroke-opacity,stroke-width,style,surfaceScale,systemLanguage,tabindex,tableValues,target,targetX,targetY,text-anchor,text-decoration,text-rendering,textLength,to,transform,transform-origin,type,u1,u2,underline-position,underline-thickness,unicode,unicode-bidi,unicode-range,units-per-em,v-alphabetic,v-hanging,v-ideographic,v-mathematical,values,vector-effect,version,vert-adv-y,vert-origin-x,vert-origin-y,viewBox,viewTarget,visibility,width,widths,word-spacing,writing-mode,x,x-height,x1,x2,xChannelSelector,xlink:actuate,xlink:arcrole,xlink:href,xlink:role,xlink:show,xlink:title,xlink:type,xml:base,xml:lang,xml:space,y,y1,y2,yChannelSelector,z,zoomAndPan`);
+function normalizeStyle(value) {
+  if (isArray(value)) {
+    const res = {};
+    for (let i = 0; i < value.length; i++) {
+      const item = value[i];
+      const normalized = isString(item) ? parseStringStyle(item) : normalizeStyle(item);
+      if (normalized) {
+        for (const key in normalized) {
+          res[key] = normalized[key];
+        }
+      }
+    }
+    return res;
+  } else if (isString(value)) {
+    return value;
+  } else if (isObject$1(value)) {
+    return value;
+  }
+}
+const listDelimiterRE = /;(?![^(]*\))/g;
+const propertyDelimiterRE = /:(.+)/;
+function parseStringStyle(cssText) {
+  const ret = {};
+  cssText.split(listDelimiterRE).forEach((item) => {
+    if (item) {
+      const tmp = item.split(propertyDelimiterRE);
+      tmp.length > 1 && (ret[tmp[0].trim()] = tmp[1].trim());
+    }
+  });
+  return ret;
+}
+function stringifyStyle(styles) {
+  let ret = "";
+  if (!styles || isString(styles)) {
+    return ret;
+  }
+  for (const key in styles) {
+    const value = styles[key];
+    const normalizedKey = key.startsWith(`--`) ? key : hyphenate(key);
+    if (isString(value) || typeof value === "number" && isNoUnitNumericStyleProp(normalizedKey)) {
+      ret += `${normalizedKey}:${value};`;
+    }
+  }
+  return ret;
+}
+function normalizeClass(value) {
+  let res = "";
+  if (isString(value)) {
+    res = value;
+  } else if (isArray(value)) {
+    for (let i = 0; i < value.length; i++) {
+      const normalized = normalizeClass(value[i]);
+      if (normalized) {
+        res += normalized + " ";
+      }
+    }
+  } else if (isObject$1(value)) {
+    for (const name in value) {
+      if (value[name]) {
+        res += name + " ";
+      }
+    }
+  }
+  return res.trim();
+}
+function normalizeProps(props) {
+  if (!props)
+    return null;
+  let { class: klass, style: style2 } = props;
+  if (klass && !isString(klass)) {
+    props.class = normalizeClass(klass);
+  }
+  if (style2) {
+    props.style = normalizeStyle(style2);
+  }
+  return props;
+}
+const HTML_TAGS = "html,body,base,head,link,meta,style,title,address,article,aside,footer,header,h1,h2,h3,h4,h5,h6,nav,section,div,dd,dl,dt,figcaption,figure,picture,hr,img,li,main,ol,p,pre,ul,a,b,abbr,bdi,bdo,br,cite,code,data,dfn,em,i,kbd,mark,q,rp,rt,ruby,s,samp,small,span,strong,sub,sup,time,u,var,wbr,area,audio,map,track,video,embed,object,param,source,canvas,script,noscript,del,ins,caption,col,colgroup,table,thead,tbody,td,th,tr,button,datalist,fieldset,form,input,label,legend,meter,optgroup,option,output,progress,select,textarea,details,dialog,menu,summary,template,blockquote,iframe,tfoot";
+const SVG_TAGS = "svg,animate,animateMotion,animateTransform,circle,clipPath,color-profile,defs,desc,discard,ellipse,feBlend,feColorMatrix,feComponentTransfer,feComposite,feConvolveMatrix,feDiffuseLighting,feDisplacementMap,feDistanceLight,feDropShadow,feFlood,feFuncA,feFuncB,feFuncG,feFuncR,feGaussianBlur,feImage,feMerge,feMergeNode,feMorphology,feOffset,fePointLight,feSpecularLighting,feSpotLight,feTile,feTurbulence,filter,foreignObject,g,hatch,hatchpath,image,line,linearGradient,marker,mask,mesh,meshgradient,meshpatch,meshrow,metadata,mpath,path,pattern,polygon,polyline,radialGradient,rect,set,solidcolor,stop,switch,symbol,text,textPath,title,tspan,unknown,use,view";
+const VOID_TAGS = "area,base,br,col,embed,hr,img,input,link,meta,param,source,track,wbr";
+const isHTMLTag = /* @__PURE__ */ makeMap(HTML_TAGS);
+const isSVGTag = /* @__PURE__ */ makeMap(SVG_TAGS);
+const isVoidTag = /* @__PURE__ */ makeMap(VOID_TAGS);
+const escapeRE = /["'&<>]/;
+function escapeHtml(string) {
+  const str = "" + string;
+  const match = escapeRE.exec(str);
+  if (!match) {
+    return str;
+  }
+  let html = "";
+  let escaped;
+  let index;
+  let lastIndex = 0;
+  for (index = match.index; index < str.length; index++) {
+    switch (str.charCodeAt(index)) {
+      case 34:
+        escaped = "&quot;";
+        break;
+      case 38:
+        escaped = "&amp;";
+        break;
+      case 39:
+        escaped = "&#39;";
+        break;
+      case 60:
+        escaped = "&lt;";
+        break;
+      case 62:
+        escaped = "&gt;";
+        break;
+      default:
+        continue;
+    }
+    if (lastIndex !== index) {
+      html += str.slice(lastIndex, index);
+    }
+    lastIndex = index + 1;
+    html += escaped;
+  }
+  return lastIndex !== index ? html + str.slice(lastIndex, index) : html;
+}
+const commentStripRE = /^-?>|<!--|-->|--!>|<!-$/g;
+function escapeHtmlComment(src) {
+  return src.replace(commentStripRE, "");
+}
+function looseCompareArrays(a, b) {
+  if (a.length !== b.length)
+    return false;
+  let equal = true;
+  for (let i = 0; equal && i < a.length; i++) {
+    equal = looseEqual(a[i], b[i]);
+  }
+  return equal;
+}
+function looseEqual(a, b) {
+  if (a === b)
+    return true;
+  let aValidType = isDate(a);
+  let bValidType = isDate(b);
+  if (aValidType || bValidType) {
+    return aValidType && bValidType ? a.getTime() === b.getTime() : false;
+  }
+  aValidType = isArray(a);
+  bValidType = isArray(b);
+  if (aValidType || bValidType) {
+    return aValidType && bValidType ? looseCompareArrays(a, b) : false;
+  }
+  aValidType = isObject$1(a);
+  bValidType = isObject$1(b);
+  if (aValidType || bValidType) {
+    if (!aValidType || !bValidType) {
+      return false;
+    }
+    const aKeysCount = Object.keys(a).length;
+    const bKeysCount = Object.keys(b).length;
+    if (aKeysCount !== bKeysCount) {
+      return false;
+    }
+    for (const key in a) {
+      const aHasKey = a.hasOwnProperty(key);
+      const bHasKey = b.hasOwnProperty(key);
+      if (aHasKey && !bHasKey || !aHasKey && bHasKey || !looseEqual(a[key], b[key])) {
+        return false;
+      }
+    }
+  }
+  return String(a) === String(b);
+}
+function looseIndexOf(arr, val) {
+  return arr.findIndex((item) => looseEqual(item, val));
+}
+const toDisplayString = (val) => {
+  return isString(val) ? val : val == null ? "" : isArray(val) || isObject$1(val) && (val.toString === objectToString || !isFunction(val.toString)) ? JSON.stringify(val, replacer, 2) : String(val);
+};
+const replacer = (_key, val) => {
+  if (val && val.__v_isRef) {
+    return replacer(_key, val.value);
+  } else if (isMap(val)) {
+    return {
+      [`Map(${val.size})`]: [...val.entries()].reduce((entries, [key, val2]) => {
+        entries[`${key} =>`] = val2;
+        return entries;
+      }, {})
+    };
+  } else if (isSet(val)) {
+    return {
+      [`Set(${val.size})`]: [...val.values()]
+    };
+  } else if (isObject$1(val) && !isArray(val) && !isPlainObject(val)) {
+    return String(val);
+  }
+  return val;
+};
+const EMPTY_OBJ = {};
+const EMPTY_ARR = [];
+const NOOP = () => {
+};
+const NO = () => false;
+const onRE = /^on[^a-z]/;
+const isOn = (key) => onRE.test(key);
+const isModelListener = (key) => key.startsWith("onUpdate:");
+const extend = Object.assign;
+const remove = (arr, el) => {
+  const i = arr.indexOf(el);
+  if (i > -1) {
+    arr.splice(i, 1);
+  }
+};
+const hasOwnProperty = Object.prototype.hasOwnProperty;
+const hasOwn = (val, key) => hasOwnProperty.call(val, key);
+const isArray = Array.isArray;
+const isMap = (val) => toTypeString(val) === "[object Map]";
+const isSet = (val) => toTypeString(val) === "[object Set]";
+const isDate = (val) => val instanceof Date;
+const isFunction = (val) => typeof val === "function";
+const isString = (val) => typeof val === "string";
+const isSymbol = (val) => typeof val === "symbol";
+const isObject$1 = (val) => val !== null && typeof val === "object";
+const isPromise = (val) => {
+  return isObject$1(val) && isFunction(val.then) && isFunction(val.catch);
+};
+const objectToString = Object.prototype.toString;
+const toTypeString = (value) => objectToString.call(value);
+const toRawType = (value) => {
+  return toTypeString(value).slice(8, -1);
+};
+const isPlainObject = (val) => toTypeString(val) === "[object Object]";
+const isIntegerKey = (key) => isString(key) && key !== "NaN" && key[0] !== "-" && "" + parseInt(key, 10) === key;
+const isReservedProp = /* @__PURE__ */ makeMap(",key,ref,ref_for,ref_key,onVnodeBeforeMount,onVnodeMounted,onVnodeBeforeUpdate,onVnodeUpdated,onVnodeBeforeUnmount,onVnodeUnmounted");
+const isBuiltInDirective = /* @__PURE__ */ makeMap("bind,cloak,else-if,else,for,html,if,model,on,once,pre,show,slot,text,memo");
+const cacheStringFunction = (fn) => {
+  const cache = /* @__PURE__ */ Object.create(null);
+  return (str) => {
+    const hit = cache[str];
+    return hit || (cache[str] = fn(str));
+  };
+};
+const camelizeRE = /-(\w)/g;
+const camelize = cacheStringFunction((str) => {
+  return str.replace(camelizeRE, (_, c) => c ? c.toUpperCase() : "");
+});
+const hyphenateRE = /\B([A-Z])/g;
+const hyphenate = cacheStringFunction((str) => str.replace(hyphenateRE, "-$1").toLowerCase());
+const capitalize = cacheStringFunction((str) => str.charAt(0).toUpperCase() + str.slice(1));
+const toHandlerKey = cacheStringFunction((str) => str ? `on${capitalize(str)}` : ``);
+const hasChanged = (value, oldValue) => !Object.is(value, oldValue);
+const invokeArrayFns = (fns, arg) => {
+  for (let i = 0; i < fns.length; i++) {
+    fns[i](arg);
+  }
+};
+const def = (obj, key, value) => {
+  Object.defineProperty(obj, key, {
+    configurable: true,
+    enumerable: false,
+    value
+  });
+};
+const toNumber = (val) => {
+  const n = parseFloat(val);
+  return isNaN(n) ? val : n;
+};
+let _globalThis;
+const getGlobalThis = () => {
+  return _globalThis || (_globalThis = typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : typeof commonjsGlobal !== "undefined" ? commonjsGlobal : {});
+};
+shared_cjs_prod.EMPTY_ARR = EMPTY_ARR;
+shared_cjs_prod.EMPTY_OBJ = EMPTY_OBJ;
+shared_cjs_prod.NO = NO;
+shared_cjs_prod.NOOP = NOOP;
+shared_cjs_prod.PatchFlagNames = PatchFlagNames;
+shared_cjs_prod.camelize = camelize;
+shared_cjs_prod.capitalize = capitalize;
+shared_cjs_prod.def = def;
+shared_cjs_prod.escapeHtml = escapeHtml;
+shared_cjs_prod.escapeHtmlComment = escapeHtmlComment;
+shared_cjs_prod.extend = extend;
+shared_cjs_prod.generateCodeFrame = generateCodeFrame;
+shared_cjs_prod.getGlobalThis = getGlobalThis;
+shared_cjs_prod.hasChanged = hasChanged;
+shared_cjs_prod.hasOwn = hasOwn;
+shared_cjs_prod.hyphenate = hyphenate;
+shared_cjs_prod.includeBooleanAttr = includeBooleanAttr;
+shared_cjs_prod.invokeArrayFns = invokeArrayFns;
+shared_cjs_prod.isArray = isArray;
+shared_cjs_prod.isBooleanAttr = isBooleanAttr;
+shared_cjs_prod.isBuiltInDirective = isBuiltInDirective;
+shared_cjs_prod.isDate = isDate;
+var isFunction_1 = shared_cjs_prod.isFunction = isFunction;
+shared_cjs_prod.isGloballyWhitelisted = isGloballyWhitelisted;
+shared_cjs_prod.isHTMLTag = isHTMLTag;
+shared_cjs_prod.isIntegerKey = isIntegerKey;
+shared_cjs_prod.isKnownHtmlAttr = isKnownHtmlAttr;
+shared_cjs_prod.isKnownSvgAttr = isKnownSvgAttr;
+shared_cjs_prod.isMap = isMap;
+shared_cjs_prod.isModelListener = isModelListener;
+shared_cjs_prod.isNoUnitNumericStyleProp = isNoUnitNumericStyleProp;
+shared_cjs_prod.isObject = isObject$1;
+shared_cjs_prod.isOn = isOn;
+shared_cjs_prod.isPlainObject = isPlainObject;
+shared_cjs_prod.isPromise = isPromise;
+shared_cjs_prod.isReservedProp = isReservedProp;
+shared_cjs_prod.isSSRSafeAttrName = isSSRSafeAttrName;
+shared_cjs_prod.isSVGTag = isSVGTag;
+shared_cjs_prod.isSet = isSet;
+shared_cjs_prod.isSpecialBooleanAttr = isSpecialBooleanAttr;
+shared_cjs_prod.isString = isString;
+shared_cjs_prod.isSymbol = isSymbol;
+shared_cjs_prod.isVoidTag = isVoidTag;
+shared_cjs_prod.looseEqual = looseEqual;
+shared_cjs_prod.looseIndexOf = looseIndexOf;
+shared_cjs_prod.makeMap = makeMap;
+shared_cjs_prod.normalizeClass = normalizeClass;
+shared_cjs_prod.normalizeProps = normalizeProps;
+shared_cjs_prod.normalizeStyle = normalizeStyle;
+shared_cjs_prod.objectToString = objectToString;
+shared_cjs_prod.parseStringStyle = parseStringStyle;
+shared_cjs_prod.propsToAttrMap = propsToAttrMap;
+shared_cjs_prod.remove = remove;
+shared_cjs_prod.slotFlagsText = slotFlagsText;
+shared_cjs_prod.stringifyStyle = stringifyStyle;
+shared_cjs_prod.toDisplayString = toDisplayString;
+shared_cjs_prod.toHandlerKey = toHandlerKey;
+shared_cjs_prod.toNumber = toNumber;
+shared_cjs_prod.toRawType = toRawType;
+shared_cjs_prod.toTypeString = toTypeString;
 function useHead(meta) {
-  const resolvedMeta = __vite_ssr_import_0__.isFunction(meta) ? __vite_ssr_import_1__.computed(meta) : meta;
-  __vite_ssr_import_2__.useNuxtApp()._useHead(resolvedMeta);
+  const resolvedMeta = isFunction_1(meta) ? computed(meta) : meta;
+  useNuxtApp()._useHead(resolvedMeta);
 }
-Object.defineProperty(__vite_ssr_exports__, "useHead", { enumerable: true, configurable: true, get(){ return useHead }});
-function useMeta(meta) {
-  return useHead(meta);
-}
-Object.defineProperty(__vite_ssr_exports__, "useMeta", { enumerable: true, configurable: true, get(){ return useMeta }});
-;
-}
-
-
-// --------------------
-// Request: /node_modules/@vue/shared/dist/shared.cjs.js
-// Parents: 
-// - /node_modules/nuxt/dist/head/runtime/composables.mjs ($id_04ea9504)
-// Dependencies: 
-
-// --------------------
-const $id_852b06a2 = (global, module, _, exports, importMeta, ssrImport, ssrDynamicImport, ssrExportAll) =>
-import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/@vue/shared/dist/shared.cjs.js")
-  .then(r => {
-    if (r.default && r.default.__esModule)
-      r = r.default
-    exports.default = r.default
-    ssrExportAll(r)
-  })
-  .catch(e => {
-    console.error(e)
-    throw new Error("[vite dev] Error loading external \"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/@vue/shared/dist/shared.cjs.js\".")
-  })
-
-
-// --------------------
-// Request: /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/css.mjs
-// Parents: 
-// - /mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/nuxt/dist/app/entry ($id_e0113c9e)
-// Dependencies: 
-// - /node_modules/ress/ress.css ($id_afcbbe75)
-// - /assets/css/style.css ($id_2262f03b)
-// - /assets/css/style.scss ($id_7107a6a0)
-// --------------------
-const $id_6f3a9fbf = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/ress/ress.css");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/assets/css/style.css");
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/assets/css/style.scss");
-;
-}
-
-
-// --------------------
-// Request: /node_modules/ress/ress.css
-// Parents: 
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/css.mjs ($id_6f3a9fbf)
-// Dependencies: 
-
-// --------------------
-const $id_afcbbe75 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-__vite_ssr_exports__.default = "html{-webkit-text-size-adjust:100%;box-sizing:border-box;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-break:normal}*,:after,:before{background-repeat:no-repeat;box-sizing:inherit}:after,:before{text-decoration:inherit;vertical-align:inherit}*{margin:0;padding:0}hr{color:inherit;height:0;overflow:visible}details,main{display:block}summary{display:list-item}small{font-size:80%}[hidden]{display:none}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}a{background-color:transparent}a:active,a:hover{outline-width:0}code,kbd,pre,samp{font-family:monospace,monospace}pre{font-size:1em}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-color:inherit;text-indent:0}iframe{border-style:none}input{border-radius:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}textarea{overflow:auto;resize:vertical}button,input,optgroup,select,textarea{font:inherit}optgroup{font-weight:700}button{overflow:visible}button,select{text-transform:none}[role=button],[type=button],[type=reset],[type=submit],button{cursor:pointer}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button:-moz-focusring{outline:1px dotted ButtonText}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}button,input,select,textarea{background-color:transparent;border-style:none}a:focus,button:focus,input:focus,select:focus,textarea:focus{outline-width:0}select{-moz-appearance:none;-webkit-appearance:none}select::-ms-expand{display:none}select::-ms-value{color:currentColor}legend{border:0;color:inherit;display:table;max-width:100%;white-space:normal}::-webkit-file-upload-button{-webkit-appearance:button;color:inherit;font:inherit}[disabled]{cursor:default}img{border-style:none}progress{vertical-align:baseline}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled=true]{cursor:default}";
-}
-
-
-// --------------------
-// Request: /assets/css/style.css
-// Parents: 
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/css.mjs ($id_6f3a9fbf)
-// Dependencies: 
-
-// --------------------
-const $id_2262f03b = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-__vite_ssr_exports__.default = "@charset \"UTF-8\";body{-ms-overflow-style:none;color:#333;scrollbar-width:none}body::-webkit-scrollbar{display:none}div,html,section{font-family:\"Gill Sans\",\"Gill Sans MT\",\"メイリオ\",\"Meiryo\",\"Trebuchet MS\",sans-serif;margin:0 auto}input[type=text]::-moz-placeholder{text-align:center}input[type=text]:-ms-input-placeholder{text-align:center}input[type=text]::placeholder{text-align:center}";
-}
-
-
-// --------------------
-// Request: /assets/css/style.scss
-// Parents: 
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/css.mjs ($id_6f3a9fbf)
-// Dependencies: 
-
-// --------------------
-const $id_7107a6a0 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-__vite_ssr_exports__.default = "@charset \"UTF-8\";body{-ms-overflow-style:none;color:#333;scrollbar-width:none}body::-webkit-scrollbar{display:none}div,html,section{font-family:\"Gill Sans\",\"Gill Sans MT\",\"メイリオ\",\"Meiryo\",\"Trebuchet MS\",sans-serif;margin:0 auto}input[type=text]::-moz-placeholder{text-align:center}input[type=text]:-ms-input-placeholder{text-align:center}input[type=text]::placeholder{text-align:center}";
-}
-
-
-// --------------------
-// Request: /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/plugins/server.mjs
-// Parents: 
-// - /mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/nuxt/dist/app/entry ($id_e0113c9e)
-// Dependencies: 
-// - /node_modules/nuxt/dist/app/plugins/preload.server.mjs ($id_9871bba0)
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/components.plugin.mjs ($id_c35c5cc8)
-// - /node_modules/nuxt/dist/head/runtime/lib/vueuse-head.plugin.mjs ($id_e6f12003)
-// - /node_modules/nuxt/dist/head/runtime/plugin.mjs ($id_a2650341)
-// - /node_modules/nuxt/dist/app/plugins/router.mjs ($id_7fe121f6)
-// --------------------
-const $id_232cc801 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/plugins/preload.server.mjs");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/components.plugin.mjs");
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/nuxt/dist/head/runtime/lib/vueuse-head.plugin.mjs");
-
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/nuxt/dist/head/runtime/plugin.mjs");
-
-const __vite_ssr_import_4__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/plugins/router.mjs");
-
-__vite_ssr_exports__.default = [
-  __vite_ssr_import_0__.default,
-  __vite_ssr_import_1__.default,
-  __vite_ssr_import_2__.default,
-  __vite_ssr_import_3__.default,
-  __vite_ssr_import_4__.default
-];
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/plugins/preload.server.mjs
-// Parents: 
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/plugins/server.mjs ($id_232cc801)
-// Dependencies: 
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// --------------------
-const $id_9871bba0 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
-__vite_ssr_exports__.default = __vite_ssr_import_0__.defineNuxtPlugin((nuxtApp) => {
+const ress = "";
+const style$1 = "";
+const style = "";
+const preload = defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.mixin({
     beforeCreate() {
       const { _registeredComponents } = this.$nuxt.ssrContext;
@@ -1629,148 +2996,38 @@ __vite_ssr_exports__.default = __vite_ssr_import_0__.defineNuxtPlugin((nuxtApp) 
     }
   });
 });
-;
-}
-
-
-// --------------------
-// Request: /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/components.plugin.mjs
-// Parents: 
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/plugins/server.mjs ($id_232cc801)
-// Dependencies: 
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// --------------------
-const $id_c35c5cc8 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-
-const components = {}
-
-__vite_ssr_exports__.default = function (nuxtApp) {
+const components = {};
+function componentsPlugin_51697ab2(nuxtApp) {
   for (const name in components) {
-    nuxtApp.vueApp.component(name, components[name])
-    nuxtApp.vueApp.component('Lazy' + name, components[name])
+    nuxtApp.vueApp.component(name, components[name]);
+    nuxtApp.vueApp.component("Lazy" + name, components[name]);
   }
 }
-;
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/head/runtime/lib/vueuse-head.plugin.mjs
-// Parents: 
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/plugins/server.mjs ($id_232cc801)
-// Dependencies: 
-// - /node_modules/@vueuse/head/dist/index.mjs ($id_c032264e)
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/defu/dist/defu.mjs ($id_d7afab65)
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// --------------------
-const $id_e6f12003 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/@vueuse/head/dist/index.mjs");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/defu/dist/defu.mjs");
-
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
-__vite_ssr_exports__.default = __vite_ssr_import_3__.defineNuxtPlugin((nuxtApp) => {
-  const head = __vite_ssr_import_0__.createHead();
-  nuxtApp.vueApp.use(head);
-  let headReady = false;
-  nuxtApp.hooks.hookOnce("app:mounted", () => {
-    __vite_ssr_import_1__.watchEffect(() => {
-      head.updateDOM();
-    });
-    headReady = true;
-  });
-  const titleTemplate = __vite_ssr_import_1__.ref();
-  nuxtApp._useHead = (_meta) => {
-    const meta = __vite_ssr_import_1__.ref(_meta);
-    if ("titleTemplate" in meta.value) {
-      titleTemplate.value = meta.value.titleTemplate;
-    }
-    const headObj = __vite_ssr_import_1__.computed(() => {
-      const overrides = { meta: [] };
-      if (titleTemplate.value && "title" in meta.value) {
-        overrides.title = typeof titleTemplate.value === "function" ? titleTemplate.value(meta.value.title) : titleTemplate.value.replace(/%s/g, meta.value.title);
-      }
-      if (meta.value.charset) {
-        overrides.meta.push({ key: "charset", charset: meta.value.charset });
-      }
-      if (meta.value.viewport) {
-        overrides.meta.push({ name: "viewport", content: meta.value.viewport });
-      }
-      return __vite_ssr_import_2__.default(overrides, meta.value);
-    });
-    head.addHeadObjs(headObj);
-    if (true) {
-      return;
-    }
-    if (headReady) {
-      __vite_ssr_import_1__.watchEffect(() => {
-        head.updateDOM();
-      });
-    }
-    const vm = __vite_ssr_import_1__.getCurrentInstance();
-    if (!vm) {
-      return;
-    }
-    __vite_ssr_import_1__.onBeforeUnmount(() => {
-      head.removeHeadObjs(headObj);
-      head.updateDOM();
-    });
-  };
-  if (true) {
-    nuxtApp.ssrContext.renderMeta = () => __vite_ssr_import_0__.renderHeadToString(head);
-  }
-});
-;
-}
-
-
-// --------------------
-// Request: /node_modules/@vueuse/head/dist/index.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/head/runtime/lib/vueuse-head.plugin.mjs ($id_e6f12003)
-// Dependencies: 
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// --------------------
-const $id_c032264e = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-var __defProp = Object.defineProperty;
-var __defProps = Object.defineProperties;
-var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
+var __defProp2 = Object.defineProperty;
+var __defProps2 = Object.defineProperties;
+var __getOwnPropDescs2 = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols2 = Object.getOwnPropertySymbols;
+var __hasOwnProp2 = Object.prototype.hasOwnProperty;
+var __propIsEnum2 = Object.prototype.propertyIsEnumerable;
+var __defNormalProp2 = (obj, key, value) => key in obj ? __defProp2(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues2 = (a, b) => {
   for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
+    if (__hasOwnProp2.call(b, prop))
+      __defNormalProp2(a, prop, b[prop]);
+  if (__getOwnPropSymbols2)
+    for (var prop of __getOwnPropSymbols2(b)) {
+      if (__propIsEnum2.call(b, prop))
+        __defNormalProp2(a, prop, b[prop]);
     }
   return a;
 };
-var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-
-// src/index.ts
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-
-// src/constants.ts
+var __spreadProps2 = (a, b) => __defProps2(a, __getOwnPropDescs2(b));
 var PROVIDE_KEY = `usehead`;
 var HEAD_COUNT_KEY = `head:count`;
 var HEAD_ATTRS_KEY = `data-head-attrs`;
 var SELF_CLOSING_TAGS = ["meta", "link", "base"];
-
-// src/create-element.ts
-var createElement = (tag, attrs, document) => {
-  const el = document.createElement(tag);
+var createElement = (tag, attrs, document2) => {
+  const el = document2.createElement(tag);
   for (const key of Object.keys(attrs)) {
     let value = attrs[key];
     if (key === "key" || value === false) {
@@ -1784,8 +3041,6 @@ var createElement = (tag, attrs, document) => {
   }
   return el;
 };
-
-// src/stringify-attrs.ts
 var htmlEscape = (str) => str.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 var stringifyAttrs = (attributes) => {
   const handledAttributes = [];
@@ -1804,8 +3059,6 @@ var stringifyAttrs = (attributes) => {
   }
   return handledAttributes.length > 0 ? " " + handledAttributes.join(" ") : "";
 };
-
-// src/utils.ts
 function isEqualNode(oldTag, newTag) {
   if (oldTag instanceof HTMLElement && newTag instanceof HTMLElement) {
     const nonce = newTag.getAttribute("nonce");
@@ -1818,8 +3071,6 @@ function isEqualNode(oldTag, newTag) {
   }
   return oldTag.isEqualNode(newTag);
 }
-
-// src/index.ts
 var getTagKey = (props) => {
   const names = ["key", "id", "name", "property"];
   for (const n of names) {
@@ -1828,13 +3079,6 @@ var getTagKey = (props) => {
       return { name: n, value };
     }
   }
-};
-var injectHead = () => {
-  const head = __vite_ssr_import_0__.inject(PROVIDE_KEY);
-  if (!head) {
-    throw new Error(`You may forget to apply app.use(head)`);
-  }
-  return head;
 };
 var acceptFields = [
   "title",
@@ -1854,7 +3098,7 @@ var headObjToTags = (obj) => {
     if (key === "title") {
       tags.push({ tag: key, props: { children: obj[key] } });
     } else if (key === "base") {
-      tags.push({ tag: key, props: __spreadValues({ key: "default" }, obj[key]) });
+      tags.push({ tag: key, props: __spreadValues2({ key: "default" }, obj[key]) });
     } else if (acceptFields.includes(key)) {
       const value = obj[key];
       if (Array.isArray(value)) {
@@ -1895,9 +3139,9 @@ var setAttrs = (el, attrs) => {
     el.removeAttribute(HEAD_ATTRS_KEY);
   }
 };
-var updateElements = (document = window.document, type, tags) => {
+var updateElements = (document2 = window.document, type, tags) => {
   var _a;
-  const head = document.head;
+  const head = document2.head;
   let headCountEl = head.querySelector(`meta[name="${HEAD_COUNT_KEY}"]`);
   const headCount = headCountEl ? Number(headCountEl.getAttribute("content")) : 0;
   const oldElements = [];
@@ -1908,12 +3152,12 @@ var updateElements = (document = window.document, type, tags) => {
       }
     }
   } else {
-    headCountEl = document.createElement("meta");
+    headCountEl = document2.createElement("meta");
     headCountEl.setAttribute("name", HEAD_COUNT_KEY);
     headCountEl.setAttribute("content", "0");
     head.append(headCountEl);
   }
-  let newElements = tags.map((tag) => createElement(tag.tag, tag.props, document));
+  let newElements = tags.map((tag) => createElement(tag.tag, tag.props, document2));
   newElements = newElements.filter((newEl) => {
     for (let i = 0; i < oldElements.length; i++) {
       const oldEl = oldElements[i];
@@ -1975,7 +3219,7 @@ var createHead = () => {
     removeHeadObjs(objs) {
       allHeadObjs = allHeadObjs.filter((_objs) => _objs !== objs);
     },
-    updateDOM(document = window.document) {
+    updateDOM(document2 = window.document) {
       let title;
       let htmlAttrs = {};
       let bodyAttrs = {};
@@ -1997,34 +3241,19 @@ var createHead = () => {
         actualTags[tag.tag].push(tag);
       }
       if (title !== void 0) {
-        document.title = title;
+        document2.title = title;
       }
-      setAttrs(document.documentElement, htmlAttrs);
-      setAttrs(document.body, bodyAttrs);
+      setAttrs(document2.documentElement, htmlAttrs);
+      setAttrs(document2.body, bodyAttrs);
       const tags = /* @__PURE__ */ new Set([...Object.keys(actualTags), ...previousTags]);
       for (const tag of tags) {
-        updateElements(document, tag, actualTags[tag] || []);
+        updateElements(document2, tag, actualTags[tag] || []);
       }
       previousTags.clear();
       Object.keys(actualTags).forEach((i) => previousTags.add(i));
     }
   };
   return head;
-};
-var IS_BROWSER = "undefined" !== "undefined";
-var useHead = (obj) => {
-  const headObj = __vite_ssr_import_0__.ref(obj);
-  const head = injectHead();
-  head.addHeadObjs(headObj);
-  if (IS_BROWSER) {
-    __vite_ssr_import_0__.watchEffect(() => {
-      head.updateDOM();
-    });
-    __vite_ssr_import_0__.onBeforeUnmount(() => {
-      head.removeHeadObjs(headObj);
-      head.updateDOM();
-    });
-  }
 };
 var tagToString = (tag) => {
   let attrs = stringifyAttrs(tag.props);
@@ -2055,171 +3284,93 @@ var renderHeadToString = (head) => {
       return titleTag + tags.join("");
     },
     get htmlAttrs() {
-      return stringifyAttrs(__spreadProps(__spreadValues({}, htmlAttrs), {
+      return stringifyAttrs(__spreadProps2(__spreadValues2({}, htmlAttrs), {
         [HEAD_ATTRS_KEY]: Object.keys(htmlAttrs).join(",")
       }));
     },
     get bodyAttrs() {
-      return stringifyAttrs(__spreadProps(__spreadValues({}, bodyAttrs), {
+      return stringifyAttrs(__spreadProps2(__spreadValues2({}, bodyAttrs), {
         [HEAD_ATTRS_KEY]: Object.keys(bodyAttrs).join(",")
       }));
     }
   };
 };
-var vnodesToHeadObj = (nodes) => {
-  const obj = {
-    title: void 0,
-    htmlAttrs: void 0,
-    bodyAttrs: void 0,
-    base: void 0,
-    meta: [],
-    link: [],
-    style: [],
-    script: []
-  };
-  for (const node of nodes) {
-    const type = node.type === "html" ? "htmlAttrs" : node.type === "body" ? "bodyAttrs" : node.type;
-    if (typeof type !== "string" || !(type in obj))
+function isObject(val) {
+  return val !== null && typeof val === "object";
+}
+function _defu(baseObj, defaults, namespace = ".", merger) {
+  if (!isObject(defaults)) {
+    return _defu(baseObj, {}, namespace, merger);
+  }
+  const obj = Object.assign({}, defaults);
+  for (const key in baseObj) {
+    if (key === "__proto__" || key === "constructor") {
       continue;
-    const props = __spreadProps(__spreadValues({}, node.props), {
-      children: Array.isArray(node.children) ? node.children[0].children : node.children
-    });
-    if (Array.isArray(obj[type])) {
-      ;
-      obj[type].push(props);
-    } else if (type === "title") {
-      obj.title = props.children;
+    }
+    const val = baseObj[key];
+    if (val === null || val === void 0) {
+      continue;
+    }
+    if (merger && merger(obj, key, val, namespace)) {
+      continue;
+    }
+    if (Array.isArray(val) && Array.isArray(obj[key])) {
+      obj[key] = val.concat(obj[key]);
+    } else if (isObject(val) && isObject(obj[key])) {
+      obj[key] = _defu(val, obj[key], (namespace ? `${namespace}.` : "") + key.toString(), merger);
     } else {
-      ;
-      obj[type] = props;
+      obj[key] = val;
     }
   }
   return obj;
-};
-var Head = /* @__PURE__ */ __vite_ssr_import_0__.defineComponent({
-  name: "Head",
-  setup(_, { slots }) {
-    const head = injectHead();
-    let obj;
-    __vite_ssr_import_0__.onBeforeUnmount(() => {
-      if (obj) {
-        head.removeHeadObjs(obj);
-        head.updateDOM();
-      }
+}
+function createDefu(merger) {
+  return (...args) => args.reduce((p, c) => _defu(p, c, "", merger), {});
+}
+const defu = createDefu();
+const vueuseHead_2ec57934 = defineNuxtPlugin((nuxtApp) => {
+  const head = createHead();
+  nuxtApp.vueApp.use(head);
+  nuxtApp.hooks.hookOnce("app:mounted", () => {
+    watchEffect(() => {
+      head.updateDOM();
     });
-    return () => {
-      __vite_ssr_import_0__.watchEffect(() => {
-        if (!slots.default)
-          return;
-        if (obj) {
-          head.removeHeadObjs(obj);
-        }
-        obj = __vite_ssr_import_0__.ref(vnodesToHeadObj(slots.default()));
-        head.addHeadObjs(obj);
-        if (IS_BROWSER) {
-          head.updateDOM();
-        }
-      });
-      return null;
-    };
-  }
-});
-
-Object.defineProperty(__vite_ssr_exports__, "Head", { enumerable: true, configurable: true, get(){ return Head }});
-Object.defineProperty(__vite_ssr_exports__, "createHead", { enumerable: true, configurable: true, get(){ return createHead }});
-Object.defineProperty(__vite_ssr_exports__, "injectHead", { enumerable: true, configurable: true, get(){ return injectHead }});
-Object.defineProperty(__vite_ssr_exports__, "renderHeadToString", { enumerable: true, configurable: true, get(){ return renderHeadToString }});
-Object.defineProperty(__vite_ssr_exports__, "useHead", { enumerable: true, configurable: true, get(){ return useHead }});
-;
-}
-
-
-// --------------------
-// Request: /node_modules/defu/dist/defu.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/head/runtime/lib/vueuse-head.plugin.mjs ($id_e6f12003)
-// Dependencies: 
-
-// --------------------
-const $id_d7afab65 = (global, module, _, exports, importMeta, ssrImport, ssrDynamicImport, ssrExportAll) =>
-import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/defu/dist/defu.mjs")
-  .then(r => {
-    if (r.default && r.default.__esModule)
-      r = r.default
-    exports.default = r.default
-    ssrExportAll(r)
-  })
-  .catch(e => {
-    console.error(e)
-    throw new Error("[vite dev] Error loading external \"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/defu/dist/defu.mjs\".")
-  })
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/head/runtime/plugin.mjs
-// Parents: 
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/plugins/server.mjs ($id_232cc801)
-// Dependencies: 
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/nuxt/dist/head/runtime/components.mjs ($id_b2a29d6f)
-// - /node_modules/nuxt/dist/head/runtime/composables.mjs ($id_04ea9504)
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/meta.config.mjs ($id_a7ef23d9)
-// --------------------
-const $id_a2650341 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/nuxt/dist/head/runtime/components.mjs");
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/nuxt/dist/head/runtime/composables.mjs");
-
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
-const __vite_ssr_import_4__ = await __vite_ssr_import__("/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/meta.config.mjs");
-
-const metaMixin = {
-  [__vite_ssr_import_4__.default.mixinKey]() {
-    const instance = __vite_ssr_import_0__.getCurrentInstance();
-    if (!instance) {
+  });
+  const titleTemplate = ref();
+  nuxtApp._useHead = (_meta) => {
+    const meta = ref(_meta);
+    if ("titleTemplate" in meta.value) {
+      titleTemplate.value = meta.value.titleTemplate;
+    }
+    const headObj = computed(() => {
+      const overrides = { meta: [] };
+      if (titleTemplate.value && "title" in meta.value) {
+        overrides.title = typeof titleTemplate.value === "function" ? titleTemplate.value(meta.value.title) : titleTemplate.value.replace(/%s/g, meta.value.title);
+      }
+      if (meta.value.charset) {
+        overrides.meta.push({ key: "charset", charset: meta.value.charset });
+      }
+      if (meta.value.viewport) {
+        overrides.meta.push({ name: "viewport", content: meta.value.viewport });
+      }
+      return defu(overrides, meta.value);
+    });
+    head.addHeadObjs(headObj);
+    {
       return;
     }
-    const options = instance.type || instance.proxy?.$options;
-    if (!options || !("head" in options)) {
-      return;
-    }
-    const nuxtApp = __vite_ssr_import_3__.useNuxtApp();
-    const source = typeof options.head === "function" ? __vite_ssr_import_0__.computed(() => options.head(nuxtApp)) : options.head;
-    __vite_ssr_import_2__.useHead(source);
-  }
-};
-__vite_ssr_exports__.default = __vite_ssr_import_3__.defineNuxtPlugin((nuxtApp) => {
-  __vite_ssr_import_2__.useHead(__vite_ssr_import_4__.default.globalMeta);
-  nuxtApp.vueApp.mixin(metaMixin);
-  for (const name in __vite_ssr_import_1__) {
-    nuxtApp.vueApp.component(name, __vite_ssr_import_1__[name]);
+  };
+  {
+    nuxtApp.ssrContext.renderMeta = () => renderHeadToString(head);
   }
 });
-;
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/head/runtime/components.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/head/runtime/plugin.mjs ($id_a2650341)
-// Dependencies: 
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/nuxt/dist/head/runtime/composables.mjs ($id_04ea9504)
-// --------------------
-const $id_b2a29d6f = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/nuxt/dist/head/runtime/composables.mjs");
-
 const removeUndefinedProps = (props) => Object.fromEntries(Object.entries(props).filter(([, value]) => value !== void 0));
 const setupForUseMeta = (metaFactory, renderChild) => (props, ctx) => {
-  __vite_ssr_import_1__.useHead(() => metaFactory({ ...removeUndefinedProps(props), ...ctx.attrs }, ctx));
-  return () => renderChild ? ctx.slots.default?.() : null;
+  useHead(() => metaFactory(__spreadValues(__spreadValues({}, removeUndefinedProps(props)), ctx.attrs), ctx));
+  return () => {
+    var _a, _b;
+    return renderChild ? (_b = (_a = ctx.slots).default) == null ? void 0 : _b.call(_a) : null;
+  };
 };
 const globalProps = {
   accesskey: String,
@@ -2266,10 +3417,9 @@ const globalProps = {
   title: String,
   translate: String
 };
-const Script = __vite_ssr_import_0__.defineComponent({
+const Script = defineComponent({
   name: "Script",
-  props: {
-    ...globalProps,
+  props: __spreadProps(__spreadValues({}, globalProps), {
     async: Boolean,
     crossorigin: {
       type: [Boolean, String],
@@ -2284,16 +3434,14 @@ const Script = __vite_ssr_import_0__.defineComponent({
     type: String,
     charset: String,
     language: String
-  },
+  }),
   setup: setupForUseMeta((script) => ({
     script: [script]
   }))
 });
-Object.defineProperty(__vite_ssr_exports__, "Script", { enumerable: true, configurable: true, get(){ return Script }});
-const Link = __vite_ssr_import_0__.defineComponent({
+const Link = defineComponent({
   name: "Link",
-  props: {
-    ...globalProps,
+  props: __spreadProps(__spreadValues({}, globalProps), {
     as: String,
     crossorigin: String,
     disabled: Boolean,
@@ -2314,55 +3462,46 @@ const Link = __vite_ssr_import_0__.defineComponent({
     type: String,
     methods: String,
     target: String
-  },
+  }),
   setup: setupForUseMeta((link) => ({
     link: [link]
   }))
 });
-Object.defineProperty(__vite_ssr_exports__, "Link", { enumerable: true, configurable: true, get(){ return Link }});
-const Base = __vite_ssr_import_0__.defineComponent({
+const Base = defineComponent({
   name: "Base",
-  props: {
-    ...globalProps,
+  props: __spreadProps(__spreadValues({}, globalProps), {
     href: String,
     target: String
-  },
+  }),
   setup: setupForUseMeta((base) => ({
     base
   }))
 });
-Object.defineProperty(__vite_ssr_exports__, "Base", { enumerable: true, configurable: true, get(){ return Base }});
-const Title = __vite_ssr_import_0__.defineComponent({
+const Title = defineComponent({
   name: "Title",
   setup: setupForUseMeta((_, { slots }) => {
-    const title = slots.default()?.[0]?.children || null;
-    if (true && title && typeof title !== "string") {
-      console.error("<Title> can only take a string in its default slot.");
-    }
+    var _a, _b;
+    const title = ((_b = (_a = slots.default()) == null ? void 0 : _a[0]) == null ? void 0 : _b.children) || null;
     return {
       title
     };
   })
 });
-Object.defineProperty(__vite_ssr_exports__, "Title", { enumerable: true, configurable: true, get(){ return Title }});
-const Meta = __vite_ssr_import_0__.defineComponent({
+const Meta = defineComponent({
   name: "Meta",
-  props: {
-    ...globalProps,
+  props: __spreadProps(__spreadValues({}, globalProps), {
     charset: String,
     content: String,
     httpEquiv: String,
     name: String
-  },
+  }),
   setup: setupForUseMeta((meta) => ({
     meta: [meta]
   }))
 });
-Object.defineProperty(__vite_ssr_exports__, "Meta", { enumerable: true, configurable: true, get(){ return Meta }});
-const Style = __vite_ssr_import_0__.defineComponent({
+const Style = defineComponent({
   name: "Style",
-  props: {
-    ...globalProps,
+  props: __spreadProps(__spreadValues({}, globalProps), {
     type: String,
     media: String,
     nonce: String,
@@ -2371,93 +3510,85 @@ const Style = __vite_ssr_import_0__.defineComponent({
       type: Boolean,
       default: void 0
     }
-  },
+  }),
   setup: setupForUseMeta((props, { slots }) => {
-    const style = { ...props };
-    const textContent = slots.default?.()?.[0]?.children;
+    var _a, _b, _c;
+    const style2 = __spreadValues({}, props);
+    const textContent = (_c = (_b = (_a = slots.default) == null ? void 0 : _a.call(slots)) == null ? void 0 : _b[0]) == null ? void 0 : _c.children;
     if (textContent) {
-      if (true && typeof textContent !== "string") {
-        console.error("<Style> can only take a string in its default slot.");
-      }
-      style.children = textContent;
+      style2.children = textContent;
     }
     return {
-      style: [style]
+      style: [style2]
     };
   })
 });
-Object.defineProperty(__vite_ssr_exports__, "Style", { enumerable: true, configurable: true, get(){ return Style }});
-const Head = __vite_ssr_import_0__.defineComponent({
+const Head = defineComponent({
   name: "Head",
-  setup: (_props, ctx) => () => ctx.slots.default?.()
+  setup: (_props, ctx) => () => {
+    var _a, _b;
+    return (_b = (_a = ctx.slots).default) == null ? void 0 : _b.call(_a);
+  }
 });
-Object.defineProperty(__vite_ssr_exports__, "Head", { enumerable: true, configurable: true, get(){ return Head }});
-const Html = __vite_ssr_import_0__.defineComponent({
+const Html = defineComponent({
   name: "Html",
-  props: {
-    ...globalProps,
+  props: __spreadProps(__spreadValues({}, globalProps), {
     manifest: String,
     version: String,
     xmlns: String
-  },
+  }),
   setup: setupForUseMeta((htmlAttrs) => ({ htmlAttrs }), true)
 });
-Object.defineProperty(__vite_ssr_exports__, "Html", { enumerable: true, configurable: true, get(){ return Html }});
-const Body = __vite_ssr_import_0__.defineComponent({
+const Body = defineComponent({
   name: "Body",
   props: globalProps,
   setup: setupForUseMeta((bodyAttrs) => ({ bodyAttrs }), true)
 });
-Object.defineProperty(__vite_ssr_exports__, "Body", { enumerable: true, configurable: true, get(){ return Body }});
-;
-}
-
-
-// --------------------
-// Request: /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/meta.config.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/head/runtime/plugin.mjs ($id_a2650341)
-// Dependencies: 
-
-// --------------------
-const $id_a7ef23d9 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-__vite_ssr_exports__.default = {"globalMeta":{"charset":"utf-8","viewport":"width=device-width, initial-scale=1","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"}],"style":[],"script":[{"src":"https://cdn.ethers.io/lib/ethers-5.0.umd.min.js"},{"src":"./js/abi/abi_ThrowMoneyFactory.js"},{"src":"./js/abi/abi_ThrowMoneyPool.js"},{"src":"./js/getContractEvent.js"}]},"mixinKey":"created"};
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/plugins/router.mjs
-// Parents: 
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/plugins/server.mjs ($id_232cc801)
-// Dependencies: 
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/ufo/dist/index.mjs ($id_614de060)
-// - /node_modules/h3/dist/index.mjs ($id_57d7ded6)
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// - /node_modules/nuxt/dist/app/nuxt.mjs ($id_e069d411)
-// --------------------
-const $id_7fe121f6 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/ufo/dist/index.mjs");
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/h3/dist/index.mjs");
-
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
-const __vite_ssr_import_4__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/nuxt.mjs");
-
-const __vite_ssr_import_5__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
+const Components = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  Script,
+  Link,
+  Base,
+  Title,
+  Meta,
+  Style,
+  Head,
+  Html,
+  Body
+}, Symbol.toStringTag, { value: "Module" }));
+const metaConfig = { "globalMeta": { "charset": "utf-8", "viewport": "width=device-width, initial-scale=1", "meta": [{ "charset": "utf-8" }, { "name": "viewport", "content": "width=device-width, initial-scale=1" }, { "name": "format-detection", "content": "telephone=no" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/favicon.ico" }], "style": [], "script": [{ "src": "https://cdn.ethers.io/lib/ethers-5.0.umd.min.js" }, { "src": "./js/abi/abi_ThrowMoneyFactory.js" }, { "src": "./js/abi/abi_ThrowMoneyPool.js" }, { "src": "./js/getContractEvent.js" }] }, "mixinKey": "created" };
+const metaMixin = {
+  [metaConfig.mixinKey]() {
+    var _a;
+    const instance = getCurrentInstance();
+    if (!instance) {
+      return;
+    }
+    const options = instance.type || ((_a = instance.proxy) == null ? void 0 : _a.$options);
+    if (!options || !("head" in options)) {
+      return;
+    }
+    const nuxtApp = useNuxtApp();
+    const source = typeof options.head === "function" ? computed(() => options.head(nuxtApp)) : options.head;
+    useHead(source);
+  }
+};
+const plugin_4bbaf14c = defineNuxtPlugin((nuxtApp) => {
+  useHead(metaConfig.globalMeta);
+  nuxtApp.vueApp.mixin(metaMixin);
+  for (const name in Components) {
+    nuxtApp.vueApp.component(name, Components[name]);
+  }
+});
 function getRouteFromPath(fullPath) {
   if (typeof fullPath === "object") {
     throw new TypeError("[nuxt] Route location object cannot be resolved when vue-router is disabled (no pages).");
   }
-  const url = __vite_ssr_import_1__.parseURL(fullPath.toString());
+  const url = parseURL(fullPath.toString());
   return {
     path: url.pathname,
     fullPath,
-    query: __vite_ssr_import_1__.parseQuery(url.search),
+    query: parseQuery(url.search),
     hash: url.hash,
     params: {},
     name: void 0,
@@ -2467,7 +3598,7 @@ function getRouteFromPath(fullPath) {
     href: fullPath
   };
 }
-__vite_ssr_exports__.default = __vite_ssr_import_3__.defineNuxtPlugin((nuxtApp) => {
+const router_50d5f825 = defineNuxtPlugin((nuxtApp) => {
   const routes = [];
   const hooks = {
     "navigate:before": [],
@@ -2479,13 +3610,12 @@ __vite_ssr_exports__.default = __vite_ssr_import_3__.defineNuxtPlugin((nuxtApp) 
     hooks[hook].push(guard);
     return () => hooks[hook].splice(hooks[hook].indexOf(guard), 1);
   };
-  const route = __vite_ssr_import_0__.reactive(getRouteFromPath(false ? window.location.href : nuxtApp.ssrContext.url));
+  const route = reactive(getRouteFromPath(nuxtApp.ssrContext.url));
   async function handleNavigation(url, replace) {
     try {
       const to = getRouteFromPath(url);
-      if (false && !nuxtApp.isHydrating) {
-        await __vite_ssr_import_4__.callWithNuxt(nuxtApp, __vite_ssr_import_5__.clearError);
-      }
+      if (false)
+        ;
       for (const middleware of hooks["navigate:before"]) {
         const result = await middleware(to, route);
         if (result === false || result instanceof Error) {
@@ -2499,16 +3629,12 @@ __vite_ssr_exports__.default = __vite_ssr_import_3__.defineNuxtPlugin((nuxtApp) 
         await handler(to, route);
       }
       Object.assign(route, to);
-      if (false) {
-        window.history[replace ? "replaceState" : "pushState"]({}, "", url);
-      }
+      if (false)
+        ;
       for (const middleware of hooks["navigate:after"]) {
         await middleware(to, route);
       }
     } catch (err) {
-      if (true && !hooks.error.length) {
-        console.warn("No error handlers registered to handle middleware errors. You can register an error handler with `router.onError()`", err);
-      }
       for (const handler of hooks.error) {
         await handler(err);
       }
@@ -2544,34 +3670,28 @@ __vite_ssr_exports__.default = __vite_ssr_import_3__.defineNuxtPlugin((nuxtApp) 
   nuxtApp.vueApp.component("RouterLink", {
     functional: true,
     props: { to: String },
-    setup: (props, { slots }) => () => __vite_ssr_import_0__.h("a", { href: props.to, onClick: (e) => {
+    setup: (props, { slots }) => () => h("a", { href: props.to, onClick: (e) => {
       e.preventDefault();
       router.push(props.to);
     } }, slots)
   });
-  if (false) {
-    window.addEventListener("popstate", (event) => {
-      const location = event.target.location;
-      router.replace(location.href.replace(location.origin, ""));
-    });
-  }
   nuxtApp._route = route;
   nuxtApp._middleware = nuxtApp._middleware || {
     global: [],
     named: {}
   };
   router.beforeEach(async (to, from) => {
-    to.meta = __vite_ssr_import_0__.reactive(to.meta || {});
+    to.meta = reactive(to.meta || {});
     nuxtApp._processingMiddleware = true;
     const middlewareEntries = new Set(nuxtApp._middleware.global);
     for (const middleware of middlewareEntries) {
-      const result = await __vite_ssr_import_4__.callWithNuxt(nuxtApp, middleware, [to, from]);
-      if (true) {
+      const result = await callWithNuxt(nuxtApp, middleware, [to, from]);
+      {
         if (result === false || result instanceof Error) {
-          const error = result || __vite_ssr_import_2__.createError({
+          const error = result || createError({
             statusMessage: `Route navigation aborted: ${nuxtApp.ssrContext.url}`
           });
-          return __vite_ssr_import_4__.callWithNuxt(nuxtApp, __vite_ssr_import_5__.throwError, [error]);
+          return callWithNuxt(nuxtApp, throwError, [error]);
         }
       }
       if (result || result === false) {
@@ -2582,11 +3702,11 @@ __vite_ssr_exports__.default = __vite_ssr_import_3__.defineNuxtPlugin((nuxtApp) 
   router.afterEach(() => {
     delete nuxtApp._processingMiddleware;
   });
-  if (true) {
+  {
     nuxtApp.hooks.hookOnce("app:created", async () => {
       await router.push(nuxtApp.ssrContext.url);
       if (route.fullPath !== nuxtApp.ssrContext.url) {
-        await __vite_ssr_import_5__.navigateTo(route.fullPath);
+        await navigateTo(route.fullPath);
       }
     });
   }
@@ -2597,1203 +3717,377 @@ __vite_ssr_exports__.default = __vite_ssr_import_3__.defineNuxtPlugin((nuxtApp) 
     }
   };
 });
-;
-}
-
-
-// --------------------
-// Request: /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/root-component.mjs
-// Parents: 
-// - /mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/nuxt/dist/app/entry ($id_e0113c9e)
-// Dependencies: 
-// - /node_modules/nuxt/dist/app/components/nuxt-root.vue ($id_e9bfada3)
-// --------------------
-const $id_fcd7cbaa = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/components/nuxt-root.vue");
-
-Object.defineProperty(__vite_ssr_exports__, "default", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_0__.default }});;
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/components/nuxt-root.vue
-// Parents: 
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/root-component.mjs ($id_fcd7cbaa)
-// Dependencies: 
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/error-component.mjs ($id_dd4dec96)
-// - /node_modules/vue/server-renderer/index.js ($id_b215fa1c)
-// - /@id/plugin-vue:export-helper ($id_bbb863c1)
-// --------------------
-const $id_e9bfada3 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
-// @ts-ignore
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/error-component.mjs");
-
-
-
-const _sfc_main = {
-  setup(__props, { expose }) {
-  expose();
-
-const nuxtApp = __vite_ssr_import_1__.useNuxtApp()
-const onResolve = () => nuxtApp.callHook('app:suspense:resolve')
-
-// vue:setup hook
-const results = nuxtApp.hooks.callHookWith(hooks => hooks.map(hook => hook()), 'vue:setup')
-if (true && results && results.some(i => i && 'then' in i)) {
-  console.error('[nuxt] Error in `vue:setup`. Callbacks must be synchronous.')
-}
-
-// error handling
-const error = __vite_ssr_import_1__.useError()
-__vite_ssr_import_0__.onErrorCaptured((err, target, info) => {
-  nuxtApp.hooks.callHook('vue:error', err, target, info).catch(hookError => console.error('[nuxt] Error in `vue:error` hook', hookError))
-  if (true) {
-    __vite_ssr_import_1__.callWithNuxt(nuxtApp, __vite_ssr_import_1__.throwError, [err])
-  }
-})
-
-const __returned__ = { nuxtApp, onResolve, results, error, onErrorCaptured: __vite_ssr_import_0__.onErrorCaptured, callWithNuxt: __vite_ssr_import_1__.callWithNuxt, throwError: __vite_ssr_import_1__.throwError, useError: __vite_ssr_import_1__.useError, useNuxtApp: __vite_ssr_import_1__.useNuxtApp, ErrorComponent: __vite_ssr_import_2__.default }
-Object.defineProperty(__returned__, '__isScriptSetup', { enumerable: false, value: true })
-return __returned__
-}
-
-}
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_4__ = await __vite_ssr_import__("/node_modules/vue/server-renderer/index.js");
-
-
-function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_App = __vite_ssr_import_3__.resolveComponent("App")
-
-  __vite_ssr_import_4__.ssrRenderSuspense(_push, {
-    default: () => {
-      if ($setup.error) {
-        _push(__vite_ssr_import_4__.ssrRenderComponent($setup["ErrorComponent"], { error: $setup.error }, null, _parent))
-      } else {
-        _push(__vite_ssr_import_4__.ssrRenderComponent(_component_App, null, null, _parent))
-      }
-    },
-    _: 1 /* STABLE */
-  })
-}
-
-
-const __vite_ssr_import_5__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const _sfc_setup = _sfc_main.setup
-_sfc_main.setup = (props, ctx) => {
-  const ssrContext = __vite_ssr_import_5__.useSSRContext()
-  ;(ssrContext.modules || (ssrContext.modules = new Set())).add("node_modules/nuxt/dist/app/components/nuxt-root.vue")
-  return _sfc_setup ? _sfc_setup(props, ctx) : undefined
-}
-const __vite_ssr_import_6__ = await __vite_ssr_import__("/@id/plugin-vue:export-helper");
-
-__vite_ssr_exports__.default = /*#__PURE__*/__vite_ssr_import_6__.default(_sfc_main, [['ssrRender',_sfc_ssrRender],['__file',"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/nuxt/dist/app/components/nuxt-root.vue"]]);
-}
-
-
-// --------------------
-// Request: /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/error-component.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/components/nuxt-root.vue ($id_e9bfada3)
-// Dependencies: 
-// - /node_modules/nuxt/dist/app/components/nuxt-error-page.vue ($id_8cc6d73f)
-// --------------------
-const $id_dd4dec96 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/components/nuxt-error-page.vue");
-
-Object.defineProperty(__vite_ssr_exports__, "default", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_0__.default }});;
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/components/nuxt-error-page.vue
-// Parents: 
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/error-component.mjs ($id_dd4dec96)
-// Dependencies: 
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-404.vue ($id_b90d4d0f)
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-500.vue ($id_14c8b574)
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue ($id_bc2d74a1)
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/vue/server-renderer/index.js ($id_b215fa1c)
-// - /@id/plugin-vue:export-helper ($id_bbb863c1)
-// --------------------
-const $id_8cc6d73f = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/@nuxt/ui-templates/dist/templates/error-404.vue");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/@nuxt/ui-templates/dist/templates/error-500.vue");
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue");
-
-
-
-const _sfc_main = {
-  props: {
-  error: Object
-},
-  setup(__props, { expose }) {
-  expose();
-
-const props = __props
-
-
-
-const error = props.error
-
-// TODO: extract to a separate utility
-const stacktrace = (error.stack || '')
-  .split('\n')
-  .splice(1)
-  .map((line) => {
-    const text = line
-      .replace('webpack:/', '')
-      .replace('.vue', '.js') // TODO: Support sourcemap
-      .trim()
-    return {
-      text,
-      internal: (line.includes('node_modules') && !line.includes('.cache')) ||
-          line.includes('internal') ||
-          line.includes('new Promise')
-    }
-  }).map(i => `<span class="stack${i.internal ? ' internal' : ''}">${i.text}</span>`).join('\n')
-
-// Error page props
-const statusCode = String(error.statusCode || 500)
-const is404 = statusCode === '404'
-
-const statusMessage = error.statusMessage ?? is404 ? 'Page Not Found' : 'Internal Server Error'
-const description = error.message || error.toString()
-const stack = true && !is404 ? error.description || `<pre>${stacktrace}</pre>` : undefined
-
-const ErrorTemplate = is404 ? __vite_ssr_import_0__.default : true ? __vite_ssr_import_2__.default : __vite_ssr_import_1__.default
-
-const __returned__ = { props, error, stacktrace, statusCode, is404, statusMessage, description, stack, ErrorTemplate, Error404: __vite_ssr_import_0__.default, Error500: __vite_ssr_import_1__.default, ErrorDev: __vite_ssr_import_2__.default }
-Object.defineProperty(__returned__, '__isScriptSetup', { enumerable: false, value: true })
-return __returned__
-}
-
-}
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_4__ = await __vite_ssr_import__("/node_modules/vue/server-renderer/index.js");
-
-
-function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  _push(__vite_ssr_import_4__.ssrRenderComponent($setup["ErrorTemplate"], __vite_ssr_import_3__.mergeProps({ statusCode: $setup.statusCode, statusMessage: $setup.statusMessage, description: $setup.description, stack: $setup.stack }, _attrs), null, _parent))
-}
-
-
-const __vite_ssr_import_5__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const _sfc_setup = _sfc_main.setup
-_sfc_main.setup = (props, ctx) => {
-  const ssrContext = __vite_ssr_import_5__.useSSRContext()
-  ;(ssrContext.modules || (ssrContext.modules = new Set())).add("node_modules/nuxt/dist/app/components/nuxt-error-page.vue")
-  return _sfc_setup ? _sfc_setup(props, ctx) : undefined
-}
-const __vite_ssr_import_6__ = await __vite_ssr_import__("/@id/plugin-vue:export-helper");
-
-__vite_ssr_exports__.default = /*#__PURE__*/__vite_ssr_import_6__.default(_sfc_main, [['ssrRender',_sfc_ssrRender],['__file',"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/nuxt/dist/app/components/nuxt-error-page.vue"]]);
-}
-
-
-// --------------------
-// Request: /node_modules/@nuxt/ui-templates/dist/templates/error-404.vue
-// Parents: 
-// - /node_modules/nuxt/dist/app/components/nuxt-error-page.vue ($id_8cc6d73f)
-// Dependencies: 
-// - /node_modules/nuxt/dist/app/components/nuxt-link.mjs ($id_ffac87b5)
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/imports.mjs ($id_e30cac3e)
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/vue/server-renderer/index.js ($id_b215fa1c)
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-404.vue?vue&type=style&index=0&scoped=true&lang.css ($id_e68b6b38)
-// - /@id/plugin-vue:export-helper ($id_bbb863c1)
-// --------------------
-const $id_b90d4d0f = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/components/nuxt-link.mjs");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/imports.mjs");
-
-
-const _sfc_main = {
-  props: {
-  appName: {
-    type: String,
-    default: "Nuxt"
-  },
-  version: {
-    type: String,
-    default: ""
-  },
-  statusCode: {
-    type: String,
-    default: "404"
-  },
-  statusMessage: {
-    type: String,
-    default: "Not Found"
-  },
-  description: {
-    type: String,
-    default: "Sorry, the page you are looking for could not be found."
-  },
-  backHome: {
-    type: String,
-    default: "Go back home"
-  }
-},
-  setup(__props, { expose }) {
-  expose();
-
-const props = __props
-
-
-__vite_ssr_import_1__.useHead({
-  title: `${ props.statusCode } - ${ props.statusMessage } | ${ props.appName }`,
-  script: [],
-  style: [
-    {
-      children: `*,:before,:after{-webkit-box-sizing:border-box;box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}*{--tw-ring-inset:var(--tw-empty, );--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(14, 165, 233, .5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000}:root{-moz-tab-size:4;-o-tab-size:4;tab-size:4}a{color:inherit;text-decoration:inherit}body{margin:0;font-family:inherit;line-height:inherit}html{-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";line-height:1.5}h1,p{margin:0}h1{font-size:inherit;font-weight:inherit}`
-    }
-  ]
-})
-
-const __returned__ = { props, useHead: __vite_ssr_import_1__.useHead }
-Object.defineProperty(__returned__, '__isScriptSetup', { enumerable: false, value: true })
-return __returned__
-}
-
-}
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/vue/server-renderer/index.js");
-
-
-function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_NuxtLink = __vite_ssr_import_0__.default
-
-  _push(`<div${
-    __vite_ssr_import_3__.ssrRenderAttrs(__vite_ssr_import_2__.mergeProps({ class: "font-sans antialiased bg-white dark:bg-black text-black dark:text-white grid min-h-screen place-content-center overflow-hidden" }, _attrs))
-  } data-v-573335c0><div class="fixed left-0 right-0 spotlight z-10" data-v-573335c0></div><div class="max-w-520px text-center z-20" data-v-573335c0><h1 class="text-8xl sm:text-10xl font-medium mb-8" data-v-573335c0>${
-    $props.statusCode
-  }</h1><p class="text-xl px-8 sm:px-0 sm:text-4xl font-light mb-16 leading-tight" data-v-573335c0>${
-    $props.description
-  }</p><div class="w-full flex items-center justify-center" data-v-573335c0>`)
-  _push(__vite_ssr_import_3__.ssrRenderComponent(_component_NuxtLink, {
-    to: "/",
-    class: "gradient-border text-md sm:text-xl py-2 px-4 sm:py-3 sm:px-6 cursor-pointer"
-  }, {
-    default: __vite_ssr_import_2__.withCtx((_, _push, _parent, _scopeId) => {
-      if (_push) {
-        _push(`${__vite_ssr_import_3__.ssrInterpolate($props.backHome)}`)
-      } else {
-        return [
-          __vite_ssr_import_2__.createTextVNode(__vite_ssr_import_2__.toDisplayString($props.backHome), 1 /* TEXT */)
-        ]
-      }
-    }),
-    _: 1 /* STABLE */
-  }, _parent))
-  _push(`</div></div></div>`)
-}
-
-const __vite_ssr_import_4__ = await __vite_ssr_import__("/node_modules/@nuxt/ui-templates/dist/templates/error-404.vue?vue&type=style&index=0&scoped=true&lang.css");
-
-
-const __vite_ssr_import_5__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const _sfc_setup = _sfc_main.setup
-_sfc_main.setup = (props, ctx) => {
-  const ssrContext = __vite_ssr_import_5__.useSSRContext()
-  ;(ssrContext.modules || (ssrContext.modules = new Set())).add("node_modules/@nuxt/ui-templates/dist/templates/error-404.vue")
-  return _sfc_setup ? _sfc_setup(props, ctx) : undefined
-}
-const __vite_ssr_import_6__ = await __vite_ssr_import__("/@id/plugin-vue:export-helper");
-
-__vite_ssr_exports__.default = /*#__PURE__*/__vite_ssr_import_6__.default(_sfc_main, [['ssrRender',_sfc_ssrRender],['__scopeId',"data-v-573335c0"],['__file',"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/@nuxt/ui-templates/dist/templates/error-404.vue"]]);
-}
-
-
-// --------------------
-// Request: /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/imports.mjs
-// Parents: 
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-404.vue ($id_b90d4d0f)
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-500.vue ($id_14c8b574)
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue ($id_bc2d74a1)
-// Dependencies: 
-// - /node_modules/nuxt/dist/head/runtime/index.mjs ($id_b7351483)
-// - /node_modules/nuxt/dist/app/compat/vue-demi.mjs ($id_a8110be7)
-// - /node_modules/nuxt/dist/app/index.mjs ($id_36927477)
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// --------------------
-const $id_e30cac3e = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/nuxt/dist/head/runtime/index.mjs");
-
-Object.defineProperty(__vite_ssr_exports__, "useHead", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_0__.useHead }});
-Object.defineProperty(__vite_ssr_exports__, "useMeta", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_0__.useMeta }});
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/compat/vue-demi.mjs");
-
-Object.defineProperty(__vite_ssr_exports__, "isVue2", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_1__.isVue2 }});
-Object.defineProperty(__vite_ssr_exports__, "isVue3", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_1__.isVue3 }});
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/index.mjs");
-
-Object.defineProperty(__vite_ssr_exports__, "useAsyncData", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.useAsyncData }});
-Object.defineProperty(__vite_ssr_exports__, "useLazyAsyncData", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.useLazyAsyncData }});
-Object.defineProperty(__vite_ssr_exports__, "refreshNuxtData", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.refreshNuxtData }});
-Object.defineProperty(__vite_ssr_exports__, "defineNuxtComponent", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.defineNuxtComponent }});
-Object.defineProperty(__vite_ssr_exports__, "useNuxtApp", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.useNuxtApp }});
-Object.defineProperty(__vite_ssr_exports__, "defineNuxtPlugin", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.defineNuxtPlugin }});
-Object.defineProperty(__vite_ssr_exports__, "useRuntimeConfig", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.useRuntimeConfig }});
-Object.defineProperty(__vite_ssr_exports__, "useState", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.useState }});
-Object.defineProperty(__vite_ssr_exports__, "useFetch", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.useFetch }});
-Object.defineProperty(__vite_ssr_exports__, "useLazyFetch", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.useLazyFetch }});
-Object.defineProperty(__vite_ssr_exports__, "useCookie", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.useCookie }});
-Object.defineProperty(__vite_ssr_exports__, "useRequestHeaders", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.useRequestHeaders }});
-Object.defineProperty(__vite_ssr_exports__, "useRequestEvent", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.useRequestEvent }});
-Object.defineProperty(__vite_ssr_exports__, "useRouter", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.useRouter }});
-Object.defineProperty(__vite_ssr_exports__, "useRoute", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.useRoute }});
-Object.defineProperty(__vite_ssr_exports__, "useActiveRoute", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.useActiveRoute }});
-Object.defineProperty(__vite_ssr_exports__, "defineNuxtRouteMiddleware", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.defineNuxtRouteMiddleware }});
-Object.defineProperty(__vite_ssr_exports__, "navigateTo", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.navigateTo }});
-Object.defineProperty(__vite_ssr_exports__, "abortNavigation", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.abortNavigation }});
-Object.defineProperty(__vite_ssr_exports__, "addRouteMiddleware", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.addRouteMiddleware }});
-Object.defineProperty(__vite_ssr_exports__, "throwError", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.throwError }});
-Object.defineProperty(__vite_ssr_exports__, "clearError", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.clearError }});
-Object.defineProperty(__vite_ssr_exports__, "useError", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.useError }});
-Object.defineProperty(__vite_ssr_exports__, "defineNuxtLink", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_2__.defineNuxtLink }});
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-Object.defineProperty(__vite_ssr_exports__, "withCtx", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.withCtx }});
-Object.defineProperty(__vite_ssr_exports__, "withDirectives", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.withDirectives }});
-Object.defineProperty(__vite_ssr_exports__, "withKeys", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.withKeys }});
-Object.defineProperty(__vite_ssr_exports__, "withMemo", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.withMemo }});
-Object.defineProperty(__vite_ssr_exports__, "withModifiers", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.withModifiers }});
-Object.defineProperty(__vite_ssr_exports__, "withScopeId", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.withScopeId }});
-Object.defineProperty(__vite_ssr_exports__, "onActivated", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.onActivated }});
-Object.defineProperty(__vite_ssr_exports__, "onBeforeMount", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.onBeforeMount }});
-Object.defineProperty(__vite_ssr_exports__, "onBeforeUnmount", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.onBeforeUnmount }});
-Object.defineProperty(__vite_ssr_exports__, "onBeforeUpdate", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.onBeforeUpdate }});
-Object.defineProperty(__vite_ssr_exports__, "onDeactivated", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.onDeactivated }});
-Object.defineProperty(__vite_ssr_exports__, "onErrorCaptured", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.onErrorCaptured }});
-Object.defineProperty(__vite_ssr_exports__, "onMounted", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.onMounted }});
-Object.defineProperty(__vite_ssr_exports__, "onRenderTracked", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.onRenderTracked }});
-Object.defineProperty(__vite_ssr_exports__, "onRenderTriggered", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.onRenderTriggered }});
-Object.defineProperty(__vite_ssr_exports__, "onServerPrefetch", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.onServerPrefetch }});
-Object.defineProperty(__vite_ssr_exports__, "onUnmounted", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.onUnmounted }});
-Object.defineProperty(__vite_ssr_exports__, "onUpdated", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.onUpdated }});
-Object.defineProperty(__vite_ssr_exports__, "computed", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.computed }});
-Object.defineProperty(__vite_ssr_exports__, "customRef", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.customRef }});
-Object.defineProperty(__vite_ssr_exports__, "isProxy", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.isProxy }});
-Object.defineProperty(__vite_ssr_exports__, "isReactive", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.isReactive }});
-Object.defineProperty(__vite_ssr_exports__, "isReadonly", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.isReadonly }});
-Object.defineProperty(__vite_ssr_exports__, "isRef", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.isRef }});
-Object.defineProperty(__vite_ssr_exports__, "markRaw", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.markRaw }});
-Object.defineProperty(__vite_ssr_exports__, "proxyRefs", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.proxyRefs }});
-Object.defineProperty(__vite_ssr_exports__, "reactive", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.reactive }});
-Object.defineProperty(__vite_ssr_exports__, "readonly", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.readonly }});
-Object.defineProperty(__vite_ssr_exports__, "ref", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.ref }});
-Object.defineProperty(__vite_ssr_exports__, "shallowReactive", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.shallowReactive }});
-Object.defineProperty(__vite_ssr_exports__, "shallowReadonly", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.shallowReadonly }});
-Object.defineProperty(__vite_ssr_exports__, "shallowRef", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.shallowRef }});
-Object.defineProperty(__vite_ssr_exports__, "toRaw", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.toRaw }});
-Object.defineProperty(__vite_ssr_exports__, "toRef", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.toRef }});
-Object.defineProperty(__vite_ssr_exports__, "toRefs", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.toRefs }});
-Object.defineProperty(__vite_ssr_exports__, "triggerRef", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.triggerRef }});
-Object.defineProperty(__vite_ssr_exports__, "unref", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.unref }});
-Object.defineProperty(__vite_ssr_exports__, "watch", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.watch }});
-Object.defineProperty(__vite_ssr_exports__, "watchEffect", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.watchEffect }});
-Object.defineProperty(__vite_ssr_exports__, "isShallow", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.isShallow }});
-Object.defineProperty(__vite_ssr_exports__, "effect", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.effect }});
-Object.defineProperty(__vite_ssr_exports__, "effectScope", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.effectScope }});
-Object.defineProperty(__vite_ssr_exports__, "getCurrentScope", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.getCurrentScope }});
-Object.defineProperty(__vite_ssr_exports__, "onScopeDispose", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.onScopeDispose }});
-Object.defineProperty(__vite_ssr_exports__, "defineComponent", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.defineComponent }});
-Object.defineProperty(__vite_ssr_exports__, "defineAsyncComponent", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.defineAsyncComponent }});
-Object.defineProperty(__vite_ssr_exports__, "resolveComponent", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.resolveComponent }});
-Object.defineProperty(__vite_ssr_exports__, "getCurrentInstance", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.getCurrentInstance }});
-Object.defineProperty(__vite_ssr_exports__, "h", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.h }});
-Object.defineProperty(__vite_ssr_exports__, "inject", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.inject }});
-Object.defineProperty(__vite_ssr_exports__, "nextTick", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.nextTick }});
-Object.defineProperty(__vite_ssr_exports__, "provide", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.provide }});
-Object.defineProperty(__vite_ssr_exports__, "useAttrs", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.useAttrs }});
-Object.defineProperty(__vite_ssr_exports__, "useCssModule", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.useCssModule }});
-Object.defineProperty(__vite_ssr_exports__, "useCssVars", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.useCssVars }});
-Object.defineProperty(__vite_ssr_exports__, "useSlots", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.useSlots }});
-Object.defineProperty(__vite_ssr_exports__, "useTransitionState", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_3__.useTransitionState }});;
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/compat/vue-demi.mjs
-// Parents: 
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/imports.mjs ($id_e30cac3e)
-// Dependencies: 
-// - /node_modules/nuxt/dist/app/compat/capi.mjs ($id_0c5717a4)
-// --------------------
-const $id_a8110be7 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/nuxt/dist/app/compat/capi.mjs");
-__vite_ssr_exportAll__(__vite_ssr_import_0__);
-const Vue2 = void 0;
-Object.defineProperty(__vite_ssr_exports__, "Vue2", { enumerable: true, configurable: true, get(){ return Vue2 }});
-const isVue2 = false;
-Object.defineProperty(__vite_ssr_exports__, "isVue2", { enumerable: true, configurable: true, get(){ return isVue2 }});
-const isVue3 = true;
-Object.defineProperty(__vite_ssr_exports__, "isVue3", { enumerable: true, configurable: true, get(){ return isVue3 }});
-;
-}
-
-
-// --------------------
-// Request: /node_modules/nuxt/dist/app/compat/capi.mjs
-// Parents: 
-// - /node_modules/nuxt/dist/app/compat/vue-demi.mjs ($id_a8110be7)
-// Dependencies: 
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// --------------------
-const $id_0c5717a4 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-__vite_ssr_exportAll__(__vite_ssr_import_0__);
-const install = () => {
-};
-Object.defineProperty(__vite_ssr_exports__, "install", { enumerable: true, configurable: true, get(){ return install }});
-function set(target, key, val) {
-  if (Array.isArray(target)) {
-    target.length = Math.max(target.length, key);
-    target.splice(key, 1, val);
-    return val;
-  }
-  target[key] = val;
-  return val;
-}
-Object.defineProperty(__vite_ssr_exports__, "set", { enumerable: true, configurable: true, get(){ return set }});
-function del(target, key) {
-  if (Array.isArray(target)) {
-    target.splice(key, 1);
-    return;
-  }
-  delete target[key];
-}
-Object.defineProperty(__vite_ssr_exports__, "del", { enumerable: true, configurable: true, get(){ return del }});
-;
-}
-
-
-// --------------------
-// Request: /node_modules/vue/server-renderer/index.js
-// Parents: 
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-404.vue ($id_b90d4d0f)
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-500.vue ($id_14c8b574)
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue ($id_bc2d74a1)
-// - /node_modules/nuxt/dist/app/components/nuxt-error-page.vue ($id_8cc6d73f)
-// - /node_modules/nuxt/dist/app/components/nuxt-root.vue ($id_e9bfada3)
-// - /components/SingleChat.vue ($id_0f3fa417)
-// - /app.vue ($id_2b46e842)
-// Dependencies: 
-
-// --------------------
-const $id_b215fa1c = (global, module, _, exports, importMeta, ssrImport, ssrDynamicImport, ssrExportAll) =>
-import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/vue/server-renderer/index.js")
-  .then(r => {
-    if (r.default && r.default.__esModule)
-      r = r.default
-    exports.default = r.default
-    ssrExportAll(r)
-  })
-  .catch(e => {
-    console.error(e)
-    throw new Error("[vite dev] Error loading external \"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/vue/server-renderer/index.js\".")
-  })
-
-
-// --------------------
-// Request: /node_modules/@nuxt/ui-templates/dist/templates/error-404.vue?vue&type=style&index=0&scoped=true&lang.css
-// Parents: 
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-404.vue ($id_b90d4d0f)
-// Dependencies: 
-
-// --------------------
-const $id_e68b6b38 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-__vite_ssr_exports__.default = ".bg-white[data-v-573335c0]{--tw-bg-opacity:1;background-color:rgba(255,255,255,var(--tw-bg-opacity))}.cursor-pointer[data-v-573335c0]{cursor:pointer}.flex[data-v-573335c0]{display:flex}.grid[data-v-573335c0]{display:-ms-grid;display:grid}.place-content-center[data-v-573335c0]{place-content:center}.items-center[data-v-573335c0]{align-items:center}.justify-center[data-v-573335c0]{justify-content:center}.font-sans[data-v-573335c0]{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",Segoe UI Symbol,\"Noto Color Emoji\"}.font-medium[data-v-573335c0]{font-weight:500}.font-light[data-v-573335c0]{font-weight:300}.text-8xl[data-v-573335c0]{font-size:6rem;line-height:1}.text-xl[data-v-573335c0]{font-size:1.25rem;line-height:1.75rem}.leading-tight[data-v-573335c0]{line-height:1.25}.mb-8[data-v-573335c0]{margin-bottom:2rem}.mb-16[data-v-573335c0]{margin-bottom:4rem}.max-w-520px[data-v-573335c0]{max-width:520px}.min-h-screen[data-v-573335c0]{min-height:100vh}.overflow-hidden[data-v-573335c0]{overflow:hidden}.px-8[data-v-573335c0]{padding-left:2rem;padding-right:2rem}.py-2[data-v-573335c0]{padding-bottom:.5rem;padding-top:.5rem}.px-4[data-v-573335c0]{padding-left:1rem;padding-right:1rem}.fixed[data-v-573335c0]{position:fixed}.left-0[data-v-573335c0]{left:0}.right-0[data-v-573335c0]{right:0}.text-center[data-v-573335c0]{text-align:center}.text-black[data-v-573335c0]{--tw-text-opacity:1;color:rgba(0,0,0,var(--tw-text-opacity))}.antialiased[data-v-573335c0]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-full[data-v-573335c0]{width:100%}.z-10[data-v-573335c0]{z-index:10}.z-20[data-v-573335c0]{z-index:20}@media (min-width:640px){.sm\\:text-4xl[data-v-573335c0]{font-size:2.25rem;line-height:2.5rem}.sm\\:text-xl[data-v-573335c0]{font-size:1.25rem;line-height:1.75rem}.sm\\:text-10xl[data-v-573335c0]{font-size:10rem;line-height:1}.sm\\:px-0[data-v-573335c0]{padding-left:0;padding-right:0}.sm\\:py-3[data-v-573335c0]{padding-bottom:.75rem;padding-top:.75rem}.sm\\:px-6[data-v-573335c0]{padding-left:1.5rem;padding-right:1.5rem}}@media (prefers-color-scheme:dark){.dark\\:bg-black[data-v-573335c0]{--tw-bg-opacity:1;background-color:rgba(0,0,0,var(--tw-bg-opacity))}.dark\\:text-white[data-v-573335c0]{--tw-text-opacity:1;color:rgba(255,255,255,var(--tw-text-opacity))}}.spotlight[data-v-573335c0]{background:linear-gradient(45deg,#00dc82,#36e4da 50%,#0047e1);bottom:-30vh;filter:blur(20vh);height:40vh}.gradient-border[data-v-573335c0]{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:.5rem;position:relative}@media (prefers-color-scheme:light){.gradient-border[data-v-573335c0]{background-color:#ffffff4d}.gradient-border[data-v-573335c0]:before{background:linear-gradient(90deg,#e2e2e2,#e2e2e2 25%,#00dc82 50%,#36e4da 75%,#0047e1)}}@media (prefers-color-scheme:dark){.gradient-border[data-v-573335c0]{background-color:#1414144d}.gradient-border[data-v-573335c0]:before{background:linear-gradient(90deg,#303030,#303030 25%,#00dc82 50%,#36e4da 75%,#0047e1)}}.gradient-border[data-v-573335c0]:before{background-size:400% auto;border-radius:.5rem;bottom:0;content:\"\";left:0;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.5;padding:2px;position:absolute;right:0;top:0;transition:background-position .3s ease-in-out,opacity .2s ease-in-out;width:100%}.gradient-border[data-v-573335c0]:hover:before{background-position:-50% 0;opacity:1}";
-}
-
-
-// --------------------
-// Request: /@id/plugin-vue:export-helper
-// Parents: 
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-404.vue ($id_b90d4d0f)
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-500.vue ($id_14c8b574)
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue ($id_bc2d74a1)
-// - /node_modules/nuxt/dist/app/components/nuxt-error-page.vue ($id_8cc6d73f)
-// - /node_modules/nuxt/dist/app/components/nuxt-root.vue ($id_e9bfada3)
-// - /components/SingleChat.vue ($id_0f3fa417)
-// - /app.vue ($id_2b46e842)
-// Dependencies: 
-
-// --------------------
-const $id_bbb863c1 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-
-__vite_ssr_exports__.default = (sfc, props) => {
+const _plugins = [
+  preload,
+  componentsPlugin_51697ab2,
+  vueuseHead_2ec57934,
+  plugin_4bbaf14c,
+  router_50d5f825
+];
+const error404_vue_vue_type_style_index_0_scoped_true_lang = "";
+const _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
     target[key] = val;
   }
   return target;
-}
-;
-}
-
-
-// --------------------
-// Request: /node_modules/@nuxt/ui-templates/dist/templates/error-500.vue
-// Parents: 
-// - /node_modules/nuxt/dist/app/components/nuxt-error-page.vue ($id_8cc6d73f)
-// Dependencies: 
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/imports.mjs ($id_e30cac3e)
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/vue/server-renderer/index.js ($id_b215fa1c)
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-500.vue?vue&type=style&index=0&scoped=true&lang.css ($id_a2b3b709)
-// - /@id/plugin-vue:export-helper ($id_bbb863c1)
-// --------------------
-const $id_14c8b574 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/imports.mjs");
-
-
-const _sfc_main = {
+};
+const _sfc_main$6 = {
+  __ssrInlineRender: true,
   props: {
-  appName: {
-    type: String,
-    default: "Nuxt"
-  },
-  version: {
-    type: String,
-    default: ""
-  },
-  statusCode: {
-    type: String,
-    default: "500"
-  },
-  statusMessage: {
-    type: String,
-    default: "Server error"
-  },
-  description: {
-    type: String,
-    default: "This page is temporarily unavailable."
-  }
-},
-  setup(__props, { expose }) {
-  expose();
-
-const props = __props
-
-
-__vite_ssr_import_0__.useHead({
-  title: `${ props.statusCode } - ${ props.statusMessage } | ${ props.appName }`,
-  script: [],
-  style: [
-    {
-      children: `*,:before,:after{-webkit-box-sizing:border-box;box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}*{--tw-ring-inset:var(--tw-empty, );--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(14, 165, 233, .5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000}:root{-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{margin:0;font-family:inherit;line-height:inherit}html{-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";line-height:1.5}h1,p{margin:0}h1{font-size:inherit;font-weight:inherit}`
+    appName: {
+      type: String,
+      default: "Nuxt"
+    },
+    version: {
+      type: String,
+      default: ""
+    },
+    statusCode: {
+      type: String,
+      default: "404"
+    },
+    statusMessage: {
+      type: String,
+      default: "Not Found"
+    },
+    description: {
+      type: String,
+      default: "Sorry, the page you are looking for could not be found."
+    },
+    backHome: {
+      type: String,
+      default: "Go back home"
     }
-  ]
-})
-
-const __returned__ = { props, useHead: __vite_ssr_import_0__.useHead }
-Object.defineProperty(__returned__, '__isScriptSetup', { enumerable: false, value: true })
-return __returned__
-}
-
-}
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/vue/server-renderer/index.js");
-
-
-function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  _push(`<div${
-    __vite_ssr_import_2__.ssrRenderAttrs(__vite_ssr_import_1__.mergeProps({ class: "font-sans antialiased bg-white dark:bg-black text-black dark:text-white grid min-h-screen place-content-center overflow-hidden" }, _attrs))
-  } data-v-0914425d><div class="fixed -bottom-1/2 left-0 right-0 h-1/2 spotlight" data-v-0914425d></div><div class="max-w-520px text-center" data-v-0914425d><h1 class="text-8xl sm:text-10xl font-medium mb-8" data-v-0914425d>${
-    $props.statusCode
-  }</h1><p class="text-xl px-8 sm:px-0 sm:text-4xl font-light mb-16 leading-tight" data-v-0914425d>${
-    $props.description
-  }</p></div></div>`)
-}
-
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/@nuxt/ui-templates/dist/templates/error-500.vue?vue&type=style&index=0&scoped=true&lang.css");
-
-
-const __vite_ssr_import_4__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const _sfc_setup = _sfc_main.setup
-_sfc_main.setup = (props, ctx) => {
-  const ssrContext = __vite_ssr_import_4__.useSSRContext()
-  ;(ssrContext.modules || (ssrContext.modules = new Set())).add("node_modules/@nuxt/ui-templates/dist/templates/error-500.vue")
-  return _sfc_setup ? _sfc_setup(props, ctx) : undefined
-}
-const __vite_ssr_import_5__ = await __vite_ssr_import__("/@id/plugin-vue:export-helper");
-
-__vite_ssr_exports__.default = /*#__PURE__*/__vite_ssr_import_5__.default(_sfc_main, [['ssrRender',_sfc_ssrRender],['__scopeId',"data-v-0914425d"],['__file',"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"]]);
-}
-
-
-// --------------------
-// Request: /node_modules/@nuxt/ui-templates/dist/templates/error-500.vue?vue&type=style&index=0&scoped=true&lang.css
-// Parents: 
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-500.vue ($id_14c8b574)
-// Dependencies: 
-
-// --------------------
-const $id_a2b3b709 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-__vite_ssr_exports__.default = ".bg-white[data-v-0914425d]{--tw-bg-opacity:1;background-color:rgba(255,255,255,var(--tw-bg-opacity))}.grid[data-v-0914425d]{display:-ms-grid;display:grid}.place-content-center[data-v-0914425d]{place-content:center}.font-sans[data-v-0914425d]{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",Segoe UI Symbol,\"Noto Color Emoji\"}.font-medium[data-v-0914425d]{font-weight:500}.font-light[data-v-0914425d]{font-weight:300}.h-1\\/2[data-v-0914425d]{height:50%}.text-8xl[data-v-0914425d]{font-size:6rem;line-height:1}.text-xl[data-v-0914425d]{font-size:1.25rem;line-height:1.75rem}.leading-tight[data-v-0914425d]{line-height:1.25}.mb-8[data-v-0914425d]{margin-bottom:2rem}.mb-16[data-v-0914425d]{margin-bottom:4rem}.max-w-520px[data-v-0914425d]{max-width:520px}.min-h-screen[data-v-0914425d]{min-height:100vh}.overflow-hidden[data-v-0914425d]{overflow:hidden}.px-8[data-v-0914425d]{padding-left:2rem;padding-right:2rem}.fixed[data-v-0914425d]{position:fixed}.left-0[data-v-0914425d]{left:0}.right-0[data-v-0914425d]{right:0}.-bottom-1\\/2[data-v-0914425d]{bottom:-50%}.text-center[data-v-0914425d]{text-align:center}.text-black[data-v-0914425d]{--tw-text-opacity:1;color:rgba(0,0,0,var(--tw-text-opacity))}.antialiased[data-v-0914425d]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}@media (min-width:640px){.sm\\:text-4xl[data-v-0914425d]{font-size:2.25rem;line-height:2.5rem}.sm\\:text-10xl[data-v-0914425d]{font-size:10rem;line-height:1}.sm\\:px-0[data-v-0914425d]{padding-left:0;padding-right:0}}@media (prefers-color-scheme:dark){.dark\\:bg-black[data-v-0914425d]{--tw-bg-opacity:1;background-color:rgba(0,0,0,var(--tw-bg-opacity))}.dark\\:text-white[data-v-0914425d]{--tw-text-opacity:1;color:rgba(255,255,255,var(--tw-text-opacity))}}.spotlight[data-v-0914425d]{background:linear-gradient(45deg,#00dc82,#36e4da 50%,#0047e1);filter:blur(20vh)}";
-}
-
-
-// --------------------
-// Request: /node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue
-// Parents: 
-// - /node_modules/nuxt/dist/app/components/nuxt-error-page.vue ($id_8cc6d73f)
-// Dependencies: 
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/imports.mjs ($id_e30cac3e)
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/vue/server-renderer/index.js ($id_b215fa1c)
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue?vue&type=style&index=0&scoped=true&lang.css ($id_2691164c)
-// - /@id/plugin-vue:export-helper ($id_bbb863c1)
-// --------------------
-const $id_bc2d74a1 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/imports.mjs");
-
-
-const _sfc_main = {
+  },
+  setup(__props) {
+    const props = __props;
+    useHead({
+      title: `${props.statusCode} - ${props.statusMessage} | ${props.appName}`,
+      script: [],
+      style: [
+        {
+          children: `*,:before,:after{-webkit-box-sizing:border-box;box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}*{--tw-ring-inset:var(--tw-empty, );--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(14, 165, 233, .5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000}:root{-moz-tab-size:4;-o-tab-size:4;tab-size:4}a{color:inherit;text-decoration:inherit}body{margin:0;font-family:inherit;line-height:inherit}html{-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";line-height:1.5}h1,p{margin:0}h1{font-size:inherit;font-weight:inherit}`
+        }
+      ]
+    });
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtLink = __nuxt_component_0$1;
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "font-sans antialiased bg-white dark:bg-black text-black dark:text-white grid min-h-screen place-content-center overflow-hidden" }, _attrs))} data-v-b11ad3a6><div class="fixed left-0 right-0 spotlight z-10" data-v-b11ad3a6></div><div class="max-w-520px text-center z-20" data-v-b11ad3a6><h1 class="text-8xl sm:text-10xl font-medium mb-8" data-v-b11ad3a6>${__props.statusCode}</h1><p class="text-xl px-8 sm:px-0 sm:text-4xl font-light mb-16 leading-tight" data-v-b11ad3a6>${__props.description}</p><div class="w-full flex items-center justify-center" data-v-b11ad3a6>`);
+      _push(ssrRenderComponent(_component_NuxtLink, {
+        to: "/",
+        class: "gradient-border text-md sm:text-xl py-2 px-4 sm:py-3 sm:px-6 cursor-pointer"
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`${ssrInterpolate(__props.backHome)}`);
+          } else {
+            return [
+              createTextVNode(toDisplayString$1(__props.backHome), 1)
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`</div></div></div>`);
+    };
+  }
+};
+const _sfc_setup$6 = _sfc_main$6.setup;
+_sfc_main$6.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/@nuxt/ui-templates/dist/templates/error-404.vue");
+  return _sfc_setup$6 ? _sfc_setup$6(props, ctx) : void 0;
+};
+const Error404 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-b11ad3a6"]]);
+const error500_vue_vue_type_style_index_0_scoped_true_lang = "";
+const _sfc_main$5 = {
+  __ssrInlineRender: true,
   props: {
-  appName: {
-    type: String,
-    default: "Nuxt"
-  },
-  version: {
-    type: String,
-    default: ""
-  },
-  statusCode: {
-    type: String,
-    default: "500"
-  },
-  statusMessage: {
-    type: String,
-    default: "Server error"
-  },
-  description: {
-    type: String,
-    default: "An error occurred in the application and the page could not be served. If you are the application owner, check your server logs for details."
-  },
-  stack: {
-    type: String,
-    default: ""
-  }
-},
-  setup(__props, { expose }) {
-  expose();
-
-const props = __props
-
-
-__vite_ssr_import_0__.useHead({
-  title: `${ props.statusCode } - ${ props.statusMessage } | ${ props.appName }`,
-  script: [],
-  style: [
-    {
-      children: `*,:before,:after{-webkit-box-sizing:border-box;box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}*{--tw-ring-inset:var(--tw-empty, );--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(14, 165, 233, .5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000}:root{-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{margin:0;font-family:inherit;line-height:inherit}html{-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";line-height:1.5}h1,p,pre{margin:0}h1{font-size:inherit;font-weight:inherit}pre{font-size:1em;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}`
+    appName: {
+      type: String,
+      default: "Nuxt"
+    },
+    version: {
+      type: String,
+      default: ""
+    },
+    statusCode: {
+      type: String,
+      default: "500"
+    },
+    statusMessage: {
+      type: String,
+      default: "Server error"
+    },
+    description: {
+      type: String,
+      default: "This page is temporarily unavailable."
     }
-  ]
-})
-
-const __returned__ = { props, useHead: __vite_ssr_import_0__.useHead }
-Object.defineProperty(__returned__, '__isScriptSetup', { enumerable: false, value: true })
-return __returned__
-}
-
-}
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/vue/server-renderer/index.js");
-
-
-function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  _push(`<div${
-    __vite_ssr_import_2__.ssrRenderAttrs(__vite_ssr_import_1__.mergeProps({ class: "font-sans antialiased bg-white px-10 pt-14 dark:bg-black text-black dark:text-white min-h-screen flex flex-col" }, _attrs))
-  } data-v-1da4697d><div class="fixed left-0 right-0 spotlight" data-v-1da4697d></div><h1 class="text-6xl sm:text-8xl font-medium mb-6" data-v-1da4697d>${
-    $props.statusCode
-  }</h1><p class="text-xl sm:text-2xl font-light mb-8 leading-tight" data-v-1da4697d>${
-    $props.description
-  }</p><div class="bg-white rounded-t-md bg-black/5 dark:bg-white/10 flex-1 overflow-y-auto h-auto" data-v-1da4697d><pre class="text-xl font-light leading-tight z-10 p-8" data-v-1da4697d>${
-    $props.stack
-  }</pre></div></div>`)
-}
-
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue?vue&type=style&index=0&scoped=true&lang.css");
-
-
-const __vite_ssr_import_4__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const _sfc_setup = _sfc_main.setup
-_sfc_main.setup = (props, ctx) => {
-  const ssrContext = __vite_ssr_import_4__.useSSRContext()
-  ;(ssrContext.modules || (ssrContext.modules = new Set())).add("node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue")
-  return _sfc_setup ? _sfc_setup(props, ctx) : undefined
-}
-const __vite_ssr_import_5__ = await __vite_ssr_import__("/@id/plugin-vue:export-helper");
-
-__vite_ssr_exports__.default = /*#__PURE__*/__vite_ssr_import_5__.default(_sfc_main, [['ssrRender',_sfc_ssrRender],['__scopeId',"data-v-1da4697d"],['__file',"/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue"]]);
-}
-
-
-// --------------------
-// Request: /node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue?vue&type=style&index=0&scoped=true&lang.css
-// Parents: 
-// - /node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue ($id_bc2d74a1)
-// Dependencies: 
-
-// --------------------
-const $id_2691164c = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-__vite_ssr_exports__.default = ".bg-white[data-v-1da4697d]{--tw-bg-opacity:1;background-color:rgba(255,255,255,var(--tw-bg-opacity))}.bg-black\\/5[data-v-1da4697d]{--tw-bg-opacity:.05;background-color:rgba(0,0,0,var(--tw-bg-opacity))}.rounded-t-md[data-v-1da4697d]{border-top-left-radius:.375rem;border-top-right-radius:.375rem}.flex[data-v-1da4697d]{display:flex}.flex-col[data-v-1da4697d]{flex-direction:column}.flex-1[data-v-1da4697d]{flex:1 1 0%}.font-sans[data-v-1da4697d]{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",Segoe UI Symbol,\"Noto Color Emoji\"}.font-medium[data-v-1da4697d]{font-weight:500}.font-light[data-v-1da4697d]{font-weight:300}.h-auto[data-v-1da4697d]{height:auto}.text-xl[data-v-1da4697d]{font-size:1.25rem;line-height:1.75rem}.text-6xl[data-v-1da4697d]{font-size:3.75rem;line-height:1}.leading-tight[data-v-1da4697d]{line-height:1.25}.mb-8[data-v-1da4697d]{margin-bottom:2rem}.mb-6[data-v-1da4697d]{margin-bottom:1.5rem}.min-h-screen[data-v-1da4697d]{min-height:100vh}.overflow-y-auto[data-v-1da4697d]{overflow-y:auto}.p-8[data-v-1da4697d]{padding:2rem}.px-10[data-v-1da4697d]{padding-left:2.5rem;padding-right:2.5rem}.pt-14[data-v-1da4697d]{padding-top:3.5rem}.fixed[data-v-1da4697d]{position:fixed}.left-0[data-v-1da4697d]{left:0}.right-0[data-v-1da4697d]{right:0}.text-black[data-v-1da4697d]{--tw-text-opacity:1;color:rgba(0,0,0,var(--tw-text-opacity))}.antialiased[data-v-1da4697d]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.z-10[data-v-1da4697d]{z-index:10}@media (min-width:640px){.sm\\:text-8xl[data-v-1da4697d]{font-size:6rem;line-height:1}.sm\\:text-2xl[data-v-1da4697d]{font-size:1.5rem;line-height:2rem}}@media (prefers-color-scheme:dark){.dark\\:bg-black[data-v-1da4697d]{--tw-bg-opacity:1;background-color:rgba(0,0,0,var(--tw-bg-opacity))}.dark\\:bg-white\\/10[data-v-1da4697d]{--tw-bg-opacity:.1;background-color:rgba(255,255,255,var(--tw-bg-opacity))}.dark\\:text-white[data-v-1da4697d]{--tw-text-opacity:1;color:rgba(255,255,255,var(--tw-text-opacity))}}.spotlight[data-v-1da4697d]{background:linear-gradient(45deg,#00dc82,#36e4da 50%,#0047e1);bottom:-40vh;filter:blur(30vh);height:60vh;opacity:.8}";
-}
-
-
-// --------------------
-// Request: /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/app-component.mjs
-// Parents: 
-// - /mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/nuxt/dist/app/entry ($id_e0113c9e)
-// Dependencies: 
-// - /app.vue ($id_2b46e842)
-// --------------------
-const $id_a1ebb2c7 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/app.vue");
-
-Object.defineProperty(__vite_ssr_exports__, "default", { enumerable: true, configurable: true, get(){ return __vite_ssr_import_0__.default }});;
-}
-
-
-// --------------------
-// Request: /app.vue
-// Parents: 
-// - /@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/app-component.mjs ($id_a1ebb2c7)
-// Dependencies: 
-// - /components/SingleChat.vue ($id_0f3fa417)
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/vue/server-renderer/index.js ($id_b215fa1c)
-// - /app.vue?vue&type=style&index=0&lang.scss ($id_64c6d174)
-// - /@id/plugin-vue:export-helper ($id_bbb863c1)
-// --------------------
-const $id_2b46e842 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/components/SingleChat.vue");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-const _sfc_main = {
-  setup(__props, { expose }) {
-  expose();
-
-//import { watch } from 'vue'
-
-const address = __vite_ssr_import_1__.ref('')
-const walletAddress = __vite_ssr_import_1__.ref('')
-const isButtonDisabled = __vite_ssr_import_1__.ref(false)
-const isVisible = __vite_ssr_import_1__.ref(true)
-
-const data = __vite_ssr_import_1__.ref([])
-
-let streamerAddress
-
-__vite_ssr_import_1__.watch(() => data.value.length, () => {
-  console.log("called function!")
-  var container = document.querySelector(".content-box");
-  if(container !== null){
-    var scrollHeight = container.scrollHeight;
-    container.scrollTop = scrollHeight;
-    console.log(`scrollHeight is ${ scrollHeight }`)
+  },
+  setup(__props) {
+    const props = __props;
+    useHead({
+      title: `${props.statusCode} - ${props.statusMessage} | ${props.appName}`,
+      script: [],
+      style: [
+        {
+          children: `*,:before,:after{-webkit-box-sizing:border-box;box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}*{--tw-ring-inset:var(--tw-empty, );--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(14, 165, 233, .5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000}:root{-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{margin:0;font-family:inherit;line-height:inherit}html{-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";line-height:1.5}h1,p{margin:0}h1{font-size:inherit;font-weight:inherit}`
+        }
+      ]
+    });
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "font-sans antialiased bg-white dark:bg-black text-black dark:text-white grid min-h-screen place-content-center overflow-hidden" }, _attrs))} data-v-18181656><div class="fixed -bottom-1/2 left-0 right-0 h-1/2 spotlight" data-v-18181656></div><div class="max-w-520px text-center" data-v-18181656><h1 class="text-8xl sm:text-10xl font-medium mb-8" data-v-18181656>${__props.statusCode}</h1><p class="text-xl px-8 sm:px-0 sm:text-4xl font-light mb-16 leading-tight" data-v-18181656>${__props.description}</p></div></div>`);
+    };
   }
-}, {flush: 'post'})
-
-async function handleSubmit  () {
-    console.log('clicked!')
-
-    streamerAddress = address.value
-    address.value = ''
-    walletAddress.value = streamerAddress
-    
+};
+const _sfc_setup$5 = _sfc_main$5.setup;
+_sfc_main$5.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/@nuxt/ui-templates/dist/templates/error-500.vue");
+  return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
+};
+const Error500 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-18181656"]]);
+const errorDev_vue_vue_type_style_index_0_scoped_true_lang = "";
+const _sfc_main$4 = {
+  __ssrInlineRender: true,
+  props: {
+    appName: {
+      type: String,
+      default: "Nuxt"
+    },
+    version: {
+      type: String,
+      default: ""
+    },
+    statusCode: {
+      type: String,
+      default: "500"
+    },
+    statusMessage: {
+      type: String,
+      default: "Server error"
+    },
+    description: {
+      type: String,
+      default: "An error occurred in the application and the page could not be served. If you are the application owner, check your server logs for details."
+    },
+    stack: {
+      type: String,
+      default: ""
+    }
+  },
+  setup(__props) {
+    const props = __props;
+    useHead({
+      title: `${props.statusCode} - ${props.statusMessage} | ${props.appName}`,
+      script: [],
+      style: [
+        {
+          children: `*,:before,:after{-webkit-box-sizing:border-box;box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}*{--tw-ring-inset:var(--tw-empty, );--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(14, 165, 233, .5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000}:root{-moz-tab-size:4;-o-tab-size:4;tab-size:4}body{margin:0;font-family:inherit;line-height:inherit}html{-webkit-text-size-adjust:100%;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";line-height:1.5}h1,p,pre{margin:0}h1{font-size:inherit;font-weight:inherit}pre{font-size:1em;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}`
+        }
+      ]
+    });
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "font-sans antialiased bg-white px-10 pt-14 dark:bg-black text-black dark:text-white min-h-screen flex flex-col" }, _attrs))} data-v-4f8d0ee7><div class="fixed left-0 right-0 spotlight" data-v-4f8d0ee7></div><h1 class="text-6xl sm:text-8xl font-medium mb-6" data-v-4f8d0ee7>${__props.statusCode}</h1><p class="text-xl sm:text-2xl font-light mb-8 leading-tight" data-v-4f8d0ee7>${__props.description}</p><div class="bg-white rounded-t-md bg-black/5 dark:bg-white/10 flex-1 overflow-y-auto h-auto" data-v-4f8d0ee7><pre class="text-xl font-light leading-tight z-10 p-8" data-v-4f8d0ee7>${__props.stack}</pre></div></div>`);
+    };
+  }
+};
+const _sfc_setup$4 = _sfc_main$4.setup;
+_sfc_main$4.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue");
+  return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
+};
+const _sfc_main$3 = {
+  __ssrInlineRender: true,
+  props: {
+    error: Object
+  },
+  setup(__props) {
+    var _a;
+    const props = __props;
+    const error = props.error;
+    (error.stack || "").split("\n").splice(1).map((line) => {
+      const text = line.replace("webpack:/", "").replace(".vue", ".js").trim();
+      return {
+        text,
+        internal: line.includes("node_modules") && !line.includes(".cache") || line.includes("internal") || line.includes("new Promise")
+      };
+    }).map((i) => `<span class="stack${i.internal ? " internal" : ""}">${i.text}</span>`).join("\n");
+    const statusCode = String(error.statusCode || 500);
+    const is404 = statusCode === "404";
+    const statusMessage = ((_a = error.statusMessage) != null ? _a : is404) ? "Page Not Found" : "Internal Server Error";
+    const description = error.message || error.toString();
+    const stack = void 0;
+    const ErrorTemplate = is404 ? Error404 : Error500;
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(ssrRenderComponent(unref(ErrorTemplate), mergeProps({ statusCode: unref(statusCode), statusMessage: unref(statusMessage), description: unref(description), stack: unref(stack) }, _attrs), null, _parent));
+    };
+  }
+};
+const _sfc_setup$3 = _sfc_main$3.setup;
+_sfc_main$3.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/nuxt/dist/app/components/nuxt-error-page.vue");
+  return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
+};
+const _sfc_main$2 = {
+  __ssrInlineRender: true,
+  setup(__props) {
+    const nuxtApp = useNuxtApp();
+    nuxtApp.hooks.callHookWith((hooks) => hooks.map((hook) => hook()), "vue:setup");
+    const error = useError();
+    onErrorCaptured((err, target, info) => {
+      nuxtApp.hooks.callHook("vue:error", err, target, info).catch((hookError) => console.error("[nuxt] Error in `vue:error` hook", hookError));
+      {
+        callWithNuxt(nuxtApp, throwError, [err]);
+      }
+    });
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_App = resolveComponent("App");
+      ssrRenderSuspense(_push, {
+        default: () => {
+          if (unref(error)) {
+            _push(ssrRenderComponent(unref(_sfc_main$3), { error: unref(error) }, null, _parent));
+          } else {
+            _push(ssrRenderComponent(_component_App, null, null, _parent));
+          }
+        },
+        _: 1
+      });
+    };
+  }
+};
+const _sfc_setup$2 = _sfc_main$2.setup;
+_sfc_main$2.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("node_modules/nuxt/dist/app/components/nuxt-root.vue");
+  return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
+};
+const SingleChat_vue_vue_type_style_index_0_scoped_true_lang = "";
+const _sfc_main$1 = {
+  __ssrInlineRender: true,
+  props: ["chat"],
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<div${ssrRenderAttrs(mergeProps({
+        class: ["chat", { emphasis: __props.chat.amount >= 1e3 }]
+      }, _attrs))} data-v-7754157d><p class="chat__alias" data-v-7754157d>${ssrInterpolate(__props.chat.alias)}</p><p class="chat__amount" data-v-7754157d><span class="chat__amount--text" data-v-7754157d>${ssrInterpolate(__props.chat.amount)}</span><span class="chat__amount--sybl" data-v-7754157d> JPYC</span></p><p class="chat__message" data-v-7754157d>${ssrInterpolate(__props.chat.message)}</p></div>`);
+    };
+  }
+};
+const _sfc_setup$1 = _sfc_main$1.setup;
+_sfc_main$1.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/SingleChat.vue");
+  return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
+};
+const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-7754157d"]]);
+const app_vue_vue_type_style_index_0_lang = "";
+const _sfc_main = {
+  __ssrInlineRender: true,
+  setup(__props) {
+    const address = ref("");
+    ref("");
+    const isButtonDisabled = ref(false);
+    const isVisible = ref(true);
+    const data = ref([]);
+    watch(() => data.value.length, () => {
+      console.log("called function!");
+      var container = document.querySelector(".content-box");
+      if (container !== null) {
+        var scrollHeight = container.scrollHeight;
+        container.scrollTop = scrollHeight;
+        console.log(`scrollHeight is ${scrollHeight}`);
+      }
+    }, { flush: "post" });
+    return (_ctx, _push, _parent, _attrs) => {
+      const _component_Html = resolveComponent("Html");
+      const _component_Title = resolveComponent("Title");
+      const _component_Meta = resolveComponent("Meta");
+      const _component_SingleChat = __nuxt_component_0;
+      _push(`<div${ssrRenderAttrs(_attrs)}>`);
+      _push(ssrRenderComponent(_component_Html, null, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(ssrRenderComponent(_component_Title, null, {
+              default: withCtx((_2, _push3, _parent3, _scopeId2) => {
+                if (_push3) {
+                  _push3(`OSHI\u30B5\u30DD!`);
+                } else {
+                  return [
+                    createTextVNode("OSHI\u30B5\u30DD!")
+                  ];
+                }
+              }),
+              _: 1
+            }, _parent2, _scopeId));
+            _push2(ssrRenderComponent(_component_Meta, {
+              name: "description",
+              content: "Encourage people directly!"
+            }, null, _parent2, _scopeId));
+          } else {
+            return [
+              createVNode(_component_Title, null, {
+                default: withCtx(() => [
+                  createTextVNode("OSHI\u30B5\u30DD!")
+                ]),
+                _: 1
+              }),
+              createVNode(_component_Meta, {
+                name: "description",
+                content: "Encourage people directly!"
+              })
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`<form class="form" style="${ssrRenderStyle(isVisible.value ? null : { display: "none" })}"><div class="form-item"><p class="form-item__label">\u30A6\u30A9\u30EC\u30C3\u30C8 \u30A2\u30C9\u30EC\u30B9\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044</p><input type="text" class="form-item__input"${ssrRenderAttr("value", address.value)} placeholder="your wallet address" required></div><button${ssrIncludeBooleanAttr(isButtonDisabled.value) ? " disabled" : ""} class="btn btn--start" id="start_chat" type="submit"> \u914D\u4FE1\u30B9\u30BF\u30FC\u30C8! </button></form>`);
+      if (data.value.length) {
+        _push(`<section class="container"><div class="container__title"> \u{1F447} Live Chat </div><div class="content-box"><!--[-->`);
+        ssrRenderList(data.value, (chat) => {
+          _push(ssrRenderComponent(_component_SingleChat, {
+            key: chat.Id,
+            chat
+          }, null, _parent));
+        });
+        _push(`<!--]--></div></section>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div>`);
+    };
+  }
+};
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("app.vue");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+if (!globalThis.$fetch) {
+  globalThis.$fetch = $fetch.create({
+    baseURL: baseURL()
+  });
+}
+let entry;
+const plugins = normalizePlugins(_plugins);
+{
+  entry = async function createNuxtAppServer(ssrContext = {}) {
+    const vueApp = createApp(_sfc_main$2);
+    vueApp.component("App", _sfc_main);
+    const nuxt = createNuxtApp({ vueApp, ssrContext });
     try {
-      getContractEvent(streamerAddress, data)
-      isVisible.value = false
-    } catch (_error) {
-      console.log(_error)
-      console.log("配信開始に失敗しました、入力したウオレット アドレスが正しいか確認してください")
+      await applyPlugins(nuxt, plugins);
+      await nuxt.hooks.callHook("app:created", vueApp);
+    } catch (err) {
+      await nuxt.callHook("app:error", err);
+      ssrContext.error = ssrContext.error || err;
     }
-
-    // getContractEvent に渡した data の中には以下の内容が組み込まれる (以下 ./js/getContractEvent.js より引用)
-    /** 
-      chatData = {
-        Id: chatCounter, // DOM 上でチャットの番号を管理する為の ID
-        alias: _alias, // 送金者のユーザー名 
-        amount: _amountEther, // 送金者が送金した額
-        chat: _chat, // 送金者のメッセージ内容
-        effect: null, // エフェクトのデータ (これはまだ未確定なので使わなくていい)
-      }
-    **/
-
-// 👇ダミーデータ
-// dataに値がプッシュされればそれがreactiveに画面に反映されるはず
-  data.value.push(
-    {"Id":"id1", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
-    {"Id":"id2", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
-    {"Id":"id3", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
-    {"Id":"id4", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
-    {"Id":"id5", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
-    {"Id":"id6", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
-    {"Id":"id7", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
-    {"Id":"id8", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
-    {"Id":"id9", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
-    {"Id":"id10", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"}
-  )
-   
-  isButtonDisabled.value = true
+    return vueApp;
+  };
 }
-
-
-const __returned__ = { address, walletAddress, isButtonDisabled, isVisible, data, streamerAddress, handleSubmit }
-Object.defineProperty(__returned__, '__isScriptSetup', { enumerable: false, value: true })
-return __returned__
-}
-
-}
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/vue/server-renderer/index.js");
-
-
-function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  const _component_Html = __vite_ssr_import_2__.resolveComponent("Html")
-  const _component_Title = __vite_ssr_import_2__.resolveComponent("Title")
-  const _component_Meta = __vite_ssr_import_2__.resolveComponent("Meta")
-  const _component_SingleChat = __vite_ssr_import_0__.default
-
-  _push(`<div${__vite_ssr_import_3__.ssrRenderAttrs(_attrs)}>`)
-  _push(__vite_ssr_import_3__.ssrRenderComponent(_component_Html, null, {
-    default: __vite_ssr_import_2__.withCtx((_, _push, _parent, _scopeId) => {
-      if (_push) {
-        _push(__vite_ssr_import_3__.ssrRenderComponent(_component_Title, null, {
-          default: __vite_ssr_import_2__.withCtx((_, _push, _parent, _scopeId) => {
-            if (_push) {
-              _push(`OSHIサポ!`)
-            } else {
-              return [
-                __vite_ssr_import_2__.createTextVNode("OSHIサポ!")
-              ]
-            }
-          }),
-          _: 1 /* STABLE */
-        }, _parent, _scopeId))
-        _push(__vite_ssr_import_3__.ssrRenderComponent(_component_Meta, {
-          name: "description",
-          content: "Encourage people directly!"
-        }, null, _parent, _scopeId))
-      } else {
-        return [
-          __vite_ssr_import_2__.createVNode(_component_Title, null, {
-            default: __vite_ssr_import_2__.withCtx(() => [
-              __vite_ssr_import_2__.createTextVNode("OSHIサポ!")
-            ]),
-            _: 1 /* STABLE */
-          }),
-          __vite_ssr_import_2__.createVNode(_component_Meta, {
-            name: "description",
-            content: "Encourage people directly!"
-          })
-        ]
-      }
-    }),
-    _: 1 /* STABLE */
-  }, _parent))
-  _push(`<!-- form --><form class="form" style="${
-    __vite_ssr_import_3__.ssrRenderStyle(($setup.isVisible) ? null : { display: "none" })
-  }"><div class="form-item"><p class="form-item__label">ウォレット アドレスを入力してください</p><input type="text" class="form-item__input"${
-    __vite_ssr_import_3__.ssrRenderAttr("value", $setup.address)
-  } placeholder="your wallet address" required></div><button${
-    (__vite_ssr_import_3__.ssrIncludeBooleanAttr($setup.isButtonDisabled)) ? " disabled" : ""
-  } class="btn btn--start" id="start_chat" type="submit"> 配信スタート! </button></form><!-- content -->`)
-  if ($setup.data.length) {
-    _push(`<section class="container"><div class="container__title"> 👇 Live Chat </div><!-- output data --><div class="content-box"><!--[-->`)
-    __vite_ssr_import_3__.ssrRenderList($setup.data, (chat) => {
-      _push(__vite_ssr_import_3__.ssrRenderComponent(_component_SingleChat, {
-        key: chat.Id,
-        chat: chat
-      }, null, _parent))
-    })
-    _push(`<!--]--></div></section>`)
-  } else {
-    _push(`<!---->`)
-  }
-  _push(`</div>`)
-}
-
-const __vite_ssr_import_4__ = await __vite_ssr_import__("/app.vue?vue&type=style&index=0&lang.scss");
-
-
-const __vite_ssr_import_5__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const _sfc_setup = _sfc_main.setup
-_sfc_main.setup = (props, ctx) => {
-  const ssrContext = __vite_ssr_import_5__.useSSRContext()
-  ;(ssrContext.modules || (ssrContext.modules = new Set())).add("app.vue")
-  return _sfc_setup ? _sfc_setup(props, ctx) : undefined
-}
-const __vite_ssr_import_6__ = await __vite_ssr_import__("/@id/plugin-vue:export-helper");
-
-__vite_ssr_exports__.default = /*#__PURE__*/__vite_ssr_import_6__.default(_sfc_main, [['ssrRender',_sfc_ssrRender],['__file',"/mnt/c/Users/nagak/Downloads/recpientWebApp/app.vue"]]);
-}
-
-
-// --------------------
-// Request: /components/SingleChat.vue
-// Parents: 
-// - /app.vue ($id_2b46e842)
-// Dependencies: 
-// - /node_modules/vue/dist/vue.cjs.js ($id_60f0615f)
-// - /node_modules/vue/server-renderer/index.js ($id_b215fa1c)
-// - /components/SingleChat.vue?vue&type=style&index=0&scoped=true&lang.scss ($id_002adb38)
-// - /@id/plugin-vue:export-helper ($id_bbb863c1)
-// --------------------
-const $id_0f3fa417 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-const _sfc_main = {
-  props: ['chat'],
-  setup(__props, { expose }) {
-  expose();
-
-const props = __props
-
-
-
-const __returned__ = { props }
-Object.defineProperty(__returned__, '__isScriptSetup', { enumerable: false, value: true })
-return __returned__
-}
-
-}
-const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const __vite_ssr_import_1__ = await __vite_ssr_import__("/node_modules/vue/server-renderer/index.js");
-
-
-function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
-  _push(`<div${
-    __vite_ssr_import_1__.ssrRenderAttrs(__vite_ssr_import_0__.mergeProps({
-      class: ["chat", {emphasis: $props.chat.amount >= 1000}]
-    }, _attrs))
-  } data-v-4d092b5b><p class="chat__alias" data-v-4d092b5b>${
-    __vite_ssr_import_1__.ssrInterpolate($props.chat.alias)
-  }</p><p class="chat__amount" data-v-4d092b5b><span class="chat__amount--text" data-v-4d092b5b>${
-    __vite_ssr_import_1__.ssrInterpolate($props.chat.amount)
-  }</span> JPYC </p><p class="chat__message" data-v-4d092b5b>${
-    __vite_ssr_import_1__.ssrInterpolate($props.chat.message)
-  }</p></div>`)
-}
-
-const __vite_ssr_import_2__ = await __vite_ssr_import__("/components/SingleChat.vue?vue&type=style&index=0&scoped=true&lang.scss");
-
-
-const __vite_ssr_import_3__ = await __vite_ssr_import__("/node_modules/vue/dist/vue.cjs.js");
-
-const _sfc_setup = _sfc_main.setup
-_sfc_main.setup = (props, ctx) => {
-  const ssrContext = __vite_ssr_import_3__.useSSRContext()
-  ;(ssrContext.modules || (ssrContext.modules = new Set())).add("components/SingleChat.vue")
-  return _sfc_setup ? _sfc_setup(props, ctx) : undefined
-}
-const __vite_ssr_import_4__ = await __vite_ssr_import__("/@id/plugin-vue:export-helper");
-
-__vite_ssr_exports__.default = /*#__PURE__*/__vite_ssr_import_4__.default(_sfc_main, [['ssrRender',_sfc_ssrRender],['__scopeId',"data-v-4d092b5b"],['__file',"/mnt/c/Users/nagak/Downloads/recpientWebApp/components/SingleChat.vue"]]);
-}
-
-
-// --------------------
-// Request: /components/SingleChat.vue?vue&type=style&index=0&scoped=true&lang.scss
-// Parents: 
-// - /components/SingleChat.vue ($id_0f3fa417)
-// Dependencies: 
-
-// --------------------
-const $id_002adb38 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-__vite_ssr_exports__.default = "@charset \"UTF-8\";body[data-v-4d092b5b]{-ms-overflow-style:none;color:#333;scrollbar-width:none}body[data-v-4d092b5b]::-webkit-scrollbar{display:none}div[data-v-4d092b5b],html[data-v-4d092b5b],section[data-v-4d092b5b]{font-family:\"Gill Sans\",\"Gill Sans MT\",\"メイリオ\",\"Meiryo\",\"Trebuchet MS\",sans-serif;margin:0 auto}input[type=text][data-v-4d092b5b]::-moz-placeholder{text-align:center}input[type=text][data-v-4d092b5b]:-ms-input-placeholder{text-align:center}input[type=text][data-v-4d092b5b]::placeholder{text-align:center}.chat[data-v-4d092b5b]{border-radius:4px;margin-bottom:16px;padding:8px 16px 0}.chat__alias[data-v-4d092b5b]{margin-right:8px}.chat__alias[data-v-4d092b5b],.chat__amount[data-v-4d092b5b]{color:#555;display:inline-block}.chat__amount[data-v-4d092b5b]{margin-bottom:4px}.chat__amount--text[data-v-4d092b5b]{color:#333;font-size:18px}.chat__message[data-v-4d092b5b]{padding-bottom:8px}.chat.emphasis[data-v-4d092b5b]{background:#e8e7ff;box-shadow:2px 2px 4px rgba(28,6,49,.2)}.chat.emphasis .chat__amount--text[data-v-4d092b5b]{font-weight:700}";
-}
-
-
-// --------------------
-// Request: /app.vue?vue&type=style&index=0&lang.scss
-// Parents: 
-// - /app.vue ($id_2b46e842)
-// Dependencies: 
-
-// --------------------
-const $id_64c6d174 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-__vite_ssr_exports__.default = "@charset \"UTF-8\";body{-ms-overflow-style:none;color:#333;scrollbar-width:none}body::-webkit-scrollbar{display:none}div,html,section{font-family:\"Gill Sans\",\"Gill Sans MT\",\"メイリオ\",\"Meiryo\",\"Trebuchet MS\",sans-serif;margin:0 auto}input[type=text]::-moz-placeholder{text-align:center}input[type=text]:-ms-input-placeholder{text-align:center}input[type=text]::placeholder{text-align:center}.form{align-items:center;display:flex;flex-direction:column;margin:120px auto 0;max-width:480px}.form-item{margin:auto auto 8px;text-align:center;width:100%}.form-item__label{margin-bottom:8px}.form-item__input{padding:8px;width:80%}.btn,.form-item__input{border:1px solid #d7d7d7;border-radius:4px}.btn{font-size:.8rem;margin:0 auto;padding:10px 20px;transition:all .2s}.btn--start{width:80%}.btn--start,.btn--start:before{display:inline-block;transition:all .2s}.btn--start:before{background-image:url(/_nuxt/assets/img/oshi-icon.png);background-size:contain;content:\"\";height:16px;vertical-align:middle;width:24px}.btn:hover{background-color:#eb0673;border:1px solid #eb0673}.btn:hover:before{transform:translateY(-3px)}.container{bottom:0!important;margin-top:24px;position:fixed!important;right:0!important}.container__title{font-size:18px;margin-bottom:8px;text-align:center}.content-box{background:#fafafa;border-radius:4px;max-height:50vh;min-height:40vh;min-width:400px;overflow-y:scroll;padding:20px;width:30vw}";
-}
-
-
-const __modules__ = {
-  "/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/nuxt/dist/app/entry": $id_e0113c9e,
-  "/node_modules/vue/dist/vue.cjs.js": $id_60f0615f,
-  "/node_modules/ohmyfetch/dist/index.mjs": $id_780217c4,
-  "/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/paths.mjs": $id_635ab8aa,
-  "/node_modules/ufo/dist/index.mjs": $id_614de060,
-  "/node_modules/nuxt/dist/app/index.mjs": $id_36927477,
-  "/node_modules/nuxt/dist/app/nuxt.mjs": $id_e069d411,
-  "/node_modules/hookable/dist/index.mjs": $id_a2c811c4,
-  "/node_modules/unctx/dist/index.mjs": $id_a569ca2d,
-  "/node_modules/nuxt/dist/app/compat/legacy-app.mjs": $id_a48341bc,
-  "/node_modules/unenv/runtime/mock/proxy.mjs": $id_39e12da7,
-  "/node_modules/nuxt/dist/app/composables/index.mjs": $id_b067a79a,
-  "/node_modules/nuxt/dist/app/composables/component.mjs": $id_53345950,
-  "/node_modules/vue-router/dist/vue-router.cjs.js": $id_f9a4a698,
-  "/node_modules/nuxt/dist/app/composables/asyncData.mjs": $id_d5b6a221,
-  "/node_modules/nuxt/dist/app/composables/utils.mjs": $id_df511336,
-  "/node_modules/nuxt/dist/app/composables/hydrate.mjs": $id_0063df1b,
-  "/node_modules/nuxt/dist/app/composables/state.mjs": $id_7d872108,
-  "/node_modules/nuxt/dist/app/composables/error.mjs": $id_6fe050f1,
-  "/node_modules/nuxt/dist/app/composables/fetch.mjs": $id_41f5ae4e,
-  "/node_modules/ohash/dist/index.mjs": $id_b1b82cf3,
-  "/node_modules/nuxt/dist/app/composables/cookie.mjs": $id_511b441d,
-  "/node_modules/cookie-es/dist/index.mjs": $id_f4975261,
-  "/node_modules/h3/dist/index.mjs": $id_57d7ded6,
-  "/node_modules/destr/dist/index.mjs": $id_03d15ecd,
-  "/node_modules/nuxt/dist/app/composables/ssr.mjs": $id_c4866ba7,
-  "/node_modules/nuxt/dist/app/composables/router.mjs": $id_db4d90a8,
-  "/node_modules/nuxt/dist/app/components/index.mjs": $id_161bfe9f,
-  "/node_modules/nuxt/dist/app/components/nuxt-link.mjs": $id_ffac87b5,
-  "/node_modules/nuxt/dist/head/runtime/index.mjs": $id_b7351483,
-  "/node_modules/nuxt/dist/head/runtime/composables.mjs": $id_04ea9504,
-  "/node_modules/@vue/shared/dist/shared.cjs.js": $id_852b06a2,
-  "/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/css.mjs": $id_6f3a9fbf,
-  "/node_modules/ress/ress.css": $id_afcbbe75,
-  "/assets/css/style.css": $id_2262f03b,
-  "/assets/css/style.scss": $id_7107a6a0,
-  "/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/plugins/server.mjs": $id_232cc801,
-  "/node_modules/nuxt/dist/app/plugins/preload.server.mjs": $id_9871bba0,
-  "/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/components.plugin.mjs": $id_c35c5cc8,
-  "/node_modules/nuxt/dist/head/runtime/lib/vueuse-head.plugin.mjs": $id_e6f12003,
-  "/node_modules/@vueuse/head/dist/index.mjs": $id_c032264e,
-  "/node_modules/defu/dist/defu.mjs": $id_d7afab65,
-  "/node_modules/nuxt/dist/head/runtime/plugin.mjs": $id_a2650341,
-  "/node_modules/nuxt/dist/head/runtime/components.mjs": $id_b2a29d6f,
-  "/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/meta.config.mjs": $id_a7ef23d9,
-  "/node_modules/nuxt/dist/app/plugins/router.mjs": $id_7fe121f6,
-  "/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/root-component.mjs": $id_fcd7cbaa,
-  "/node_modules/nuxt/dist/app/components/nuxt-root.vue": $id_e9bfada3,
-  "/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/error-component.mjs": $id_dd4dec96,
-  "/node_modules/nuxt/dist/app/components/nuxt-error-page.vue": $id_8cc6d73f,
-  "/node_modules/@nuxt/ui-templates/dist/templates/error-404.vue": $id_b90d4d0f,
-  "/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/imports.mjs": $id_e30cac3e,
-  "/node_modules/nuxt/dist/app/compat/vue-demi.mjs": $id_a8110be7,
-  "/node_modules/nuxt/dist/app/compat/capi.mjs": $id_0c5717a4,
-  "/node_modules/vue/server-renderer/index.js": $id_b215fa1c,
-  "/node_modules/@nuxt/ui-templates/dist/templates/error-404.vue?vue&type=style&index=0&scoped=true&lang.css": $id_e68b6b38,
-  "/@id/plugin-vue:export-helper": $id_bbb863c1,
-  "/node_modules/@nuxt/ui-templates/dist/templates/error-500.vue": $id_14c8b574,
-  "/node_modules/@nuxt/ui-templates/dist/templates/error-500.vue?vue&type=style&index=0&scoped=true&lang.css": $id_a2b3b709,
-  "/node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue": $id_bc2d74a1,
-  "/node_modules/@nuxt/ui-templates/dist/templates/error-dev.vue?vue&type=style&index=0&scoped=true&lang.css": $id_2691164c,
-  "/@id/__x00__virtual:/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/app-component.mjs": $id_a1ebb2c7,
-  "/app.vue": $id_2b46e842,
-  "/components/SingleChat.vue": $id_0f3fa417,
-  "/components/SingleChat.vue?vue&type=style&index=0&scoped=true&lang.scss": $id_002adb38,
-  "/app.vue?vue&type=style&index=0&lang.scss": $id_64c6d174
-}
-
-
-const __pendingModules__ = new Map()
-const __pendingImports__ = new Map()
-const __ssrContext__ = { global: globalThis }
-
-function __ssrLoadModule__(url, urlStack = []) {
-  const pendingModule = __pendingModules__.get(url)
-  if (pendingModule) { return pendingModule }
-  const modulePromise = __instantiateModule__(url, urlStack)
-  __pendingModules__.set(url, modulePromise)
-  modulePromise.catch(() => { __pendingModules__.delete(url) })
-         .finally(() => { __pendingModules__.delete(url) })
-  return modulePromise
-}
-
-async function __instantiateModule__(url, urlStack) {
-  const mod = __modules__[url]
-  if (mod.stubModule) { return mod.stubModule }
-  const stubModule = { [Symbol.toStringTag]: 'Module' }
-  Object.defineProperty(stubModule, '__esModule', { value: true })
-  mod.stubModule = stubModule
-  // https://vitejs.dev/guide/api-hmr.html
-  const importMeta = { url, hot: { accept() {}, prune() {}, dispose() {}, invalidate() {}, decline() {}, on() {} } }
-  urlStack = urlStack.concat(url)
-  const isCircular = url => urlStack.includes(url)
-  const pendingDeps = []
-  const ssrImport = async (dep) => {
-    // TODO: Handle externals if dep[0] !== '.' | '/'
-    if (!isCircular(dep) && !__pendingImports__.get(dep)?.some(isCircular)) {
-      pendingDeps.push(dep)
-      if (pendingDeps.length === 1) {
-        __pendingImports__.set(url, pendingDeps)
-      }
-      await __ssrLoadModule__(dep, urlStack)
-      if (pendingDeps.length === 1) {
-        __pendingImports__.delete(url)
-      } else {
-        pendingDeps.splice(pendingDeps.indexOf(dep), 1)
-      }
-    }
-    return __modules__[dep].stubModule
-  }
-  function ssrDynamicImport (dep) {
-    // TODO: Handle dynamic import starting with . relative to url
-    return ssrImport(dep)
-  }
-
-  function ssrExportAll(sourceModule) {
-    for (const key in sourceModule) {
-      if (key !== 'default') {
-        try {
-          Object.defineProperty(stubModule, key, {
-            enumerable: true,
-            configurable: true,
-            get() { return sourceModule[key] }
-          })
-        } catch (_err) { }
-      }
-    }
-  }
-
-  const cjsModule = {
-    get exports () {
-      return stubModule.default
-    },
-    set exports (v) {
-      stubModule.default = v
-    },
-  }
-
-  await mod(
-    __ssrContext__.global,
-    cjsModule,
-    stubModule.default,
-    stubModule,
-    importMeta,
-    ssrImport,
-    ssrDynamicImport,
-    ssrExportAll
-  )
-
-  return stubModule
-}
-
-
-export default await __ssrLoadModule__("/mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/nuxt/dist/app/entry")
+const entry$1 = (ctx) => entry(ctx);
+export { entry$1 as default };

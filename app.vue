@@ -48,18 +48,20 @@ async function handleSubmit  () {
 
 // 👇ダミーデータ
 // dataに値がプッシュされればそれがreactiveに画面に反映されるはず
+/** 
   data.value.push(
-    {"Id":"id1", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
-    {"Id":"id2", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
-    {"Id":"id3", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
-    {"Id":"id4", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
-    {"Id":"id5", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
-    {"Id":"id6", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
-    {"Id":"id7", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
-    {"Id":"id8", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
-    {"Id":"id9", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
-    {"Id":"id10", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"}
+    {"Id":"id1", "alias": "akie", "amount": 100, "message": "Looooooooooove your streaming"},
+    {"Id":"id2", "alias": "akie", "amount": 100, "message": "Looooooooooove your streaming"},
+    {"Id":"id3", "alias": "akie", "amount": 100, "message": "Looooooooooove your streaming"},
+    {"Id":"id4", "alias": "akie", "amount": 100, "message": "Looooooooooove your streaming"},
+    {"Id":"id5", "alias": "shohei", "amount": 10000, "message": "Wonderful streaming!!"},
+    {"Id":"id6", "alias": "shohei", "amount": 10000, "message": "Wonderful streaming!!"},
+    {"Id":"id7", "alias": "shohei", "amount": 10000, "message": "Wonderful streaming!!"},
+    {"Id":"id8", "alias": "shohei", "amount": 10000, "message": "Wonderful streaming!!"},
+    {"Id":"id9", "alias": "shohei", "amount": 10000, "message": "Wonderful streaming!!"},
+    {"Id":"id10", "alias": "shohei", "amount": 10000, "message": "Wonderful streaming!!"}
   )
+  **/
    
   isButtonDisabled.value = true
 }
@@ -88,6 +90,7 @@ async function handleSubmit  () {
       <div class="container__title">
         👇 Live Chat
       </div>
+
 
       <!-- output data -->
       <div class="content-box" >
@@ -166,6 +169,7 @@ $padding: 8px;
     }
 }
 .container {
+  background: #fafafa;
   margin-top: 24px;
   bottom: 0px !important;
   right: 0px !important;
@@ -180,7 +184,6 @@ $padding: 8px;
 }
 
 .content-box {
-  background: #fafafa;
   padding: 20px 20px;
   min-width: 400px;
   width: 30vw;

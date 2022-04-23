@@ -21,7 +21,7 @@ async function getContractEvent (_streamerAddress, _data) {
 
     PoolContract.on(filter, (_senderAddr, _reciveAddr, _message, _alias, _amount) => {
       chatCounter++
-      _amountEther = ethers.utils.formatEther(_amount)
+      _amountEther = _amount * 10e-19
       chatData = {
         Id: chatCounter,
         alias: _alias,

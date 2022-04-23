@@ -9,7 +9,7 @@ const props = defineProps(['chat'])
     </p>
 
     <p class="chat__amount">
-        <span class="chat__amount--text">{{ chat.amount }}</span> JPYC
+        <span class="chat__amount--text">{{ chat.amount }}</span><span class="chat__amount--sybl"> JPYC</span>
     </p>
     <p class="chat__message">
         {{ chat.message }}
@@ -35,10 +35,15 @@ const props = defineProps(['chat'])
         margin-bottom: 4px;
         display: inline-block;
         color: #555555;
+        float: right;
 
         &--text {
             font-size: 18px;
+            font-family: monospace;
             color: style.$color-text;
+        }
+        &--sybl {
+            font-size: 12px;
         }
     }
     &__message {
