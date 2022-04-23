@@ -1,12 +1,24 @@
 <script setup>
+//import { watch } from 'vue'
 
 const address = ref('')
 const walletAddress = ref('')
 const isButtonDisabled = ref(false)
+const isVisible = ref(true)
 
 const data = ref([])
 
 let streamerAddress
+
+watch(() => data.value.length, () => {
+  console.log("called function!")
+  var container = document.querySelector(".content-box");
+  if(container !== null){
+    var scrollHeight = container.scrollHeight;
+    container.scrollTop = scrollHeight;
+    console.log(`scrollHeight is ${ scrollHeight }`)
+  }
+}, {flush: 'post'})
 
 async function handleSubmit  () {
     console.log('clicked!')
@@ -15,7 +27,13 @@ async function handleSubmit  () {
     address.value = ''
     walletAddress.value = streamerAddress
     
-    getContractEvent(streamerAddress, data)
+    try {
+      getContractEvent(streamerAddress, data)
+      isVisible.value = false
+    } catch (_error) {
+      console.log(_error)
+      console.log("配信開始に失敗しました、入力したウオレット アドレスが正しいか確認してください")
+    }
 
     // getContractEvent に渡した data の中には以下の内容が組み込まれる (以下 ./js/getContractEvent.js より引用)
     /** 
@@ -30,20 +48,20 @@ async function handleSubmit  () {
 
 // 👇ダミーデータ
 // dataに値がプッシュされればそれがreactiveに画面に反映されるはず
-  //  data.value.push(
-  //    {"Id":"id1", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
-  //    {"Id":"id2", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
-  //    {"Id":"id3", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
-  //    {"Id":"id4", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
-  //    {"Id":"id5", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
-  //    {"Id":"id6", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
-  //    {"Id":"id7", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
-  //    {"Id":"id8", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
-  //    {"Id":"id9", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
-  //    {"Id":"id10", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"}
-  //  )
+  data.value.push(
+    {"Id":"id1", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
+    {"Id":"id2", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
+    {"Id":"id3", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
+    {"Id":"id4", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
+    {"Id":"id5", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
+    {"Id":"id6", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
+    {"Id":"id7", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
+    {"Id":"id8", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
+    {"Id":"id9", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
+    {"Id":"id10", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"}
+  )
    
-   isButtonDisabled.value = true
+  isButtonDisabled.value = true
 }
 
 </script>
@@ -54,7 +72,7 @@ async function handleSubmit  () {
         <Meta name="description" content="Encourage people directly!"></Meta>
     </Html>
     <!-- form -->
-    <form class="form" @submit.prevent="handleSubmit">
+    <form class="form" @submit.prevent="handleSubmit" v-show="isVisible">
       <div class="form-item">
         <p class="form-item__label">ウォレット アドレスを入力してください</p>
         <input type="text" class="form-item__input" v-model="address" placeholder="your wallet address" required>
@@ -72,7 +90,7 @@ async function handleSubmit  () {
       </div>
 
       <!-- output data -->
-      <div class="content-box">
+      <div class="content-box" >
         <SingleChat v-for="chat in data" :key="chat.Id" :chat="chat"/>
       </div>
     </section>
@@ -149,6 +167,9 @@ $padding: 8px;
 }
 .container {
   margin-top: 24px;
+  bottom: 0px !important;
+  right: 0px !important;
+  position: fixed !important;
 
   &__title {
     text-align: center;
@@ -161,7 +182,8 @@ $padding: 8px;
 .content-box {
   background: #fafafa;
   padding: 20px 20px;
-  max-width: 480px;
+  min-width: 400px;
+  width: 30vw;
   min-height: 40vh;
   max-height: 50vh;
   border-radius: 4px;

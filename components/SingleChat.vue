@@ -9,10 +9,10 @@ const props = defineProps(['chat'])
     </p>
 
     <p class="chat__amount">
-        $ <span class="chat__amount--text">{{ chat.amount}}</span> JPYC
+        <span class="chat__amount--text">{{ chat.amount }}</span> JPYC
     </p>
     <p class="chat__message">
-        {{ chat.chat }}
+        {{ chat.message }}
     </p>
 </div>
 </template>
