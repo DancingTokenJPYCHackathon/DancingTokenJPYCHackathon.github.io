@@ -1,26 +1,26 @@
-import 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/unenv/runtime/polyfill/fetch.node.mjs';
+import 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/unenv/runtime/polyfill/fetch.node.mjs';
 import { Server } from 'http';
 import { tmpdir } from 'os';
 import { join } from 'path';
 import { mkdirSync } from 'fs';
 import { parentPort, threadId } from 'worker_threads';
-import { provider, isWindows } from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/std-env/dist/index.mjs';
-import { toEventHandler, defineEventHandler, handleCacheHeaders, createEvent, createApp, createRouter, lazyEventHandler, eventHandler, useQuery } from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/h3/dist/index.mjs';
-import { createFetch as createFetch$1, Headers } from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/ohmyfetch/dist/node.mjs';
-import destr from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/destr/dist/index.mjs';
-import { createRouter as createRouter$1 } from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/radix3/dist/index.mjs';
-import { createCall, createFetch } from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/unenv/runtime/fetch/index.mjs';
-import { createHooks } from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/hookable/dist/index.mjs';
-import { hash } from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/ohash/dist/index.mjs';
-import { createStorage } from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/unstorage/dist/index.mjs';
-import _unstorage_drivers_fs from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/unstorage/drivers/fs.mjs';
-import { withQuery, joinURL } from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/ufo/dist/index.mjs';
-import { createRenderer } from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/vue-bundle-renderer/dist/index.mjs';
-import devalue from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/@nuxt/devalue/dist/devalue.mjs';
-import { snakeCase } from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/scule/dist/index.mjs';
-import { createDefu } from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/defu/dist/defu.mjs';
-import htmlTemplate from '/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/views/document.template.mjs';
-import { renderToString as renderToString$2 } from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/vue/server-renderer/index.mjs';
+import { provider, isWindows } from 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/std-env/dist/index.mjs';
+import { toEventHandler, defineEventHandler, handleCacheHeaders, createEvent, createApp, createRouter, lazyEventHandler, eventHandler, useQuery } from 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/h3/dist/index.mjs';
+import { createFetch as createFetch$1, Headers } from 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/ohmyfetch/dist/node.mjs';
+import destr from 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/destr/dist/index.mjs';
+import { createRouter as createRouter$1 } from 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/radix3/dist/index.mjs';
+import { createCall, createFetch } from 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/unenv/runtime/fetch/index.mjs';
+import { createHooks } from 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/hookable/dist/index.mjs';
+import { hash } from 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/ohash/dist/index.mjs';
+import { createStorage } from 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/unstorage/dist/index.mjs';
+import _unstorage_drivers_fs from 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/unstorage/drivers/fs.mjs';
+import { withQuery, joinURL } from 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/ufo/dist/index.mjs';
+import { createRenderer } from 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/vue-bundle-renderer/dist/index.mjs';
+import devalue from 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/@nuxt/devalue/dist/devalue.mjs';
+import { snakeCase } from 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/scule/dist/index.mjs';
+import { createDefu } from 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/defu/dist/defu.mjs';
+import htmlTemplate from '/Users/akienakai/Documents/dancingtokenjpychackathon.github.io/.nuxt/views/document.template.mjs';
+import { renderToString as renderToString$2 } from 'file:///Users/akienakai/Documents/dancingtokenjpychackathon.github.io/node_modules/vue/server-renderer/index.mjs';
 
 const _runtimeConfig = {app:{baseURL:"\u002F",buildAssetsDir:"\u002F_nuxt\u002F",cdnURL:""},nitro:{routes:{},envPrefix:"NUXT_"},public:{}};
 const ENV_PREFIX = "NITRO_";
@@ -68,7 +68,7 @@ function timingMiddleware(_req, res, next) {
   next();
 }
 
-const serverAssets = [{"baseName":"server","dir":"/mnt/c/Users/nagak/Downloads/recpientWebApp/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"/Users/akienakai/Documents/dancingtokenjpychackathon.github.io/server/assets"}];
 
 const assets = createStorage();
 
@@ -82,10 +82,10 @@ const useStorage = () => storage;
 
 storage.mount('/assets', assets);
 
-storage.mount('root', _unstorage_drivers_fs({"driver":"fs","base":"/mnt/c/Users/nagak/Downloads/recpientWebApp"}));
-storage.mount('src', _unstorage_drivers_fs({"driver":"fs","base":"/mnt/c/Users/nagak/Downloads/recpientWebApp/server"}));
-storage.mount('build', _unstorage_drivers_fs({"driver":"fs","base":"/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt"}));
-storage.mount('cache', _unstorage_drivers_fs({"driver":"fs","base":"/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/cache"}));
+storage.mount('root', _unstorage_drivers_fs({"driver":"fs","base":"/Users/akienakai/Documents/dancingtokenjpychackathon.github.io"}));
+storage.mount('src', _unstorage_drivers_fs({"driver":"fs","base":"/Users/akienakai/Documents/dancingtokenjpychackathon.github.io/server"}));
+storage.mount('build', _unstorage_drivers_fs({"driver":"fs","base":"/Users/akienakai/Documents/dancingtokenjpychackathon.github.io/.nuxt"}));
+storage.mount('cache', _unstorage_drivers_fs({"driver":"fs","base":"/Users/akienakai/Documents/dancingtokenjpychackathon.github.io/.nuxt/cache"}));
 
 const defaultCacheOptions = {
   name: "_",
@@ -301,11 +301,11 @@ const errorHandler = (async function errorhandler(_error, event) {
   event.res.end(html);
 });
 
-const _19b73a = () => Promise.resolve().then(function () { return renderer$1; });
+const _57b8ad = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/__nuxt_error', handler: _19b73a, lazy: true, method: undefined },
-  { route: '/**', handler: _19b73a, lazy: true, method: undefined }
+  { route: '/__nuxt_error', handler: _57b8ad, lazy: true, method: undefined },
+  { route: '/**', handler: _57b8ad, lazy: true, method: undefined }
 ];
 
 function createNitroApp() {
@@ -387,8 +387,8 @@ function publicAssetsURL(...path) {
 const STATIC_ASSETS_BASE = process.env.NUXT_STATIC_BASE + "/" + process.env.NUXT_STATIC_VERSION;
 const NUXT_NO_SSR = process.env.NUXT_NO_SSR;
 const PAYLOAD_JS = "/payload.js";
-const getClientManifest = cachedImport(() => import('/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/dist/server/client.manifest.mjs'));
-const getSSRApp = !process.env.NUXT_NO_SSR && cachedImport(() => import('/mnt/c/Users/nagak/Downloads/recpientWebApp/.nuxt/dist/server/server.mjs'));
+const getClientManifest = cachedImport(() => import('/Users/akienakai/Documents/dancingtokenjpychackathon.github.io/.nuxt/dist/server/client.manifest.mjs'));
+const getSSRApp = !process.env.NUXT_NO_SSR && cachedImport(() => import('/Users/akienakai/Documents/dancingtokenjpychackathon.github.io/.nuxt/dist/server/server.mjs'));
 const getSSRRenderer = cachedResult(async () => {
   const clientManifest = await getClientManifest();
   if (!clientManifest) {

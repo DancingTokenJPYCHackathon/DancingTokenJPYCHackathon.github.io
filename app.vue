@@ -2,6 +2,7 @@
 
 const address = ref('')
 const walletAddress = ref('')
+const isButtonDisabled = ref(false)
 
 const data = ref([])
 
@@ -14,7 +15,7 @@ async function handleSubmit  () {
     address.value = ''
     walletAddress.value = streamerAddress
     
-    getContractEvent(streamerAddress, data)   
+    getContractEvent(streamerAddress, data)
 
     // getContractEvent に渡した data の中には以下の内容が組み込まれる (以下 ./js/getContractEvent.js より引用)
     /** 
@@ -22,10 +23,27 @@ async function handleSubmit  () {
         Id: chatCounter, // DOM 上でチャットの番号を管理する為の ID
         alias: _alias, // 送金者のユーザー名 
         amount: _amountEther, // 送金者が送金した額
-        message: _message, // 送金者のメッセージ内容
+        chat: _chat, // 送金者のメッセージ内容
         effect: null, // エフェクトのデータ (これはまだ未確定なので使わなくていい)
       }
     **/
+
+// 👇ダミーデータ
+// dataに値がプッシュされればそれがreactiveに画面に反映されるはず
+  //  data.value.push(
+  //    {"Id":"id1", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
+  //    {"Id":"id2", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
+  //    {"Id":"id3", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
+  //    {"Id":"id4", "alias": "akie", "amount": 100, "chat": "Looooooooooove your streaming"},
+  //    {"Id":"id5", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
+  //    {"Id":"id6", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
+  //    {"Id":"id7", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
+  //    {"Id":"id8", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
+  //    {"Id":"id9", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"},
+  //    {"Id":"id10", "alias": "shohei", "amount": 10000, "chat": "Wonderful streaming!!"}
+  //  )
+   
+   isButtonDisabled.value = true
 }
 
 </script>
@@ -41,23 +59,21 @@ async function handleSubmit  () {
         <p class="form-item__label">ウォレット アドレスを入力してください</p>
         <input type="text" class="form-item__input" v-model="address" placeholder="your wallet address" required>
       </div>
-      <button class="btn btn--start" id="start_chat" type="submit">
+      <button :disabled="isButtonDisabled" class="btn btn--start" id="start_chat" type="submit">
         配信スタート!
       </button>
     </form>
 
     <!-- content -->
-    <section class="container" v-if="data">
+    <section class="container" v-if="data.length">
 
       <div class="container__title">
-        Your Wallet Address 👉  {{ walletAddress }}
+        👇 Live Chat
       </div>
 
       <!-- output data -->
       <div class="content-box">
-
-        {{ data }}
-
+        <SingleChat v-for="chat in data" :key="chat.Id" :chat="chat"/>
       </div>
     </section>
   </div>
@@ -71,7 +87,7 @@ $padding: 8px;
 
 .form {
   margin: 0 auto;
-  width: 480px;
+  max-width: 480px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,6 +95,9 @@ $padding: 8px;
 }
 
 .form-item {
+  width: 100%;
+  text-align: center;
+  margin: auto;
   margin-bottom: $padding;
 
   &__label {
@@ -86,7 +105,7 @@ $padding: 8px;
   }
 
   &__input {
-    width: 100%;
+    width: 80%;
     padding: 8px;
     border: 1px solid style.$color-secondary;
     border-radius: $border-radius;
@@ -95,7 +114,8 @@ $padding: 8px;
 
 .btn {
   margin: 0 auto;
-  background: style.$color-secondary;
+  border: 1px solid style.$color-secondary;
+  // background: style.$color-secondary;
   border-radius: $border-radius;
   transition: all 0.2s;
   padding: 10px 20px;
@@ -103,6 +123,7 @@ $padding: 8px;
 
   &--start {
     display: inline-block;
+    width: 80%;
     transition: all 0.2s;
 
     &::before {
@@ -120,6 +141,7 @@ $padding: 8px;
 
     &:hover {
         background-color: style.$color-accent;
+        border: 1px solid style.$color-accent;
     }
     &:hover::before {
       transform: translateY(-3px);
@@ -131,14 +153,19 @@ $padding: 8px;
   &__title {
     text-align: center;
     margin-bottom: $padding;
+    font-size: 18px;
+
   }
 }
 
 .content-box {
   background: #fafafa;
-  padding: 30px 20px;
+  padding: 20px 20px;
   max-width: 480px;
   min-height: 40vh;
+  max-height: 50vh;
+  border-radius: 4px;
+  overflow-y: scroll;
   
 }
 
