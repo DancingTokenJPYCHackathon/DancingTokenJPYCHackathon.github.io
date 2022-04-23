@@ -2,5 +2,5 @@ node_modules
 .DS_Store
 assets/css/style.css.map
 assets/css/style.min.css.map
-.output/public/*
+.output/
 server.py
