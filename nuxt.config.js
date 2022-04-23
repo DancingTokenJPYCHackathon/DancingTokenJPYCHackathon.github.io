@@ -66,6 +66,9 @@ export default {
       name: 'page',
       appear: true
     },
-    target: 'static'
+    target: 'static',
+    router: {
+    base: '/dancingtokenjpychackathon.github.io/'
+  }
   }
 
