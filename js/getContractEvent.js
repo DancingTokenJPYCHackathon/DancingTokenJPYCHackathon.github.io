@@ -1,4 +1,4 @@
-const throwMoneyFactoryAddress = "0x85841E40736Feb76de69DDA89e05760c4aB54E28"
+const throwMoneyFactoryAddress = "0x6d837f431d7592F36e4b3146256eB301D017af4a"
 
 let throwMoneyFactoryContract
 let signerPool
@@ -21,7 +21,7 @@ async function getContractEvent (_streamerAddress, _data) {
 
     PoolContract.on(filter, (_senderAddr, _reciveAddr, _message, _alias, _amount) => {
       chatCounter++
-      _amountEther = _amount * 10e-19
+      _amountEther = Math.round(ethers.utils.formatEther(_amount))
       chatData = {
         Id: chatCounter,
         alias: _alias,

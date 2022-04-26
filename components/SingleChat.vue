@@ -3,7 +3,7 @@ const props = defineProps(['chat'])
 </script>
 
 <template>
-<div class="chat" :class="{emphasis: chat.amount >= 1000}">
+<div class="chat" :class="{emphasis: chat.amount >= 100}">
     <p class="chat__alias">
         {{ chat.alias }}
     </p>

@@ -67,8 +67,8 @@ export default {
       appear: true
     },
     target: 'static',
-    router: {
-    base: '/'
-  }
+//    router: {
+//    base: '/steamerOverlay/'
+//  }
   }
 
