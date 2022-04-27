@@ -48,20 +48,18 @@ async function handleSubmit  () {
 
 // 👇ダミーデータ
 // dataに値がプッシュされればそれがreactiveに画面に反映されるはず
-/** 
   data.value.push(
     {"Id":"id1", "alias": "akie", "amount": 100, "message": "Looooooooooove your streaming"},
-    {"Id":"id2", "alias": "akie", "amount": 100, "message": "Looooooooooove your streaming"},
-    {"Id":"id3", "alias": "akie", "amount": 100, "message": "Looooooooooove your streaming"},
-    {"Id":"id4", "alias": "akie", "amount": 100, "message": "Looooooooooove your streaming"},
-    {"Id":"id5", "alias": "shohei", "amount": 10000, "message": "Wonderful streaming!!"},
-    {"Id":"id6", "alias": "shohei", "amount": 10000, "message": "Wonderful streaming!!"},
-    {"Id":"id7", "alias": "shohei", "amount": 10000, "message": "Wonderful streaming!!"},
-    {"Id":"id8", "alias": "shohei", "amount": 10000, "message": "Wonderful streaming!!"},
-    {"Id":"id9", "alias": "shohei", "amount": 10000, "message": "Wonderful streaming!!"},
-    {"Id":"id10", "alias": "shohei", "amount": 10000, "message": "Wonderful streaming!!"}
+    {"Id":"id2", "alias": "akie", "amount": 1000, "message": "Looooooooooove your streaming"},
+    {"Id":"id3", "alias": "akie", "amount": 5000, "message": "Looooooooooove your streaming"},
+    {"Id":"id4", "alias": "akie", "amount": 10000, "message": "Looooooooooove your streaming"},
+    {"Id":"id5", "alias": "shohei", "amount": 20000, "message": "Wonderful streaming!!"},
+    {"Id":"id6", "alias": "shohei", "amount": 50000, "message": "Wonderful streaming!!"},
+    {"Id":"id7", "alias": "shohei", "amount": 15000, "message": "Wonderful streaming!!"},
+    {"Id":"id8", "alias": "shohei", "amount": 30000, "message": "Wonderful streaming!!"},
+    {"Id":"id9", "alias": "shohei", "amount": 6000, "message": "Wonderful streaming!!"},
+    {"Id":"id10", "alias": "shohei", "amount": 3000, "message": "Wonderful streaming!!"}
   )
-  **/
    
   isButtonDisabled.value = true
 }
