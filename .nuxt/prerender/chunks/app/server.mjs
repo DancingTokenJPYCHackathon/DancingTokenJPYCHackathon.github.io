@@ -3919,8 +3919,8 @@ const _sfc_main$1 = {
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
-        class: ["chat", { emphasis: __props.chat.amount >= 1e3 }]
-      }, _attrs))} data-v-7754157d><p class="chat__alias" data-v-7754157d>${serverRenderer.exports.ssrInterpolate(__props.chat.alias)}</p><p class="chat__amount" data-v-7754157d><span class="chat__amount--text" data-v-7754157d>${serverRenderer.exports.ssrInterpolate(__props.chat.amount)}</span><span class="chat__amount--sybl" data-v-7754157d> JPYC</span></p><p class="chat__message" data-v-7754157d>${serverRenderer.exports.ssrInterpolate(__props.chat.message)}</p></div>`);
+        class: ["chat", { emphasis: __props.chat.amount >= 100 }]
+      }, _attrs))} data-v-0de908aa><p class="chat__alias" data-v-0de908aa>${serverRenderer.exports.ssrInterpolate(__props.chat.alias)}</p><p class="chat__amount" data-v-0de908aa><span class="chat__amount--text" data-v-0de908aa>${serverRenderer.exports.ssrInterpolate(__props.chat.amount)}</span><span class="chat__amount--sybl" data-v-0de908aa> JPYC</span></p><p class="chat__message" data-v-0de908aa>${serverRenderer.exports.ssrInterpolate(__props.chat.message)}</p></div>`);
     };
   }
 };
@@ -3930,7 +3930,7 @@ _sfc_main$1.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/SingleChat.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
-const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-7754157d"]]);
+const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-0de908aa"]]);
 const _sfc_main = {
   __ssrInlineRender: true,
   setup(__props) {
