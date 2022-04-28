@@ -24,6 +24,7 @@ const emphasisType = computed({
 </script>
 
 <template>
+<Transition name="chat" appear>
 <div class="chat" :class="emphasisType">
     <p class="chat__alias">
         {{ chat.alias }}
@@ -36,10 +37,23 @@ const emphasisType = computed({
         {{ chat.message }}
     </p>
 </div>
+</Transition>
 </template>
 
 <style lang="scss" scoped>
 @use '@/assets/css/style';
+
+.chat-enter-active {
+    transition: all 0.3s ease-in;
+}
+
+.chat-enter-to {
+    opacity: 1;
+}
+
+.chat-enter-from {
+    opacity: 0;
+}
 
 .chat {
     margin-bottom: 16px;
@@ -121,6 +135,7 @@ const emphasisType = computed({
     background: #F44336;
     box-shadow: 2px 2px 4px rgba(28, 6, 49, 0.2);
     color: #F5F5F5;
+    font-weight: 800;
 
     & .chat__alias {
         color: #F5F5F5;
@@ -130,7 +145,7 @@ const emphasisType = computed({
         color: #F5F5F5;
         &--text {
             color: #F5F5F5;
-            font-weight: bold;
+            font-weight: 800;
         }
     }
 }
