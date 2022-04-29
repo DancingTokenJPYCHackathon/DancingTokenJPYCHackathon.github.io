@@ -95,6 +95,9 @@ const emphasisType = computed({
     align-items: center;
 }
 
+// color scheme is made by referencing here
+// https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+
 // if more than 1000JPYC
 .chat.emphasis0 {
     background: #E8E7FF;
