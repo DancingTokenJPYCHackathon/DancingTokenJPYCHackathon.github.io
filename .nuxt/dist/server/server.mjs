@@ -3447,7 +3447,7 @@ async function handleSubmit  () {
 
 // 👇ダミーデータ
 // dataに値がプッシュされればそれがreactiveに画面に反映されるはず
-
+/**
   let dummyData = [
     {"Id":"id1", "alias": "akie", "amount": 100, "message": "Looooooooooove your streaming"},
     {"Id":"id2", "alias": "akie", "amount": 1000, "message": "Looooooooooove your streaming"},
@@ -3464,6 +3464,7 @@ async function handleSubmit  () {
   dummyData.forEach(_pushData => {
     data.value.push(_pushData)
   });
+**/
    
 }
 
