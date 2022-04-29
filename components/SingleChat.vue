@@ -26,13 +26,15 @@ const emphasisType = computed({
 <template>
 <Transition name="chat" appear>
 <div class="chat" :class="emphasisType">
+    <div class="chat-top">
     <p class="chat__alias">
         {{ chat.alias }}
     </p>
-
     <p class="chat__amount">
         <span class="chat__amount--text">{{ chat.amount }}</span><span class="chat__amount--sybl"> JPYC</span>
     </p>
+    </div>
+
     <p class="chat__message">
         {{ chat.message }}
     </p>
@@ -61,30 +63,36 @@ const emphasisType = computed({
     border-radius: 4px;
     
     &__alias {
-        display: inline-block;
         color: #555555;
-        margin-right: 8px;
+        text-align: center;
+        font-size: 12pt;
+        padding-bottom: 4px;
     }
 
     &__amount {
+        margin-left: 10px;
         margin-bottom: 4px;
-        display: inline-block;
         color: #555555;
-        float: right;
 
         &--text {
-            font-size: 18px;
+            font-size: 12pt;
             font-family: monospace;
             color: style.$color-text;
         }
         &--sybl {
-            font-size: 12px;
+            font-size: 10pt;
         }
     }
     &__message {
         padding-bottom: 8px;
     }
 
+}
+
+.chat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 // if more than 1000JPYC
@@ -97,56 +105,83 @@ const emphasisType = computed({
 .chat.emphasis1 {
     background: #B388FF;
     box-shadow: 2px 2px 4px rgba(28, 6, 49, 0.2);
+
+    & .chat__alias {
+        color: black;
+    }
 }
 
 // if more than 10000JPYC
 .chat.emphasis2 {
-    background: #03DAC6;
+    background: #1DE9B6;
     box-shadow: 2px 2px 4px rgba(28, 6, 49, 0.2);
-    color: #F5F5F5;
-
-    & .chat__alias {
-        color: #F5F5F5;
-    }
 
     & .chat__amount {
-        color: #F5F5F5;
         &--text {
-            color: #F5F5F5;
             font-weight: bold;
         }
+    }
+
+    & .chat__message {
+        background: #A7FFEB;
+        position: relative;
+        width: calc(100% + 32px);
+        left: -16px;
+        padding: 6px 16px;
+        border-radius: 0px 0px 4px 4px;
     }
 }
 
 // if more than 20000JPYC
 .chat.emphasis3 {
-    background: #FFF176;
+    background: #FFA000;
     box-shadow: 2px 2px 4px rgba(28, 6, 49, 0.2);
+
+    & .chat__alias {
+        color: black;
+    }
 
     & .chat__amount {
         &--text {
             font-weight: bold;
         }
     }
+
+    & .chat__message {
+        background: #FFC107;
+        position: relative;
+        width: calc(100% + 32px);
+        left: -16px;
+        padding: 6px 16px;
+        border-radius: 0px 0px 4px 4px;
+    }
 }
 
 // if more than 50000JPYC
 .chat.emphasis4 {
-    background: #F44336;
+    background: #D32F2F;
     box-shadow: 2px 2px 4px rgba(28, 6, 49, 0.2);
     color: #F5F5F5;
-    font-weight: 800;
 
     & .chat__alias {
-        color: #F5F5F5;
+        color: #FBE9E7;
     }
 
     & .chat__amount {
-        color: #F5F5F5;
+        color: #FBE9E7;
         &--text {
-            color: #F5F5F5;
+            color: #FBE9E7;
             font-weight: 800;
         }
+    }
+
+    & .chat__message {
+        background: #E57373;
+        position: relative;
+        width: calc(100% + 32px);
+        left: -16px;
+        padding: 6px 16px;
+        border-radius: 0px 0px 4px 4px;
     }
 }
 

@@ -45,10 +45,12 @@ async function handleSubmit  () {
         effect: null, // エフェクトのデータ (これはまだ未確定なので使わなくていい)
       }
     **/
+  isButtonDisabled.value = true
 
 // 👇ダミーデータ
 // dataに値がプッシュされればそれがreactiveに画面に反映されるはず
-  data.value.push(
+
+  let dummyData = [
     {"Id":"id1", "alias": "akie", "amount": 100, "message": "Looooooooooove your streaming"},
     {"Id":"id2", "alias": "akie", "amount": 1000, "message": "Looooooooooove your streaming"},
     {"Id":"id3", "alias": "akie", "amount": 5000, "message": "Looooooooooove your streaming"},
@@ -59,9 +61,12 @@ async function handleSubmit  () {
     {"Id":"id8", "alias": "shohei", "amount": 30000, "message": "Wonderful streaming!!"},
     {"Id":"id9", "alias": "shohei", "amount": 6000, "message": "Wonderful streaming!!"},
     {"Id":"id10", "alias": "shohei", "amount": 3000, "message": "Wonderful streaming!!"}
-  )
+  ]
+
+  dummyData.forEach(_pushData => {
+    data.value.push(_pushData)
+  });
    
-  isButtonDisabled.value = true
 }
 
 </script>
@@ -83,7 +88,7 @@ async function handleSubmit  () {
     </form>
 
     <!-- content -->
-    <section class="container" v-if="data.length">
+    <section class="container" v-show="!isVisible">
 
       <div class="container__title">
         👇 Live Chat
@@ -134,7 +139,6 @@ $padding: 8px;
 .btn {
   margin: 0 auto;
   border: 1px solid style.$color-secondary;
-  // background: style.$color-secondary;
   border-radius: $border-radius;
   transition: all 0.2s;
   padding: 10px 20px;
@@ -172,10 +176,11 @@ $padding: 8px;
   bottom: 0px !important;
   right: 0px !important;
   position: fixed !important;
+  border-radius: 8px 0 0 0;
 
   &__title {
     text-align: center;
-    margin-bottom: $padding;
+    margin: $padding;
     font-size: 18px;
 
   }
@@ -185,10 +190,14 @@ $padding: 8px;
   padding: 20px 20px;
   min-width: 400px;
   width: 30vw;
-  min-height: 40vh;
-  max-height: 50vh;
+  height: 50vh;
+  min-height: 300px;
   border-radius: 4px;
   overflow-y: scroll;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
   
 }
 

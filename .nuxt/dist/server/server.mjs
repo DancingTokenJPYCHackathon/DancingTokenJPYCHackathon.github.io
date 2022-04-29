@@ -3443,10 +3443,12 @@ async function handleSubmit  () {
         effect: null, // エフェクトのデータ (これはまだ未確定なので使わなくていい)
       }
     **/
+  isButtonDisabled.value = true
 
 // 👇ダミーデータ
 // dataに値がプッシュされればそれがreactiveに画面に反映されるはず
-  data.value.push(
+
+  let dummyData = [
     {"Id":"id1", "alias": "akie", "amount": 100, "message": "Looooooooooove your streaming"},
     {"Id":"id2", "alias": "akie", "amount": 1000, "message": "Looooooooooove your streaming"},
     {"Id":"id3", "alias": "akie", "amount": 5000, "message": "Looooooooooove your streaming"},
@@ -3457,9 +3459,12 @@ async function handleSubmit  () {
     {"Id":"id8", "alias": "shohei", "amount": 30000, "message": "Wonderful streaming!!"},
     {"Id":"id9", "alias": "shohei", "amount": 6000, "message": "Wonderful streaming!!"},
     {"Id":"id10", "alias": "shohei", "amount": 3000, "message": "Wonderful streaming!!"}
-  )
+  ]
+
+  dummyData.forEach(_pushData => {
+    data.value.push(_pushData)
+  });
    
-  isButtonDisabled.value = true
 }
 
 
@@ -3523,20 +3528,16 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $op
     __vite_ssr_import_3__.ssrRenderAttr("value", $setup.address)
   } placeholder="your wallet address" required></div><button${
     (__vite_ssr_import_3__.ssrIncludeBooleanAttr($setup.isButtonDisabled)) ? " disabled" : ""
-  } class="btn btn--start" id="start_chat" type="submit"> 配信スタート! </button></form><!-- content -->`)
-  if ($setup.data.length) {
-    _push(`<section class="container"><div class="container__title"> 👇 Live Chat </div><!-- output data --><div class="content-box"><!--[-->`)
-    __vite_ssr_import_3__.ssrRenderList($setup.data, (chat) => {
-      _push(__vite_ssr_import_3__.ssrRenderComponent(_component_SingleChat, {
-        key: chat.Id,
-        chat: chat
-      }, null, _parent))
-    })
-    _push(`<!--]--></div></section>`)
-  } else {
-    _push(`<!---->`)
-  }
-  _push(`</div>`)
+  } class="btn btn--start" id="start_chat" type="submit"> 配信スタート! </button></form><!-- content --><section class="container" style="${
+    __vite_ssr_import_3__.ssrRenderStyle((!$setup.isVisible) ? null : { display: "none" })
+  }"><div class="container__title"> 👇 Live Chat </div><!-- output data --><div class="content-box"><!--[-->`)
+  __vite_ssr_import_3__.ssrRenderList($setup.data, (chat) => {
+    _push(__vite_ssr_import_3__.ssrRenderComponent(_component_SingleChat, {
+      key: chat.Id,
+      chat: chat
+    }, null, _parent))
+  })
+  _push(`<!--]--></div></section></div>`)
 }
 
 const __vite_ssr_import_4__ = await __vite_ssr_import__("/app.vue?vue&type=style&index=0&lang.scss");
@@ -3616,11 +3617,11 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $op
     __vite_ssr_import_2__.ssrRenderAttrs(__vite_ssr_import_1__.mergeProps({
       class: ["chat", $setup.emphasisType]
     }, _attrs))
-  } data-v-4d092b5b><p class="chat__alias" data-v-4d092b5b>${
+  } data-v-4d092b5b><div class="chat-top" data-v-4d092b5b><p class="chat__alias" data-v-4d092b5b>${
     __vite_ssr_import_2__.ssrInterpolate($props.chat.alias)
   }</p><p class="chat__amount" data-v-4d092b5b><span class="chat__amount--text" data-v-4d092b5b>${
     __vite_ssr_import_2__.ssrInterpolate($props.chat.amount)
-  }</span><span class="chat__amount--sybl" data-v-4d092b5b> JPYC</span></p><p class="chat__message" data-v-4d092b5b>${
+  }</span><span class="chat__amount--sybl" data-v-4d092b5b> JPYC</span></p></div><p class="chat__message" data-v-4d092b5b>${
     __vite_ssr_import_2__.ssrInterpolate($props.chat.message)
   }</p></div>`)
 }
@@ -3671,7 +3672,7 @@ import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/@vue/rea
 
 // --------------------
 const $id_002adb38 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-__vite_ssr_exports__.default = "@charset \"UTF-8\";body[data-v-4d092b5b]{-ms-overflow-style:none;color:#333;scrollbar-width:none}body[data-v-4d092b5b]::-webkit-scrollbar{display:none}div[data-v-4d092b5b],html[data-v-4d092b5b],section[data-v-4d092b5b]{font-family:\"Gill Sans\",\"Gill Sans MT\",\"メイリオ\",\"Meiryo\",\"Trebuchet MS\",sans-serif;margin:0 auto}input[type=text][data-v-4d092b5b]::-moz-placeholder{text-align:center}input[type=text][data-v-4d092b5b]:-ms-input-placeholder{text-align:center}input[type=text][data-v-4d092b5b]::placeholder{text-align:center}.chat-enter-active[data-v-4d092b5b]{transition:all .3s ease-in}.chat-enter-to[data-v-4d092b5b]{opacity:1}.chat-enter-from[data-v-4d092b5b]{opacity:0}.chat[data-v-4d092b5b]{border-radius:4px;margin-bottom:16px;padding:8px 16px 0}.chat__alias[data-v-4d092b5b]{margin-right:8px}.chat__alias[data-v-4d092b5b],.chat__amount[data-v-4d092b5b]{color:#555;display:inline-block}.chat__amount[data-v-4d092b5b]{float:right;margin-bottom:4px}.chat__amount--text[data-v-4d092b5b]{color:#333;font-family:monospace;font-size:18px}.chat__amount--sybl[data-v-4d092b5b]{font-size:12px}.chat__message[data-v-4d092b5b]{padding-bottom:8px}.chat.emphasis0[data-v-4d092b5b]{background:#e8e7ff}.chat.emphasis0[data-v-4d092b5b],.chat.emphasis1[data-v-4d092b5b]{box-shadow:2px 2px 4px rgba(28,6,49,.2)}.chat.emphasis1[data-v-4d092b5b]{background:#b388ff}.chat.emphasis2[data-v-4d092b5b]{background:#03dac6;box-shadow:2px 2px 4px rgba(28,6,49,.2);color:#f5f5f5}.chat.emphasis2 .chat__alias[data-v-4d092b5b],.chat.emphasis2 .chat__amount[data-v-4d092b5b]{color:#f5f5f5}.chat.emphasis2 .chat__amount--text[data-v-4d092b5b]{color:#f5f5f5;font-weight:700}.chat.emphasis3[data-v-4d092b5b]{background:#fff176;box-shadow:2px 2px 4px rgba(28,6,49,.2)}.chat.emphasis3 .chat__amount--text[data-v-4d092b5b]{font-weight:700}.chat.emphasis4[data-v-4d092b5b]{background:#f44336;box-shadow:2px 2px 4px rgba(28,6,49,.2);color:#f5f5f5;font-weight:800}.chat.emphasis4 .chat__alias[data-v-4d092b5b],.chat.emphasis4 .chat__amount[data-v-4d092b5b]{color:#f5f5f5}.chat.emphasis4 .chat__amount--text[data-v-4d092b5b]{color:#f5f5f5;font-weight:800}";
+__vite_ssr_exports__.default = "@charset \"UTF-8\";body[data-v-4d092b5b]{-ms-overflow-style:none;color:#333;scrollbar-width:none}body[data-v-4d092b5b]::-webkit-scrollbar{display:none}div[data-v-4d092b5b],html[data-v-4d092b5b],section[data-v-4d092b5b]{font-family:\"Gill Sans\",\"Gill Sans MT\",\"メイリオ\",\"Meiryo\",\"Trebuchet MS\",sans-serif;margin:0 auto}input[type=text][data-v-4d092b5b]::-moz-placeholder{text-align:center}input[type=text][data-v-4d092b5b]:-ms-input-placeholder{text-align:center}input[type=text][data-v-4d092b5b]::placeholder{text-align:center}.chat-enter-active[data-v-4d092b5b]{transition:all .3s ease-in}.chat-enter-to[data-v-4d092b5b]{opacity:1}.chat-enter-from[data-v-4d092b5b]{opacity:0}.chat[data-v-4d092b5b]{border-radius:4px;margin-bottom:16px;padding:8px 16px 0}.chat__alias[data-v-4d092b5b]{color:#555;font-size:12pt;padding-bottom:4px;text-align:center}.chat__amount[data-v-4d092b5b]{color:#555;margin-bottom:4px;margin-left:10px}.chat__amount--text[data-v-4d092b5b]{color:#333;font-family:monospace;font-size:12pt}.chat__amount--sybl[data-v-4d092b5b]{font-size:10pt}.chat__message[data-v-4d092b5b]{padding-bottom:8px}.chat-top[data-v-4d092b5b]{align-items:center;display:flex;justify-content:space-between}.chat.emphasis0[data-v-4d092b5b]{background:#e8e7ff}.chat.emphasis0[data-v-4d092b5b],.chat.emphasis1[data-v-4d092b5b]{box-shadow:2px 2px 4px rgba(28,6,49,.2)}.chat.emphasis1[data-v-4d092b5b]{background:#b388ff}.chat.emphasis1 .chat__alias[data-v-4d092b5b]{color:#000}.chat.emphasis2[data-v-4d092b5b]{background:#1de9b6;box-shadow:2px 2px 4px rgba(28,6,49,.2)}.chat.emphasis2 .chat__amount--text[data-v-4d092b5b]{font-weight:700}.chat.emphasis2 .chat__message[data-v-4d092b5b]{background:#a7ffeb;border-radius:0 0 4px 4px;left:-16px;padding:6px 16px;position:relative;width:calc(100% + 32px)}.chat.emphasis3[data-v-4d092b5b]{background:#ffa000;box-shadow:2px 2px 4px rgba(28,6,49,.2)}.chat.emphasis3 .chat__alias[data-v-4d092b5b]{color:#000}.chat.emphasis3 .chat__amount--text[data-v-4d092b5b]{font-weight:700}.chat.emphasis3 .chat__message[data-v-4d092b5b]{background:#ffc107;border-radius:0 0 4px 4px;left:-16px;padding:6px 16px;position:relative;width:calc(100% + 32px)}.chat.emphasis4[data-v-4d092b5b]{background:#d32f2f;box-shadow:2px 2px 4px rgba(28,6,49,.2);color:#f5f5f5}.chat.emphasis4 .chat__alias[data-v-4d092b5b],.chat.emphasis4 .chat__amount[data-v-4d092b5b]{color:#fbe9e7}.chat.emphasis4 .chat__amount--text[data-v-4d092b5b]{color:#fbe9e7;font-weight:800}.chat.emphasis4 .chat__message[data-v-4d092b5b]{background:#e57373;border-radius:0 0 4px 4px;left:-16px;padding:6px 16px;position:relative;width:calc(100% + 32px)}";
 }
 
 
@@ -3683,7 +3684,7 @@ __vite_ssr_exports__.default = "@charset \"UTF-8\";body[data-v-4d092b5b]{-ms-ove
 
 // --------------------
 const $id_64c6d174 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-__vite_ssr_exports__.default = "@charset \"UTF-8\";body{-ms-overflow-style:none;color:#333;scrollbar-width:none}body::-webkit-scrollbar{display:none}div,html,section{font-family:\"Gill Sans\",\"Gill Sans MT\",\"メイリオ\",\"Meiryo\",\"Trebuchet MS\",sans-serif;margin:0 auto}input[type=text]::-moz-placeholder{text-align:center}input[type=text]:-ms-input-placeholder{text-align:center}input[type=text]::placeholder{text-align:center}.form{align-items:center;display:flex;flex-direction:column;margin:120px auto 0;max-width:480px}.form-item{margin:auto auto 8px;text-align:center;width:100%}.form-item__label{margin-bottom:8px}.form-item__input{padding:8px;width:80%}.btn,.form-item__input{border:1px solid #d7d7d7;border-radius:4px}.btn{font-size:.8rem;margin:0 auto;padding:10px 20px;transition:all .2s}.btn--start{width:80%}.btn--start,.btn--start:before{display:inline-block;transition:all .2s}.btn--start:before{background-image:url(/_nuxt/assets/img/oshi-icon.png);background-size:contain;content:\"\";height:16px;vertical-align:middle;width:24px}.btn:hover{background-color:#eb0673;border:1px solid #eb0673}.btn:hover:before{transform:translateY(-3px)}.container{background:#fafafa;bottom:0!important;margin-top:24px;position:fixed!important;right:0!important}.container__title{font-size:18px;margin-bottom:8px;text-align:center}.content-box{border-radius:4px;max-height:50vh;min-height:40vh;min-width:400px;overflow-y:scroll;padding:20px;width:30vw}";
+__vite_ssr_exports__.default = "@charset \"UTF-8\";body{-ms-overflow-style:none;color:#333;scrollbar-width:none}body::-webkit-scrollbar{display:none}div,html,section{font-family:\"Gill Sans\",\"Gill Sans MT\",\"メイリオ\",\"Meiryo\",\"Trebuchet MS\",sans-serif;margin:0 auto}input[type=text]::-moz-placeholder{text-align:center}input[type=text]:-ms-input-placeholder{text-align:center}input[type=text]::placeholder{text-align:center}.form{align-items:center;display:flex;flex-direction:column;margin:120px auto 0;max-width:480px}.form-item{margin:auto auto 8px;text-align:center;width:100%}.form-item__label{margin-bottom:8px}.form-item__input{padding:8px;width:80%}.btn,.form-item__input{border:1px solid #d7d7d7;border-radius:4px}.btn{font-size:.8rem;margin:0 auto;padding:10px 20px;transition:all .2s}.btn--start{width:80%}.btn--start,.btn--start:before{display:inline-block;transition:all .2s}.btn--start:before{background-image:url(/_nuxt/assets/img/oshi-icon.png);background-size:contain;content:\"\";height:16px;vertical-align:middle;width:24px}.btn:hover{background-color:#eb0673;border:1px solid #eb0673}.btn:hover:before{transform:translateY(-3px)}.container{background:#fafafa;border-radius:8px 0 0 0;bottom:0!important;margin-top:24px;position:fixed!important;right:0!important}.container__title{font-size:18px;margin:8px;text-align:center}.content-box{border-radius:4px;height:50vh;min-height:300px;min-width:400px;overflow-y:scroll;padding:20px;width:30vw}.content-box::-webkit-scrollbar{display:none}";
 }
 
 
