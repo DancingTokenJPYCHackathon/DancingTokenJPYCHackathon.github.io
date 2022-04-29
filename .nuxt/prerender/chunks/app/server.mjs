@@ -1,4 +1,4 @@
-import { v as vue_cjs_prod, r as require$$0, s as serverRenderer } from '../index.mjs';
+import { v as vue_cjs_prod, r as require$$0, s as serverRenderer, a as reactivity } from '../index.mjs';
 import { hasProtocol, parseQuery, parseURL, withBase, withQuery } from 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/ufo/dist/index.mjs';
 import { u as useRuntimeConfig$1 } from '../nitro/nitro-prerenderer.mjs';
 import 'file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/unenv/runtime/mock/proxy.mjs';
@@ -3917,10 +3917,28 @@ const _sfc_main$1 = {
   __ssrInlineRender: true,
   props: ["chat"],
   setup(__props) {
+    const props = __props;
+    const emphasisType = reactivity.exports.computed({
+      get() {
+        let className = "";
+        if (props.chat.amount >= 5e4) {
+          className = "emphasis4";
+        } else if (props.chat.amount >= 2e4) {
+          className = "emphasis3";
+        } else if (props.chat.amount >= 1e4) {
+          className = "emphasis2";
+        } else if (props.chat.amount >= 5e3) {
+          className = "emphasis1";
+        } else if (props.chat.amount >= 1e3) {
+          className = "emphasis0";
+        }
+        return className;
+      }
+    });
     return (_ctx, _push, _parent, _attrs) => {
       _push(`<div${serverRenderer.exports.ssrRenderAttrs(vue_cjs_prod.mergeProps({
-        class: ["chat", { emphasis: __props.chat.amount >= 100 }]
-      }, _attrs))} data-v-0de908aa><p class="chat__alias" data-v-0de908aa>${serverRenderer.exports.ssrInterpolate(__props.chat.alias)}</p><p class="chat__amount" data-v-0de908aa><span class="chat__amount--text" data-v-0de908aa>${serverRenderer.exports.ssrInterpolate(__props.chat.amount)}</span><span class="chat__amount--sybl" data-v-0de908aa> JPYC</span></p><p class="chat__message" data-v-0de908aa>${serverRenderer.exports.ssrInterpolate(__props.chat.message)}</p></div>`);
+        class: ["chat", vue_cjs_prod.unref(emphasisType)]
+      }, _attrs))} data-v-d8c09008><div class="chat-top" data-v-d8c09008><p class="chat__alias" data-v-d8c09008>${serverRenderer.exports.ssrInterpolate(__props.chat.alias)}</p><p class="chat__amount" data-v-d8c09008><span class="chat__amount--text" data-v-d8c09008>${serverRenderer.exports.ssrInterpolate(__props.chat.amount)}</span><span class="chat__amount--sybl" data-v-d8c09008> JPYC</span></p></div><p class="chat__message" data-v-d8c09008>${serverRenderer.exports.ssrInterpolate(__props.chat.message)}</p></div>`);
     };
   }
 };
@@ -3930,7 +3948,7 @@ _sfc_main$1.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/SingleChat.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
-const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-0de908aa"]]);
+const __nuxt_component_0 = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-d8c09008"]]);
 const _sfc_main = {
   __ssrInlineRender: true,
   setup(__props) {
@@ -3990,20 +4008,14 @@ const _sfc_main = {
         }),
         _: 1
       }, _parent));
-      _push(`<form class="form" style="${serverRenderer.exports.ssrRenderStyle(isVisible.value ? null : { display: "none" })}"><div class="form-item"><p class="form-item__label">\u30A6\u30A9\u30EC\u30C3\u30C8 \u30A2\u30C9\u30EC\u30B9\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044</p><input type="text" class="form-item__input"${serverRenderer.exports.ssrRenderAttr("value", address.value)} placeholder="your wallet address" required></div><button${serverRenderer.exports.ssrIncludeBooleanAttr(isButtonDisabled.value) ? " disabled" : ""} class="btn btn--start" id="start_chat" type="submit"> \u914D\u4FE1\u30B9\u30BF\u30FC\u30C8! </button></form>`);
-      if (data.value.length) {
-        _push(`<section class="container"><div class="container__title"> \u{1F447} Live Chat </div><div class="content-box"><!--[-->`);
-        serverRenderer.exports.ssrRenderList(data.value, (chat) => {
-          _push(serverRenderer.exports.ssrRenderComponent(_component_SingleChat, {
-            key: chat.Id,
-            chat
-          }, null, _parent));
-        });
-        _push(`<!--]--></div></section>`);
-      } else {
-        _push(`<!---->`);
-      }
-      _push(`</div>`);
+      _push(`<form class="form" style="${serverRenderer.exports.ssrRenderStyle(isVisible.value ? null : { display: "none" })}"><div class="form-item"><p class="form-item__label">\u30A6\u30A9\u30EC\u30C3\u30C8 \u30A2\u30C9\u30EC\u30B9\u3092\u5165\u529B\u3057\u3066\u304F\u3060\u3055\u3044</p><input type="text" class="form-item__input"${serverRenderer.exports.ssrRenderAttr("value", address.value)} placeholder="your wallet address" required></div><button${serverRenderer.exports.ssrIncludeBooleanAttr(isButtonDisabled.value) ? " disabled" : ""} class="btn btn--start" id="start_chat" type="submit"> \u914D\u4FE1\u30B9\u30BF\u30FC\u30C8! </button></form><section class="container" style="${serverRenderer.exports.ssrRenderStyle(!isVisible.value ? null : { display: "none" })}"><div class="container__title"> \u{1F447} Live Chat </div><div class="content-box"><!--[-->`);
+      serverRenderer.exports.ssrRenderList(data.value, (chat) => {
+        _push(serverRenderer.exports.ssrRenderComponent(_component_SingleChat, {
+          key: chat.Id,
+          chat
+        }, null, _parent));
+      });
+      _push(`<!--]--></div></section></div>`);
     };
   }
 };
