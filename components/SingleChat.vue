@@ -58,33 +58,35 @@ const emphasisType = computed({
 }
 
 .chat {
-    margin-bottom: 16px;
-    padding: 8px 16px 0px 16px;
+    margin-bottom: 24px;
+    padding: 12px 16px 0px 16px;
     border-radius: 4px;
     
     &__alias {
         color: #555555;
         text-align: center;
-        font-size: 12pt;
+        font-size: 18pt;
         padding-bottom: 4px;
     }
 
     &__amount {
         margin-left: 10px;
-        margin-bottom: 4px;
+        margin-bottom: 8px;
         color: #555555;
 
         &--text {
-            font-size: 12pt;
+            font-size: 24pt;
             font-family: monospace;
             color: style.$color-text;
         }
         &--sybl {
-            font-size: 10pt;
+            font-size: 16pt;
         }
     }
     &__message {
+        padding-top: 8px;
         padding-bottom: 8px;
+        font-size: 18pt;
     }
 
 }
@@ -130,7 +132,7 @@ const emphasisType = computed({
         position: relative;
         width: calc(100% + 32px);
         left: -16px;
-        padding: 6px 16px;
+        padding: 8px 16px;
         border-radius: 0px 0px 4px 4px;
     }
 }
@@ -155,7 +157,7 @@ const emphasisType = computed({
         position: relative;
         width: calc(100% + 32px);
         left: -16px;
-        padding: 6px 16px;
+        padding: 8px 16px;
         border-radius: 0px 0px 4px 4px;
     }
 }
@@ -183,7 +185,7 @@ const emphasisType = computed({
         position: relative;
         width: calc(100% + 32px);
         left: -16px;
-        padding: 6px 16px;
+        padding: 8px 16px;
         border-radius: 0px 0px 4px 4px;
     }
 }

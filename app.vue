@@ -1,8 +1,5 @@
 <script setup>
-//import { watch } from 'vue'
-
 const address = ref('')
-const walletAddress = ref('')
 const isButtonDisabled = ref(false)
 const isVisible = ref(true)
 
@@ -25,8 +22,8 @@ async function handleSubmit  () {
 
     streamerAddress = address.value
     address.value = ''
-    walletAddress.value = streamerAddress
-    
+
+    qrcode.makeCode(metaMaskMobileBaseUrl + streamerAddress)
     try {
       getContractEvent(streamerAddress, data)
       isVisible.value = false
@@ -51,16 +48,24 @@ async function handleSubmit  () {
 // dataに値がプッシュされればそれがreactiveに画面に反映されるはず
 /**
   let dummyData = [
-    {"Id":"id1", "alias": "akie", "amount": 100, "message": "Looooooooooove your streaming"},
-    {"Id":"id2", "alias": "akie", "amount": 1000, "message": "Looooooooooove your streaming"},
-    {"Id":"id3", "alias": "akie", "amount": 5000, "message": "Looooooooooove your streaming"},
-    {"Id":"id4", "alias": "akie", "amount": 10000, "message": "Looooooooooove your streaming"},
-    {"Id":"id5", "alias": "shohei", "amount": 20000, "message": "Wonderful streaming!!"},
-    {"Id":"id6", "alias": "shohei", "amount": 50000, "message": "Wonderful streaming!!"},
-    {"Id":"id7", "alias": "shohei", "amount": 15000, "message": "Wonderful streaming!!"},
-    {"Id":"id8", "alias": "shohei", "amount": 30000, "message": "Wonderful streaming!!"},
-    {"Id":"id9", "alias": "shohei", "amount": 6000, "message": "Wonderful streaming!!"},
-    {"Id":"id10", "alias": "shohei", "amount": 3000, "message": "Wonderful streaming!!"}
+    {"Id":"id1", "alias": "あきえ", "amount": 100, "message": "Looooooooooove your streaming"},
+    {"Id":"id2", "alias": "akie", "amount": 100, "message": "Looooooooooove your streaming"},
+    {"Id":"id3", "alias": "AKIE", "amount": 100, "message": "Looooooooooove your streaming"},
+    {"Id":"id4", "alias": "あきえ", "amount": 1000, "message": "Looooooooooove your streaming"},
+    {"Id":"id5", "alias": "akie", "amount": 1000, "message": "Looooooooooove your streaming"},
+    {"Id":"id6", "alias": "AKIE", "amount": 1000, "message": "Looooooooooove your streaming"},
+    {"Id":"id7", "alias": "あきえ", "amount": 5000, "message": "Looooooooooove your streaming"},
+    {"Id":"id8", "alias": "akie", "amount": 5000, "message": "Looooooooooove your streaming"},
+    {"Id":"id9", "alias": "AKIE", "amount": 5000, "message": "Looooooooooove your streaming"},
+    {"Id":"id10", "alias": "あきえ", "amount": 10000, "message": "Looooooooooove your streaming"},
+    {"Id":"id411", "alias": "akie", "amount": 10000, "message": "Looooooooooove your streaming"},
+    {"Id":"id12", "alias": "AKIE", "amount": 10000, "message": "Looooooooooove your streaming"},
+    {"Id":"id13", "alias": "shohei", "amount": 20000, "message": "Wonderful streaming!!"},
+    {"Id":"id14", "alias": "shohei", "amount": 50000, "message": "Wonderful streaming!!"},
+    {"Id":"id15", "alias": "shohei", "amount": 15000, "message": "Wonderful streaming!!"},
+    {"Id":"id16", "alias": "shohei", "amount": 30000, "message": "Wonderful streaming!!"},
+    {"Id":"id17", "alias": "shohei", "amount": 6000, "message": "Wonderful streaming!!"},
+    {"Id":"id18", "alias": "shohei", "amount": 3000, "message": "Wonderful streaming!!"}
   ]
 
   dummyData.forEach(_pushData => {
@@ -87,6 +92,15 @@ async function handleSubmit  () {
         配信スタート!
       </button>
     </form>
+
+    <!-- QR code -->
+    <section class="qrcontainer" v-show="!isVisible">
+      <div id="qrcode"></div>
+
+      <div class="container__title">
+        Support From Mobile! 
+      </div>
+    </section>
 
     <!-- content -->
     <section class="container" v-show="!isVisible">
@@ -171,6 +185,7 @@ $padding: 8px;
       transform: translateY(-3px);
     }
 }
+
 .container {
   background: #fafafa;
   margin-top: 24px;
@@ -182,7 +197,8 @@ $padding: 8px;
   &__title {
     text-align: center;
     margin: $padding;
-    font-size: 18px;
+    font-size: 18pt;
+    font-weight: bold;
 
   }
 }
@@ -200,6 +216,23 @@ $padding: 8px;
     display: none;
   }
   
+}
+
+.qrcontainer {
+  background: #fafafa;
+  margin: 10px;
+  top: 0px !important;
+  right: 0px !important;
+  position: fixed !important;
+  border-radius: 8px;
+
+  &__title {
+    text-align: center;
+    margin: $padding;
+    font-size: 18pt;
+    font-weight: bold;
+  }
+
 }
 
 </style>

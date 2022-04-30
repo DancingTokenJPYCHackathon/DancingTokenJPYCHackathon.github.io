@@ -166,7 +166,7 @@ import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/ohmyfetc
 const $id_635ab8aa = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
 const __vite_ssr_import_0__ = await __vite_ssr_import__("/node_modules/ufo/dist/index.mjs");
 
-const appConfig = {"baseURL":"/","buildAssetsDir":"/_nuxt/","assetsPath":{},"cdnURL":"","head":{"charset":"utf-8","viewport":"width=device-width, initial-scale=1","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"}],"style":[],"script":[{"src":"https://cdn.ethers.io/lib/ethers-5.0.umd.min.js"},{"src":"./js/abi/abi_ThrowMoneyFactory.js"},{"src":"./js/abi/abi_ThrowMoneyPool.js"},{"src":"./js/getContractEvent.js"}]}}
+const appConfig = {"baseURL":"/","buildAssetsDir":"/_nuxt/","assetsPath":{},"cdnURL":"","head":{"charset":"utf-8","viewport":"width=device-width, initial-scale=1","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"}],"style":[],"script":[{"src":"https://cdn.ethers.io/lib/ethers-5.0.umd.min.js"},{"src":"./js/abi/abi_ThrowMoneyFactory.js"},{"src":"./js/abi/abi_ThrowMoneyPool.js"},{"src":"./js/qrcode.min.js"},{"src":"./js/generateQrCode.js"},{"src":"./js/getContractEvent.js"}]}}
 const baseURL = () => appConfig.baseURL
 Object.defineProperty(__vite_ssr_exports__, "baseURL", { enumerable: true, configurable: true, get(){ return baseURL }});
 const buildAssetsDir = () => appConfig.buildAssetsDir
@@ -2421,7 +2421,7 @@ Object.defineProperty(__vite_ssr_exports__, "Body", { enumerable: true, configur
 
 // --------------------
 const $id_a7ef23d9 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-__vite_ssr_exports__.default = {"globalMeta":{"charset":"utf-8","viewport":"width=device-width, initial-scale=1","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"}],"style":[],"script":[{"src":"https://cdn.ethers.io/lib/ethers-5.0.umd.min.js"},{"src":"./js/abi/abi_ThrowMoneyFactory.js"},{"src":"./js/abi/abi_ThrowMoneyPool.js"},{"src":"./js/getContractEvent.js"}]},"mixinKey":"created"};
+__vite_ssr_exports__.default = {"globalMeta":{"charset":"utf-8","viewport":"width=device-width, initial-scale=1","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"}],"style":[],"script":[{"src":"https://cdn.ethers.io/lib/ethers-5.0.umd.min.js"},{"src":"./js/abi/abi_ThrowMoneyFactory.js"},{"src":"./js/abi/abi_ThrowMoneyPool.js"},{"src":"./js/qrcode.min.js"},{"src":"./js/generateQrCode.js"},{"src":"./js/getContractEvent.js"}]},"mixinKey":"created"};
 }
 
 
@@ -3397,10 +3397,7 @@ const _sfc_main = {
   setup(__props, { expose }) {
   expose();
 
-//import { watch } from 'vue'
-
 const address = __vite_ssr_import_1__.ref('')
-const walletAddress = __vite_ssr_import_1__.ref('')
 const isButtonDisabled = __vite_ssr_import_1__.ref(false)
 const isVisible = __vite_ssr_import_1__.ref(true)
 
@@ -3423,8 +3420,8 @@ async function handleSubmit  () {
 
     streamerAddress = address.value
     address.value = ''
-    walletAddress.value = streamerAddress
-    
+
+    qrcode.makeCode(metaMaskMobileBaseUrl + streamerAddress)
     try {
       getContractEvent(streamerAddress, data)
       isVisible.value = false
@@ -3449,16 +3446,24 @@ async function handleSubmit  () {
 // dataに値がプッシュされればそれがreactiveに画面に反映されるはず
 /**
   let dummyData = [
-    {"Id":"id1", "alias": "akie", "amount": 100, "message": "Looooooooooove your streaming"},
-    {"Id":"id2", "alias": "akie", "amount": 1000, "message": "Looooooooooove your streaming"},
-    {"Id":"id3", "alias": "akie", "amount": 5000, "message": "Looooooooooove your streaming"},
-    {"Id":"id4", "alias": "akie", "amount": 10000, "message": "Looooooooooove your streaming"},
-    {"Id":"id5", "alias": "shohei", "amount": 20000, "message": "Wonderful streaming!!"},
-    {"Id":"id6", "alias": "shohei", "amount": 50000, "message": "Wonderful streaming!!"},
-    {"Id":"id7", "alias": "shohei", "amount": 15000, "message": "Wonderful streaming!!"},
-    {"Id":"id8", "alias": "shohei", "amount": 30000, "message": "Wonderful streaming!!"},
-    {"Id":"id9", "alias": "shohei", "amount": 6000, "message": "Wonderful streaming!!"},
-    {"Id":"id10", "alias": "shohei", "amount": 3000, "message": "Wonderful streaming!!"}
+    {"Id":"id1", "alias": "あきえ", "amount": 100, "message": "Looooooooooove your streaming"},
+    {"Id":"id2", "alias": "akie", "amount": 100, "message": "Looooooooooove your streaming"},
+    {"Id":"id3", "alias": "AKIE", "amount": 100, "message": "Looooooooooove your streaming"},
+    {"Id":"id4", "alias": "あきえ", "amount": 1000, "message": "Looooooooooove your streaming"},
+    {"Id":"id5", "alias": "akie", "amount": 1000, "message": "Looooooooooove your streaming"},
+    {"Id":"id6", "alias": "AKIE", "amount": 1000, "message": "Looooooooooove your streaming"},
+    {"Id":"id7", "alias": "あきえ", "amount": 5000, "message": "Looooooooooove your streaming"},
+    {"Id":"id8", "alias": "akie", "amount": 5000, "message": "Looooooooooove your streaming"},
+    {"Id":"id9", "alias": "AKIE", "amount": 5000, "message": "Looooooooooove your streaming"},
+    {"Id":"id10", "alias": "あきえ", "amount": 10000, "message": "Looooooooooove your streaming"},
+    {"Id":"id411", "alias": "akie", "amount": 10000, "message": "Looooooooooove your streaming"},
+    {"Id":"id12", "alias": "AKIE", "amount": 10000, "message": "Looooooooooove your streaming"},
+    {"Id":"id13", "alias": "shohei", "amount": 20000, "message": "Wonderful streaming!!"},
+    {"Id":"id14", "alias": "shohei", "amount": 50000, "message": "Wonderful streaming!!"},
+    {"Id":"id15", "alias": "shohei", "amount": 15000, "message": "Wonderful streaming!!"},
+    {"Id":"id16", "alias": "shohei", "amount": 30000, "message": "Wonderful streaming!!"},
+    {"Id":"id17", "alias": "shohei", "amount": 6000, "message": "Wonderful streaming!!"},
+    {"Id":"id18", "alias": "shohei", "amount": 3000, "message": "Wonderful streaming!!"}
   ]
 
   dummyData.forEach(_pushData => {
@@ -3469,7 +3474,7 @@ async function handleSubmit  () {
 }
 
 
-const __returned__ = { address, walletAddress, isButtonDisabled, isVisible, data, streamerAddress, handleSubmit }
+const __returned__ = { address, isButtonDisabled, isVisible, data, streamerAddress, handleSubmit }
 Object.defineProperty(__returned__, '__isScriptSetup', { enumerable: false, value: true })
 return __returned__
 }
@@ -3529,7 +3534,9 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $op
     __vite_ssr_import_3__.ssrRenderAttr("value", $setup.address)
   } placeholder="your wallet address" required></div><button${
     (__vite_ssr_import_3__.ssrIncludeBooleanAttr($setup.isButtonDisabled)) ? " disabled" : ""
-  } class="btn btn--start" id="start_chat" type="submit"> 配信スタート! </button></form><!-- content --><section class="container" style="${
+  } class="btn btn--start" id="start_chat" type="submit"> 配信スタート! </button></form><!-- QR code --><section class="qrcontainer" style="${
+    __vite_ssr_import_3__.ssrRenderStyle((!$setup.isVisible) ? null : { display: "none" })
+  }"><div id="qrcode"></div><div class="container__title"> Support From Mobile! </div></section><!-- content --><section class="container" style="${
     __vite_ssr_import_3__.ssrRenderStyle((!$setup.isVisible) ? null : { display: "none" })
   }"><div class="container__title"> 👇 Live Chat </div><!-- output data --><div class="content-box"><!--[-->`)
   __vite_ssr_import_3__.ssrRenderList($setup.data, (chat) => {
@@ -3673,7 +3680,7 @@ import("file:///mnt/c/Users/nagak/Downloads/recpientWebApp/node_modules/@vue/rea
 
 // --------------------
 const $id_002adb38 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-__vite_ssr_exports__.default = "@charset \"UTF-8\";body[data-v-4d092b5b]{-ms-overflow-style:none;color:#333;scrollbar-width:none}body[data-v-4d092b5b]::-webkit-scrollbar{display:none}div[data-v-4d092b5b],html[data-v-4d092b5b],section[data-v-4d092b5b]{font-family:\"Gill Sans\",\"Gill Sans MT\",\"メイリオ\",\"Meiryo\",\"Trebuchet MS\",sans-serif;margin:0 auto}input[type=text][data-v-4d092b5b]::-moz-placeholder{text-align:center}input[type=text][data-v-4d092b5b]:-ms-input-placeholder{text-align:center}input[type=text][data-v-4d092b5b]::placeholder{text-align:center}.chat-enter-active[data-v-4d092b5b]{transition:all .3s ease-in}.chat-enter-to[data-v-4d092b5b]{opacity:1}.chat-enter-from[data-v-4d092b5b]{opacity:0}.chat[data-v-4d092b5b]{border-radius:4px;margin-bottom:16px;padding:8px 16px 0}.chat__alias[data-v-4d092b5b]{color:#555;font-size:12pt;padding-bottom:4px;text-align:center}.chat__amount[data-v-4d092b5b]{color:#555;margin-bottom:4px;margin-left:10px}.chat__amount--text[data-v-4d092b5b]{color:#333;font-family:monospace;font-size:12pt}.chat__amount--sybl[data-v-4d092b5b]{font-size:10pt}.chat__message[data-v-4d092b5b]{padding-bottom:8px}.chat-top[data-v-4d092b5b]{align-items:center;display:flex;justify-content:space-between}.chat.emphasis0[data-v-4d092b5b]{background:#e8e7ff}.chat.emphasis0[data-v-4d092b5b],.chat.emphasis1[data-v-4d092b5b]{box-shadow:2px 2px 4px rgba(28,6,49,.2)}.chat.emphasis1[data-v-4d092b5b]{background:#b388ff}.chat.emphasis1 .chat__alias[data-v-4d092b5b]{color:#000}.chat.emphasis2[data-v-4d092b5b]{background:#1de9b6;box-shadow:2px 2px 4px rgba(28,6,49,.2)}.chat.emphasis2 .chat__amount--text[data-v-4d092b5b]{font-weight:700}.chat.emphasis2 .chat__message[data-v-4d092b5b]{background:#a7ffeb;border-radius:0 0 4px 4px;left:-16px;padding:6px 16px;position:relative;width:calc(100% + 32px)}.chat.emphasis3[data-v-4d092b5b]{background:#ffa000;box-shadow:2px 2px 4px rgba(28,6,49,.2)}.chat.emphasis3 .chat__alias[data-v-4d092b5b]{color:#000}.chat.emphasis3 .chat__amount--text[data-v-4d092b5b]{font-weight:700}.chat.emphasis3 .chat__message[data-v-4d092b5b]{background:#ffc107;border-radius:0 0 4px 4px;left:-16px;padding:6px 16px;position:relative;width:calc(100% + 32px)}.chat.emphasis4[data-v-4d092b5b]{background:#d32f2f;box-shadow:2px 2px 4px rgba(28,6,49,.2);color:#f5f5f5}.chat.emphasis4 .chat__alias[data-v-4d092b5b],.chat.emphasis4 .chat__amount[data-v-4d092b5b]{color:#fbe9e7}.chat.emphasis4 .chat__amount--text[data-v-4d092b5b]{color:#fbe9e7;font-weight:800}.chat.emphasis4 .chat__message[data-v-4d092b5b]{background:#e57373;border-radius:0 0 4px 4px;left:-16px;padding:6px 16px;position:relative;width:calc(100% + 32px)}";
+__vite_ssr_exports__.default = "@charset \"UTF-8\";body[data-v-4d092b5b]{-ms-overflow-style:none;color:#333;scrollbar-width:none}body[data-v-4d092b5b]::-webkit-scrollbar{display:none}div[data-v-4d092b5b],html[data-v-4d092b5b],section[data-v-4d092b5b]{font-family:\"Gill Sans\",\"Gill Sans MT\",\"メイリオ\",\"Meiryo\",\"Trebuchet MS\",sans-serif;margin:0 auto}input[type=text][data-v-4d092b5b]::-moz-placeholder{text-align:center}input[type=text][data-v-4d092b5b]:-ms-input-placeholder{text-align:center}input[type=text][data-v-4d092b5b]::placeholder{text-align:center}.chat-enter-active[data-v-4d092b5b]{transition:all .3s ease-in}.chat-enter-to[data-v-4d092b5b]{opacity:1}.chat-enter-from[data-v-4d092b5b]{opacity:0}.chat[data-v-4d092b5b]{border-radius:4px;margin-bottom:24px;padding:12px 16px 0}.chat__alias[data-v-4d092b5b]{color:#555;font-size:18pt;padding-bottom:4px;text-align:center}.chat__amount[data-v-4d092b5b]{color:#555;margin-bottom:8px;margin-left:10px}.chat__amount--text[data-v-4d092b5b]{color:#333;font-family:monospace;font-size:24pt}.chat__amount--sybl[data-v-4d092b5b]{font-size:16pt}.chat__message[data-v-4d092b5b]{font-size:18pt;padding-bottom:8px;padding-top:8px}.chat-top[data-v-4d092b5b]{align-items:center;display:flex;justify-content:space-between}.chat.emphasis0[data-v-4d092b5b]{background:#e8e7ff}.chat.emphasis0[data-v-4d092b5b],.chat.emphasis1[data-v-4d092b5b]{box-shadow:2px 2px 4px rgba(28,6,49,.2)}.chat.emphasis1[data-v-4d092b5b]{background:#b388ff}.chat.emphasis1 .chat__alias[data-v-4d092b5b]{color:#000}.chat.emphasis2[data-v-4d092b5b]{background:#1de9b6;box-shadow:2px 2px 4px rgba(28,6,49,.2)}.chat.emphasis2 .chat__amount--text[data-v-4d092b5b]{font-weight:700}.chat.emphasis2 .chat__message[data-v-4d092b5b]{background:#a7ffeb;border-radius:0 0 4px 4px;left:-16px;padding:8px 16px;position:relative;width:calc(100% + 32px)}.chat.emphasis3[data-v-4d092b5b]{background:#ffa000;box-shadow:2px 2px 4px rgba(28,6,49,.2)}.chat.emphasis3 .chat__alias[data-v-4d092b5b]{color:#000}.chat.emphasis3 .chat__amount--text[data-v-4d092b5b]{font-weight:700}.chat.emphasis3 .chat__message[data-v-4d092b5b]{background:#ffc107;border-radius:0 0 4px 4px;left:-16px;padding:8px 16px;position:relative;width:calc(100% + 32px)}.chat.emphasis4[data-v-4d092b5b]{background:#d32f2f;box-shadow:2px 2px 4px rgba(28,6,49,.2);color:#f5f5f5}.chat.emphasis4 .chat__alias[data-v-4d092b5b],.chat.emphasis4 .chat__amount[data-v-4d092b5b]{color:#fbe9e7}.chat.emphasis4 .chat__amount--text[data-v-4d092b5b]{color:#fbe9e7;font-weight:800}.chat.emphasis4 .chat__message[data-v-4d092b5b]{background:#e57373;border-radius:0 0 4px 4px;left:-16px;padding:8px 16px;position:relative;width:calc(100% + 32px)}";
 }
 
 
@@ -3685,7 +3692,7 @@ __vite_ssr_exports__.default = "@charset \"UTF-8\";body[data-v-4d092b5b]{-ms-ove
 
 // --------------------
 const $id_64c6d174 = async function (global, module, exports, __vite_ssr_exports__, __vite_ssr_import_meta__, __vite_ssr_import__, __vite_ssr_dynamic_import__, __vite_ssr_exportAll__) {
-__vite_ssr_exports__.default = "@charset \"UTF-8\";body{-ms-overflow-style:none;color:#333;scrollbar-width:none}body::-webkit-scrollbar{display:none}div,html,section{font-family:\"Gill Sans\",\"Gill Sans MT\",\"メイリオ\",\"Meiryo\",\"Trebuchet MS\",sans-serif;margin:0 auto}input[type=text]::-moz-placeholder{text-align:center}input[type=text]:-ms-input-placeholder{text-align:center}input[type=text]::placeholder{text-align:center}.form{align-items:center;display:flex;flex-direction:column;margin:120px auto 0;max-width:480px}.form-item{margin:auto auto 8px;text-align:center;width:100%}.form-item__label{margin-bottom:8px}.form-item__input{padding:8px;width:80%}.btn,.form-item__input{border:1px solid #d7d7d7;border-radius:4px}.btn{font-size:.8rem;margin:0 auto;padding:10px 20px;transition:all .2s}.btn--start{width:80%}.btn--start,.btn--start:before{display:inline-block;transition:all .2s}.btn--start:before{background-image:url(/_nuxt/assets/img/oshi-icon.png);background-size:contain;content:\"\";height:16px;vertical-align:middle;width:24px}.btn:hover{background-color:#eb0673;border:1px solid #eb0673}.btn:hover:before{transform:translateY(-3px)}.container{background:#fafafa;border-radius:8px 0 0 0;bottom:0!important;margin-top:24px;position:fixed!important;right:0!important}.container__title{font-size:18px;margin:8px;text-align:center}.content-box{border-radius:4px;height:50vh;min-height:300px;min-width:400px;overflow-y:scroll;padding:20px;width:30vw}.content-box::-webkit-scrollbar{display:none}";
+__vite_ssr_exports__.default = "@charset \"UTF-8\";body{-ms-overflow-style:none;color:#333;scrollbar-width:none}body::-webkit-scrollbar{display:none}div,html,section{font-family:\"Gill Sans\",\"Gill Sans MT\",\"メイリオ\",\"Meiryo\",\"Trebuchet MS\",sans-serif;margin:0 auto}input[type=text]::-moz-placeholder{text-align:center}input[type=text]:-ms-input-placeholder{text-align:center}input[type=text]::placeholder{text-align:center}.form{align-items:center;display:flex;flex-direction:column;margin:120px auto 0;max-width:480px}.form-item{margin:auto auto 8px;text-align:center;width:100%}.form-item__label{margin-bottom:8px}.form-item__input{padding:8px;width:80%}.btn,.form-item__input{border:1px solid #d7d7d7;border-radius:4px}.btn{font-size:.8rem;margin:0 auto;padding:10px 20px;transition:all .2s}.btn--start{width:80%}.btn--start,.btn--start:before{display:inline-block;transition:all .2s}.btn--start:before{background-image:url(/_nuxt/assets/img/oshi-icon.png);background-size:contain;content:\"\";height:16px;vertical-align:middle;width:24px}.btn:hover{background-color:#eb0673;border:1px solid #eb0673}.btn:hover:before{transform:translateY(-3px)}.container{background:#fafafa;border-radius:8px 0 0 0;bottom:0!important;margin-top:24px;position:fixed!important;right:0!important}.container__title{font-size:18pt;font-weight:700;margin:8px;text-align:center}.content-box{border-radius:4px;height:50vh;min-height:300px;min-width:400px;overflow-y:scroll;padding:20px;width:30vw}.content-box::-webkit-scrollbar{display:none}.qrcontainer{background:#fafafa;border-radius:8px;margin:10px;position:fixed!important;right:0!important;top:0!important}.qrcontainer__title{font-size:18pt;font-weight:700;margin:8px;text-align:center}";
 }
 
 

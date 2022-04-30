@@ -14,13 +14,13 @@ export default {
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        // { rel: 'stylesheet', href: "https://use.typekit.net/hkx4eig.css"},
-        // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' },
       ],
       script: [
         {src: 'https://cdn.ethers.io/lib/ethers-5.0.umd.min.js'},
         {src: './js/abi/abi_ThrowMoneyFactory.js'},
         {src: './js/abi/abi_ThrowMoneyPool.js'},
+        {src: './js/qrcode.min.js'},
+        {src: './js/generateQrCode.js'},
         {src: './js/getContractEvent.js'},
       ]
   
@@ -29,7 +29,6 @@ export default {
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
       '~/node_modules/ress/ress.css',
-    //   '@fortawesome/fontawesome-free/css/all.min.css',
       '~/assets/css/style.css',
       '~/assets/css/style.scss',
     ],
@@ -52,8 +51,7 @@ export default {
   
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
-      // https://go.nuxtjs.dev/axios
-    //   'nuxt-material-design-icons-iconfont'
+        // Write Modules Here
     ],
   
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -67,8 +65,5 @@ export default {
       appear: true
     },
     target: 'static',
-//    router: {
-//    base: '/steamerOverlay/'
-//  }
   }
 
